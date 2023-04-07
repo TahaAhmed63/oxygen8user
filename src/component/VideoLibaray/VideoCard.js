@@ -1,22 +1,23 @@
 import React from "react";
 import { useNavigate,Link } from "react-router-dom";
 
-const VideoCard = () => {
+const VideoCard = ({...item}) => {
+
+  const img_link = localStorage.getItem("image_link");
+
   const navigate = useNavigate();
+  const {id,name,description,image,playlist_videos_count }=item
 
   return (
     <div>
-      <div className="col-xxl-12" onClick={()=>{navigate('/videolibrarydetail')}}>
+      <div className="col-xxl-12" onClick={()=>{navigate(`/videolibrarydetail/${id}`)}}>
         <div className="course__item white-bg mb-30 fix">
           <div className="row gx-0">
             <div className="col-xxl-4 col-xl-4 col-lg-4">
               <div className="course__thumb course__thumb-list w-img p-relative fix" >
                 <Link>
-                  <img src="assets/img/course/list/course-1.jpg" alt="" />
+                  <img src={`${img_link}${image}`} alt="" width='300' height='300' />
                 </Link>
-                <div className="course__tag" >
-                  <Link style={{background:'#337c75'}}>Art & Design</Link>
-                </div>
               </div>
             </div>
             <div className="col-xxl-8 col-xl-8 col-lg-8">
@@ -25,7 +26,7 @@ const VideoCard = () => {
                   <div className="course__meta d-flex align-items-center">
                     <div className="course__lesson mr-20">
                       <span>
-                        <i className="far fa-book-alt"></i>43 Lesson
+                        <i className="far fa-book-alt"></i>{playlist_videos_count} Videos
                       </span>
                     </div>
                     
@@ -37,15 +38,14 @@ const VideoCard = () => {
                   </h3>
                   <div className="course__summary">
                     <p style={{textAlign:'left'}}>
-                      Communia virtutes tutiorem declarat stoicorum sanabat
-                      oblivisci nostris tamquam iucunditatem
+                    {name}
                     </p>
                   </div>
                   
                 </div>
                 <div className="course__more course__more-2 d-flex justify-content-between align-items-center">
                   <div className="course__status">
-                    <span style={{color:'#337c75'}}>Free</span>
+                    <span style={{color:'#337c75'}}>Paid</span>
                   </div>
                   <div className="course__btn">
                     <Link className="link-btn" to='/videolibrarydetail'>

@@ -1,10 +1,66 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import Footer from "../../component/Footer/Footer";
 import Headers from "../../component/Header/Header";
-import { Link } from "react-router-dom";
-import Lesson from "../../component/Lesson/Lesson";
+import { Link, useParams } from "react-router-dom";
+import Chapter from "../../component/Chapter/Chapter";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import BaseUrl from "../../component/BaseUrl/BaseUrl";
 
 const CourseDetail = () => {
+  const img_link = localStorage.getItem("image_link");
+
+  const [loading, setLoading] = useState(false);
+  const [course, setCourse] = useState();
+
+
+  const param = useParams();
+  const { id } = param;
+
+
+  useEffect(() => {
+    courseapi();
+  }, []);
+  const token = localStorage.getItem("accesstoken");
+
+  const courseapi = () => {
+    // setLoader(true);
+
+    var config = {
+      method: "get",
+      url: `${BaseUrl.baseurl}/user/course/${id}`,
+     
+    };
+
+    axios(config)
+      .then(function (response) {
+     console.log(response)
+     setCourse(response.data.course)
+        // setLoader(false);
+      })
+      .catch(function (error) {
+        // setLoader(false);
+
+        console.log(error);
+      });
+  };
+
+  // const  courseApi= async ()=> {
+  //   setLoading(true);
+  //   try {
+  //     const response = await axios.get(`${BaseUrl.baseurl}/user/course/${id}`);
+  //     setLoading(false);
+  //     console.log(response.data);
+  //     setCourse(response.data.course);
+  //     console.log(response);
+  //   } catch (error) {
+  //     setLoading(false);
+  //     console.log(error?.response?.message);
+  //   }
+  // }
+ 
+
   const arr = [1, 2, 3, 4, 5];
   return (
     <div>
@@ -53,15 +109,12 @@ const CourseDetail = () => {
                     </div>
                     <span className="page__title-pre">Development</span>
                     <h5 className="page__title-3" style={{ textAlign: "left" }}>
-                      The business Intelligence analyst Course 2022
+                      {course?.name}
                     </h5>
                   </div>
                   <div className="course__meta-2 d-sm-flex mb-30"></div>
                   <div className="course__img w-img mb-30">
-                    <img
-                      src="assets/img/course/details/course-details-1.jpg"
-                      alt=""
-                    />
+                    <img src={`${img_link}${course?.image}`} alt="" />
                   </div>
                   <div className="course__tab-2 mb-45">
                     <ul className="nav nav-tabs" id="courseTab" role="tablist">
@@ -110,31 +163,7 @@ const CourseDetail = () => {
                         <div className="course__description">
                           <h3 style={{ textAlign: "left" }}>Course Overview</h3>
                           <p style={{ textAlign: "left" }}>
-                            Only a quid me old mucker squiffy tomfoolery grub
-                            cheers ruddy cor blimey guvnor in my flat, up the
-                            duff Eaton car boot up the kyver pardon you A bit of
-                            how's your father David skive off sloshed, don't get
-                            shirty with me chip shop vagabond crikey bugger
-                            Queen's English chap. Matie boy nancy boy bite your
-                            arm off up the kyver old no biggie fantastic boot,
-                            David have it show off show off pick your nose and
-                            blow off lost the plot porkies bits and bobs only a
-                            quid bugger all mate, absolutely bladdered
-                            bamboozled it's your round don't get shirty with me
-                            down the pub well. Give us a bell bits and bobs
-                            Charles he lost his bottle super my lady cras
-                            starkers bite your arm off Queen's English, pardon
-                            me horse play Elizabeth a blinding shot chinwag
-                            knees up do one David, blag cup of tea Eaton so I
-                            said bleeding haggle James Bond cup of char. Gosh
-                            William ummm I'm telling crikey burke I don't want
-                            no agro A bit of how's your father bugger all mate
-                            off his nut that, what a plonker cuppa owt to do
-                            with me nancy boy show off show off pick your nose
-                            and blow off spiffing good time lavatory me old
-                            mucker, chimney pot what a load of rubbish boot
-                            squiffy lost the plot brolly wellies excuse my
-                            french.
+                            {course?.description}
                           </p>
                         </div>
                       </div>
@@ -145,66 +174,10 @@ const CourseDetail = () => {
                         aria-labelledby="curriculum-tab"
                       >
                         <div class="course__curriculum">
-                          {/* chaptaer */}
-                          <div class="accordion" id="course__accordion">
-                            <div class="accordion-item mb-50">
-                              <h2 class="accordion-header" id="week-01">
-                                <button
-                                  class="accordion-button"
-                                  type="button"
-                                  data-bs-toggle="collapse"
-                                  data-bs-target="#week-01-content"
-                                  aria-expanded="true"
-                                  aria-controls="week-01-content"
-                                >
-                                  chapter 01
-                                </button>
-                              </h2>
-                              <div
-                                id="week-01-content"
-                                class="accordion-collapse collapse show"
-                                aria-labelledby="week-01"
-                                data-bs-parent="#course__accordion"
-                              >
-                                <div class="accordion-body">
-                                  {/* lesson */}
-                                  {arr.map((item) => (
-                                    <Lesson />
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
 
-                          <div class="accordion" id="course__accordion-2">
-                            <div class="accordion-item mb-50">
-                              <h2 class="accordion-header" id="week-02">
-                                <button
-                                  class="accordion-button"
-                                  type="button"
-                                  data-bs-toggle="collapse"
-                                  data-bs-target="#week-02-content"
-                                  aria-expanded="true"
-                                  aria-controls="week-02-content"
-                                >
-                                  Chapter 02
-                                </button>
-                              </h2>
-                              <div
-                                id="week-02-content"
-                                class="accordion-collapse  collapse show"
-                                aria-labelledby="week-02"
-                                data-bs-parent="#course__accordion-2"
-                              >
-                                <div class="accordion-body">
-                                  {arr.map((item) => (
-                                    <Lesson />
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          
+                          {course?.chapters?.map((item) => (
+                            <Chapter {...item} />
+                          ))}
                         </div>
                       </div>
                     </div>

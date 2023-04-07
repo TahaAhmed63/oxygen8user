@@ -3,10 +3,32 @@ import Header from '../../component/Header/Header'
 import Footer from '../../component/Footer/Footer'
 import Card from '../../component/Card/Card'
 import { Link } from 'react-router-dom'
-
+import axios from "axios";
+import { useState,useEffect } from "react";
+import BaseUrl from '../../component/BaseUrl/BaseUrl'
 
 const Courses = () => {
-    const arr=[1,2,3,4,5,6,7,8,9,]
+
+   const [loading,setLoading]=useState(false);
+   const [courses,setCourses]=useState([])
+
+   useEffect(()=>{
+      courseApi()
+   },[])
+
+  async  function courseApi(){
+      setLoading(true)
+   try {
+
+      const response = await axios.get(`${BaseUrl.baseurl}/user/course`);
+      setLoading(false);
+      setCourses(response.data.courses)
+      console.log(response)
+    } catch (error) {
+      setLoading(false);
+      console.log(error?.response?.message);
+    }
+   }
 
   return (
     <div>
@@ -39,7 +61,7 @@ const Courses = () => {
                         <div className="tab-content" id="courseTabContent">
                            <div className="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
                               <div className="row">
-                              {arr.map(item=> <Card/> )}
+                              {courses?.map(item=> <Card {...item}/> )}
                               </div>
                            </div>
                            

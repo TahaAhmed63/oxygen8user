@@ -2,7 +2,7 @@
 import { useNavigate, Link } from "react-router-dom";
 
 function Card({ ...item }) {
-  const { id, description, name, image, status,chapters } = item;
+  const { id, name, image, chapters } = item;
 
   const img_link = localStorage.getItem("image_link");
 

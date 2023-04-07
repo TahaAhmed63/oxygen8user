@@ -10,7 +10,7 @@ const navigate = useNavigate()
   return (
     <Navbar style={{backgroundColor:"transparent"}} expand="lg">
       <Container>
-        <Navbar.Brand href="#home"><img src={myLogo} alt='' width='80' height='70'/></Navbar.Brand>
+        <Link to='/'><img src={myLogo} alt='' width='80' height='70'/></Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" style={{textAlign:'center'}}>
           <Nav className="mx-auto"  >

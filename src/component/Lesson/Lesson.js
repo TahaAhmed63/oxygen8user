@@ -1,6 +1,7 @@
 import React from "react";
 
-const Lesson = () => {
+const Lesson = ({...item}) => {
+  const {title,description,image,video}=item
   return (
     <div className="course__curriculum-content d-sm-flex justify-content-between align-items-center">
       <div className="course__curriculum-info">
@@ -16,7 +17,7 @@ const Lesson = () => {
         </svg>
         <h3>
           {" "}
-          <span>Lesson </span> Ut enim ad minim veniam
+          <span>{title}</span> 
         </h3>
       </div>
       <div className="course__curriculum-meta">
