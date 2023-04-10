@@ -20,48 +20,48 @@ const CourseDetail = () => {
 
 
   useEffect(() => {
-    courseapi();
+    courseApi();
   }, []);
-  const token = localStorage.getItem("accesstoken");
+  // const token = localStorage.getItem("accesstoken");
 
-  const courseapi = () => {
-    // setLoader(true);
+  // const courseapi = () => {
+  //   setLoader(true);
 
-    var config = {
-      method: "get",
-      url: `${BaseUrl.baseurl}/user/course/${id}`,
+  //   var config = {
+  //     method: "get",
+  //     url: `${BaseUrl.baseurl}/user/course/${id}`,
      
-    };
+  //   };
 
-    axios(config)
-      .then(function (response) {
-     console.log(response)
-     setCourse(response.data.course)
-        // setLoader(false);
-      })
-      .catch(function (error) {
-        // setLoader(false);
+  //   axios(config)
+  //     .then(function (response) {
+  //    console.log(response)
+  //    setCourse(response.data.course)
+  //       setLoader(false);
+  //     })
+  //     .catch(function (error) {
+  //       setLoader(false);
 
-        console.log(error);
-      });
-  };
+  //       console.log(error);
+  //     });
+  // };
 
-  // const  courseApi= async ()=> {
-  //   setLoading(true);
-  //   try {
-  //     const response = await axios.get(`${BaseUrl.baseurl}/user/course/${id}`);
-  //     setLoading(false);
-  //     console.log(response.data);
-  //     setCourse(response.data.course);
-  //     console.log(response);
-  //   } catch (error) {
-  //     setLoading(false);
-  //     console.log(error?.response?.message);
-  //   }
-  // }
+  const  courseApi= async ()=> {
+    setLoading(true);
+    try {
+      const response = await axios.get(`${BaseUrl.baseurl}/user/course/${id}`);
+      setLoading(false);
+      console.log(response.data);
+      setCourse(response.data.course);
+      console.log(response);
+    } catch (error) {
+      setLoading(false);
+      console.log(error?.response?.message);
+    }
+  }
  
 
-  const arr = [1, 2, 3, 4, 5];
+  // const arr = [1, 2, 3, 4, 5];
   return (
     <div>
       <Headers />
@@ -102,12 +102,11 @@ const CourseDetail = () => {
                             className="breadcrumb-item active"
                             aria-current="page"
                           >
-                            The business Intelligence analyst Course 2022
+                             {course?.name}
                           </li>
                         </ol>
                       </nav>
                     </div>
-                    <span className="page__title-pre">Development</span>
                     <h5 className="page__title-3" style={{ textAlign: "left" }}>
                       {course?.name}
                     </h5>
@@ -187,29 +186,13 @@ const CourseDetail = () => {
               <div className="col-xxl-4 col-xl-4 col-lg-4">
                 <div className="course__sidebar pl-70 p-relative">
                   <div className="course__shape">
-                    <img
-                      className="course-dot"
-                      src="assets/img/course/course-dot.png"
-                      alt=""
-                    />
+                  {/* <img src={`${img_link}${course?.image}`} alt='' /> */}
+
                   </div>
                   <div className="course__sidebar-widget-2 white-bg mb-20">
                     <div className="course__video">
                       <div className="course__video-thumb w-img mb-25">
-                        <img
-                          src="assets/img/course/video/course-video.jpg"
-                          alt=""
-                        />
-                        <div className="course__video-play">
-                          <a
-                            href="https://youtu.be/yJg-Y5byMMw"
-                            data-fancybox=""
-                            className="play-btn"
-                          >
-                            {" "}
-                            <i className="fas fa-play"></i>{" "}
-                          </a>
-                        </div>
+                      <img src={`${img_link}${course?.image}`} alt='' />
                       </div>
                       <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
                         <div className="course__video-price">
@@ -221,25 +204,7 @@ const CourseDetail = () => {
                       </div>
                       <div className="course__video-content mb-35">
                         <ul>
-                          <li className="d-flex align-items-center">
-                            <div className="course__video-icon">
-                              {/* <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve"> */}
-                              <path
-                                className="st0"
-                                d="M2,6l6-4.7L14,6v7.3c0,0.7-0.6,1.3-1.3,1.3H3.3c-0.7,0-1.3-0.6-1.3-1.3V6z"
-                              />
-                              <polyline
-                                className="st0"
-                                points="6,14.7 6,8 10,8 10,14.7 "
-                              />
-                              {/* </svg> */}
-                            </div>
-                            <div className="course__video-info">
-                              <h5>
-                                <span>Instructor :</span> Eleanor Fant
-                              </h5>
-                            </div>
-                          </li>
+                         
                           <li className="d-flex align-items-center">
                             <div className="course__video-icon">
                               {/* <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"> */}
@@ -256,7 +221,7 @@ const CourseDetail = () => {
                             </div>
                             <div className="course__video-info">
                               <h5>
-                                <span>Lectures :</span>14
+                                <span>Chapters :</span>{course?.chapters?.length}
                               </h5>
                             </div>
                           </li>

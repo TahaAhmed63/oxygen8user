@@ -144,23 +144,21 @@ function SignIn() {
                         <button
                           className="e-btn  w-100"
                           style={{ background: "#337c75" }}
-                        >
-                          {" "}
-                          <span></span> {loading === true ?  
+                        >{loading === true ?  
                            <ColorRing
-                             visible={true}
-                             height="80"
-                             width="80"
+                            //  visible={true}
+                             height="40"
+                             width="40"
                              ariaLabel="blocks-loading"
                              wrapperStyle={{}}
                              wrapperClass="blocks-wrapper"
-                             colors={['#fff']}
+                              colors={['#fff','#fff','#fff','#fff','#fff']}
                            />
                             :'Sign In'}
                         </button>
                         <div className="sign__new text-center mt-20">
                           <p>
-                            New to Markit? <Link to="/register">Sign Up</Link>
+                            You don't have a account? <Link to="/register">Sign Up</Link>
                           </p>
                         </div>
                       </div>

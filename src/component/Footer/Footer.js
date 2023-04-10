@@ -8,7 +8,7 @@ function Footer(){
                      <div className="row">
                         <div className="col-xxl-12">
                            <div className="footer__copyright text-center">
-                              <p style={{color:'#337c75'}}>© 2022 Educal, All Rights Reserved. Design By <a href="index.html">Theme Pure</a></p>
+                           <a href="https://hnhtechsolutions.com/">   <p style={{color:'#337c75'}}>© 2023 Oxygen 8. Template by HNH Tech Solution </p></a>
                            </div>
                         </div>
                      </div>

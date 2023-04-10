@@ -2,15 +2,16 @@ import React from 'react'
 import Header from '../../component/Header/Header'
 import Footer from '../../component/Footer/Footer'
 import Card from '../../component/Card/Card'
-import { Link } from 'react-router-dom'
 import axios from "axios";
 import { useState,useEffect } from "react";
 import BaseUrl from '../../component/BaseUrl/BaseUrl'
+import CardSkeleton from '../../component/Skeleton/CardSkeleton'
 
 const Courses = () => {
 
    const [loading,setLoading]=useState(false);
    const [courses,setCourses]=useState([])
+   const arr=[1,2,3,4,5,6]
 
    useEffect(()=>{
       courseApi()
@@ -40,12 +41,7 @@ const Courses = () => {
                   <div className="col-xxl-12">
                      <div className="page__title-wrapper mt-110">
                         <h3 className="page__title">Courses</h3>                         
-                        <nav aria-label="breadcrumb">
-                           <ol className="breadcrumb">
-                              <li className="breadcrumb-item"><Link to='/' >Home</Link></li>
-                              <li className="breadcrumb-item active" aria-current="page">Courses</li>
-                           </ol>
-                        </nav>
+                       
                      </div>
                   </div>
                </div>
@@ -61,6 +57,8 @@ const Courses = () => {
                         <div className="tab-content" id="courseTabContent">
                            <div className="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
                               <div className="row">
+                              {loading && arr.map(item=> <CardSkeleton loading={loading} />)}
+
                               {courses?.map(item=> <Card {...item}/> )}
                               </div>
                            </div>

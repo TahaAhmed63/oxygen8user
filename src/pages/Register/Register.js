@@ -251,13 +251,13 @@ function Register() {
                             {loading === true ? (
                              <ColorRing
                              visible={true}
-                             height="80"
-                             width="80"
+                             height="40"
+                             width="40"
                              ariaLabel="blocks-loading"
                              wrapperStyle={{}}
                              wrapperClass="blocks-wrapper"
-                             colors={['#fff']}
-                           />
+                             colors={['#fff','#fff','#fff','#fff','#fff']}
+                             />
                             ) : (
                               "Sign Up"
                             )}

@@ -1,17 +1,17 @@
 import React from "react";
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
-import { Link } from "react-router-dom";
 import VideoCard from "../../component/VideoLibaray/VideoCard";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
+import VideoCardSkeleton from "../../component/Skeleton/VideoCardSkeleton";
 
 const Playlist = () => {
 
   const [loading, setLoading] = useState(false);
   const [playlist, setPlaylist] = useState([]);
-  const arr = [1, 2, 3];
+  const arr = [1,1,1,1];
 
   useEffect(() => {
     playlistApi();
@@ -42,16 +42,7 @@ const Playlist = () => {
             <div className="col-xxl-12">
               <div className="page__title-wrapper mt-110">
                 <h3 className="page__title">Video Library</h3>
-                <nav aria-label="breadcrumb">
-                  <ol className="breadcrumb">
-                    <li className="breadcrumb-item">
-                      <Link to="/">Home</Link>
-                    </li>
-                    <li className="breadcrumb-item active" aria-current="page">
-                      Video Library
-                    </li>
-                  </ol>
-                </nav>
+              
               </div>
             </div>
           </div>
@@ -60,7 +51,9 @@ const Playlist = () => {
 
       <section className="course__area pt-120 pb-120">
         <div className="container">
-          <div className="row">
+          <div className="row"> 
+          {loading && arr.map(item=><VideoCardSkeleton loading={loading}/>)}
+
             {playlist?.map((item) => (
               <VideoCard {...item} />
             ))}
