@@ -3,8 +3,6 @@ import { useNavigate, Link } from "react-router-dom";
 function Card({...item}) {
   const { id, name, image, chapters } = item;
 
-  console.log(item);
-
   const img_link = localStorage.getItem("image_link");
 
   const navigate = useNavigate();
@@ -35,8 +33,7 @@ function Card({...item}) {
             </div>
           </div>
           <h3
-            className="course__title"
-            style={{ textAlign: "left", paddingTop: "5px" }}
+            className="course__title text-start pt-5"
           >
             <Link>{name}</Link>
           </h3>

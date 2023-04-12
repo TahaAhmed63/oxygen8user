@@ -1,9 +1,29 @@
 import React from "react";
+import { useState,useRef } from "react";
+import Modal from 'react-bootstrap/Modal';
 
 const Lesson = ({...item}) => {
-  const {title,description,image,video}=item
+
+const {title,video}=item
+
+  const [show, setShow] = useState(false);
+
+  const videoEl = useRef(null);
+  const [time,settime] = useState()
+
+  const video_link = localStorage.getItem("video_link");
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleLoadedMetadata = () => {
+    const videolength = videoEl.current;
+    settime(Math.floor(videolength.duration)/60)
+    if (!videolength) return videolength.duration
+  };
+
   return (
-    <div className="course__curriculum-content d-sm-flex justify-content-between align-items-center">
+    <div className="course__curriculum-content d-sm-flex justify-content-between align-items-center" > 
       <div className="course__curriculum-info">
         <svg className="document" viewBox="0 0 24 24">
           <path
@@ -17,15 +37,25 @@ const Lesson = ({...item}) => {
         </svg>
         <h3>
           {" "}
+          <div className="course__item white-bg mb-30 fix" style={{display:'none'}}>
+      <video src={`${video_link}${video}`}  ref={videoEl} onLoadedMetadata={handleLoadedMetadata}  alt=""  height="300" width="250" autoPlay muted loop playsInline ><source src={`${video_link}${video}`} type='video/mp4'/></video>
+    </div>
           <span>{title}</span> 
+        
         </h3>
       </div>
-      <div className="course__curriculum-meta">
+      <div className="course__curriculum-meta" onClick={handleShow} style={{cursor:'pointer'}}>
         <span className="time">
           {" "}
-          <i className="icon_clock_alt"></i> 22 minutes
+          <i className="icon_clock_alt"></i> {time} minutes
         </span>
       </div>
+       <Modal show={show} onHide={handleClose} fullscreen={true}>
+        <Modal.Header closeButton>
+          <Modal.Title>{title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body> <video src={`${video_link}${video}`}  alt=""  height="100%" width="100%" autoPlay muted loop playsInline controls><source src={`${video_link}${video}`} type='video/mp4'/></video></Modal.Body>
+      </Modal>
     </div>
   );
 };

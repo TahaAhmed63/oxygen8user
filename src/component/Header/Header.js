@@ -5,7 +5,10 @@ import myLogo from './Logooxygen.png';
 import Button from 'react-bootstrap/Button';
 import { useNavigate,Link } from 'react-router-dom';
 function Header() {
+
 const navigate = useNavigate()
+const token = localStorage.getItem("accesstoken");
+
 
   return (
     <Navbar style={{backgroundColor:"transparent"}} expand="lg">
@@ -21,8 +24,8 @@ const navigate = useNavigate()
             <Link to='/contact' style={{fontSize:'18px',color:'#337c75',fontWeight:'500',paddingRight:'25px'}}>Contact</Link>
            
           </Nav>
-          <Button onClick={()=>{navigate('/register')}} variant="primary" style={{backgroundColor:"#337c75",border:'none',padding:'12px'}} className='mr-5'>Sign Up</Button>{'  '}
-          <Button onClick={()=>{navigate('/signin')}} variant="primary" style={{backgroundColor:"#337c75",border:'none',padding:'12px'}}>Sign In</Button>
+       {token? null :  <> <Button onClick={()=>{navigate('/register')}} variant="primary" style={{backgroundColor:"#337c75",border:'none',padding:'12px'}} className='mr-5'>Sign Up</Button>
+          <Button onClick={()=>{navigate('/signin')}} variant="primary" style={{backgroundColor:"#337c75",border:'none',padding:'12px'}}>Sign In</Button></>}
         </Navbar.Collapse>
       </Container>
     </Navbar>

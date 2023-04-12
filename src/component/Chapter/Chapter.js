@@ -3,7 +3,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Lesson from "../Lesson/Lesson";
 
 const Chapter = ({ ...item }) => {
-  const { course_id, id, name, lectures } = item;
+  const { id, lectures } = item;
 
   return (
     <div className="accordion" id="course__accordion">

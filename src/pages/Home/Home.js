@@ -58,8 +58,7 @@ const arr=[1,1,1,1,1,1];
             <div className="row align-items-center">
               <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                 <div
-                  className="hero__content p-relative z-index-1"
-                  style={{ textAlign: "left" }}
+                  className="hero__content p-relative z-index-1 text-start"
                 >
                   <h3 className="hero__title">
                     <span>Access 2700+</span>
@@ -127,8 +126,7 @@ const arr=[1,1,1,1,1,1];
           <div class="row align-items-end">
             <div class="col-xxl-5 col-xl-6 col-lg-6">
               <div
-                class="section__title-wrapper mb-60"
-                style={{ textAlign: "left" }}
+                class="section__title-wrapper mb-60 text-start"
               >
                 <h2 class="section__title">
                   Find the Right

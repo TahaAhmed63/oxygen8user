@@ -9,7 +9,7 @@ const VideoCard = ({...item}) => {
   const {id,name,description,image,playlist_videos_count }=item
 
   return (
-    <div>
+    <div style={{cursor:'pointer'}}>
       <div className="col-xxl-12" onClick={()=>{navigate(`/videolibrarydetail/${id}`)}}>
         <div className="course__item white-bg mb-30 fix">
           <div className="row gx-0">
@@ -37,8 +37,9 @@ const VideoCard = ({...item}) => {
                     </Link>
                   </h3>
                   <div className="course__summary">
-                    <p style={{textAlign:'left'}}>
-                    {description}
+                    <p style={{textAlign:'left',cursor:'pointer'}} to={`/videolibrarydetail/${id}`} >
+                      {description.length > 150 ? `${description.slice(0,150)} ` : description}
+                    {description.length > 150 && <span style={{color:'blue'}}> Read more</span>}
                     </p>
                   </div>
                   
