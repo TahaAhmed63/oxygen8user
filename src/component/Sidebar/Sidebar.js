@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import StripeCheckout from "react-stripe-checkout";
-import BaseUrl from "../BaseUrl/BaseUrl";
-import axios from "axios";
+// import StripeCheckout from "react-stripe-checkout";
+// import BaseUrl from "../BaseUrl/BaseUrl";
+// import axios from "axios";
 
 const Sidebar = ({ id, length, img, duration, price }) => {
   const img_link = localStorage.getItem("image_link");
@@ -17,21 +17,21 @@ const Sidebar = ({ id, length, img, duration, price }) => {
       navigate("/signin");
     }
   }
-  const onToken = async (token) => {
-    try {
-      const data = new FormData();
-      data.append("plan_id", id);
-      data.append("token", token.id);
-      const response = await axios.post(
-        `${BaseUrl.baseurl}/user/subscription`,
-        data
-      );
-      console.log(response)
-    } catch(e) {
-      console.log(e)
+  // const onToken = async (token) => {
+  //   try {
+  //     const data = new FormData();
+  //     data.append("plan_id", id);
+  //     data.append("token", token.id);
+  //     const response = await axios.post(
+  //       `${BaseUrl.baseurl}/user/subscription`,
+  //       data
+  //     );
+  //     console.log(response)
+  //   } catch(e) {
+  //     console.log(e)
 
-    }
-  };
+  //   }
+  // };
   return (
     <div className="course__video">
       <div className="course__video-thumb w-img mb-25 " style={{position:'relative'}}>
