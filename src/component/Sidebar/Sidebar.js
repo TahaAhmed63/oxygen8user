@@ -8,33 +8,38 @@ const Sidebar = ({ id, length, img, duration, price }) => {
   const img_link = localStorage.getItem("image_link");
   const navigate = useNavigate();
 
-  const token = localStorage.getItem("accesstoken");
-  function handleEnroll() {
-    if (token) {
-      alert('stripe open')
-      // onToken()
-    } else {
-      navigate("/signin");
-    }
+  // const userToken = localStorage.getItem("accesstoken");
+
+  function handleLogin() {
+    navigate("/signin");
   }
+
   // const onToken = async (token) => {
   //   try {
-  //     const data = new FormData();
-  //     data.append("plan_id", id);
-  //     data.append("token", token.id);
-  //     const response = await axios.post(
-  //       `${BaseUrl.baseurl}/user/subscription`,
-  //       data
-  //     );
-  //     console.log(response)
-  //   } catch(e) {
-  //     console.log(e)
-
+  //     const data1 = new FormData();
+  //     data1.append("plan_id", id);
+  //     data1.append("source", token.id);
+  //     var config = {
+  //       method: "post",
+  //       url: `${BaseUrl.baseurl}/user/subscription`,
+  //       data: data1,
+  //       headers: {
+  //         Accept: "application/json",
+  //         Authorization: `Bearer ${userToken}`,
+  //       },
+  //     };
+  //     const response = await axios(config);
+  //     console.log(response);
+  //   } catch (e) {
+  //     console.log(e);
   //   }
   // };
   return (
     <div className="course__video">
-      <div className="course__video-thumb w-img mb-25 " style={{position:'relative'}}>
+      <div
+        className="course__video-thumb w-img mb-25 "
+        style={{ position: "relative" }}
+      >
         <img src={`${img_link}${img}`} alt="" />
       </div>
       <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
@@ -78,25 +83,32 @@ const Sidebar = ({ id, length, img, duration, price }) => {
       </div>
 
       <div className="course__enroll-btn">
-
-       {/* {token ?  <StripeCheckout
-          token={onToken}
-          stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv
-        amount={price}
-        >
-          <button  className="e-btn e-btn-7 w-100">Enroll</button>
-        </StripeCheckout> :  <button
-        className="e-btn e-btn-7 w-100"
-        style={{ background: "#337c75" }}
-        // onClick={handleEnroll}
-      >
-        login <i className="far fa-arrow-right"></i>
-      </button>  } */}
-       <button
-        className="e-btn e-btn-7 w-100"
-        style={{ background: "#337c75" }}
-         onClick={handleEnroll}
-      >Enroll</button>
+        {/* {userToken ? (
+          <StripeCheckout
+            token={onToken}
+            stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
+            amount={price*100}
+          >
+            <button className="e-btn e-btn-7 w-100">
+              Enroll <i className="far fa-arrow-right"></i>
+            </button>
+          </StripeCheckout>
+        ) : (
+          <button
+            className="e-btn e-btn-7 w-100"
+            style={{ background: "#337c75" }}
+            onClick={handleLogin}
+          >
+            login{" "}
+          </button>
+        )} */}
+        <button
+            className="e-btn e-btn-7 w-100"
+            style={{ background: "#337c75" }}
+            onClick={handleLogin}
+          >
+            Enroll <i className="far fa-arrow-right"></i>
+          </button>
       </div>
     </div>
   );
