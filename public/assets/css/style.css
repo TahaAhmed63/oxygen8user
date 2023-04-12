@@ -3815,7 +3815,7 @@ p {
   padding-left: 4px;
 }
 .course__shape img {
-  position: absolute;
+  position: relative;
 }
 .course__shape img.course-dot {
   right: -30px;

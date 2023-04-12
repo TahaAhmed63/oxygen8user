@@ -30,7 +30,7 @@ const VideoList = ({ ...item }) => {
   >
     <div className="course__item white-bg mb-30 fix">
       <div className="course__thumb w-img p-relative fix">
-          <img src={`${img_link}${image}`} alt="" width="300" height="250" />
+          <img src={`${img_link}${image}`} alt="" width="300" height="200" />
       </div>
       <div className="course__item white-bg mb-30 fix" style={{display:'none'}}>
       <video src={`${video_link}${video}`}  ref={videoEl} onLoadedMetadata={handleLoadedMetadata}  alt=""  height="300" width="250" autoPlay muted loop playsInline ><source src={`${video_link}${video}`} type='video/mp4'/></video>
