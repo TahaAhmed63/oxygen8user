@@ -21,6 +21,8 @@ const VideoLibraryDetail = () => {
   const [monthly, setMonthly] = useState([]);
   const [yearly, setYearly] = useState([]);
   const [video, setVideo] = useState();
+  const userToken = localStorage.getItem("accesstoken");
+
 
   useEffect(() => {
     videoApi();
@@ -29,9 +31,15 @@ const VideoLibraryDetail = () => {
   async function videoApi() {
     setLoading(true);
     try {
-      const response = await axios.get(
-        `${BaseUrl.baseurl}/user/playlist/${id}`
-      );
+      var config = {
+        method: "get",
+        url: `${BaseUrl.baseurl}/user/playlist/${id}`,
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+      };
+      const response = await axios(config);
       setLoading(false);
       setVideo(response.data.playlist);
       console.log(response.data);
