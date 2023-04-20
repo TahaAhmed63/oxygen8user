@@ -41,7 +41,6 @@ const About = () => {
                 <div class="about__review">
                   <h5>
                     {" "}
-                    <span>8,200+</span> five ster reviews
                   </h5>
                 </div>
                 <div class="about__thumb ml-100">
@@ -65,7 +64,7 @@ const About = () => {
                       Goals{" "}
                       <img src="/assets/img/shape/yellow-bg-2.png" alt="" />
                     </span>{" "}
-                    with Educal{" "}
+                    with Oxygen{" "}
                   </h2>
                   <p>
                     Lost the plot bobby such a fibber bleeding bits and bobs
@@ -91,7 +90,7 @@ const About = () => {
                   </ul>
                 </div>
                 <Link
-                  href="contact.html"
+                  href="#"
                   className="e-btn e-btn-border"
                   style={{ backgroundColor: "#337c75", color: "#fff" }}
                 >
@@ -330,11 +329,12 @@ const About = () => {
                   >
                     Join for Free
                   </Link>
-                  <a href="about.html" className="link-btn">
+                  <Link href="#"
+                   className="link-btn">
                     Learn More
                     <i className="far fa-arrow-right"></i>
                     <i className="far fa-arrow-right"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

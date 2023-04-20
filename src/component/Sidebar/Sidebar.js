@@ -1,39 +1,41 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import StripeCheckout from "react-stripe-checkout";
-// import BaseUrl from "../BaseUrl/BaseUrl";
-// import axios from "axios";
+import StripeCheckout from "react-stripe-checkout";
+import BaseUrl from "../BaseUrl/BaseUrl";
+import axios from "axios";
 
-const Sidebar = ({ id, length, img, duration, price }) => {
+const Sidebar = ({ id, length, img, duration, price,buy }) => {
   const img_link = localStorage.getItem("image_link");
   const navigate = useNavigate();
 
-  // const userToken = localStorage.getItem("accesstoken");
+   const userToken = localStorage.getItem("accesstoken");
 
   function handleLogin() {
     navigate("/signin");
   }
 
-  // const onToken = async (token) => {
-  //   try {
-  //     const data1 = new FormData();
-  //     data1.append("plan_id", id);
-  //     data1.append("source", token.id);
-  //     var config = {
-  //       method: "post",
-  //       url: `${BaseUrl.baseurl}/user/subscription`,
-  //       data: data1,
-  //       headers: {
-  //         Accept: "application/json",
-  //         Authorization: `Bearer ${userToken}`,
-  //       },
-  //     };
-  //     const response = await axios(config);
-  //     console.log(response);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
+  const onToken = async (token) => {
+    try {
+      const data1 = new FormData();
+      data1.append("plan_id", id);
+      data1.append("source", token.id);
+      var config = {
+        method: "post",
+        url: `${BaseUrl.baseurl}/user/subscription`,
+        data: data1,
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+      };
+      const response = await axios(config);
+      console.log(response);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+
   return (
     <div className="course__video">
       <div
@@ -44,7 +46,7 @@ const Sidebar = ({ id, length, img, duration, price }) => {
       </div>
       <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
         <div className="course__video-price">
-          <h5>${price}</h5>
+          <h5>${price ? price : 0}</h5>
         </div>
       </div>
       <div className="course__video-content mb-35">
@@ -53,7 +55,7 @@ const Sidebar = ({ id, length, img, duration, price }) => {
             <div className="course__video-info">
               <h5>
                 <span>Video :</span>
-                {length}
+                {length? length : 0}
               </h5>
             </div>
           </li>
@@ -61,7 +63,7 @@ const Sidebar = ({ id, length, img, duration, price }) => {
             <div className="course__video-info">
               <h5>
                 <span>Duration :</span>
-                {duration}
+                {duration? duration : 0}
               </h5>
             </div>
           </li>
@@ -83,17 +85,37 @@ const Sidebar = ({ id, length, img, duration, price }) => {
       </div>
 
       <div className="course__enroll-btn">
-        {/* {userToken ? (
-          <StripeCheckout
+{/* {buy  ?  <button
+        className="e-btn e-btn-7 w-100"
+        style={{ background: "#337c75" }}>Enrolled
+      </button>  : userToken ? <StripeCheckout
             token={onToken}
             stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
             amount={price*100}
           >
-            <button className="e-btn e-btn-7 w-100">
+            <button className="e-btn e-btn-7 w-100" style={{ background: "#337c75" }}>
               Enroll <i className="far fa-arrow-right"></i>
             </button>
-          </StripeCheckout>
-        ) : (
+          </StripeCheckout> :   <button
+            className="e-btn e-btn-7 w-100"
+            style={{ background: "#337c75" }}
+            onClick={handleLogin}
+          >
+            login{" "}
+          </button>} */}
+       {!buy ?  
+       userToken ? 
+       (
+       <StripeCheckout
+            token={onToken}
+            stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
+            amount={price*100}
+          >
+            <button className="e-btn e-btn-7 w-100" style={{ background: "#337c75" }}>
+              Enroll <i className="far fa-arrow-right"></i>
+            </button>
+          </StripeCheckout>)
+           : (
           <button
             className="e-btn e-btn-7 w-100"
             style={{ background: "#337c75" }}
@@ -101,14 +123,14 @@ const Sidebar = ({ id, length, img, duration, price }) => {
           >
             login{" "}
           </button>
-        )} */}
+        )
+        : 
         <button
-            className="e-btn e-btn-7 w-100"
-            style={{ background: "#337c75" }}
-            onClick={handleLogin}
-          >
-            Enroll <i className="far fa-arrow-right"></i>
-          </button>
+        className="e-btn e-btn-7 w-100"
+        style={{ background: "#337c75" }}>Enrolled
+      </button>  
+       }
+      
       </div>
     </div>
   );
