@@ -1,4 +1,3 @@
-import Header from "../../component/Header/Header";
 import Footer from "../../component/Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import { ColorRing } from "react-loader-spinner";
@@ -26,9 +25,9 @@ function SignIn() {
    try {
      const response = await axios.post(`${BaseUrl.baseurl}/userLogin`, V);
      setLoading(false);
-     localStorage.removeItem('admin')
      const { message, status, token } = response.data;
      if (status === true) {
+      localStorage.setItem('user',JSON.stringify(response?.data?.user))
        setLoading(false);
       setSession(token);
        Swal.fire({
@@ -64,7 +63,6 @@ function SignIn() {
 
   return (
     <div>
-      <Header />
       <section className="signup__area po-rel-z1 pt-100 pb-145">
         <div className="sign__shape">
           <img className="man-1" src="assets/img/icon/sign/man-1.png" alt="" />

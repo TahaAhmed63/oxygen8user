@@ -46,7 +46,7 @@ const VideoList = ({ ...item }) => {
       </div>
       <div className="course__more d-flex justify-content-between align-items-center">
           <div className="course__btn">
-            <span style={{ color: "#337c75" }}>{time} min </span>
+            <span className="theme-btn">{time} min </span>
           </div>
           <div className="course__btn" onClick={handleShow}>
             <Link href="#" className="link-btn" to="">
