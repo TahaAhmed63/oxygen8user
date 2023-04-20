@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useCallback, useState,useEffect} from 'react'
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar'
 import format from 'date-fns/format'
@@ -23,30 +24,30 @@ const localizer = dateFnsLocalizer({
   getDay,
   locales,
 })
-const events = [
-  {
-    title: 'My Event',
-    start1: new Date('2023-04-21T13:45:00'),
-    end1: new Date('2023-04-21T14:00')
-  },
-  {
-    title: 'My Event',
-    start: new Date('2023-04-22T15:45:00'),
-    end: new Date('2023-04-22T16:00:00')
-  },
-  {
-    title: 'My Event',
-    start: new Date('2023-04-23T17:00:00'),
-    end: new Date('2023-04-23T18:00:00')
-  }
-]
+// const events = [
+//   {
+//     title: 'My Event',
+//     start1: new Date('2023-04-21T13:45:00'),
+//     end1: new Date('2023-04-21T14:00')
+//   },
+//   {
+//     title: 'My Event',
+//     start: new Date('2023-04-22T15:45:00'),
+//     end: new Date('2023-04-22T16:00:00')
+//   },
+//   {
+//     title: 'My Event',
+//     start: new Date('2023-04-23T17:00:00'),
+//     end: new Date('2023-04-23T18:00:00')
+//   }
+// ]
 const Consultant = () => {
 
   const user = JSON.parse(localStorage.getItem("user"))
   const token = localStorage.getItem("accesstoken");
 console.log(user.id)
   const [myEvents, setEvents] = useState([])
-  const [loaders,setLoaders]=useState(false)
+  const [,setLoaders]=useState(false)
 
   useEffect(()=>{
     Slotapi()
