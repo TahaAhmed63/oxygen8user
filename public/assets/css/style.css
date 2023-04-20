@@ -3822,6 +3822,9 @@ p {
   top: 150px;
   z-index: -1;
 }
+.theme-text{
+  color: #337c75;
+}
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .course__shape img.course-dot {
     right: -20px;

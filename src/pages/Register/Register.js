@@ -1,4 +1,3 @@
-import Header from "../../component/Header/Header";
 import Footer from "../../component/Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import { ColorRing } from "react-loader-spinner";
@@ -16,13 +15,9 @@ function Register() {
   const SignupSchema = Yup.object().shape({
     first_name: Yup.string("please enter a first name").required("Required"),
     last_name: Yup.string("please enter a last name").required("Required"),
-    phone_number: Yup.string()
-      .required("Required")
-      .min(11, "Phone number  is too short - should be 11 chars minimum."),
+    phone_number: Yup.string().required("Required").min(11, "Phone number  is too short - should be 11 chars minimum."),
     email: Yup.string().email("Invalid email").required("Required"),
-    password: Yup.string()
-      .required("Required")
-      .min(8, "Password is too short - should be 8 chars minimum."),
+    password: Yup.string().required("Required").min(8, "Password is too short - should be 8 chars minimum."),
     password_confirmation: Yup.string().oneOf(
       [Yup.ref("password"), null],
       "Must be same your password"
@@ -30,23 +25,10 @@ function Register() {
   });
 
   async function handleSubmit(i) {
-    //  var config = {
-    //    method: "post",
-    //    url: `${BaseUrl.baseurl}/register`,
-    //    headers: {
-    //      Accept: "applicatin/json",
-    //    },
-    //  };
-    //  try {
-    //    const result = await axios(config,v);
-    //    console.log(result);
-    //  } catch (e) {
-    //    console.log(e.message);
-    //  }
+   
     setLoading(true);
     try {
       const response = await axios.post(`${BaseUrl.baseurl}/register`, i);
-      // const response = await axios.post('https://oxygenapi.dev-hi.xyz/api/register',i);
       setLoading(false);
       const { message, status } = response.data;
       if (status === true) {
@@ -82,7 +64,6 @@ function Register() {
 
   return (
     <div>
-      <Header />
       <section className="signup__area po-rel-z1 pt-100 pb-145">
         <div className="sign__shape">
           <img className="man-1" src="assets/img/icon/sign/man-3.png" alt="" />
@@ -249,15 +230,21 @@ function Register() {
                             {" "}
                             <span></span>
                             {loading === true ? (
-                             <ColorRing
-                             visible={true}
-                             height="40"
-                             width="40"
-                             ariaLabel="blocks-loading"
-                             wrapperStyle={{}}
-                             wrapperClass="blocks-wrapper"
-                             colors={['#fff','#fff','#fff','#fff','#fff']}
-                             />
+                              <ColorRing
+                                visible={true}
+                                height="40"
+                                width="40"
+                                ariaLabel="blocks-loading"
+                                wrapperStyle={{}}
+                                wrapperClass="blocks-wrapper"
+                                colors={[
+                                  "#fff",
+                                  "#fff",
+                                  "#fff",
+                                  "#fff",
+                                  "#fff",
+                                ]}
+                              />
                             ) : (
                               "Sign Up"
                             )}

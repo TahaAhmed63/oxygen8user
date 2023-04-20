@@ -24,8 +24,6 @@ const arr=[1,1,1,1,1,1];
       setCourse(response.data.courses);
       localStorage.setItem("image_link", response.data.image_link);
       localStorage.setItem("video_link", response.data.videolink);
-
-      console.log(response);
     } catch (error) {
       setLoading(false);
       console.log(error?.response?.message);
@@ -105,14 +103,14 @@ const arr=[1,1,1,1,1,1];
                     />
                   </div>
                   <div className="hero__thumb-big mr-30">
-                    <img src="assets/img/hero/hero-1.jpg" alt="" />
+                    <img src="assets/img/shape/fitness3.jpg" alt="" />
                     <div className="hero__quote hero__quote-animation">
                       <span>Tomorrow is our</span>
                       <h4>“When I Grow Up” Spirit Day!</h4>
                     </div>
                   </div>
                   <div className="hero__thumb-sm mt-50 d-none d-lg-block">
-                    <img src="assets/img/hero/hero-sm-1.jpg" alt="" />
+                    <img src="assets/img/shape/fitness2.jpg" alt="" />
                   </div>
                 </div>
               </div>
