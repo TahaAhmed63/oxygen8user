@@ -8,28 +8,54 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import CourseSidebar from "../../component/Sidebar/CourseSidebar";
+import { useNavigate } from "react-router-dom";
+
 
 const CourseDetail = () => {
   const img_link = localStorage.getItem("image_link");
+  const navigate =useNavigate()
 
   const [, setLoading] = useState(false);
   const [course, setCourse] = useState();
   const [monthly, setMonthly] = useState([]);
   const [yearly, setYearly] = useState([]);
+  const [subscription,setSubscription] = useState();
+  const userToken = localStorage.getItem("accesstoken");
+
+
 
   const { id } = useParams();
-  // const  = param;
 
   useEffect(() => {
+    if(!userToken){
+      navigate('/signin')
+          }
     courseApi();
   }, []);
 
   const courseApi = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`${BaseUrl.baseurl}/user/course/${id}`);
+      var config = {
+        method: "get",
+        url: `${BaseUrl.baseurl}/user/course/${id}`,
+        headers: {
+          Accept: "application/json",
+           Authorization: `Bearer ${userToken}`,
+        },
+      };
+      var config1 = {
+        method: "get",
+        url: `${BaseUrl.baseurl}/user/subscription/course/${id}`,
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+      };
+      const response = await axios(config);
+      const response1 = await axios(config1)
       setLoading(false);
-      console.log(response.data);
+      setSubscription(response1.data)
       setCourse(response.data.course);
       setMonthly(
         response.data.course.packages.filter((item) => item.period === "month")
@@ -152,11 +178,11 @@ const CourseDetail = () => {
                         role="tabpanel"
                         aria-labelledby="curriculum-tab"
                       >
-                        <div class="course__curriculum">
+                       {((course?.pack)  && (subscription?.subscription?.expiry_date))?  <div class="course__curriculum">
                           {course?.chapters?.map((item) => (
                             <Chapter {...item} />
                           ))}
-                        </div>
+                        </div> : 'First Buy this course'}
                       </div>
                     </div>
                   </div>
@@ -221,11 +247,13 @@ const CourseDetail = () => {
                             aria-labelledby="yearly-tab"
                           >
                             <CourseSidebar
+                            id={yearly[0]?.id}
                               length={course?.chapters?.length}
                               img={course?.image}
                               duration={`${yearly[0]?.duration} ${yearly[0]?.period}`}
                               price={yearly[0]?.price}
-                            />
+                              buy={subscription?.subscription?.plan?.period === 'year' ? true : false}
+                              />
                           </div>
                         </div>
 
@@ -243,10 +271,12 @@ const CourseDetail = () => {
                             aria-labelledby="yearly-tab"
                           >
                             <CourseSidebar
+                            id={monthly[0]?.id}
                               length={course?.chapters?.length}
                               img={course?.image}
                               duration={`${monthly[0]?.duration} ${monthly[0]?.period}`}
                               price={monthly[0]?.price}
+                              buy={subscription?.subscription?.plan?.period === 'month' ? true : false}
                             />
                           </div>
                         </div>

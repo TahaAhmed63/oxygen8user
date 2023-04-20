@@ -1,19 +1,40 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import StripeCheckout from "react-stripe-checkout";
+import BaseUrl from "../BaseUrl/BaseUrl";
+import axios from "axios";
 
 
-const CourseSidebar = ({ length, img,duration,price }) => {
+const CourseSidebar = ({id, length, img,duration,price,buy }) => {
   const img_link = localStorage.getItem("image_link");
   const navigate = useNavigate();
 
-  function handleEnroll() {
-    const token = localStorage.getItem("accesstoken");
-    if (token) {
-      alert("stripe open");
-    } else {
-      navigate("/signin");
-    }
+  const userToken = localStorage.getItem("accesstoken");
+
+  function handleLogin() {
+    navigate("/signin");
   }
+
+  const onToken = async (token) => {
+    try {
+      const data1 = new FormData();
+      data1.append("plan_id", id);
+      data1.append("source", token.id);
+      var config = {
+        method: "post",
+        url: `${BaseUrl.baseurl}/user/subscription`,
+        data: data1,
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+      };
+      const response = await axios(config);
+      console.log(response);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
   
@@ -24,7 +45,7 @@ const CourseSidebar = ({ length, img,duration,price }) => {
           <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
             <div className="course__video-price">
               <h5>
-                ${price}
+                ${price ? price :  0}
               </h5>
             </div>
           </div>
@@ -36,7 +57,7 @@ const CourseSidebar = ({ length, img,duration,price }) => {
                 <div className="course__video-info">
                   <h5>
                     <span>chapters :</span>
-                    {length}
+                    {length? length : 0}
                   </h5>
                 </div>
               </li>
@@ -44,7 +65,7 @@ const CourseSidebar = ({ length, img,duration,price }) => {
                 
                 <div className="course__video-info">
                   <h5>
-                    <span>Duration :</span>{duration}
+                    <span>Duration :</span>{duration ? duration : 0}
                   </h5>
                 </div>
               </li>
@@ -68,14 +89,27 @@ const CourseSidebar = ({ length, img,duration,price }) => {
           </div>
 
           <div className="course__enroll-btn">
-            <button
-              onClick={handleEnroll}
-              className="e-btn e-btn-7 w-100"
-              style={{ background: "#337c75" }}
-            >
+        {userToken ? (
+          <StripeCheckout
+            token={onToken}
+            stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
+            amount={price*100}
+          >
+            <button className="e-btn e-btn-7 w-100" style={{ background: "#337c75" }}>
               Enroll <i className="far fa-arrow-right"></i>
             </button>
-          </div>
+          </StripeCheckout>
+        ) : (
+          <button
+            className="e-btn e-btn-7 w-100" 
+            style={{ background: "#337c75" }}
+            onClick={handleLogin}
+          >
+            login{" "}
+          </button>
+        )}
+      
+      </div>
         </div>
   );
 };
