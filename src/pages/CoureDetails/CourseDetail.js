@@ -37,6 +37,7 @@ const CourseDetail = () => {
   }, []);
 
   const courseApi = async () => {
+    console.log('call hui--->')
     setLoading(true);
     try {
       var config = {
@@ -185,7 +186,7 @@ const CourseDetail = () => {
                         role="tabpanel"
                         aria-labelledby="curriculum-tab"
                       >
-                          {course?.pack ?  <div class="course__curriculum">
+                          {((course?.pack) && (subscription?.subscription?.expiry_date))?  <div class="course__curriculum">
                           {course?.chapters?.map((item) => (
                             <Chapter {...item} />
                           ))}
@@ -262,6 +263,8 @@ const CourseDetail = () => {
                               price={yearly[0]?.price}
                               buy={subscription?.subscription?.plan?.period === 'year' ? true : false}
                               loading={loading}
+                              api={courseApi}
+
                               />
                           </div>
                         </div>
@@ -288,6 +291,7 @@ const CourseDetail = () => {
                               price={monthly[0]?.price}
                               buy={subscription?.subscription?.plan?.period === 'month' ? true : false}
                               loading={loading}
+                              api={courseApi}
                             />
                           </div>
                         </div>
