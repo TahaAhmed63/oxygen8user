@@ -57,6 +57,7 @@ const CourseDetail = () => {
       };
       const response = await axios(config);
       const response1 = await axios(config1)
+      
       setLoading(false);
       setSubscription(response1.data)
       setCourse(response.data.course);
@@ -184,7 +185,7 @@ const CourseDetail = () => {
                         role="tabpanel"
                         aria-labelledby="curriculum-tab"
                       >
-                          {((course?.pack)  && (subscription?.subscription?.expiry_date > date))?  <div class="course__curriculum">
+                          {course?.pack ?  <div class="course__curriculum">
                           {course?.chapters?.map((item) => (
                             <Chapter {...item} />
                           ))}
