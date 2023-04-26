@@ -6,7 +6,7 @@ import BaseUrl from "../BaseUrl/BaseUrl";
 import axios from "axios";
 
 
-const CourseSidebar = ({id, length, img,duration,price,buy,stripeFunc,loading,courseID }) => {
+const CourseSidebar = ({id, length, img,duration,price,buy,loading }) => {
 
   const img_link = localStorage.getItem("image_link");
   const navigate = useNavigate();
@@ -92,7 +92,7 @@ const CourseSidebar = ({id, length, img,duration,price,buy,stripeFunc,loading,co
        userToken ? 
        (
        <StripeCheckout
-            token={onToken()}
+            token={onToken}
             stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
             amount={price*100}
           >
