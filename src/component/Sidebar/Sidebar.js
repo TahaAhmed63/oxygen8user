@@ -112,7 +112,7 @@ const Sidebar = ({ id, length, img, duration, price,buy }) => {
             amount={price*100}
           >
             <button className="e-btn e-btn-7 w-100" style={{ background: "#337c75" }}>
-              Enroll <i className="far fa-arrow-right"></i>
+              Buy <i className="far fa-arrow-right"></i>
             </button>
           </StripeCheckout>)
            : (

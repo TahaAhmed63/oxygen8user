@@ -1,20 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
+import { ColorRing } from "react-loader-spinner";
 import BaseUrl from "../BaseUrl/BaseUrl";
 import axios from "axios";
 
 
-const CourseSidebar = ({id, length, img,duration,price,buy }) => {
+const CourseSidebar = ({id, length, img,duration,price,buy,stripeFunc,loading,courseID }) => {
+
   const img_link = localStorage.getItem("image_link");
   const navigate = useNavigate();
-
   const userToken = localStorage.getItem("accesstoken");
 
   function handleLogin() {
     navigate("/signin");
   }
-
   const onToken = async (token) => {
     try {
       const data1 = new FormData();
@@ -35,7 +35,6 @@ const CourseSidebar = ({id, length, img,duration,price,buy }) => {
       console.log(e);
     }
   };
-
   return (
   
         <div className="course__video">
@@ -89,25 +88,46 @@ const CourseSidebar = ({id, length, img,duration,price,buy }) => {
           </div>
 
           <div className="course__enroll-btn">
-        {userToken ? (
-          <StripeCheckout
-            token={onToken}
+          {!buy ?  
+       userToken ? 
+       (
+       <StripeCheckout
+            token={onToken()}
             stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
             amount={price*100}
           >
             <button className="e-btn e-btn-7 w-100" style={{ background: "#337c75" }}>
-              Enroll <i className="far fa-arrow-right"></i>
+              {loading  === true ?  <ColorRing
+                                visible={true}
+                                height="40"
+                                width="40"
+                                ariaLabel="blocks-loading"
+                                wrapperStyle={{}}
+                                wrapperClass="blocks-wrapper"
+                                colors={[
+                                  "#fff",
+                                  "#fff",
+                                  "#fff",
+                                  "#fff",
+                                  "#fff",
+                                ]}/> : 'Buy'}         
             </button>
-          </StripeCheckout>
-        ) : (
+          </StripeCheckout>)
+           : (
           <button
-            className="e-btn e-btn-7 w-100" 
+            className="e-btn e-btn-7 w-100"
             style={{ background: "#337c75" }}
             onClick={handleLogin}
           >
             login{" "}
           </button>
-        )}
+        )
+        : 
+        <button
+        className="e-btn e-btn-7 w-100"
+        style={{ background: "#337c75" }}>Enrolled
+      </button>  
+       }
       
       </div>
         </div>
