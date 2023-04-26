@@ -130,9 +130,9 @@ async function bookSlot(e){
     } catch (e) {
       console.log(e);
       Swal.fire({
-        title: "OOps",
+        title: "Oops",
         text: e.response.data.message,
-        icon: "success",
+        icon: "error",
         button: "Ok",
       });
     }

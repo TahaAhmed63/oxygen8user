@@ -24,6 +24,7 @@ const VideoLibraryDetail = () => {
   const [video, setVideo] = useState();
   const [subscription,setSubscription] = useState();
   const userToken = localStorage.getItem("accesstoken");
+  const date = new Date();
 
 
   useEffect(() => {
@@ -197,7 +198,7 @@ const VideoLibraryDetail = () => {
                                   role="tabpanel"
                                   aria-labelledby="grid-tab"
                                 >
-                                 {((video?.pack) && (subscription?.subscription?.expiry_date)) ? 
+                                 {((video?.pack) && (subscription?.subscription?.expiry_date > date)) ? 
                                   <div className="row">
                                   {video?.playlist_videos?.map(item => <VideoList {...item} />)}
                                 </div>
@@ -271,12 +272,12 @@ const VideoLibraryDetail = () => {
                           aria-labelledby="yearly-tab"
                         >
                           <Sidebar
-                          id={yearly[0]?.id}
+                            id={yearly[0]?.id}
                             length={video?.playlist_videos?.length}
                             img={video?.image}
                             duration={`${yearly[0]?.duration} ${yearly[0]?.period}`}
                             price={yearly[0]?.price}
-                          buy={subscription?.subscription?.plan?.period === 'year' ? true : false}
+                            buy={subscription?.subscription?.plan?.period === 'year' ? true : false}
                           />
                         </div>
                       </div>
