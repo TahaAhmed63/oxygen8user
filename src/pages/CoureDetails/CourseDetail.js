@@ -4,6 +4,7 @@ import Footer from "../../component/Footer/Footer";
 import Headers from "../../component/Header/Header";
 import { Link, useParams } from "react-router-dom";
 import Chapter from "../../component/Chapter/Chapter";
+import DetailSkeleton from "../../component/Skeleton/DetailSkeleton";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
@@ -12,16 +13,18 @@ import { useNavigate } from "react-router-dom";
 
 
 const CourseDetail = () => {
+  
   const img_link = localStorage.getItem("image_link");
   const navigate =useNavigate()
 
-  const [, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [course, setCourse] = useState();
   const [monthly, setMonthly] = useState([]);
   const [yearly, setYearly] = useState([]);
   const [subscription,setSubscription] = useState();
   const userToken = localStorage.getItem("accesstoken");
-
+  const date = new Date();
+  console.log(date)
 
 
   const { id } = useParams();
@@ -70,9 +73,12 @@ const CourseDetail = () => {
     }
   };
 
+ 
+
   return (
     <>
       <Headers />
+      {loading ? <DetailSkeleton/>:
       <main>
         <section className="page__title-area pt-120 pb-90">
           <div className="page__title-shape">
@@ -178,7 +184,7 @@ const CourseDetail = () => {
                         role="tabpanel"
                         aria-labelledby="curriculum-tab"
                       >
-                       {((course?.pack)  && (subscription?.subscription?.expiry_date))?  <div class="course__curriculum">
+                          {((course?.pack)  && (subscription?.subscription?.expiry_date > date))?  <div class="course__curriculum">
                           {course?.chapters?.map((item) => (
                             <Chapter {...item} />
                           ))}
@@ -247,12 +253,14 @@ const CourseDetail = () => {
                             aria-labelledby="yearly-tab"
                           >
                             <CourseSidebar
+                            courseID={id}
                             id={yearly[0]?.id}
                               length={course?.chapters?.length}
                               img={course?.image}
                               duration={`${yearly[0]?.duration} ${yearly[0]?.period}`}
                               price={yearly[0]?.price}
                               buy={subscription?.subscription?.plan?.period === 'year' ? true : false}
+                              loading={loading}
                               />
                           </div>
                         </div>
@@ -271,12 +279,14 @@ const CourseDetail = () => {
                             aria-labelledby="yearly-tab"
                           >
                             <CourseSidebar
-                            id={monthly[0]?.id}
+                              courseID={id}
+                              id={monthly[0]?.id}
                               length={course?.chapters?.length}
                               img={course?.image}
                               duration={`${monthly[0]?.duration} ${monthly[0]?.period}`}
                               price={monthly[0]?.price}
                               buy={subscription?.subscription?.plan?.period === 'month' ? true : false}
+                              loading={loading}
                             />
                           </div>
                         </div>
@@ -289,6 +299,7 @@ const CourseDetail = () => {
           </div>
         </section>
       </main>
+}
 
       <Footer />
     </>
