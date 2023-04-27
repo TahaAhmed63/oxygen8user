@@ -18,7 +18,7 @@ function Register() {
     phone_number: Yup.string().required("Required").min(11, "Phone number  is too short - should be 11 chars minimum."),
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string().required("Required").min(8, "Password is too short - should be 8 chars minimum."),
-    password_confirmation: Yup.string().oneOf(
+    password_confirmation: Yup.string().required("Required").oneOf(
       [Yup.ref("password"), null],
       "Must be same your password"
     ),
