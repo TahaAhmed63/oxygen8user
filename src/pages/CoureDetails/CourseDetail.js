@@ -58,7 +58,6 @@ const CourseDetail = () => {
       const response = await axios(config);
       const response1 = await axios(config1);
 
-      setLoading(false);
       setSubscription(response1.data);
       setCourse(response.data.course);
       setMonthly(
@@ -67,6 +66,8 @@ const CourseDetail = () => {
       setYearly(
         response.data.course.packages.filter((item) => item.period === "year")
       );
+      setLoading(false);
+
       console.log(response);
     } catch (error) {
       setLoading(false);
@@ -75,6 +76,7 @@ const CourseDetail = () => {
   };
 
   const onToken = async (token) => {
+    setLoading(true);
     try {
       const data1 = new FormData();
       data1.append("plan_id", yearly[0]?.id);
@@ -118,9 +120,6 @@ const CourseDetail = () => {
     }
   };
 
-  function handleLogin() {
-    navigate("/signin");
-  }
 
   return (
     <>
@@ -257,66 +256,67 @@ const CourseDetail = () => {
                   </div>
                 </div>
 
-                <div className="col-xxl-4 col-xl-4 col-lg-4">
-                  <div className="course__sidebar pl-70 p-relative">
-                    <div className="course__shape">
-                      <div className="course__tab-2 mb-45 ">
-                        <ul
-                          className="nav nav-tabs"
-                          id="courseTab"
-                          role="tablist"
-                        >
-                          <li className="nav-item w-50" role="presentation">
-                            <button
-                              className="nav-link active"
-                              id="yearly-tab"
-                              data-bs-toggle="tab"
-                              data-bs-target="#yearly"
-                              type="button"
-                              role="tab"
-                              aria-controls="yearly"
-                              aria-selected="true"
-                            >
-                              {" "}
-                              <i className="icon_book_alt"></i>{" "}
-                              <span>Yearly</span>{" "}
-                            </button>
-                          </li>
-                          <li className="nav-item w-50" role="presentation">
-                            <button
-                              className="nav-link "
-                              id="monthly-tab"
-                              data-bs-toggle="tab"
-                              data-bs-target="#monthly"
-                              type="button"
-                              role="tab"
-                              aria-controls="monthly"
-                              aria-selected="false"
-                            >
-                              {" "}
-                              <i className="fa fa-calendar"></i>{" "}
-                              <span>Monthly</span>{" "}
-                            </button>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div className="course__tab-content mb-95">
-                        <div className="tab-content" id="courseTabContent">
-                          <div
-                            class="tab-pane fade show active"
-                            id="yearly"
-                            role="tabpanel"
-                            aria-labelledby="yearly-tab"
+                {!course?.pack && (
+                  <div className="col-xxl-4 col-xl-4 col-lg-4">
+                    <div className="course__sidebar pl-70 p-relative">
+                      <div className="course__shape">
+                        <div className="course__tab-2 mb-45 ">
+                          <ul
+                            className="nav nav-tabs"
+                            id="courseTab"
+                            role="tablist"
                           >
+                            <li className="nav-item w-50" role="presentation">
+                              <button
+                                className="nav-link active"
+                                id="yearly-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#yearly"
+                                type="button"
+                                role="tab"
+                                aria-controls="yearly"
+                                aria-selected="true"
+                              >
+                                {" "}
+                                <i className="icon_book_alt"></i>{" "}
+                                <span>Yearly</span>{" "}
+                              </button>
+                            </li>
+                            <li className="nav-item w-50" role="presentation">
+                              <button
+                                className="nav-link "
+                                id="monthly-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#monthly"
+                                type="button"
+                                role="tab"
+                                aria-controls="monthly"
+                                aria-selected="false"
+                              >
+                                {" "}
+                                <i className="fa fa-calendar"></i>{" "}
+                                <span>Monthly</span>{" "}
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div className="course__tab-content mb-95">
+                          <div className="tab-content" id="courseTabContent">
                             <div
-                              className="course__sidebar-widget-2 white-bg mb-20"
-                              // className="tab-pane fade show active"
+                              class="tab-pane fade show active"
                               id="yearly"
                               role="tabpanel"
                               aria-labelledby="yearly-tab"
                             >
-                              {/* <CourseSidebar
+                              <div
+                                className="course__sidebar-widget-2 white-bg mb-20"
+                                // className="tab-pane fade show active"
+                                id="yearly"
+                                role="tabpanel"
+                                aria-labelledby="yearly-tab"
+                              >
+                                {/* <CourseSidebar
                             courseID={id}
                             id={yearly[0]?.id}
                               length={course?.chapters?.length}
@@ -329,66 +329,74 @@ const CourseDetail = () => {
 
                               /> */}
 
-                              <div className="course__video">
-                                <div
-                                  className="course__video-thumb w-img mb-25"
-                                  style={{ position: "relative" }}
-                                >
-                                  <img
-                                    src={`${img_link}${course?.image}`}
-                                    alt=""
-                                  />
-                                </div>
-                                <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
-                                  <div className="course__video-price">
-                                    <h5>${yearly[0] ? yearly[0]?.price : 0}</h5>
+                                <div className="course__video">
+                                  <div
+                                    className="course__video-thumb w-img mb-25"
+                                    style={{ position: "relative" }}
+                                  >
+                                    <img
+                                      src={`${img_link}${course?.image}`}
+                                      alt=""
+                                    />
                                   </div>
-                                </div>
-                                <div className="course__video-content mb-35">
-                                  <ul>
-                                    <li className="d-flex align-items-center">
-                                      <div className="course__video-info">
-                                        <h5>
-                                          <span>chapters :</span>
-                                          {course?.chapters
-                                            ? course?.chapters?.length
-                                            : 0}
-                                        </h5>
-                                      </div>
-                                    </li>
-                                    <li className="d-flex align-items-center">
-                                      <div className="course__video-info">
-                                        <h5>
-                                          <span>Duration :</span>
-                                          {yearly[0]
-                                            ? `${yearly[0]?.duration} ${yearly[0]?.period}`
-                                            : 0}
-                                        </h5>
-                                      </div>
-                                    </li>
-                                    <li className="d-flex align-items-center">
-                                      <div className="course__video-info">
-                                        <h5>
-                                          <span>Enrolled :</span>20 students
-                                        </h5>
-                                      </div>
-                                    </li>
-                                    <li className="d-flex align-items-center">
-                                      <div className="course__video-info">
-                                        <h5>
-                                          <span>Language :</span>English
-                                        </h5>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
+                                  <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
+                                    <div className="course__video-price">
+                                      <h5>
+                                        ${yearly[0] ? yearly[0]?.price : 0}
+                                      </h5>
+                                    </div>
+                                  </div>
+                                  <div className="course__video-content mb-35">
+                                    <ul>
+                                      <li className="d-flex align-items-center">
+                                        <div className="course__video-info">
+                                          <h5>
+                                            <span>chapters :</span>
+                                            {course?.chapters
+                                              ? course?.chapters?.length
+                                              : 0}
+                                          </h5>
+                                        </div>
+                                      </li>
+                                      <li className="d-flex align-items-center">
+                                        <div className="course__video-info">
+                                          <h5>
+                                            <span>Duration :</span>
+                                            {yearly[0]
+                                              ? `${yearly[0]?.duration} ${yearly[0]?.period}`
+                                              : 0}
+                                          </h5>
+                                        </div>
+                                      </li>
+                                      <li className="d-flex align-items-center">
+                                        <div className="course__video-info">
+                                          <h5>
+                                            <span>Enrolled :</span>20 students
+                                          </h5>
+                                        </div>
+                                      </li>
+                                      <li className="d-flex align-items-center">
+                                        <div className="course__video-info">
+                                          <h5>
+                                            <span>Language :</span>English
+                                          </h5>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
 
-                                <div className="course__enroll-btn">
-                                  {subscription?.subscription?.plan?.period ===
-                                  "year" ? (
-                                    true
-                                  ) : false ? (
-                                    userToken ? (
+                                  <div className="course__enroll-btn">
+                                    {subscription?.subscription?.plan
+                                      ?.period === "year" ? 
+                                      true
+                                     : false ? 
+                                      <button
+                                        className="e-btn e-btn-7 w-100"
+                                        style={{ background: "#337c75" }}
+                                      >
+                                        Enrolled
+                                      </button>
+                                     :
                                       <StripeCheckout
                                         token={onToken}
                                         stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
@@ -398,7 +406,7 @@ const CourseDetail = () => {
                                           className="e-btn e-btn-7 w-100"
                                           style={{ background: "#337c75" }}
                                         >
-                                          {loading === true ? (
+                                          {loading === true ? 
                                             <ColorRing
                                               visible={true}
                                               height="40"
@@ -414,110 +422,99 @@ const CourseDetail = () => {
                                                 "#fff",
                                               ]}
                                             />
-                                          ) : (
+                                           : 
                                             "Buy"
-                                          )}
+                                          }
                                         </button>
                                       </StripeCheckout>
-                                    ) : (
+                                    }
+                                  
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div
+                              class="tab-pane fade"
+                              id="monthly"
+                              role="tabpanel"
+                              aria-labelledby="monthly-tab"
+                            >
+                              <div
+                                className="course__sidebar-widget-2 white-bg mb-20"
+                                // className="tab-pane fade show active"
+                                id="yearly"
+                                role="tabpanel"
+                                aria-labelledby="yearly-tab"
+                              >
+                                <div className="course__video">
+                                  <div
+                                    className="course__video-thumb w-img mb-25"
+                                    style={{ position: "relative" }}
+                                  >
+                                    <img
+                                      src={`${img_link}${course?.image}`}
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
+                                    <div className="course__video-price">
+                                      <h5>
+                                        ${monthly[0] ? monthly[0]?.price : 0}
+                                      </h5>
+                                    </div>
+                                  </div>
+                                  <div className="course__video-content mb-35">
+                                    <ul>
+                                      <li className="d-flex align-items-center">
+                                        <div className="course__video-info">
+                                          <h5>
+                                            <span>chapters :</span>
+                                            {course?.chapters
+                                              ? course?.chapters?.length
+                                              : 0}
+                                          </h5>
+                                        </div>
+                                      </li>
+                                      <li className="d-flex align-items-center">
+                                        <div className="course__video-info">
+                                          <h5>
+                                            <span>Duration :</span>
+                                            {monthly[0]
+                                              ? `${monthly[0]?.duration} ${monthly[0]?.period}`
+                                              : 0}
+                                          </h5>
+                                        </div>
+                                      </li>
+                                      <li className="d-flex align-items-center">
+                                        <div className="course__video-info">
+                                          <h5>
+                                            <span>Enrolled :</span>20 students
+                                          </h5>
+                                        </div>
+                                      </li>
+                                      <li className="d-flex align-items-center">
+                                        <div className="course__video-info">
+                                          <h5>
+                                            <span>Language :</span>English
+                                          </h5>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+
+                                  <div className="course__enroll-btn">
+                                    {subscription?.subscription?.plan
+                                      ?.period === "month" ? (
+                                      true
+                                    ) : false ? (
                                       <button
                                         className="e-btn e-btn-7 w-100"
                                         style={{ background: "#337c75" }}
-                                        onClick={handleLogin}
                                       >
-                                        login{" "}
+                                        Enrolled
                                       </button>
-                                    )
-                                  ) : (
-                                    <button
-                                      className="e-btn e-btn-7 w-100"
-                                      style={{ background: "#337c75" }}
-                                    >
-                                      Enrolled
-                                    </button>
-                                  )}
-                                  {}
-                                </div>
-                               
-                              </div>
-                            </div>
-                          </div>
-
-                          <div
-                            class="tab-pane fade"
-                            id="monthly"
-                            role="tabpanel"
-                            aria-labelledby="monthly-tab"
-                          >
-                            <div
-                              className="course__sidebar-widget-2 white-bg mb-20"
-                              // className="tab-pane fade show active"
-                              id="yearly"
-                              role="tabpanel"
-                              aria-labelledby="yearly-tab"
-                            >
-                              <div className="course__video">
-                                <div
-                                  className="course__video-thumb w-img mb-25"
-                                  style={{ position: "relative" }}
-                                >
-                                  <img
-                                    src={`${img_link}${course?.image}`}
-                                    alt=""
-                                  />
-                                </div>
-                                <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
-                                  <div className="course__video-price">
-                                    <h5>
-                                      ${monthly[0] ? monthly[0]?.price : 0}
-                                    </h5>
-                                  </div>
-                                </div>
-                                <div className="course__video-content mb-35">
-                                  <ul>
-                                    <li className="d-flex align-items-center">
-                                      <div className="course__video-info">
-                                        <h5>
-                                          <span>chapters :</span>
-                                          {course?.chapters
-                                            ? course?.chapters?.length
-                                            : 0}
-                                        </h5>
-                                      </div>
-                                    </li>
-                                    <li className="d-flex align-items-center">
-                                      <div className="course__video-info">
-                                        <h5>
-                                          <span>Duration :</span>
-                                          {monthly[0]
-                                            ? `${monthly[0]?.duration} ${monthly[0]?.period}`
-                                            : 0}
-                                        </h5>
-                                      </div>
-                                    </li>
-                                    <li className="d-flex align-items-center">
-                                      <div className="course__video-info">
-                                        <h5>
-                                          <span>Enrolled :</span>20 students
-                                        </h5>
-                                      </div>
-                                    </li>
-                                    <li className="d-flex align-items-center">
-                                      <div className="course__video-info">
-                                        <h5>
-                                          <span>Language :</span>English
-                                        </h5>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-
-                                <div className="course__enroll-btn">
-                                  {subscription?.subscription?.plan?.period ===
-                                  "month" ? (
-                                    true
-                                  ) : false ? (
-                                    userToken ? (
+                                    ) : (
                                       <StripeCheckout
                                         token={onToken1}
                                         stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
@@ -548,23 +545,8 @@ const CourseDetail = () => {
                                           )}
                                         </button>
                                       </StripeCheckout>
-                                    ) : (
-                                      <button
-                                        className="e-btn e-btn-7 w-100"
-                                        style={{ background: "#337c75" }}
-                                        onClick={handleLogin}
-                                      >
-                                        login{" "}
-                                      </button>
-                                    )
-                                  ) : (
-                                    <button
-                                      className="e-btn e-btn-7 w-100"
-                                      style={{ background: "#337c75" }}
-                                    >
-                                      Enrolled
-                                    </button>
-                                  )}
+                                    )}
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -573,7 +555,7 @@ const CourseDetail = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </section>

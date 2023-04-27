@@ -1,29 +1,31 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {useCallback, useState,useEffect} from 'react'
-import { Calendar, dateFnsLocalizer } from 'react-big-calendar'
-import format from 'date-fns/format'
-import parse from 'date-fns/parse'
-import startOfWeek from 'date-fns/startOfWeek'
-import getDay from 'date-fns/getDay'
-import enUS from 'date-fns/locale/en-US'
+import React, { useCallback, useState, useEffect } from "react";
+import { Calendar, dateFnsLocalizer } from "react-big-calendar";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import format from "date-fns/format";
+import parse from "date-fns/parse";
+import startOfWeek from "date-fns/startOfWeek";
+import getDay from "date-fns/getDay";
+import enUS from "date-fns/locale/en-US";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
-import axios from 'axios'
-import Footer from '../../component/Footer/Footer'
-import Header from '../../component/Header/Header'
+import axios from "axios";
+import Footer from "../../component/Footer/Footer";
+import Header from "../../component/Header/Header";
 import Swal from "sweetalert2";
 
-
 const locales = {
-  'en-US': enUS,
-}
+  "en-US": enUS,
+};
 const localizer = dateFnsLocalizer({
   format,
   parse,
   startOfWeek,
   getDay,
   locales,
-})
+});
 // const events = [
 //   {
 //     title: 'My Event',
@@ -42,23 +44,27 @@ const localizer = dateFnsLocalizer({
 //   }
 // ]
 const Consultant = () => {
-
-  const user = JSON.parse(localStorage.getItem("user"))
+  const user = JSON.parse(localStorage.getItem("user"));
   const token = localStorage.getItem("accesstoken");
-console.log(user.id)
-  const [myEvents, setEvents] = useState([])
-  const [,setLoaders]=useState(false)
+  const [myEvents, setEvents] = useState([]);
+  const [booked, setBooked] = useState([]);
+  const [, setLoaders] = useState(false);
+  const [show, setShow] = useState(false);
 
-  useEffect(()=>{
-    Slotapi()
-  },[])
+  useEffect(() => {
+    Slotapi();
+  }, []);
+
+  const handleClose = () => setShow(false);
 
   const Slotapi = () => {
     setLoaders(true);
 
     var config = {
       method: "get",
-      url: `${BaseUrl.baseurl}/user/appointment?user_id=${''}&duration=${''}&booked=${''}`,
+      url: `${
+        BaseUrl.baseurl
+      }/user/appointment?user_id=${""}&duration=${""}&booked=${""}`,
       headers: {
         Accept: "application/json",
         Authorization: `Bearer ${token}`,
@@ -67,13 +73,15 @@ console.log(user.id)
 
     axios(config)
       .then(function (response) {
-        console.log(response.data.appointments)
-        setEvents(response.data.appointments.map(((e)=>({
-            id:e.id,
+        console.log(response.data.appointments);
+        setEvents(
+          response.data.appointments.map((e) => ({
+            id: e.id,
             title: e.booked === 1 ? "booked" : e.title,
             start: new Date(e.start_time),
-            end: new Date(e.end_time)
-        }))));
+            end: new Date(e.end_time),
+          }))
+        );
         setLoaders(false);
       })
       .catch(function (error) {
@@ -83,26 +91,39 @@ console.log(user.id)
       });
   };
 
-const handleSelectSlot = useCallback(
-  ({ start, end }) => {
-    const title = window.prompt('New Event Name')
-    if (title) {
-      setEvents((prev) => [...prev, { start, end, title }])
+  // const handleSelectSlot = useCallback(
+  //   ({ start, end }) => {
+  //     const title = window.prompt("New Event Name");
+  //     setShow(true);
+  //     if (title) {
+  //       setEvents((prev) => [...prev, { start, end, title }]);
+  //     }
+  //   },
+  //   [setEvents]
+  // );
+
+  const handleSelectEvent = useCallback((event) => {
+    setBooked(event);
+    if (event.title !== "booked") {
+      setShow(true);
+    } else {
+      Swal.fire({
+        title: "Oops",
+        text: "Your Selected slot is already book plz select another one",
+        icon: "error",
+        button: "Ok",
+      });
     }
-  },
-  [setEvents]
-)
+    console.log(event.start)
+  }, []);
 
-const handleSelectEvent = useCallback(
-  (event) => bookSlot(event),
-  []
-)
-
-async function bookSlot(e){
+  async function handleSubmit() {
+    console.log(booked);
+    setShow(false);
     try {
       const data1 = new FormData()
-      data1.append("appointment_id", e.id);
-      data1.append("user_id" ,user.id);
+      data1.append("appointment_id", booked.id);
+       data1.append("user_id" ,user.id);
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/appointment`,
@@ -125,8 +146,8 @@ async function bookSlot(e){
         });
       } else {
         setLoaders(false);
-      // alert("")
       }
+      Slotapi()
     } catch (e) {
       console.log(e);
       Swal.fire({
@@ -136,27 +157,70 @@ async function bookSlot(e){
         button: "Ok",
       });
     }
-
-}
+  }
 
   return (
     <>
-    <Header/>
-    <h2 style={{paddingTop:'50px',color:'#337c75'}}>Book Your Slot</h2>
-    <div style={{paddingTop:'30px',paddingRight:'50px',paddingLeft:'50px',paddingBottom:'80px'}}>
-  <Calendar
-    localizer={localizer}
-    events={myEvents}
-    startAccessor="start"
-    endAccessor="end"
-    onSelectEvent={handleSelectEvent}
-    onSelectSlot={handleSelectSlot}
-    style={{ height: 500 }}
-  />
-</div>
-<Footer/>
-  </>
-  )
-}
+      <Header />
+      <h2 style={{ paddingTop: "50px", color: "#337c75" }}>Book Your Slot</h2>
+      <div
+        style={{
+          paddingTop: "30px",
+          paddingRight: "50px",
+          paddingLeft: "50px",
+          paddingBottom: "80px",
+        }}
+      >
+        <Calendar
+          localizer={localizer}
+          events={myEvents}
+          startAccessor="start"
+          endAccessor="end"
+          onSelectEvent={handleSelectEvent}
+          // onSelectSlot={handleSelectSlot}
+          style={{ height: 500 }}
+        />
+      </div>
 
-export default Consultant
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Slot Booking For Consultation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {/* <p>Start time: {booked?.start}</p>
+        <p>End time: {booked?.end}</p> */}
+       
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Full name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="full name"
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                autoFocus
+              />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleSubmit}>
+            Confirm Book 
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      <Footer />
+    </>
+  );
+};
+
+export default Consultant;
