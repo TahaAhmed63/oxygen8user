@@ -8,10 +8,9 @@ import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import VideoCardSkeleton from "../../component/Skeleton/VideoCardSkeleton";
 
 const Playlist = () => {
-
   const [loading, setLoading] = useState(false);
   const [playlist, setPlaylist] = useState([]);
-  const arr = [1,1,1,1];
+  const arr = [1, 1, 1, 1];
 
   useEffect(() => {
     playlistApi();
@@ -42,7 +41,6 @@ const Playlist = () => {
             <div className="col-xxl-12">
               <div className="page__title-wrapper mt-110">
                 <h3 className="page__title">Video Library</h3>
-              
               </div>
             </div>
           </div>
@@ -51,8 +49,9 @@ const Playlist = () => {
 
       <section className="course__area pt-120 pb-120">
         <div className="container">
-          <div className="row"> 
-          {loading && arr.map(item=><VideoCardSkeleton loading={loading}/>)}
+          <div className="row">
+            {loading &&
+              arr.map((item) => <VideoCardSkeleton loading={loading} />)}
 
             {playlist?.map((item) => (
               <VideoCard {...item} />
