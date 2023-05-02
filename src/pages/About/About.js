@@ -44,10 +44,10 @@ const About = () => {
                   </h5>
                 </div>
                 <div class="about__thumb ml-100">
-                  <img src="assets/img/about/about.jpg" alt="" />
+                  <img src="/assets/img/page-title/about.jpg" alt="" />
                 </div>
                 <div class="about__banner mt--210">
-                  <img src="assets/img/about/about-banner.jpg" alt="" />
+                  <img src="/assets/img/page-title/about1x.jpg" alt="" />
                 </div>
              
               </div>

@@ -52,7 +52,6 @@ const {title,video}=item
       </div>
        <Modal show={show} onHide={handleClose} fullscreen={true}>
         <Modal.Header closeButton>
-          <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body> <video src={`${video_link}${video}`}  alt=""  height="100%" width="100%" autoPlay muted loop playsInline controls><source src={`${video_link}${video}`} type='video/mp4'/></video></Modal.Body>
       </Modal>
