@@ -24,10 +24,8 @@ const Courses = () => {
       const response = await axios.get(`${BaseUrl.baseurl}/user/course`);
       setLoading(false);
       setCourses(response.data.courses)
-      console.log(response)
     } catch (error) {
       setLoading(false);
-      console.log(error?.response?.message);
     }
    }
 
@@ -35,7 +33,8 @@ const Courses = () => {
     <div>
         <Header/>
 
-        <section className="page__title-area page__title-height page__title-overlay d-flex align-items-center"  style={{background: "url('/assets/img/page-title/page-title.jpg')"}}>
+        <section className="page__title-area page__title-height page__title-overlay d-flex align-items-center"  style={{background: "url('/assets/img/page-title/yoga4.jpg')"
+        ,backgroundRepeat:"no-repeat",backgroundSize: "cover",objectFit:'contain'}}>
             <div className="container">
                <div className="row">
                   <div className="col-xxl-12">

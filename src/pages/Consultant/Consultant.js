@@ -1,17 +1,32 @@
+<<<<<<< HEAD
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, useState, useEffect } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import Form from "react-bootstrap/Form";
+=======
+import React, { useCallback, useState, useEffect } from "react";
+import { Calendar, dateFnsLocalizer } from "react-big-calendar";
+// import Form from "react-bootstrap/Form";
+>>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import format from "date-fns/format";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
+<<<<<<< HEAD
+=======
+import { ColorRing } from "react-loader-spinner";
+>>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
 import enUS from "date-fns/locale/en-US";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import axios from "axios";
+<<<<<<< HEAD
+=======
+import { Formik, Field, Form } from "formik";
+import * as Yup from "yup";
+>>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
 import Swal from "sweetalert2";
@@ -26,6 +41,7 @@ const localizer = dateFnsLocalizer({
   getDay,
   locales,
 });
+<<<<<<< HEAD
 // const events = [
 //   {
 //     title: 'My Event',
@@ -51,6 +67,21 @@ const Consultant = () => {
   const [, setLoaders] = useState(false);
   const [show, setShow] = useState(false);
 
+=======
+
+const Consultant = () => {
+  const token = localStorage.getItem("accesstoken");
+  const [myEvents, setEvents] = useState([]);
+  const [booked, setBooked] = useState([]);
+  const [loader, setLoaders] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const SignupSchema = Yup.object().shape({
+    first_name: Yup.string("please enter a first name").required("Required"),
+    email: Yup.string().email("Invalid email").required("Required"),
+  });
+
+>>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
   useEffect(() => {
     Slotapi();
   }, []);
@@ -65,15 +96,22 @@ const Consultant = () => {
       url: `${
         BaseUrl.baseurl
       }/user/appointment?user_id=${""}&duration=${""}&booked=${""}`,
+<<<<<<< HEAD
       headers: {
         Accept: "application/json",
         Authorization: `Bearer ${token}`,
       },
+=======
+>>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
     };
 
     axios(config)
       .then(function (response) {
+<<<<<<< HEAD
         console.log(response.data.appointments);
+=======
+        console.log(response.data);
+>>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
         setEvents(
           response.data.appointments.map((e) => ({
             id: e.id,
@@ -86,11 +124,10 @@ const Consultant = () => {
       })
       .catch(function (error) {
         setLoaders(false);
-
-        console.log(error);
       });
   };
 
+<<<<<<< HEAD
   // const handleSelectSlot = useCallback(
   //   ({ start, end }) => {
   //     const title = window.prompt("New Event Name");
@@ -102,6 +139,8 @@ const Consultant = () => {
   //   [setEvents]
   // );
 
+=======
+>>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
   const handleSelectEvent = useCallback((event) => {
     setBooked(event);
     if (event.title !== "booked") {
@@ -114,6 +153,7 @@ const Consultant = () => {
         button: "Ok",
       });
     }
+<<<<<<< HEAD
     console.log(event.start)
   }, []);
 
@@ -124,6 +164,17 @@ const Consultant = () => {
       const data1 = new FormData()
       data1.append("appointment_id", booked.id);
        data1.append("user_id" ,user.id);
+=======
+  }, []);
+
+  async function handleSubmit(i) {
+    setShow(false);
+    setLoaders(true)
+    try {
+      const data1 = new FormData();
+      data1.append("appointment_id", booked.id);
+      data1.append("email", i.email);
+>>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/appointment`,
@@ -134,7 +185,7 @@ const Consultant = () => {
         },
       };
       const response = await axios(config);
-      console.log(response)
+      console.log(response);
       const { message, status } = response.data;
       if (status === true) {
         setLoaders(false);
@@ -147,7 +198,11 @@ const Consultant = () => {
       } else {
         setLoaders(false);
       }
+<<<<<<< HEAD
       Slotapi()
+=======
+      Slotapi();
+>>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
     } catch (e) {
       console.log(e);
       Swal.fire({
@@ -156,6 +211,7 @@ const Consultant = () => {
         icon: "error",
         button: "Ok",
       });
+      setLoaders(false);
     }
   }
 
@@ -163,6 +219,7 @@ const Consultant = () => {
     <>
       <Header />
       <h2 style={{ paddingTop: "50px", color: "#337c75" }}>Book Your Slot</h2>
+<<<<<<< HEAD
       <div
         style={{
           paddingTop: "30px",
@@ -181,11 +238,52 @@ const Consultant = () => {
           style={{ height: 500 }}
         />
       </div>
+=======
+      {loader ? (
+       <div  style={{
+        paddingTop: "230px",
+        paddingBottom: "230px",
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center'
+      }}>
+         <ColorRing
+          visible={true}
+          height="40"
+          width="40"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={["#337c75", "#337c75", "#337c75", "#337c75", "#337c75"]}
+        />
+       </div>
+      ) : (
+        <div
+          style={{
+            paddingTop: "30px",
+            paddingRight: "50px",
+            paddingLeft: "50px",
+            paddingBottom: "80px",
+          }}
+        >
+          <Calendar
+            localizer={localizer}
+            events={myEvents}
+            startAccessor="start"
+            endAccessor="end"
+            onSelectEvent={handleSelectEvent}
+            // onSelectSlot={handleSelectSlot}
+            style={{ height: 700 }}
+          />
+        </div>
+      )}
+>>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Slot Booking For Consultation</Modal.Title>
         </Modal.Header>
+<<<<<<< HEAD
         <Modal.Body>
           {/* <p>Start time: {booked?.start}</p>
         <p>End time: {booked?.end}</p> */}
@@ -217,6 +315,72 @@ const Consultant = () => {
             Confirm Book 
           </Button>
         </Modal.Footer>
+=======
+        <Formik
+          initialValues={{
+            first_name: "",
+            email: "",
+          }}
+          validationSchema={SignupSchema}
+          onSubmit={(values) => {
+            handleSubmit(values);
+          }}
+        >
+          {({ errors, touched }) => (
+            <div>
+              <Form>
+                <Modal.Body>
+                  {/* <p>Start time: {booked?.start}</p>
+        <p>End time: {booked?.end}</p> */}
+
+                  <div className="mb-3" controlId="exampleForm.ControlInput1">
+                    <label>User name</label>
+                    <Field
+                      className="form-control"
+                      type="text"
+                      name="first_name"
+                      placeholder="Full name"
+                    />
+                    {errors.first_name && touched.first_name ? (
+                      <div className="text-danger">{errors.first_name}</div>
+                    ) : null}
+                  </div>
+                  <div className="mb-3" controlId="exampleForm.ControlInput1">
+                    {" "}
+                    <label>User email</label>
+                    <Field
+                      className="form-control"
+                      type="text"
+                      name="email"
+                      placeholder="e-mail address"
+                    />
+                    {errors.email && touched.email ? (
+                      <div className="text-danger">{errors.email}</div>
+                    ) : null}
+                  </div>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button
+                    variant="secondary"
+                    onClick={handleClose}
+                    style={{ border: "none" }}
+                  >
+                    Close
+                  </Button>
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    // onClick={handleSubmit}
+                    style={{ backgroundColor: "#337c75", border: "none" }}
+                  >
+                    Confirm Book
+                  </Button>
+                </Modal.Footer>
+              </Form>
+            </div>
+          )}
+        </Formik>
+>>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
       </Modal>
       <Footer />
     </>
