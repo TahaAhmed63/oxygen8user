@@ -37,7 +37,6 @@ function SignIn() {
          button: "Ok",
        });
        navigate("/")
-       // setLoader(false);
      } else {
        setLoading(false);
        Swal.fire({
@@ -46,14 +45,15 @@ function SignIn() {
          icon: "danger",
          button: "O00000k",
        });
+      console.log(message)
      }
    } catch (error) {
      setLoading(false);
      // setLoader(false);
-     console.log(error?.response?.message);
+     console.log(error?.response?.data?.message);
      Swal.fire({
        title: "Something Went Wrong",
-       text: error?.message,
+       text: error?.response?.data?.message,
        icon: "error",
        dangerMode: true,
        confirmButtonText: "ok",

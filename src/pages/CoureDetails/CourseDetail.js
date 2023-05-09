@@ -78,6 +78,7 @@ const CourseDetail = () => {
       const data1 = new FormData();
       data1.append("plan_id", yearly[0]?.id);
       data1.append("source", token.id);
+      data1.append("type", 'plan');
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/subscription`,
@@ -96,10 +97,12 @@ const CourseDetail = () => {
   };
 
   const onToken1 = async (token) => {
+    setLoading(true);
     try {
       const data1 = new FormData();
       data1.append("plan_id", monthly[0]?.id);
       data1.append("source", token.id);
+      data1.append("type", 'plan');
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/subscription`,
@@ -308,14 +311,6 @@ const CourseDetail = () => {
                                       </h5>
                                     </div>
                                   </li>
-
-                                  <li className="d-flex align-items-center">
-                                    <div className="course__video-info">
-                                      <h5>
-                                        <span>Enrolled :</span>20 students
-                                      </h5>
-                                    </div>
-                                  </li>
                                   <li className="d-flex align-items-center">
                                     <div className="course__video-info">
                                       <h5>
@@ -470,13 +465,7 @@ const CourseDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>Enrolled :</span>20 students
-                                          </h5>
-                                        </div>
-                                      </li>
+                                   
                                       <li className="d-flex align-items-center">
                                         <div className="course__video-info">
                                           <h5>
@@ -586,13 +575,7 @@ const CourseDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>Enrolled :</span>20 students
-                                          </h5>
-                                        </div>
-                                      </li>
+                                     
                                       <li className="d-flex align-items-center">
                                         <div className="course__video-info">
                                           <h5>

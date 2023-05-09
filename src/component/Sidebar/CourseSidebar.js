@@ -6,7 +6,7 @@ import BaseUrl from "../BaseUrl/BaseUrl";
 import axios from "axios";
 
 
-const CourseSidebar = ({id, length, img,duration,price,buy,loading }) => {
+const CourseSidebar = ({id, length, img,duration,price,buy,loading,api }) => {
 
   const img_link = localStorage.getItem("image_link");
   const navigate = useNavigate();
@@ -31,6 +31,7 @@ const CourseSidebar = ({id, length, img,duration,price,buy,loading }) => {
       };
       const response = await axios(config);
       console.log(response);
+      api()
     } catch (e) {
       console.log(e);
     }
