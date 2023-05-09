@@ -63,7 +63,7 @@ const Consultant = () => {
         setEvents(
           response.data.appointments.map((e) => ({
             id: e.id,
-            title: e.booked === 1 ? "booked" : e.title,
+            title: e.status === 'pending' ? e.title : "booked" ,
             start: new Date(e.start_time),
             end: new Date(e.end_time),
           }))

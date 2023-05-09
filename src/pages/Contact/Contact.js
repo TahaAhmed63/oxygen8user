@@ -1,13 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from '../../component/Footer/Footer'
 import Header from '../../component/Header/Header'
 import { Link } from 'react-router-dom'
+// import BaseUrl from "../../component/BaseUrl/BaseUrl";
+// import axios from "axios";
+// import Swal from "sweetalert2";
+import { ColorRing } from "react-loader-spinner";
+
 const Contact = () => {
+   const [data,setData]=useState()
+   const [loader,]=useState(false)
+
+   function hanldeChange(e){
+      setData({
+         ...data,
+         [e.target.name]:e.target.value
+      })
+   }
+   async function handleSubmit(i) {
+ console.log(data)
+      // setLoader(true)
+      // try {
+      //   const data1 = new FormData();
+      //   data1.append("name", data.name);
+      //   data1.append("email", data.email);
+      //   data1.append("subject", data.subject);
+      //   data1.append("message", data.message);
+      //   var config = {
+      //     method: "post",
+      //     url: `${BaseUrl.baseurl}/user/appointment`,
+      //     data: data1,
+       
+      //   };
+      //   const response = await axios(config);
+      //   console.log(response);
+      //   const { message, status } = response.data;
+      //   if (status === true) {
+      //     setLoader(false);
+      //     Swal.fire({
+      //       title: "Good job!",
+      //       text: message,
+      //       icon: "success",
+      //       button: "Ok",
+      //     });
+      //   } else {
+      //     setLoader(false);
+      //   }
+      // } catch (e) {
+      //   console.log(e);
+      //   Swal.fire({
+      //     title: "Oops",
+      //     text: e.response.data.message,
+      //     icon: "error",
+      //     button: "Ok",
+      //   });
+      //   setLoader(false);
+      // }
+    }
   return (
     <div>
-
         <Header/>
-
         <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" style={{background: "url('/assets/img/page-title/page-title.jpg')"}}>
             <div class="container">
                <div class="row">
@@ -35,26 +87,26 @@ const Contact = () => {
                            <p>Have a question or just want to say hi? We'd love to hear from you.</p>
                         </div>
                         <div className="contact__form">
-                           <form action="https://weblearnbd.net/tphtml/educal/educal/assets/mail.php">
+                           <form >
                               <div className="row">
                                  <div className="col-xxl-6 col-xl-6 col-md-6">
                                     <div className="contact__form-input">
-                                       <input type="text" placeholder="Your Name" name="name"/>
+                                       <input type="text" placeholder="Your Name" name="name" onChange={(e)=>{hanldeChange(e)}}/>
                                     </div>
                                  </div>
                                  <div className="col-xxl-6 col-xl-6 col-md-6">
                                     <div className="contact__form-input">
-                                       <input type="email" placeholder="Your Email" name="email"/>
+                                       <input type="email" placeholder="Your Email" name="email"onChange={(e)=>{hanldeChange(e)}}/>
                                     </div>
                                  </div>
                                  <div className="col-xxl-12">
                                     <div className="contact__form-input">
-                                       <input type="text" placeholder="Subject" name="subject"/>
+                                       <input type="text" placeholder="Subject" name="subject"onChange={(e)=>{hanldeChange(e)}}/>
                                     </div>
                                  </div>
                                  <div className="col-xxl-12">
                                     <div className="contact__form-input">
-                                       <textarea placeholder="Enter Your Message" name="message"></textarea>
+                                       <textarea placeholder="Enter Your Message" name="message"onChange={(e)=>{hanldeChange(e)}}></textarea>
                                     </div>
                                  </div>
                                  <div className="col-xxl-12">
@@ -65,7 +117,17 @@ const Contact = () => {
                                  </div>
                                  <div className="col-xxl-12 " >
                                     <div className="contact__btn" style={{float:'left'}}>
-                                       <button type="submit" className="e-btn" style={{backgroundColor:'#337c75'}}>Send your message</button>
+                                       <button type="button"  className="e-btn" style={{backgroundColor:'#337c75'}} onClick={(e)=>{handleSubmit(e)}}>{loader === true ?  
+                           <ColorRing
+                            //  visible={true}
+                             height="40"
+                             width="40"
+                             ariaLabel="blocks-loading"
+                             wrapperStyle={{}}
+                             wrapperClass="blocks-wrapper"
+                              colors={['#fff','#fff','#fff','#fff','#fff']}
+                           />
+                            :'Send your message'}</button>
                                     </div>
                                  </div>
                               </div>
@@ -92,7 +154,7 @@ const Contact = () => {
                                     </div>
                                     <div className="contact__info-text text-left">
                                        <h4 style={{textAlign:'left'}}>New York Office</h4>
-                                       <p style={{textAlign:'left'}}><Link target="_blank" href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">Maypole Crescent 70-80 Upper St Norwich NR2 1LT</Link></p>
+                                       <p style={{textAlign:'left'}}><Link >Maypole Crescent 70-80 Upper St Norwich NR2 1LT</Link></p>
    
                                     </div>
                                  </div>
@@ -107,8 +169,8 @@ const Contact = () => {
                                     </div>
                                     <div className="contact__info-text">
                                        <h4>Email us directly</h4>
-                                       <p style={{textAlign:'left'}}><a href="mailto:support@educal.com">support@educal.com</a></p>
-                                       <p style={{textAlign:'left'}}><a href="mailto:info@educal.com"> info@educal.com</a></p>
+                                       <p style={{textAlign:'left'}}><Link>support@educal.com</Link></p>
+                                       <p style={{textAlign:'left'}}><Link> info@educal.com</Link></p>
                                     </div>
                                  </div>
                               </li>

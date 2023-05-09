@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import VideoList from "../../component/VideoList/VideoList";
+import Swal from "sweetalert2";
 
 const VideoLibraryDetail = () => {
   // const arr=[1,2,3,4]
@@ -81,6 +82,8 @@ const VideoLibraryDetail = () => {
       const data1 = new FormData();
       data1.append("plan_id", yearly[0]?.id);
       data1.append("source", token.id);
+      data1.append("bulk_id", '');
+      data1.append("type", 'plan');
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/subscription`,
@@ -91,10 +94,22 @@ const VideoLibraryDetail = () => {
         },
       };
       const response = await axios(config);
+      Swal.fire({
+        title: "Good job!",
+        text: response.message,
+        icon: "success",
+        button: "Ok",
+      });
       console.log(response);
       videoApi();
     } catch (e) {
-      console.log(e);
+     
+      Swal.fire({
+        title: "Good job!",
+        text: e.message,
+        icon: "success",
+        button: "Ok",
+      });
     }
   };
 
@@ -103,6 +118,8 @@ const VideoLibraryDetail = () => {
       const data1 = new FormData();
       data1.append("plan_id", monthly[0]?.id);
       data1.append("source", token.id);
+      data1.append("bulk_id", '');
+      data1.append("type", 'plan');
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/subscription`,
@@ -179,6 +196,7 @@ const VideoLibraryDetail = () => {
                         alt=""
                         width={450}
                         height={500}
+                        
                       />
                     </div>
                     <div className="course__tab-2 mb-45">
@@ -333,13 +351,7 @@ const VideoLibraryDetail = () => {
                                     </div>
                                   </li>
 
-                                  <li className="d-flex align-items-center">
-                                    <div className="course__video-info">
-                                      <h5>
-                                        <span>Enrolled :</span>20 students
-                                      </h5>
-                                    </div>
-                                  </li>
+                                 
                                   <li className="d-flex align-items-center">
                                     <div className="course__video-info">
                                       <h5>
@@ -489,13 +501,7 @@ const VideoLibraryDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>Enrolled :</span>20 students
-                                          </h5>
-                                        </div>
-                                      </li>
+                                     
                                       <li className="d-flex align-items-center">
                                         <div className="course__video-info">
                                           <h5>
