@@ -6,6 +6,7 @@ import CourseDetail from "../pages/CoureDetails/CourseDetail";
 import Contact from "../pages/Contact/Contact";
 import Courses from "../pages/Courses/Courses";
 import Playlist from "../pages/Playlist/Playlist";
+import Subscription from "../pages/Subscription/Subscription";
 import VideoLibraryDetail from "../pages/VideoLibraryDetail/VideoLibraryDetail";
 import About from "../pages/About/About";
 import Consultant from "../pages/Consultant/Consultant";
@@ -19,6 +20,7 @@ function Rounting() {
       <Route exact path="/signin" element={<SignIn />} />
       <Route exact path="/courses" element={<Courses />} />
       <Route exact path="/videolibrary" element={<Playlist />} />
+      <Route exact path="/subscription" element={<Subscription />} />
       <Route exact path="/consultant" element={<Consultant />} />
       <Route
         exact
