@@ -51,10 +51,10 @@ function Register() {
       }
     } catch (error) {
       setLoading(false);
-      console.log(error?.response?.message);
+      console.log(error?.response?.data?.message);
       Swal.fire({
         title: "Something Went Wrong",
-        text: error?.message,
+        text:error?.response?.data?.message,
         icon: "error",
         dangerMode: true,
         confirmButtonText: "ok",

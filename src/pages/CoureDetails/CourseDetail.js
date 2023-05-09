@@ -8,11 +8,7 @@ import DetailSkeleton from "../../component/Skeleton/DetailSkeleton";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
-<<<<<<< HEAD
-import CourseSidebar from "../../component/Sidebar/CourseSidebar";
-=======
 // import CourseSidebar from "../../component/Sidebar/CourseSidebar";
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
 import StripeCheckout from "react-stripe-checkout";
 import { ColorRing } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
@@ -25,16 +21,9 @@ const CourseDetail = () => {
   const [course, setCourse] = useState();
   const [monthly, setMonthly] = useState([]);
   const [yearly, setYearly] = useState([]);
-<<<<<<< HEAD
-  const [subscription, setSubscription] = useState();
-  const userToken = localStorage.getItem("accesstoken");
-  const date = new Date();
-  console.log(date);
-=======
   // const [subscription, setSubscription] = useState();
   const userToken = localStorage.getItem("accesstoken");
   // const date = new Date();
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
 
   const { id } = useParams();
 
@@ -46,7 +35,6 @@ const CourseDetail = () => {
   }, []);
 
   const courseApi = async () => {
-    console.log("call hui--->");
     setLoading(true);
     try {
       var config = {
@@ -54,17 +42,6 @@ const CourseDetail = () => {
         url: `${BaseUrl.baseurl}/user/course/${id}`,
         headers: {
           Accept: "application/json",
-<<<<<<< HEAD
-          Authorization: `Bearer ${userToken}`,
-        },
-      };
-      var config1 = {
-        method: "get",
-        url: `${BaseUrl.baseurl}/user/subscription/course/${id}`,
-        headers: {
-          Accept: "application/json",
-=======
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
           Authorization: `Bearer ${userToken}`,
         },
       };
@@ -77,14 +54,8 @@ const CourseDetail = () => {
       //   },
       // };
       const response = await axios(config);
-<<<<<<< HEAD
-      const response1 = await axios(config1);
-
-      setSubscription(response1.data);
-=======
       // const response1 = await axios(config1);
       // setSubscription(response1.data);
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
       setCourse(response.data.course);
       setMonthly(
         response.data.course.packages.filter((item) => item.period === "month")
@@ -94,11 +65,7 @@ const CourseDetail = () => {
       );
       setLoading(false);
 
-<<<<<<< HEAD
-      console.log(response);
-=======
       console.log('course detail-->',response);
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
     } catch (error) {
       setLoading(false);
       console.log(error?.response?.message);
@@ -111,6 +78,7 @@ const CourseDetail = () => {
       const data1 = new FormData();
       data1.append("plan_id", yearly[0]?.id);
       data1.append("source", token.id);
+      data1.append("type", 'plan');
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/subscription`,
@@ -128,37 +96,13 @@ const CourseDetail = () => {
     }
   };
 
-<<<<<<< HEAD
-  const onToken = async (token) => {
-    setLoading(true);
-    try {
-      const data1 = new FormData();
-      data1.append("plan_id", yearly[0]?.id);
-      data1.append("source", token.id);
-      var config = {
-        method: "post",
-        url: `${BaseUrl.baseurl}/user/subscription`,
-        data: data1,
-        headers: {
-          Accept: "application/json",
-          Authorization: `Bearer ${userToken}`,
-        },
-      };
-      const response = await axios(config);
-      console.log(response);
-      courseApi();
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-=======
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
   const onToken1 = async (token) => {
+    setLoading(true);
     try {
       const data1 = new FormData();
       data1.append("plan_id", monthly[0]?.id);
       data1.append("source", token.id);
+      data1.append("type", 'plan');
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/subscription`,
@@ -175,10 +119,6 @@ const CourseDetail = () => {
       console.log(e);
     }
   };
-<<<<<<< HEAD
-
-=======
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
 
   return (
     <>
@@ -233,13 +173,8 @@ const CourseDetail = () => {
                       </h5>
                     </div>
                     <div className="course__meta-2 d-sm-flex mb-30"></div>
-<<<<<<< HEAD
-                    <div className="course__img w-img mb-30">
-                      <img src={`${img_link}${course?.image}`} alt="" />
-=======
                     <div className="course__img w-img mb-30 " >
                       <img src={`${img_link}${course?.image}`} alt="" style={{height:'400px',objectFit:'contain'}} />
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
                     </div>
                     <div className="course__tab-2 mb-45">
                       <ul
@@ -260,11 +195,7 @@ const CourseDetail = () => {
                           >
                             {" "}
                             <i className="icon_ribbon_alt"></i>{" "}
-<<<<<<< HEAD
-                            <span>Discription</span>{" "}
-=======
                             <span>Description</span>{" "}
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
                           </button>
                         </li>
                         <li className="nav-item" role="presentation">
@@ -290,8 +221,6 @@ const CourseDetail = () => {
                         <div
                           className="tab-pane fade show active"
                           id="description"
-<<<<<<< HEAD
-=======
                           role="tabpanel"
                           aria-labelledby="description-tab"
                         >
@@ -333,336 +262,16 @@ const CourseDetail = () => {
                         <div
                           class="tab-pane fade show active"
                           id="yearly"
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
                           role="tabpanel"
-                          aria-labelledby="description-tab"
+                          aria-labelledby="yearly-tab"
                         >
-                          <div className="course__description">
-                            <h3 style={{ textAlign: "left" }}>
-                              Course Overview
-                            </h3>
-                            <p style={{ textAlign: "left" }}>
-                              {course?.description}
-                            </p>
-                          </div>
-                        </div>
-                        <div
-                          class="tab-pane fade"
-                          id="curriculum"
-                          role="tabpanel"
-                          aria-labelledby="curriculum-tab"
-                        >
-                          {course?.pack &&
-                          subscription?.subscription?.expiry_date ? (
-                            <div class="course__curriculum">
-                              {course?.chapters?.map((item) => (
-                                <Chapter {...item} />
-                              ))}
-                            </div>
-                          ) : (
-                            "First Buy this course"
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {!course?.pack && (
-                  <div className="col-xxl-4 col-xl-4 col-lg-4">
-                    <div className="course__sidebar pl-70 p-relative">
-                      <div className="course__shape">
-                        <div className="course__tab-2 mb-45 ">
-                          <ul
-                            className="nav nav-tabs"
-                            id="courseTab"
-                            role="tablist"
+                          <div
+                            className="course__sidebar-widget-2 white-bg mb-20"
+                            // className="tab-pane fade show active"
+                            id="yearly"
+                            role="tabpanel"
+                            aria-labelledby="yearly-tab"
                           >
-<<<<<<< HEAD
-                            <li className="nav-item w-50" role="presentation">
-                              <button
-                                className="nav-link active"
-                                id="yearly-tab"
-                                data-bs-toggle="tab"
-                                data-bs-target="#yearly"
-                                type="button"
-                                role="tab"
-                                aria-controls="yearly"
-                                aria-selected="true"
-                              >
-                                {" "}
-                                <i className="icon_book_alt"></i>{" "}
-                                <span>Yearly</span>{" "}
-                              </button>
-                            </li>
-                            <li className="nav-item w-50" role="presentation">
-                              <button
-                                className="nav-link "
-                                id="monthly-tab"
-                                data-bs-toggle="tab"
-                                data-bs-target="#monthly"
-                                type="button"
-                                role="tab"
-                                aria-controls="monthly"
-                                aria-selected="false"
-                              >
-                                {" "}
-                                <i className="fa fa-calendar"></i>{" "}
-                                <span>Monthly</span>{" "}
-                              </button>
-                            </li>
-                          </ul>
-                        </div>
-
-                        <div className="course__tab-content mb-95">
-                          <div className="tab-content" id="courseTabContent">
-                            <div
-                              class="tab-pane fade show active"
-                              id="yearly"
-                              role="tabpanel"
-                              aria-labelledby="yearly-tab"
-                            >
-                              <div
-                                className="course__sidebar-widget-2 white-bg mb-20"
-                                // className="tab-pane fade show active"
-                                id="yearly"
-                                role="tabpanel"
-                                aria-labelledby="yearly-tab"
-                              >
-                                {/* <CourseSidebar
-                            courseID={id}
-                            id={yearly[0]?.id}
-                              length={course?.chapters?.length}
-                              img={course?.image}
-                              duration={`${yearly[0]?.duration} ${yearly[0]?.period}`}
-                              price={yearly[0]?.price}
-                              buy={subscription?.subscription?.plan?.period === 'year' ? true : false}
-                              loading={loading}
-                              api={courseApi}
-
-                              /> */}
-
-                                <div className="course__video">
-                                  <div
-                                    className="course__video-thumb w-img mb-25"
-                                    style={{ position: "relative" }}
-                                  >
-                                    <img
-                                      src={`${img_link}${course?.image}`}
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
-                                    <div className="course__video-price">
-                                      <h5>
-                                        ${yearly[0] ? yearly[0]?.price : 0}
-                                      </h5>
-                                    </div>
-                                  </div>
-                                  <div className="course__video-content mb-35">
-                                    <ul>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>chapters :</span>
-                                            {course?.chapters
-                                              ? course?.chapters?.length
-                                              : 0}
-                                          </h5>
-                                        </div>
-                                      </li>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>Duration :</span>
-                                            {yearly[0]
-                                              ? `${yearly[0]?.duration} ${yearly[0]?.period}`
-                                              : 0}
-                                          </h5>
-                                        </div>
-                                      </li>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>Enrolled :</span>20 students
-                                          </h5>
-                                        </div>
-                                      </li>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>Language :</span>English
-                                          </h5>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                  </div>
-
-                                  <div className="course__enroll-btn">
-                                    {subscription?.subscription?.plan
-                                      ?.period === "year" ? 
-                                      true
-                                     : false ? 
-                                      <button
-                                        className="e-btn e-btn-7 w-100"
-                                        style={{ background: "#337c75" }}
-                                      >
-                                        Enrolled
-                                      </button>
-                                     :
-                                      <StripeCheckout
-                                        token={onToken}
-                                        stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
-                                        amount={yearly[0]?.price * 100}
-                                      >
-                                        <button
-                                          className="e-btn e-btn-7 w-100"
-                                          style={{ background: "#337c75" }}
-                                        >
-                                          {loading === true ? 
-                                            <ColorRing
-                                              visible={true}
-                                              height="40"
-                                              width="40"
-                                              ariaLabel="blocks-loading"
-                                              wrapperStyle={{}}
-                                              wrapperClass="blocks-wrapper"
-                                              colors={[
-                                                "#fff",
-                                                "#fff",
-                                                "#fff",
-                                                "#fff",
-                                                "#fff",
-                                              ]}
-                                            />
-                                           : 
-                                            "Buy"
-                                          }
-                                        </button>
-                                      </StripeCheckout>
-                                    }
-                                  
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div
-                              class="tab-pane fade"
-                              id="monthly"
-                              role="tabpanel"
-                              aria-labelledby="monthly-tab"
-                            >
-                              <div
-                                className="course__sidebar-widget-2 white-bg mb-20"
-                                // className="tab-pane fade show active"
-                                id="yearly"
-                                role="tabpanel"
-                                aria-labelledby="yearly-tab"
-                              >
-                                <div className="course__video">
-                                  <div
-                                    className="course__video-thumb w-img mb-25"
-                                    style={{ position: "relative" }}
-                                  >
-                                    <img
-                                      src={`${img_link}${course?.image}`}
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
-                                    <div className="course__video-price">
-                                      <h5>
-                                        ${monthly[0] ? monthly[0]?.price : 0}
-                                      </h5>
-                                    </div>
-                                  </div>
-                                  <div className="course__video-content mb-35">
-                                    <ul>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>chapters :</span>
-                                            {course?.chapters
-                                              ? course?.chapters?.length
-                                              : 0}
-                                          </h5>
-                                        </div>
-                                      </li>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>Duration :</span>
-                                            {monthly[0]
-                                              ? `${monthly[0]?.duration} ${monthly[0]?.period}`
-                                              : 0}
-                                          </h5>
-                                        </div>
-                                      </li>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>Enrolled :</span>20 students
-                                          </h5>
-                                        </div>
-                                      </li>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>Language :</span>English
-                                          </h5>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                  </div>
-
-                                  <div className="course__enroll-btn">
-                                    {subscription?.subscription?.plan
-                                      ?.period === "month" ? (
-                                      true
-                                    ) : false ? (
-                                      <button
-                                        className="e-btn e-btn-7 w-100"
-                                        style={{ background: "#337c75" }}
-                                      >
-                                        Enrolled
-                                      </button>
-                                    ) : (
-                                      <StripeCheckout
-                                        token={onToken1}
-                                        stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
-                                        amount={monthly[0]?.price * 100}
-                                      >
-                                        <button
-                                          className="e-btn e-btn-7 w-100"
-                                          style={{ background: "#337c75" }}
-                                        >
-                                          {loading === true ? (
-                                            <ColorRing
-                                              visible={true}
-                                              height="40"
-                                              width="40"
-                                              ariaLabel="blocks-loading"
-                                              wrapperStyle={{}}
-                                              wrapperClass="blocks-wrapper"
-                                              colors={[
-                                                "#fff",
-                                                "#fff",
-                                                "#fff",
-                                                "#fff",
-                                                "#fff",
-                                              ]}
-                                            />
-                                          ) : (
-                                            "Buy"
-                                          )}
-                                        </button>
-                                      </StripeCheckout>
-                                    )}
-                                  </div>
-                                </div>
-                              </div>
-=======
                             {/* <CourseSidebar
                         courseID={id}
                         id={yearly[0]?.id}
@@ -702,14 +311,6 @@ const CourseDetail = () => {
                                       </h5>
                                     </div>
                                   </li>
-
-                                  <li className="d-flex align-items-center">
-                                    <div className="course__video-info">
-                                      <h5>
-                                        <span>Enrolled :</span>20 students
-                                      </h5>
-                                    </div>
-                                  </li>
                                   <li className="d-flex align-items-center">
                                     <div className="course__video-info">
                                       <h5>
@@ -746,15 +347,12 @@ const CourseDetail = () => {
                                   )}
                                 </button>
                               </div>
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-<<<<<<< HEAD
-=======
                 ) : (
                   // side bar yealy and monthly
                   <div className="col-xxl-4 col-xl-4 col-lg-4">
@@ -867,13 +465,7 @@ const CourseDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>Enrolled :</span>20 students
-                                          </h5>
-                                        </div>
-                                      </li>
+                                   
                                       <li className="d-flex align-items-center">
                                         <div className="course__video-info">
                                           <h5>
@@ -983,13 +575,7 @@ const CourseDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>Enrolled :</span>20 students
-                                          </h5>
-                                        </div>
-                                      </li>
+                                     
                                       <li className="d-flex align-items-center">
                                         <div className="course__video-info">
                                           <h5>
@@ -1049,7 +635,6 @@ const CourseDetail = () => {
                       </div>
                     </div>
                   </div>
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
                 )}
               </div>
             </div>

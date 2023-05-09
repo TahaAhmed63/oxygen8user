@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import VideoList from "../../component/VideoList/VideoList";
+import Swal from "sweetalert2";
 
 const VideoLibraryDetail = () => {
   // const arr=[1,2,3,4]
@@ -25,10 +26,6 @@ const VideoLibraryDetail = () => {
   const [video, setVideo] = useState();
   const [, setSubscription] = useState();
   const userToken = localStorage.getItem("accesstoken");
-<<<<<<< HEAD
-
-=======
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
 
   useEffect(() => {
     if (!userToken) {
@@ -85,6 +82,8 @@ const VideoLibraryDetail = () => {
       const data1 = new FormData();
       data1.append("plan_id", yearly[0]?.id);
       data1.append("source", token.id);
+      data1.append("bulk_id", '');
+      data1.append("type", 'plan');
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/subscription`,
@@ -95,10 +94,22 @@ const VideoLibraryDetail = () => {
         },
       };
       const response = await axios(config);
+      Swal.fire({
+        title: "Good job!",
+        text: response.message,
+        icon: "success",
+        button: "Ok",
+      });
       console.log(response);
       videoApi();
     } catch (e) {
-      console.log(e);
+     
+      Swal.fire({
+        title: "Good job!",
+        text: e.message,
+        icon: "success",
+        button: "Ok",
+      });
     }
   };
 
@@ -107,6 +118,8 @@ const VideoLibraryDetail = () => {
       const data1 = new FormData();
       data1.append("plan_id", monthly[0]?.id);
       data1.append("source", token.id);
+      data1.append("bulk_id", '');
+      data1.append("type", 'plan');
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/subscription`,
@@ -176,34 +189,6 @@ const VideoLibraryDetail = () => {
                         {video?.name}
                       </h5>
                     </div>
-<<<<<<< HEAD
-                    <div
-                      class="tab-pane fade"
-                      id="curriculum"
-                      role="tabpanel"
-                      aria-labelledby="curriculum-tab"
-                    >
-                      <div class="course__curriculum">
-                        {/* video list */}
-                        <div className="row">
-                          <div className="col-xxl-12">
-                            <div className="course__tab-conent">
-                              <div
-                                className="tab-content"
-                                id="courseTabContent"
-                              >
-                                <div
-                                  className="tab-pane fade show active"
-                                  id="grid"
-                                  role="tabpanel"
-                                  aria-labelledby="grid-tab"
-                                >
-                                 {((video?.pack) && (subscription?.subscription?.expiry_date)) ? 
-                                  <div className="row">
-                                  {video?.playlist_videos?.map(item => <VideoList {...item} />)}
-                                </div>
-                                 : 'First buy this VideoList'}
-=======
                     <div className="course__meta-2 d-sm-flex mb-30"></div>
                     <div className="course__img w-img mb-30">
                       <img
@@ -211,6 +196,7 @@ const VideoLibraryDetail = () => {
                         alt=""
                         width={450}
                         height={500}
+                        
                       />
                     </div>
                     <div className="course__tab-2 mb-45">
@@ -300,7 +286,6 @@ const VideoLibraryDetail = () => {
                                       )}
                                     </div>
                                   </div>
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
                                 </div>
                               </div>
                             </div>
@@ -322,10 +307,6 @@ const VideoLibraryDetail = () => {
                           role="tabpanel"
                           aria-labelledby="yearly-tab"
                         >
-<<<<<<< HEAD
-                          <Sidebar
-                          id={yearly[0]?.id}
-=======
                           <div
                             className="course__sidebar-widget-2 white-bg mb-20"
                             // className="tab-pane fade show active"
@@ -370,13 +351,7 @@ const VideoLibraryDetail = () => {
                                     </div>
                                   </li>
 
-                                  <li className="d-flex align-items-center">
-                                    <div className="course__video-info">
-                                      <h5>
-                                        <span>Enrolled :</span>20 students
-                                      </h5>
-                                    </div>
-                                  </li>
+                                 
                                   <li className="d-flex align-items-center">
                                     <div className="course__video-info">
                                       <h5>
@@ -481,17 +456,10 @@ const VideoLibraryDetail = () => {
                               >
                                 {/* <Sidebar
                             id={yearly[0]?.id}
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
                             length={video?.playlist_videos?.length}
                             img={video?.image}
                             duration={`${yearly[0]?.duration} ${yearly[0]?.period}`}
                             price={yearly[0]?.price}
-<<<<<<< HEAD
-                          buy={subscription?.subscription?.plan?.period === 'year' ? true : false}
-                          />
-                        </div>
-                      </div>
-=======
                             buy={subscription?.subscription?.plan?.period === 'year' ? true : false}
                           /> */}
                                 <div className="course__video">
@@ -533,13 +501,7 @@ const VideoLibraryDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
-                                      <li className="d-flex align-items-center">
-                                        <div className="course__video-info">
-                                          <h5>
-                                            <span>Enrolled :</span>20 students
-                                          </h5>
-                                        </div>
-                                      </li>
+                                     
                                       <li className="d-flex align-items-center">
                                         <div className="course__video-info">
                                           <h5>
@@ -549,7 +511,6 @@ const VideoLibraryDetail = () => {
                                       </li>
                                     </ul>
                                   </div>
->>>>>>> d276a404a585b3e3a0adbf18055a82bc61a5bfbb
 
                                   <div className="course__enroll-btn">
                                     {/* subscription?.subscription?.plan ?.period === "year" ? 
