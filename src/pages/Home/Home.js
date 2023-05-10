@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+
 import Card from "../../component/Card/Card";
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
@@ -7,17 +8,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import CardSkeleton from "../../component/Skeleton/CardSkeleton";
-// import React, { useRef} from "react";
-// Import Swiper React components
-// import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-// import { Autoplay, Pagination, Navigation } from "swiper";
-import "swiper/css/effect-fade";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/effect-fade";
+// import "swiper/css/navigation";
+// import { Pagination,Navigation, EffectFade } from "swiper";
+// import "swiper/css/effect-fade";
 import './home.css'
+
 function Home() {
   const [loading, setLoading] = useState(false);
   const [course, setCourse] = useState([]);
@@ -56,24 +56,20 @@ const arr=[1,1,1,1,1,1];
       <Header />
       {/* <Swiper
         spaceBetween={30}
-        centeredSlides={true}
+        effect={"fade"}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
+        
         pagination={{
           clickable: true,
         }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[EffectFade, Navigation, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
-        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
-        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
-        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
-        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
-        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
+        <SwiperSlide><div className='main-div'></div><img src='https://ahgroup-pk.com/assets/images/moh_1920.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
+        <SwiperSlide><img src='https://ahgroup-pk.com/assets/images/slider.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
        
       </Swiper> */}
       <section className="hero__area hero__height d-flex align-items-center grey-bg-2 p-relative">

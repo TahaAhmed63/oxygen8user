@@ -2,60 +2,55 @@ import React, { useState } from 'react'
 import Footer from '../../component/Footer/Footer'
 import Header from '../../component/Header/Header'
 import { Link } from 'react-router-dom'
-// import BaseUrl from "../../component/BaseUrl/BaseUrl";
-// import axios from "axios";
-// import Swal from "sweetalert2";
+import BaseUrl from "../../component/BaseUrl/BaseUrl";
+import axios from "axios";
+import Swal from "sweetalert2";
 import { ColorRing } from "react-loader-spinner";
 
 const Contact = () => {
-   const [data,setData]=useState()
-   const [loader,]=useState(false)
+   const [name,setName]=useState()
+   const [email,setEmail]=useState()
+   const [subject,setSubject]=useState()
+   const [userMessage,setUserMessage]=useState()
+   const [loading,setLoading]=useState(false)
 
-   function hanldeChange(e){
-      setData({
-         ...data,
-         [e.target.name]:e.target.value
-      })
-   }
+   
    async function handleSubmit(i) {
- console.log(data)
-      // setLoader(true)
-      // try {
-      //   const data1 = new FormData();
-      //   data1.append("name", data.name);
-      //   data1.append("email", data.email);
-      //   data1.append("subject", data.subject);
-      //   data1.append("message", data.message);
-      //   var config = {
-      //     method: "post",
-      //     url: `${BaseUrl.baseurl}/user/appointment`,
-      //     data: data1,
-       
-      //   };
-      //   const response = await axios(config);
-      //   console.log(response);
-      //   const { message, status } = response.data;
-      //   if (status === true) {
-      //     setLoader(false);
-      //     Swal.fire({
-      //       title: "Good job!",
-      //       text: message,
-      //       icon: "success",
-      //       button: "Ok",
-      //     });
-      //   } else {
-      //     setLoader(false);
-      //   }
-      // } catch (e) {
-      //   console.log(e);
-      //   Swal.fire({
-      //     title: "Oops",
-      //     text: e.response.data.message,
-      //     icon: "error",
-      //     button: "Ok",
-      //   });
-      //   setLoader(false);
-      // }
+         setLoading(true);
+         try {
+           const data1 = new FormData();
+           data1.append("name",name);
+           data1.append("email", email);
+           data1.append("subject", subject);
+           data1.append("message",userMessage);
+           var config = {
+             method: "post",
+             url: `${BaseUrl.baseurl}/user/contactus`,
+             data: data1
+           };
+           const response = await axios(config);
+           setName('')
+           setEmail('')
+           setSubject('')
+           setUserMessage('')
+           console.log('conatct--->',response)
+           const { message } = response.data;
+           setLoading(false);
+           Swal.fire({
+             title: "Good job!",
+             text: message,
+             icon: "success",
+             button: "Ok",
+           });
+         } catch (e) {
+           console.log(e);
+           Swal.fire({
+             title: "Oops!",
+             text: e.message,
+             icon: "error",
+             button: "Ok",
+           });
+         }
     }
   return (
     <div>
@@ -91,33 +86,27 @@ const Contact = () => {
                               <div className="row">
                                  <div className="col-xxl-6 col-xl-6 col-md-6">
                                     <div className="contact__form-input">
-                                       <input type="text" placeholder="Your Name" name="name" onChange={(e)=>{hanldeChange(e)}}/>
+                                       <input type="text" placeholder="Your Name" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}/>
                                     </div>
                                  </div>
                                  <div className="col-xxl-6 col-xl-6 col-md-6">
                                     <div className="contact__form-input">
-                                       <input type="email" placeholder="Your Email" name="email"onChange={(e)=>{hanldeChange(e)}}/>
+                                       <input type="email" placeholder="Your Email" name="email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
                                     </div>
                                  </div>
                                  <div className="col-xxl-12">
                                     <div className="contact__form-input">
-                                       <input type="text" placeholder="Subject" name="subject"onChange={(e)=>{hanldeChange(e)}}/>
+                                       <input type="text" placeholder="Subject" name="subject" value={subject} onChange={(e)=>{setSubject(e.target.value)}}/>
                                     </div>
                                  </div>
                                  <div className="col-xxl-12">
                                     <div className="contact__form-input">
-                                       <textarea placeholder="Enter Your Message" name="message"onChange={(e)=>{hanldeChange(e)}}></textarea>
-                                    </div>
-                                 </div>
-                                 <div className="col-xxl-12">
-                                    <div className="contact__form-agree  d-flex align-items-center mb-20">
-                                       <input className="e-check-input" type="checkbox" id="e-agree"/>
-                                       <label className="e-check-label" for="e-agree">I agree to the<Link>Terms & Conditions</Link></label>
+                                       <textarea placeholder="Enter Your Message" name="message" value={userMessage} onChange={(e)=>{setUserMessage(e.target.value)}}></textarea>
                                     </div>
                                  </div>
                                  <div className="col-xxl-12 " >
                                     <div className="contact__btn" style={{float:'left'}}>
-                                       <button type="button"  className="e-btn" style={{backgroundColor:'#337c75'}} onClick={(e)=>{handleSubmit(e)}}>{loader === true ?  
+                                       <button type="button"  className="e-btn" style={{backgroundColor:'#337c75'}} onClick={(e)=>{handleSubmit(e)}}>{loading === true ?  
                            <ColorRing
                             //  visible={true}
                              height="40"
