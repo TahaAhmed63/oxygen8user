@@ -6,7 +6,7 @@ const VideoCard = ({...item}) => {
   const img_link = localStorage.getItem("image_link");
 
   const navigate = useNavigate();
-  const {id,name,description,image,playlist_videos_count }=item
+  const {id,name,description,image,playlist_videos_count,pack }=item
 
   return (
     <div style={{cursor:'pointer'}}>
@@ -46,7 +46,7 @@ const VideoCard = ({...item}) => {
                 </div>
                 <div className="course__more course__more-2 d-flex justify-content-between align-items-center">
                   <div className="course__status">
-                    <span style={{color:'#337c75'}}>Paid</span>
+                    <span style={{color:'#337c75'}}>{pack ? 'Enroll' : 'Paid'}</span>
                   </div>
                   <div className="course__btn">
                     <Link className="link-btn" to='/videolibrarydetail'>

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import Header from '../../component/Header/Header'
 import Footer from '../../component/Footer/Footer'
@@ -11,23 +12,35 @@ const Courses = () => {
 
    const [loading,setLoading]=useState(false);
    const [courses,setCourses]=useState([])
+   const userToken = localStorage.getItem("accesstoken");
+
    const arr=[1,2,3,4,5,6]
 
    useEffect(()=>{
       courseApi()
    },[])
 
-  async  function courseApi(){
-      setLoading(true)
+const courseApi = async () => {
+   setLoading(true);
    try {
+     var config = {
+       method: "get",
+       url: `${BaseUrl.baseurl}/user/course`,
+       headers: {
+         Accept: "application/json",
+         Authorization: `Bearer ${userToken}`,
+       },
+     };
+     
+     const response = await axios(config);
+     setCourses(response.data.courses);
+     setLoading(false);
 
-      const response = await axios.get(`${BaseUrl.baseurl}/user/course`);
-      setLoading(false);
-      setCourses(response.data.courses)
-    } catch (error) {
-      setLoading(false);
-    }
+   } catch (error) {
+     setLoading(false);
+     console.log(error?.response?.message);
    }
+ };
 
   return (
     <div>

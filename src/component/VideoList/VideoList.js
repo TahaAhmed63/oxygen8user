@@ -20,13 +20,15 @@ const VideoList = ({ ...item }) => {
 
   const handleLoadedMetadata = () => {
     const videolength = videoEl.current;
-    settime(Math.floor(videolength.duration)/60)
+    const temp =(Math.floor(videolength.duration)/60)
+    settime(temp.toFixed(2))
     if (!videolength) return videolength.duration
 
   };
+
   return (
     <div
-    className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 grid-item cat1 cat2 cat4"
+    className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 grid-item cat1 cat2 cat4 height='600'"
   >
     <div className="course__item white-bg mb-30 fix">
       <div className="course__thumb w-img p-relative fix">
@@ -39,12 +41,12 @@ const VideoList = ({ ...item }) => {
        
         <h3
           className="course__title"
-          style={{ textAlign: "left", paddingTop: "5px" }}
+          style={{ textAlign: "left", paddingTop: "5px",height:'50px' }}
         >
           {title}
         </h3>
       </div>
-      <div className="course__more d-flex justify-content-between align-items-center">
+      <div className="course__more d-flex justify-content-between align-items-center  cursor-pointer">
           <div className="course__btn">
             <span className="theme-btn">{time} min </span>
           </div>
