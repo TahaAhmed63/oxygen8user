@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
@@ -10,6 +11,7 @@ import VideoCardSkeleton from "../../component/Skeleton/VideoCardSkeleton";
 const Playlist = () => {
   const [loading, setLoading] = useState(false);
   const [playlist, setPlaylist] = useState([]);
+  const userToken = localStorage.getItem("accesstoken");
   const arr = [1, 1, 1, 1];
 
   useEffect(() => {
@@ -19,7 +21,15 @@ const Playlist = () => {
   async function playlistApi() {
     setLoading(true);
     try {
-      const response = await axios.get(`${BaseUrl.baseurl}/user/playlist`);
+      var config = {
+        method: "get",
+        url: `${BaseUrl.baseurl}/user/playlist`,
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+      };
+      const response = await axios(config);
       setLoading(false);
       setPlaylist(response.data.playlists);
       console.log(response);

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Card from "../../component/Card/Card";
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
@@ -6,33 +7,75 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import CardSkeleton from "../../component/Skeleton/CardSkeleton";
+// import React, { useRef} from "react";
+// Import Swiper React components
+// import { Swiper, SwiperSlide } from "swiper/react";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+// import { Autoplay, Pagination, Navigation } from "swiper";
+import "swiper/css/effect-fade";
+import './home.css'
 function Home() {
   const [loading, setLoading] = useState(false);
   const [course, setCourse] = useState([]);
+  const userToken = localStorage.getItem("accesstoken");
 const arr=[1,1,1,1,1,1];
 
   useEffect(() => {
     courseApi();
   }, []);
 
-  async function courseApi() {
+  const courseApi = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`${BaseUrl.baseurl}/user/course`);
-       setLoading(false);
+      var config = {
+        method: "get",
+        url: `${BaseUrl.baseurl}/user/course`,
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+      };
+      
+      const response = await axios(config);
       setCourse(response.data.courses);
       localStorage.setItem("image_link", response.data.image_link);
       localStorage.setItem("video_link", response.data.videolink);
+      setLoading(false);
+
     } catch (error) {
       setLoading(false);
       console.log(error?.response?.message);
     }
-  }
-
+  };
   return (
     <main>
       <Header />
+      {/* <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
+        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
+        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
+        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
+        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
+        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
+       
+      </Swiper> */}
       <section className="hero__area hero__height d-flex align-items-center grey-bg-2 p-relative">
         <div className="hero__shape">
           <img

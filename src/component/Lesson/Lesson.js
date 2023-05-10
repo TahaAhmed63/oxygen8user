@@ -18,8 +18,10 @@ const {title,video}=item
 
   const handleLoadedMetadata = () => {
     const videolength = videoEl.current;
-    settime(Math.floor(videolength.duration)/60)
+    const temp =(Math.floor(videolength.duration)/60)
+    settime(temp.toFixed(2))
     if (!videolength) return videolength.duration
+
   };
 
   return (

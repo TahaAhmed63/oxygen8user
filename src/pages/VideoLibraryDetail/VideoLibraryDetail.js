@@ -475,7 +475,7 @@ const VideoLibraryDetail = () => {
                                   <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
                                     <div className="course__video-price">
                                       <h5>
-                                        ${yearly[0] ? yearly[0]?.price : 0}
+                                      £{yearly[0] ? yearly[0]?.price : 0}
                                       </h5>
                                     </div>
                                   </div>
@@ -595,7 +595,7 @@ const VideoLibraryDetail = () => {
                                   <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
                                     <div className="course__video-price">
                                       <h5>
-                                        ${monthly[0] ? monthly[0]?.price : 0}
+                                      £{monthly[0] ? monthly[0]?.price : 0}
                                       </h5>
                                     </div>
                                   </div>

@@ -21,7 +21,7 @@ const CourseDetail = () => {
   const [course, setCourse] = useState();
   const [monthly, setMonthly] = useState([]);
   const [yearly, setYearly] = useState([]);
-  // const [subscription, setSubscription] = useState();
+  const [subscription, setSubscription] = useState();
   const userToken = localStorage.getItem("accesstoken");
   // const date = new Date();
 
@@ -45,17 +45,17 @@ const CourseDetail = () => {
           Authorization: `Bearer ${userToken}`,
         },
       };
-      // var config1 = {
-      //   method: "get",
-      //   url: `${BaseUrl.baseurl}/user/subscription/course/${id}`,
-      //   headers: {
-      //     Accept: "application/json",
-      //     Authorization: `Bearer ${userToken}`,
-      //   },
-      // };
+      var config1 = {
+        method: "get",
+        url: `${BaseUrl.baseurl}/user/subscription/course/${id}`,
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+      };
       const response = await axios(config);
-      // const response1 = await axios(config1);
-      // setSubscription(response1.data);
+      const response1 = await axios(config1);
+      setSubscription(response1.data);
       setCourse(response.data.course);
       setMonthly(
         response.data.course.packages.filter((item) => item.period === "month")
@@ -64,14 +64,13 @@ const CourseDetail = () => {
         response.data.course.packages.filter((item) => item.period === "year")
       );
       setLoading(false);
-
-      console.log('course detail-->',response);
+      console.log('subscription----------------->>',subscription)
     } catch (error) {
       setLoading(false);
       console.log(error?.response?.message);
     }
   };
-  
+
   const onToken = async (token) => {
     setLoading(true);
     try {
@@ -439,7 +438,7 @@ const CourseDetail = () => {
                                   <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
                                     <div className="course__video-price">
                                       <h5>
-                                        ${yearly[0] ? yearly[0]?.price : 0}
+                                      £{yearly[0] ? yearly[0]?.price : 0}
                                       </h5>
                                     </div>
                                   </div>
@@ -549,7 +548,7 @@ const CourseDetail = () => {
                                   <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
                                     <div className="course__video-price">
                                       <h5>
-                                        ${monthly[0] ? monthly[0]?.price : 0}
+                                      £{monthly[0] ? monthly[0]?.price : 0}
                                       </h5>
                                     </div>
                                   </div>
