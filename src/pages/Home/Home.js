@@ -8,6 +8,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import CardSkeleton from "../../component/Skeleton/CardSkeleton";
+import { Contact } from "./Components/Contact";
 import {Col} from 'react-bootstrap'
 import mylogo from './Fav.png'
 
@@ -205,6 +206,7 @@ function Home() {
 <DetailVideo/>
 <Blogs/>
 <LibraraySpan/>
+<Contact/>
 
       {/* <section className="course__area pt-115 pb-120 grey-bg">
         <div className="container">
