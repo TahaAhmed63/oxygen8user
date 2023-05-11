@@ -1,0 +1,22 @@
+import React from 'react'
+
+export const LibraraySpan = () => {
+  return (
+    <>
+    <section className="libraryspan">
+        
+        <div className="librarycontent-">
+            <div className="library-head">
+                <h4>Try the Libraries for Free</h4>
+
+            </div>
+            <div className="library-para">
+                <p>Access all Libraries for tools on stress, anxiety, sleep and resilience management.</p>
+            </div>
+
+        </div>
+        
+        </section>    
+    </>
+  )
+}
