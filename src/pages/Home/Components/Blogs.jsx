@@ -31,7 +31,9 @@ export const Blogs = () => {
             para:"Guided sessions for: ",
             list1:"Anxiety ",
             list2:"Down-Regulating",
+            list4:"Resilience building",
             list3:"Performance"
+            
             
          }
 
@@ -66,7 +68,10 @@ export const Blogs = () => {
                                    <ul>
                                     <li>{BLogData.list1}</li>
                                     <li>{BLogData.list2}</li>
+                                    { index === 2 && <li>{BLogData.list4}</li> }
+
                                     <li>{BLogData.list3}</li>
+                               
                                    </ul>
                             </div>
                             <div className="cardBtn">
