@@ -83,4 +83,15 @@ swiper-slide {
 .para-wrap p{
 text-align: left;
 
+
+}
+@media(max-width:760px){
+  .header-wrap{
+    text-align: left;
+    justify-content: flex-start;
+
+  }
+  .para-wrap{
+    padding: 0px  ;
+  }
 }

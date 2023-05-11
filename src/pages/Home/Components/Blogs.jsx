@@ -45,12 +45,15 @@ export const Blogs = () => {
     <>
    
    <section className="Blogs-home">
-  <Container fluid>
-    <Row>
+  <Container >
+    <Row className='justify-content-center align-items-center ml-5'>
+
         {
             BLogData.map((BLogData,index)=>{
                 return(
+                  
                     <Col key={index} md={4} sm={12} xs={12}>
+                  
                     <div className="card">
                         <div className="card-content">
                             <div className="card-img">
@@ -78,9 +81,10 @@ export const Blogs = () => {
                                 <span>Explore</span>
                             </div>
                         </div>
-                     
+               
                     </div>
                     </Col>
+                
                 )
             })
             
@@ -88,7 +92,7 @@ export const Blogs = () => {
       
         
         
-        
+   
     
     </Row>
 
