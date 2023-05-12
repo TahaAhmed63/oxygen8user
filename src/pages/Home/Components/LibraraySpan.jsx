@@ -13,7 +13,11 @@ export const LibraraySpan = () => {
             <div className="library-para">
                 <p>Access all Libraries for tools on stress, anxiety, sleep and resilience management.</p>
             </div>
-
+            <div className="wrap">
+                 <div className="cardBtn">
+                <span>Free Trial</span>
+                 </div>
+                 </div>
         </div>
         
         </section>    
