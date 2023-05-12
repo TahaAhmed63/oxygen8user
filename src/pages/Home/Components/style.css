@@ -203,6 +203,28 @@
     flex-direction: column;
  
 }
+@media(max-width:375px){
+    .card{
+        height: 22em !important;
+        width: 15em !important;
+    }
+    .card-img {
+        height: 25%;
+        display: flex;
+        justify-content: center;
+    }
+    .card-head h6{
+        font-size: 14px !important;
+    }
+    
+    .card-para p{
+        font-size: 13px !important;
+    }
+    .card-list ul li{
+        font-size: 10px;
+    }
+    
+    }
 .card-head h6{
     font-size: 30px;
     font-weight: 800;
@@ -315,13 +337,32 @@ list-style:unset
 /* contact */
 .contact {
     padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
     background-color: #317C74;
     margin-top: 4rem;
 }
 
 .contact-head{
     text-align: left;
+}
+.contact-img-wrap{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.contact-img-wrap img{
+    width: 200px;
+    height: 200px;
+
+}
+@media(max-width:768px){
+    .contact-img-wrap img{
+        width: 100px;
+        height: 100px;
+    
+    }
 }
 .contact-head h4{
     font-size: 30px;
