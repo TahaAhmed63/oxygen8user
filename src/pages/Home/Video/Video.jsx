@@ -17,12 +17,21 @@ function Video() {
 //   };
 
   return (
-    <div className='video-container'>
-      <video src={myvideo} className='myvideo' muted autoPlay loop>
+    <div >
+<div className='video-container'>
+  <video src={myvideo} className='myvideo' muted autoPlay loop></video>
+</div>
 
-      </video>
+     <div className="overlay-absolute-text">
+          <div className="text-video-wrap">
+            <h2>Control your nervous system.
+Control your stress.</h2>
+<p>Micro-regulation tools for stress. Any time, anywhere.</p>
+          </div>
+     </div>
+          </div>
    
-    </div>
+
   );
 }
 

@@ -2,13 +2,23 @@ import React from "react";
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
 import { Link } from "react-router-dom";
+import { AboutDetail } from "./Components/AboutDetail";
+import { AboutFullDetails } from "./Components/AboutFullDetails";
+import { Contact } from "../Home/Components/Contact";
 
 const About = () => {
   return (
     <div>
       <Header />
 
-      <section
+      <AboutDetail/>
+      <AboutFullDetails/>
+
+
+      <Contact/>
+   
+
+      {/* <section
         className="page__title-area page__title-height page__title-overlay d-flex align-items-center"
         style={{ background: "url('/assets/img/page-title/page-title-2.jpg')" }}
       >
@@ -100,7 +110,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <section className="brand__area pb-110">
         <div className="container">
@@ -165,7 +175,7 @@ const About = () => {
         </div>
       </section> */}
 
-      <section className="why__area pt-125">
+      {/* <section className="why__area pt-125">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xxl-5 offset-xxl-1 col-xl-5 offset-xl-1 col-lg-6 col-md-8">
@@ -385,7 +395,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>
