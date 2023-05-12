@@ -4,6 +4,7 @@ import { Container,Row,Col } from 'react-bootstrap'
 import {RxEnvelopeClosed} from 'react-icons/rx'
 import {BsInstagram} from 'react-icons/bs'
 import Form from 'react-bootstrap/Form';
+import contactlogo  from  "./../Fav.png"
 
 
 export const Contact = () => {
@@ -64,6 +65,11 @@ stress management strategies.</p>
 
 </div>
 
+              </Col>
+              <Col md={12} sm={12}>
+    <div className="contact-img-wrap">
+      <img src={contactlogo} alt="" />
+    </div>
               </Col>
             </Row>
 

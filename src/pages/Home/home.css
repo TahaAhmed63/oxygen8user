@@ -127,7 +127,7 @@ swiper-slide {
 }
 @media (min-width: 920px) and (max-width: 1025px){
   .video-container{
-    height: 563px;
+    height: 500px;
   }
 }
 .header-wrap{
@@ -137,7 +137,11 @@ swiper-slide {
   height: 100%;
   align-items: center;
 }
-
+@media(max-width:320px){
+  .video-container{
+    width: 100%;
+  }
+}
 .para-wrap {
   display: flex;
   padding: 0px 125px 0px 145px;
