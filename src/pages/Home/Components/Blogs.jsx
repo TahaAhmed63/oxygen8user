@@ -3,6 +3,7 @@ import "./style.css"
 import icon1 from './../../../Assets/Blogs/Blog1.png'
 import icon2 from './../../../Assets/Blogs/Blog2.png'
 import icon3 from './../../../Assets/Blogs/Blog3.png'
+import { Link } from 'react-router-dom'
 import { Container,Row,Col } from 'react-bootstrap'
 export const Blogs = () => {
     const BLogData =[
@@ -14,7 +15,8 @@ export const Blogs = () => {
            list1:"Control your own stress ",
            list2:"Build resilience",
            list3:"Cultivate methods to help recover from burnout",
-           btn:"Explore"
+           btn:"Explore",
+           linkto:"/courses"
            
         },
         {
@@ -24,7 +26,8 @@ export const Blogs = () => {
             list1:"Personalised integration plans built around you ",
             list2:"Tailored sessions",
             list3:"Facilitated sessions",
-            btn:"Find Out More"
+            btn:"Find Out More",
+            linkto:"/consultant"
             
          },
          {
@@ -35,7 +38,8 @@ export const Blogs = () => {
             list2:"Down-Regulating",
             list4:"Resilience building",
             list3:"Performance",
-            btn:"Explore"
+            btn:"Explore",
+            linkto:"/videolibrary"
             
             
          }
@@ -83,7 +87,10 @@ export const Blogs = () => {
                                    </ul>
                             </div>
                             <div className="cardBtn">
-                                <span>{BLogData.btn}</span>
+                       <Link to={BLogData.linkto} style={{
+                        textDecoration:"none",
+                        color:"#608984"
+                       }}>  <span>{BLogData.btn}</span></Link>       
                             </div>
                         </div>
                

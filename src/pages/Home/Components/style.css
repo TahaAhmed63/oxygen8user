@@ -82,6 +82,7 @@
 @media (min-width:1400px){
 .card-list ul li {
     font-size: 18px !important;
+    font-family: Inter,sans-serif;
 }
 }
 .footer__bottom{
@@ -362,6 +363,9 @@ list-style:unset
         width: 100px;
         height: 100px;
     
+    }
+    .contact-info{
+        margin-top: 22px;
     }
 }
 .contact-head h4{
