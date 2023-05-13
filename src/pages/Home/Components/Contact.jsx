@@ -5,6 +5,7 @@ import {RxEnvelopeClosed} from 'react-icons/rx'
 import {BsInstagram} from 'react-icons/bs'
 import Form from 'react-bootstrap/Form';
 import contactlogo  from  "./../Fav.png"
+import { Link } from 'react-router-dom'
 
 
 export const Contact = () => {
@@ -59,7 +60,8 @@ stress management strategies.</p>
             <div className="form-info">
             <Form>
             <Form.Control type="email" placeholder="Email Address" />
-<button type='submit'>Sign Up</button>
+            <Link to="/register" style={{textDecoration:"none",color:"#000"}}><button type='submit'>Sign Up</button></Link>
+
 </Form>
             </div>
 
