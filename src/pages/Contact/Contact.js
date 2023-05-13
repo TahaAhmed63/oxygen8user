@@ -136,14 +136,14 @@ const Contact = () => {
                               <li>
                                  <div className="contact__info-item d-flex align-items-start mb-35">
                                     <div className="contact__info-icon mr-15">
-                                       <svg className="map" viewBox="0 0 24 24">
+                                       <svg  className="map" viewBox="0 0 24 24">
                                           <path className="st0" d="M21,10c0,7-9,13-9,13s-9-6-9-13c0-5,4-9,9-9S21,5,21,10z"/>
                                           <circle className="st0" cx="12" cy="10" r="3"/>
                                        </svg>
                                     </div>
                                     <div className="contact__info-text text-left">
                                        <h4 style={{textAlign:'left'}}>New York Office</h4>
-                                       <p style={{textAlign:'left'}}><Link >Maypole Crescent 70-80 Upper St Norwich NR2 1LT</Link></p>
+                                       <p style={{textAlign:'left'}}><Link style={{textDecoration:"none",color:"#53545b"}}  >Maypole Crescent 70-80 Upper St Norwich NR2 1LT</Link></p>
    
                                     </div>
                                  </div>
@@ -158,8 +158,8 @@ const Contact = () => {
                                     </div>
                                     <div className="contact__info-text">
                                        <h4>Email us directly</h4>
-                                       <p style={{textAlign:'left'}}><Link>support@educal.com</Link></p>
-                                       <p style={{textAlign:'left'}}><Link> info@educal.com</Link></p>
+                                       <p style={{textAlign:'left'}}><Link style={{textDecoration:"none",color:"#53545b"}}>support@educal.com</Link></p>
+                                       <p style={{textAlign:'left'}}><Link style={{textDecoration:"none",color:"#53545b"}}> info@educal.com</Link></p>
                                     </div>
                                  </div>
                               </li>
@@ -172,8 +172,8 @@ const Contact = () => {
                                     </div>
                                     <div className="contact__info-text text-left">
                                        <h4 style={{textAlign:'left'}}>Phone</h4>
-                                       <p><a href="tel:+(426)-742-26-44">+(426) 742 26 44</a></p>
-                                       <p><a href="tel:+(224)-762-442-32">+(224) 762 442 32</a></p>
+                                       <p><a href="tel:+(426)-742-26-44" style={{textDecoration:"none",color:"#53545b"}}>+(426) 742 26 44</a></p>
+                                       <p><a href="tel:+(224)-762-442-32" style={{textDecoration:"none",color:"#53545b"}}>+(224) 762 442 32</a></p>
                                     </div>
                                  </div>
                               </li>
@@ -181,9 +181,9 @@ const Contact = () => {
                            <div className="contact__social pl-30">
                               <h4>Follow Us</h4>
                               <ul>
-                                 <li><Link className="fb" ><i className="social_facebook"></i></Link></li>
-                                 <li><Link className="tw" ><i className="social_twitter"></i></Link></li>
-                                 <li><Link className="pin" ><i className="social_pinterest"></i></Link></li>
+                                 <li><Link className="fb" style={{textDecoration:"none"}} ><i className="social_facebook"></i></Link></li>
+                                 <li><Link className="tw"  style={{textDecoration:"none"}}><i className="social_twitter"></i></Link></li>
+                                 <li><Link className="pin" style={{textDecoration:"none"}} ><i className="social_pinterest"></i></Link></li>
                               </ul>
                            </div>
                         </div>
@@ -214,7 +214,7 @@ const Contact = () => {
                         <div className="contact__content">
                            <h3 className="contact__title">Knowledge Base</h3>
                            <p>My good sir plastered cuppa barney cobblers mush argy bargy ruddy.</p>
-                           <Link className="e-btn e-btn-border">Visit Documentation</Link>
+                           <Link style={{textDecoration:"none"}} className="e-btn e-btn-border">Visit Documentation</Link>
                         </div>
                      </div>
                   </div>
