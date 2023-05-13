@@ -33,6 +33,7 @@ function Header() {
                 color: "#337c75",
                 fontWeight: "500",
                 paddingRight: "25px",
+                textDecoration:"none"
               }}
             >
               Courses
@@ -48,6 +49,7 @@ function Header() {
                 color: "#337c75",
                 fontWeight: "500",
                 paddingRight: "25px",
+                textDecoration:"none"
               }}
             >
               Consultant
@@ -59,6 +61,7 @@ function Header() {
                 color: "#337c75",
                 fontWeight: "500",
                 paddingRight: "25px",
+                textDecoration:"none"
               }}
             >
               About
@@ -70,13 +73,20 @@ function Header() {
                 color: "#337c75",
                 fontWeight: "500",
                 paddingRight: "25px",
+                textDecoration:"none"
               }}
             >
               Contact
             </Link>
             <div class="dropdown">
               <button class="dropbtn">
-                <Link to="/videolibrary">Video Library</Link>
+                <Link to="/videolibrary"
+                style={{
+                  textDecoration:"none",
+                  color:"#337c75"
+
+                }}
+                >Video Library</Link>
                 <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content">
@@ -93,6 +103,7 @@ function Header() {
                 color: "#337c75",
                 fontWeight: "500",
                 paddingRight: "25px",
+                textDecoration:"none"
               }}
             >
               {currentuser?.email}

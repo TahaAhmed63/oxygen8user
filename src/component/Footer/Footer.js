@@ -2,7 +2,7 @@
 
 function Footer(){
     return(
-        <footer style={{borderTop:'1px solid white',backgroundColor:'#fff',color:'#337c75'}}> 
+        <footer style={{backgroundColor:'#fff',color:'#337c75'}}> 
                <div className="footer__bottom">
                   <div className="container">
                      <div className="row">
