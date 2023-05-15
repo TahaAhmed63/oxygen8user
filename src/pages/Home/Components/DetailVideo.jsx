@@ -24,7 +24,7 @@ export const DetailVideo = () => {
        </Col>
      <Col md={6}>
         <div className="about-img-wrap">
-          <img src={skeleton} alt="" />
+          <img src={skeleton} alt="" className='img-fluid' width='300' height='900'/>
         </div>
      
      

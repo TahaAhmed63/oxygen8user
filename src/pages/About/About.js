@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { AboutDetail } from "./Components/AboutDetail";
 import { AboutFullDetails } from "./Components/AboutFullDetails";
 import { Contact } from "../Home/Components/Contact";
