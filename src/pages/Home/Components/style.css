@@ -231,7 +231,13 @@
     .emails i {
         font-size: 25px;
     }
-    }
+.contact {
+    padding-top: 0rem !important;
+    padding-bottom: 2rem;
+    background-color: #fff;
+    margin-top: 4rem;
+}
+      }
 .card-head h6{
     font-size: 30px;
     font-weight: 800;
@@ -345,7 +351,7 @@ list-style:unset
 .contact {
     padding-top: 4rem;
     padding-bottom: 2rem;
-    background-color: #317C74;
+    background-color: #fff;
     margin-top: 4rem;
 }
 
@@ -354,14 +360,14 @@ list-style:unset
 }
 .contact-img-wrap{
     display: flex;
-    height: 100%;
+    /* height: 100%; */
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
 }
 .contact-img-wrap img{
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height:100px;
 
 }
 @media(max-width:768px){
@@ -380,7 +386,8 @@ list-style:unset
 .contact-head h4{
     font-size: 30px;
     font-family: Inter,sans-serif;
-    color: #FFf;
+    color: #317C74;
+    
 }
 .emails {
     text-align: left;
@@ -393,12 +400,13 @@ list-style:unset
 }
 .emails i {
     font-size: 45px;
-    color: #FFf;
+    color:#317C74;
 }
 
 .email-info{
     margin-top: 20px;
     text-align: left    ;
+    color:#317C74;
 }
 form button{
     
@@ -408,7 +416,8 @@ form button{
         width: 92px;
         height: 39px;
         border-radius: 50px;
-        background: #FEFDFD;
+        background: #317C74;
+        color:#fff;
     
 }
 .subform{
@@ -422,12 +431,12 @@ form button{
 }
 .email-info p{
     font-size: 18.6px;
-    color: #FFf;
+    color: #317C74;
 
 }
 .email-info h4{
     font-size: 24.3px;
-    color: #fff;
+    color: #317C74;
 }
 
 

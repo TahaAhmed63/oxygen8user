@@ -1,5 +1,5 @@
 import React from 'react'
-import "./style.css"
+import "./Style.css"
 import { Container,Row,Col } from 'react-bootstrap'
 import {RxEnvelopeClosed} from 'react-icons/rx'
 import {BsInstagram} from 'react-icons/bs'
@@ -70,7 +70,7 @@ stress management strategies.</p>
               </Col>
               <Col md={12} sm={12}>
     <div className="contact-img-wrap">
-      <img src={contactlogo} alt="" />
+      <img src={contactlogo} alt=""  className='img-fluid'/>
     </div>
               </Col>
             </Row>
