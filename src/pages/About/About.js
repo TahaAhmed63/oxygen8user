@@ -1,14 +1,24 @@
 import React from "react";
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { AboutDetail } from "./Components/AboutDetail";
+import { AboutFullDetails } from "./Components/AboutFullDetails";
+import { Contact } from "../Home/Components/Contact";
 
 const About = () => {
   return (
     <div>
       <Header />
 
-      <section
+      <AboutDetail/>
+      <AboutFullDetails/>
+
+
+      <Contact/>
+   
+
+      {/* <section
         className="page__title-area page__title-height page__title-overlay d-flex align-items-center"
         style={{ background: "url('/assets/img/page-title/page-title-2.jpg')" }}
       >
@@ -26,7 +36,7 @@ const About = () => {
                       About
                     </li>
                   </ol>
-                </nav>
+                </nav>s
               </div>
             </div>
           </div>
@@ -100,9 +110,9 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="brand__area pb-110">
+      {/* <section className="brand__area pb-110">
         <div className="container">
           <div className="row">
             <div className="col-xxl-12">
@@ -163,145 +173,9 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section
-        className="testimonial__area pt-145 pb-150"
-        data-background="/assets/img/testimonial/home-3/testimonial-bg-3.jpg"
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-10">
-              <div className="testimonial__slider-3">
-                <h3 className="testimonial__title">
-                  Student <br /> Community Feedback
-                </h3>
-                <div className="testimonial__slider-wrapper swiper-container testimonial-text mb-35">
-                  <div className="swiper-wrapper">
-                    <div className="swiper-slide">
-                      <div className="testimonial__item-3">
-                        <p>
-                          “After I started learning design with Quillow, I
-                          realized that I had improved to very advanced levels.
-                          While I am studying at my university, I design as an
-                          additional income and I am sure that I will do this
-                          professionally.”
-                        </p>
-
-                        <div className="testimonial__info-2">
-                          <h4>James Lee,</h4>
-                          <span>Student @Educal University</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="testimonial__item-3">
-                        <p>
-                          “After I started learning design with Quillow, I
-                          realized that I had improved to very advanced levels.
-                          While I am studying at my university, I design as an
-                          additional income and I am sure that I will do this
-                          professionally.”
-                        </p>
-
-                        <div className="testimonial__info-2">
-                          <h4>James Lee,</h4>
-                          <span>Student @Educal University</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="testimonial__item-3">
-                        <p>
-                          “After I started learning design with Quillow, I
-                          realized that I had improved to very advanced levels.
-                          While I am studying at my university, I design as an
-                          additional income and I am sure that I will do this
-                          professionally.”
-                        </p>
-
-                        <div className="testimonial__info-2">
-                          <h4>James Lee,</h4>
-                          <span>Student @Educal University</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="swiper-container testimonial-nav">
-                  <div className="swiper-wrapper">
-                    <div className="swiper-slide">
-                      <div className="testimonial__nav-thumb">
-                        <img
-                          src="/assets/img/testimonial/home-3/testi-1.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="testimonial__nav-thumb">
-                        <img
-                          src="/assets/img/testimonial/home-3/testi-2.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="testimonial__nav-thumb">
-                        <img
-                          src="/assets/img/testimonial/home-3/testi-3.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="testimonial__nav-thumb">
-                        <img
-                          src="/assets/img/testimonial/home-3/testi-2.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-10">
-              <div className="testimonial__video ml-70 fix">
-                <div className="testimonial__thumb-3">
-                  <iframe
-                    src="https://www.youtube.com/embed/Rr0uFzAOQus"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  ></iframe>
-                </div>
-                <div className="testimonial__video-content d-sm-flex">
-                  <div className="testimonial__video-icon mr-20 mb-20">
-                    <span>
-                      {/* <svg version="1.1" id="educal-youtube" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"> */}
-                      <path
-                        className="st0"
-                        d="M22,11.1V12c0,5.5-4.5,10-10,10C6.5,22,2,17.5,2,12C2,6.5,6.5,2,12,2c1.4,0,2.8,0.3,4.1,0.9"
-                      />
-                      <polyline className="st0" points="22,4 12,14 9,11 " />
-                      {/* </svg> */}
-                    </span>
-                  </div>
-                  <div className="testimonial__video-text">
-                    <h4>Course Outcome</h4>
-                    <p>
-                      Faff about A bit of how's your father getmate cack
-                      codswallop crikey argy-bargy cobblers lost his bottle.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="why__area pt-125">
+      {/* <section className="why__area pt-125">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xxl-5 offset-xxl-1 col-xl-5 offset-xl-1 col-lg-6 col-md-8">
@@ -521,7 +395,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

@@ -174,7 +174,7 @@ const VideoLibraryDetail = () => {
                               <Link to="/">Home</Link>
                             </li>
                             <li className="breadcrumb-item">
-                              <Link to="/videolibrary">Video Library</Link>
+                              <Link  to="/videolibrary">Video Library</Link>
                             </li>
                             <li
                               className="breadcrumb-item active"

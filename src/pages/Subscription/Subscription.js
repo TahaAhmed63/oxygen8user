@@ -26,19 +26,17 @@ const Subscription = () => {
     try {
       var config = {
         method: "get",
-        //login k bad
-        // url: `${BaseUrl.baseurl}/user/subscription`,
         url: `${BaseUrl.baseurl}/user/subscription/all/packages`,
-        // headers: {
-        //   Accept: "application/json",
-        //   Authorization: `Bearer ${userToken}`,
-        // },
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
       };
       const response = await axios(config);
 
       setLoading(false);
       setsubscription(response.data.bulks);
-      console.log(response.data);
+      console.log('subscription--->',response.data.bulks[0].pack);
     } catch (error) {
       setLoading(false);
       console.log(error?.response?.message);
@@ -139,7 +137,27 @@ const Subscription = () => {
                             <p className="subCard-detail">
                               {item?.description}
                             </p>
-                            {userToken ? (
+                            {userToken ? item.pack ?
+                            <button
+                                style={{
+                                  color: "#fff",
+                                  backgroundColor: "#74b3ac",
+                                  width: "80%",
+                                  textAlign: "center",
+                                  marginTop: "30px",
+                                  marginBottom: "10px",
+                                  borderStyle: "solid",
+                                  borderColor: "#fff",
+                                  fontWeight: "bold",
+                                  borderRadius: "50px",
+                                  paddingInline: "50px",
+                                  paddingTop: "10px",
+                                  paddingBottom: "10px",
+                                  fontSize: "1rem",
+                                }}
+                              >
+                                Enroll
+                              </button> : (
                               <StripeCheckout
                                 token={(token) => {
                                   onToken(token, item);

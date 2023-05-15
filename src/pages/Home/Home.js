@@ -1,81 +1,90 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import Card from "../../component/Card/Card";
+
+// import Card from "../../component/Card/Card";
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import BaseUrl from "../../component/BaseUrl/BaseUrl";
-import CardSkeleton from "../../component/Skeleton/CardSkeleton";
-// import React, { useRef} from "react";
-// Import Swiper React components
+// import { Link } from "react-router-dom";
+// import axios from "axios";
+// import { useState, useEffect } from "react";
+// import BaseUrl from "../../component/BaseUrl/BaseUrl";
+// import CardSkeleton from "../../component/Skeleton/CardSkeleton";
+import { Contact } from "./Components/Contact";
+import {Col} from 'react-bootstrap'
+import mylogo from './Fav.png'
+
 // import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-// import { Autoplay, Pagination, Navigation } from "swiper";
-import "swiper/css/effect-fade";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/effect-fade";
+// import "swiper/css/navigation";
+// import { Pagination,Navigation, EffectFade } from "swiper";
+// import "swiper/css/effect-fade";
 import './home.css'
+import Video from "./Video/Video";
+import { Container, Row } from "react-bootstrap";
+import { DetailVideo } from "./Components/DetailVideo";
+import { Blogs } from "./Components/Blogs";
+import { LibraraySpan } from "./Components/LibraraySpan";
 function Home() {
-  const [loading, setLoading] = useState(false);
-  const [course, setCourse] = useState([]);
-  const userToken = localStorage.getItem("accesstoken");
-const arr=[1,1,1,1,1,1];
+//   const [loading, setLoading] = useState(false);
+//   const [course, setCourse] = useState([]);
+//   const userToken = localStorage.getItem("accesstoken");
+// const arr=[1,1,1,1,1,1];
 
-  useEffect(() => {
-    courseApi();
-  }, []);
+//   useEffect(() => {
+//     courseApi();
+//   }, []);
 
-  const courseApi = async () => {
-    setLoading(true);
-    try {
-      var config = {
-        method: "get",
-        url: `${BaseUrl.baseurl}/user/course`,
-        headers: {
-          Accept: "application/json",
-          Authorization: `Bearer ${userToken}`,
-        },
-      };
+//   const courseApi = async () => {
+//     setLoading(true);
+//     try {
+//       var config = {
+//         method: "get",
+//         url: `${BaseUrl.baseurl}/user/course`,
+//         headers: {
+//           Accept: "application/json",
+//           Authorization: `Bearer ${userToken}`,
+//         },
+//       };
       
-      const response = await axios(config);
-      setCourse(response.data.courses);
-      localStorage.setItem("image_link", response.data.image_link);
-      localStorage.setItem("video_link", response.data.videolink);
-      setLoading(false);
+//       const response = await axios(config);
+//       setCourse(response.data.courses);
+//       localStorage.setItem("image_link", response.data.image_link);
+//       localStorage.setItem("video_link", response.data.videolink);
+//       setLoading(false);
 
-    } catch (error) {
-      setLoading(false);
-      console.log(error?.response?.message);
-    }
-  };
+//     } catch (error) {
+//       setLoading(false);
+//       console.log(error?.response?.message);
+//     }
+//   };
+  
   return (
     <main>
       <Header />
       {/* <Swiper
         spaceBetween={30}
-        centeredSlides={true}
+        effect={"fade"}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
+        
         pagination={{
           clickable: true,
         }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[EffectFade, Navigation, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
-        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
-        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
-        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
-        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
-        <SwiperSlide><img src='/assets/img/page-title/yoga4.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
+        <SwiperSlide><div className='main-div'></div><img src='https://ahgroup-pk.com/assets/images/moh_1920.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
+        <SwiperSlide><img src='https://ahgroup-pk.com/assets/images/slider.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
        
       </Swiper> */}
+     {/* <section>
+        <div>
+        <video src='assets/video/video1.mp4' alt="" border="3" height="50%" width="100%" autoPlay muted loop playsInline ><source src='assets/video/video1.mp4' type='video/mp4'/></video>
+        </div>
+      </section>
       <section className="hero__area hero__height d-flex align-items-center grey-bg-2 p-relative">
         <div className="hero__shape">
           <img
@@ -160,9 +169,51 @@ const arr=[1,1,1,1,1,1];
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <section className="home-main">
+      <Video/>
+     
 
-      <section className="course__area pt-115 pb-120 grey-bg">
+      </section>
+     
+
+     <section className="about-home">
+      <Container>
+        <Row  >
+          <Col md={12} xs={12}>
+            <div className="header-wrap">
+            <div className="about-head">
+          <h4>
+          Welcome to Oxygen8 Stress Wellness
+
+          </h4>
+           </div>
+           <div className="logo">
+             <img src={mylogo} alt=''/>
+           </div>
+            </div>
+          
+          
+          </Col>
+        <Col md={12}>
+        <div className="para-wrap">
+            <p>
+            Whether you are looking for stress or anxiety management, burnout recovery, or resilience building, Oxygen8 offers a comprehensive and integrative approach to dealing with the stresses of life. We offer you the tools to directly regulate your nervous system in both the short and long term using Conscious Nervous System Feedback (CNSF) exercises. These methods become an arsenal of quick-fire techniques that cover you anytime, anywhere.
+            </p>
+          </div>
+        
+        </Col>
+        </Row>
+      </Container>
+
+     </section>
+
+<DetailVideo/>
+<Blogs/>
+<LibraraySpan/>
+<Contact/>
+
+      {/* <section className="course__area pt-115 pb-120 grey-bg">
         <div className="container">
           <div class="row align-items-end">
             <div class="col-xxl-5 col-xl-6 col-lg-6">
@@ -193,7 +244,7 @@ const arr=[1,1,1,1,1,1];
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </main>
