@@ -52,7 +52,6 @@ export const Blogs = () => {
     <>
    
    <section className="Blogs-home">
-    <Container fluid>
   <Container >
     <div className="card-wraper">
     <Row className='justify-content-center align-items-center ml-5'>
@@ -109,7 +108,7 @@ export const Blogs = () => {
     </Row>
     </div>
   </Container>
-  </Container>
+
   
   
      </section>
