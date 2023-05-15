@@ -1,5 +1,5 @@
 import React from 'react'
-import "./style.css"
+import "./Style.css"
 import { Container,Row,Col } from 'react-bootstrap'
 import {RxEnvelopeClosed} from 'react-icons/rx'
 import {BsInstagram} from 'react-icons/bs'
