@@ -72,6 +72,11 @@ const arr=[1,1,1,1,1,1];
         <SwiperSlide><img src='https://ahgroup-pk.com/assets/images/slider.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
        
       </Swiper> */}
+      <section>
+        <div>
+        <video src='assets/video/video1.mp4' alt="" border="3" height="50%" width="100%" autoPlay muted loop playsInline ><source src='assets/video/video1.mp4' type='video/mp4'/></video>
+        </div>
+      </section>
       <section className="hero__area hero__height d-flex align-items-center grey-bg-2 p-relative">
         <div className="hero__shape">
           <img
