@@ -70,7 +70,7 @@ stress management strategies.</p>
               </Col>
               <Col md={12} sm={12}>
     <div className="contact-img-wrap">
-      <img src={contactlogo} alt="" />
+      <img src={contactlogo} alt=""  className='img-fluid'/>
     </div>
               </Col>
             </Row>

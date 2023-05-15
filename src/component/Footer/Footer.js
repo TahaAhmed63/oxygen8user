@@ -8,7 +8,7 @@ function Footer(){
                      <div className="row">
                         <div className="col-xxl-12">
                            <div className="footer__copyright text-center">
-                           <a href="https://hnhtechsolutions.com/">   <p style={{color:'#fff'}}>© 2023 Oxygen 8. Template by HNH Tech Solution </p></a>
+                           <a href="https://hnhtechsolutions.com/">   <p style={{color:'#fff'}}>© 2023 Oxygen 8. Designed by HNH Tech Solution </p></a>
                            </div>
                         </div>
                      </div>
