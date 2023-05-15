@@ -20,8 +20,12 @@
 
 }
 .img-wrap img{
-    width: 100%;
-    height: 350px;
+    width: 80%;
+    height: 250px;
+}
+.owner1{
+    width: 80%;
+    height: auto;  
 }
 .all-image-wrap{
     display: flex;
@@ -29,10 +33,49 @@
     height: 100%;
     gap: 20px;
 }
+@media(min-width:320px) and (max-width:768px){
+    .img-wrap{
+        width: 100%;
+    }
+    .both-btn{
+        margin-left: 0px !important;
+
+        
+        }
+        .button-wrap{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            gap: 0em !important;
+        }
+        .button-about-1 {
+            width: 200px;
+            height: 60px;
+            font-size: 12px !important;
+            padding: 10px;
+        }
+        .para-wrap-about p {
+            font-size: 20px;
+            line-height: 30px !important;
+            color: white;
+            text-align: left;
+            font-family: Inter,sans-serif;
+        }
+        .owner1{
+            width: 100%;
+            height: auto;  
+        }
+        .img-wrap img {
+            width: 100%;
+            height: 250px;
+        }
+}
 @media(min-width:768px){
     .img-wrap{
         width: 100%;
     }
+
 }
 .img-wrap {
     display: flex;
@@ -62,8 +105,8 @@
     height: 100%;
 }
 .para-wrap-about p {
-    font-size: 25px;
-    line-height: 38px;
+    font-size: 20px;
+    line-height: 46px;
     color: white;
     text-align: left;
     font-family: Inter,sans-serif;
@@ -72,6 +115,7 @@
    .owner-image-wrap{
     flex-direction: row;
    }
+ 
 }
 @media((min-width:756px)and (max-width:1024px)){
     .para-wrap-about p {
@@ -104,6 +148,9 @@
     height: 60px;
     font-size: 17px;
 
+}
+.both-btn{
+margin-left: 5rem;
 }
 .button-about-1 button{
  
