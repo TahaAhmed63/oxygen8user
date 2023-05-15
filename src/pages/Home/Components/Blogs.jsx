@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Style.css"
+import "./style.css"
 import icon1 from './../../../Assets/Blogs/Blog1.png'
 import icon2 from './../../../Assets/Blogs/Blog2.png'
 import icon3 from './../../../Assets/Blogs/Blog3.png'
