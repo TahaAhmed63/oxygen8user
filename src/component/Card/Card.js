@@ -35,7 +35,7 @@ function Card({...item}) {
           <h3
             className="course__title text-start pt-5"
           >
-            <Link>{name}</Link>
+            <Link style={{textDecoration:"none",color:"#000"}}>{name}</Link>
           </h3>
         </div>
         <div className="course__more d-flex justify-content-between align-items-center">
@@ -43,7 +43,7 @@ function Card({...item}) {
             <span style={{ color: "#337c75" }}>{pack ? 'Enroll' : 'Paid'}</span>
           </div>
           <div className="course__btn">
-            <Link href="#" className="link-btn" to="/coursedetail">
+            <Link style={{textDecoration:"none"}} href="#" className="link-btn" to="/coursedetail">
               Know Details
               <i className="far fa-arrow-right"></i>
               <i className="far fa-arrow-right"></i>
