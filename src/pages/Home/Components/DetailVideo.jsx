@@ -1,5 +1,5 @@
 import React from 'react'
-import "./style.css"
+import "./Style.css"
 import { Container,Row,Col } from 'react-bootstrap'
 import mainvideo from "./../../../../src/Assets/videohome/090523_Oxygen8-Website-Medium-Loop_4x3.mp4"
 import skeleton from "./../../../../src/Assets/Videoaboutimages/skeleton.png"
