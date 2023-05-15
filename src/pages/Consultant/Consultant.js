@@ -236,7 +236,7 @@ const Consultant = () => {
                     // onClick={handleSubmit}
                     style={{ backgroundColor: "#337c75", border: "none" }}
                   >
-                    Confirm Book
+                    Confirm
                   </Button>
                 </Modal.Footer>
               </Form>
