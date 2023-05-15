@@ -32,7 +32,7 @@ const VideoCard = ({...item}) => {
                     
                   </div>
                   <h3 className="course__title course__title-3" style={{textAlign:'left',paddingTop:'5px',paddingBottom:'5px'}}>
-                    <Link>
+                    <Link style={{textDecoration:"none",color:"#000"}}>
                      {name}
                     </Link>
                   </h3>
@@ -49,7 +49,7 @@ const VideoCard = ({...item}) => {
                     <span style={{color:'#337c75'}}>{pack ? 'Enroll' : 'Paid'}</span>
                   </div>
                   <div className="course__btn">
-                    <Link className="link-btn" to='/videolibrarydetail'>
+                    <Link style={{textDecoration:"none",color:"#000"}} className="link-btn" to='/videolibrarydetail'>
                       Know Details
                       <i className="far fa-arrow-right"></i>
                       <i className="far fa-arrow-right"></i>
