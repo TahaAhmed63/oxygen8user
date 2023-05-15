@@ -44,7 +44,7 @@ export const AboutDetail = () => {
         </Row>
 
     </section> 
-<section className="About-image mt-5">
+<section className="About-image py-5">
         <Container fluid>
          <Container>
              <Row>
