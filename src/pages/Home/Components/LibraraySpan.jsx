@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Style.css"
 
 export const LibraraySpan = () => {
   return (
