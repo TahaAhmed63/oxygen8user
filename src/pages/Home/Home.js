@@ -25,6 +25,7 @@ import { Container, Row } from "react-bootstrap";
 import { DetailVideo } from "./Components/DetailVideo";
 import { Blogs } from "./Components/Blogs";
 import { LibraraySpan } from "./Components/LibraraySpan";
+
 function Home() {
 //   const [loading, setLoading] = useState(false);
 //   const [course, setCourse] = useState([]);
@@ -62,6 +63,8 @@ function Home() {
   return (
     <main>
       <Header />
+   
+     
       {/* <Swiper
         spaceBetween={30}
         effect={"fade"}
@@ -169,18 +172,23 @@ function Home() {
             </div>
           </div>
         </div>
+
       </section> */}
+    <div className="main-video">
       <section className="home-main">
+        
       <Video/>
-     
 
       </section>
      
-
+      </div>
      <section className="about-home">
+  
       <Container>
         <Row  >
           <Col md={12} xs={12}>
+   
+
             <div className="header-wrap">
             <div className="about-head">
           <h4>
@@ -196,6 +204,7 @@ function Home() {
           
           </Col>
         <Col md={12}>
+ 
         <div className="para-wrap">
             <p>
             Whether you are looking for stress or anxiety management, burnout recovery, or resilience building, Oxygen8 offers a comprehensive and integrative approach to dealing with the stresses of life. We offer you the tools to directly regulate your nervous system in both the short and long term using Conscious Nervous System Feedback (CNSF) exercises. These methods become an arsenal of quick-fire techniques that cover you anytime, anywhere.

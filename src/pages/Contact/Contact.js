@@ -6,6 +6,8 @@ import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { ColorRing } from "react-loader-spinner";
+import "./../About/Components/style.css"
+import {Row,Col} from "react-bootstrap"
 
 const Contact = () => {
    const [name,setName]=useState()
@@ -55,7 +57,7 @@ const Contact = () => {
   return (
     <div>
         <Header/>
-        <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" style={{background: "url('/assets/img/page-title/page-title.jpg')"}}>
+        {/* <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" style={{background: "url('/assets/img/page-title/page-title.jpg')"}}>
             <div class="container">
                <div class="row">
                   <div class="col-xxl-12">
@@ -71,15 +73,29 @@ const Contact = () => {
                   </div>
                </div>
             </div>
-         </section>
+         </section> */}
+             <section className="AboutPage">
+        <Row>
+     
+    <Col md={12} sm={12}>
+        <div className="headwrapabout">
+           <h1>Contact</h1>
+        </div>
+    </Col>
+
+
+        </Row>
+
+    </section> 
+
         <section className="contact__area pt-115 pb-120">
             <div className="container">
                <div className="row">
-                  <div className="col-xxl-7 col-xl-7 col-lg-6">
+                  <div className="col-xxl-7 col-xl-7 col-lg-6 mx-auto">
                      <div className="contact__wrapper">
                         <div className="section__title-wrapper mb-40">
                            <h2 className="section__title">Get in<span className="yellow-bg yellow-bg-big">touch<img src="assets/img/shape/yellow-bg.png" alt=""/></span></h2>
-                           <p>Have a question or just want to say hi? We'd love to hear from you.</p>
+                           <p>Any questions or just want to reach out? .</p>
                         </div>
                         <div className="contact__form">
                            <form >
@@ -124,7 +140,7 @@ const Contact = () => {
                         </div>
                      </div>
                   </div>
-                  <div className="col-xxl-4 offset-xxl-1 col-xl-4 offset-xl-1 col-lg-5 offset-lg-1">
+                  {/* <div className="col-xxl-4 offset-xxl-1 col-xl-4 offset-xl-1 col-lg-5 offset-lg-1">
                      <div className="contact__info white-bg p-relative z-index-1">
                         <div className="contact__shape">
                            <img className="contact-shape-1" src="assets/img/contact/contact-shape-1.png" alt=""/>
@@ -188,18 +204,18 @@ const Contact = () => {
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> */}
                </div>
             </div>
          </section>
  
 
-         <section className="contact__area grey-bg-2 pt-120 pb-90 p-relative fix">
+         {/* <section className="contact__area grey-bg-2 pt-120 pb-90 p-relative fix">
             <div className="contact__shape">
                <img className="contact-shape-5" src="assets/img/contact/contact-shape-5.png" alt=""/>
                <img className="contact-shape-4" src="assets/img/contact/contact-shape-4.png" alt=""/>
-            </div>
-            <div className="container">
+            </div> */}
+            {/* <div className="container">
                <div className="row">
                   <div className="col-lg-12 col-md-10 col-sm-12 ">
                      <div className="contact__item text-center mb-30 transition-3 white-bg">
@@ -220,8 +236,8 @@ const Contact = () => {
                   </div>
                
                </div>
-            </div>
-         </section>
+            </div> */}
+         {/* </section> */}
 
         <Footer/>
 
