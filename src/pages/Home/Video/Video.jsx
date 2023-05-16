@@ -17,7 +17,7 @@ function Video() {
 //   };
 
   return (
-    <div >
+<>
 <div className='video-container'>
   <video src={myvideo} className='myvideo' muted autoPlay loop></video>
 </div>
@@ -29,7 +29,8 @@ Control your stress.</h2>
 <p>Micro-regulation tools for stress. Any time, anywhere.</p>
           </div>
      </div>
-          </div>
+     <div className="bottom-mark"></div>
+     </>
    
 
   );
