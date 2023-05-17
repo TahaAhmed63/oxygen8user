@@ -207,8 +207,7 @@ function Home() {
  
         <div className="para-wrap">
             <p>
-            Whether you are looking for stress or anxiety management, burnout recovery, or resilience building, Oxygen8 offers a comprehensive and integrative approach to dealing with the stresses of life. We offer you the tools to directly regulate your nervous system in both the short and long term using Conscious Nervous System Feedback (CNSF) exercises. These methods become an arsenal of quick-fire techniques that cover you anytime, anywhere.
-            </p>
+            Whether you are looking for stress or anxiety management, burnout recovery, or resilience building, Oxygen8 offers a comprehensive and integrative approach to dealing with the stresses of life. We offer you the tools to directly regulate your nervous system in both the short and long term using Conscious Nervous System Feedback (CNSF) and Optimising exercises. These methods become an arsenal of quick-fire techniques that cover you anytime, anywhere.            </p>
           </div>
         
         </Col>
