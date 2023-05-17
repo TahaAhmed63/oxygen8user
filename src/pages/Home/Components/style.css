@@ -167,6 +167,13 @@
     margin-top: 15px !important;
   }
   
+  .col-md-4 {
+    align-items: center;
+    width: 100% !important;
+    display: flex;
+    flex: 0 0 auto !important;
+    justify-content: center;
+  }  
   .button-about-1 {
     font-size: 12px !important;
   }
