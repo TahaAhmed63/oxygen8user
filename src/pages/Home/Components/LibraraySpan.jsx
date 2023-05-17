@@ -4,8 +4,9 @@ import "./style.css"
 export const LibraraySpan = () => {
   return (
     <>
+
     <section className="libraryspan">
-        
+    <div className="bottommark-3"></div> 
         <div className="librarycontent-">
             <div className="library-head">
                 <h4>Try the Libraries for Free</h4>

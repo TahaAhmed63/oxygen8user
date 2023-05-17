@@ -7,6 +7,8 @@ import axios from "axios";
 import { useState,useEffect } from "react";
 import BaseUrl from '../../component/BaseUrl/BaseUrl'
 import CardSkeleton from '../../component/Skeleton/CardSkeleton'
+import "./../About/Components/style.css"
+import {Row,Col} from "react-bootstrap"
 
 const Courses = () => {
 
@@ -45,7 +47,7 @@ const courseApi = async () => {
   return (
     <div>
         <Header/>
-
+{/* 
         <section className="page__title-area page__title-height page__title-overlay d-flex align-items-center"  style={{background: "url('/assets/img/page-title/yoga4.jpg')"
         ,backgroundRepeat:"no-repeat",backgroundSize: "cover",objectFit:'contain'}}>
             <div className="container">
@@ -58,7 +60,20 @@ const courseApi = async () => {
                   </div>
                </div>
             </div>
-         </section>
+         </section> */}
+    <section className="AboutPage">
+        <Row>
+     
+    <Col md={12} sm={12}>
+        <div className="headwrapabout">
+           <h1>Courses</h1>
+        </div>
+    </Col>
+
+
+        </Row>
+
+    </section> 
 
          <section className="course__area pt-120 pb-120">
             <div className="container">

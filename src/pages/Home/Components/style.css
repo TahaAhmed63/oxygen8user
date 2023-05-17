@@ -1,13 +1,13 @@
 .Home-detail {
   background-color: #317c74;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+
 }
 
 .head-wrap {
   width: 100%;
   padding: 0 19px 0 57px;
 }
+
 .card-wraper {
   display: flex;
   width: 100%;
@@ -25,7 +25,8 @@
 @media (min-width: 768px) {
   .head-wrap {
     padding: 0;
-  }
+    margin-top: 35px;
+}
   .video-wrap {
     padding: 0px !important;
   }
@@ -67,8 +68,8 @@
   }
 }
 .about-img-wrap img {
-  width: auto;
-  height: 100%;
+  width: 1376px;
+  height: 768px;
 }
 
 /* Blogs component */
@@ -102,6 +103,31 @@
   .email-info p {
     font-size: 16px;
   }
+  .img-section {
+    height: 400px;
+    margin-top: 122px;
+}
+  .video-details {
+    height: 509px !important;
+    gap: 0px !important;
+    /* margin-top: 5%; */
+    display: flex !important ;
+    flex-direction: column !important;
+    margin-top: 6% !important;
+    margin-bottom: 6% !important;
+}
+.bottommark-3::before {
+  content: "";
+  position: absolute !important;
+  top: 544% !important;
+  left: 42% !important;
+  right: 0% !important;
+  width: 100% !important;
+  height: 209% !important;
+  transform: translateX(-51%) translateY(134%) rotate(180deg) !important;
+                                                                                    background-image: url(./../../../Assets/AboutImages/watermark.png) !important;
+  background-repeat: no-repeat !important;
+}
 }
 @media (min-width: 769px) and (max-width: 920px) {
   .card {
@@ -121,6 +147,15 @@
     justify-content: center;
     align-items: center;
   }
+  .video-details {
+    height: 100% !important;
+    gap: 0px !important;
+    width: 100%;
+    margin-top: 5% !important;
+    margin-bottom: 5% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
   .email-info h4 {
     font-size: 16px !important;
     font-family: Inter, sans-serif;
@@ -159,11 +194,29 @@
     font-size: 14px;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1440px) {
   .card {
     height: 32em !important;
     width: 20em !important;
   }
+  .bottommark-2 {
+    position: absolute;
+    bottom: 0;
+    width: 88%;
+    height: 50%;
+  }
+  .bottommark-2::before {
+    content: "";
+    position: relative;
+    top: 46%;
+    display: block;
+    left: 103.5%;
+    width: 24%;
+    height: 209%;
+    transform: translateX(-58%) translateY(131%) rotate(360deg);
+    background-image: url(./../../../Assets/AboutImages/watermark.png);
+    background-repeat: no-repeat;
+}
 }
 .librarycontent- {
   display: flex;
@@ -190,23 +243,31 @@
 }
 @media (max-width: 375px) {
   .card {
-    height: 22em !important;
+    height: 27em !important;
     width: 15em !important;
-  }
+}
+.video-details {
+  height: 350px !important;
+  gap: 0px !important;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+}
   .card-img {
     height: 25%;
     display: flex;
     justify-content: center;
   }
   .card-head h6 {
-    font-size: 14px !important;
-  }
+    font-size: 17px !important;
+}
 
   .card-para p {
     font-size: 13px !important;
   }
   .card-list ul li {
-    font-size: 10px;
+    font-size: 14px;
   }
   .emails i {
     font-size: 25px;
@@ -216,6 +277,14 @@
     padding-bottom: 2rem;
     background-color: #fff;
     margin-top: 4rem;
+  }
+  .cardBtn{
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .cardBtn span{
+    height: 38px !important;
+    width: 172px !important;
   }
 }
 .card-head h6 {
@@ -351,6 +420,7 @@
     font-size: 25px !important;
   }
 }
+
 .contact-head h4 {
   font-size: 30px;
   font-family: Inter, sans-serif;
@@ -385,6 +455,14 @@ form button {
   background: #317c74;
   color: #fff;
 }
+.video-details {
+  height: 510px;
+  gap: 40px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+}
 .subform {
   display: flex;
   gap: 20px;
@@ -414,4 +492,134 @@ form button {
   height: 100%;
   justify-content: center;
   align-items: center;
+}
+.bottommark-2 {
+  position: absolute;
+  bottom: 0;
+  width: 88%;
+  height: 50%;
+}
+.bottommark-2::before {
+  content: "";
+  position: relative;
+  top: 46%;
+  display: block;
+  left: 103.5%;
+  width: 24%;
+  height: 209%;
+  transform: translateX(-58%) translateY(99%) rotate(360deg);
+  background-image: url(./../../../Assets/AboutImages/watermark.png);
+  background-repeat: no-repeat;
+}
+.bottommark-3{
+  position: absolute;
+  bottom: 0;
+  width: 88%;
+  height: 50%;
+}
+
+  .bottommark-3::before {
+    content: "";
+    position: relative;
+    /* top: 100%; */
+    left: 1%;
+    display: block;
+    right: 0%;
+    width: 100%;
+    height: 150%;
+    transform: translateX(-58%) translateY(451%) rotate(180deg);
+    background-image: url(./../../../../src/Assets/AboutImages/watermark.png);
+    background-repeat: no-repeat;
+}
+
+@media (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles for iPhone 6/7/8 */
+  .bottommark-3::before {
+    transform: translateX(-70%) translateY(171%) rotate(147deg) !important;
+}
+
+}
+@media (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles for iPhone 6/7/8 Plus */
+  .bottommark-3::before {
+    transform: translateX(-70%) translateY(171%) rotate(147deg);
+}
+}
+@media (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles for iPhone X/XS/11 Pro */
+  .bottommark-3::before {
+    transform: translateX(-70%) translateY(160%) rotate(147deg);
+}
+}
+@media (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles for iPhone XR/11 */
+  .bottommark-3::before {
+    transform: translateX(-70%) translateY(90%) rotate(147deg) !important;
+}
+}
+@media (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles for iPhone XR/11 */
+  .bottommark-3::before {
+    transform: translateX(-70%) translateY(90%) rotate(147deg);
+}
+}
+@media (device-width: 411px) and (device-height: 731px) and (-webkit-device-pixel-ratio: 2.625) {
+  /* Styles for Google Pixel 2 */
+  .bottommark-3::before {
+    transform: translateX(-70%) translateY(90%) rotate(147deg);
+}
+}
+@media (device-width: 411px) and (device-height: 731px) and (-webkit-device-pixel-ratio: 2.625) {
+  /* Styles for Google Pixel 2 */
+  .bottommark-3::before {
+    transform: translateX(-70%) translateY(90%) rotate(147deg);
+}
+}
+@media (device-width: 360px) and (device-height: 740px) and (-webkit-device-pixel-ratio: 4) {
+  /* Styles for Samsung Galaxy S9/S9+/S8/S8+ */
+  .bottommark-3::before {
+    transform: translateX(-70%) translateY(130%) rotate(147deg) !important;
+}
+}
+
+@media (device-width: 412px) and (device-height: 915px)  {
+  /* Styles for Samsung Galaxy S9/S9+/S8/S8+ */
+  .bottommark-3::before {
+    transform: translateX(-70%) translateY(83%) rotate(147deg) !important;
+}
+}
+@media (device-width: 360px) and (device-height: 640px)  {
+  /* Styles for Samsung Galaxy S9/S9+/S8/S8+ */
+  .bottommark-3::before {
+    transform: translateX(-70%) translateY(187%) rotate(147deg) !important;
+}
+}
+
+@media (device-width: 820px) and (device-height: 1180px)  {
+  /* Styles for Samsung Galaxy ipad air */
+
+.bottommark-2::before{
+  transform: translateX(-74%) translateY(-3%) rotate(180deg);
+  top: 0px;
+}
+
+}
+@media (device-width: 1440px) and (device-height: 566px)  {
+  /* Styles for Samsung Galaxy ipad air */
+
+.bottommark-3::before{
+  transform: translateX(-29%) translateY(486%) rotate(360deg) !important;
+}
+}
+@media (device-width: 1368px) and (device-height: 912px){
+   .bottommark-3::before{
+  height: 184%;
+  transform: translateX(-74%) translateY(-3%) rotate(180deg);
+  top: 0px;
+  }
+  .bottommark-2::before{
+    height: 100%;
+
+  }
+
 }
