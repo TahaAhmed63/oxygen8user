@@ -44,7 +44,7 @@
     position: relative;
     left: 0;
     right: 0;
-    z-index: 999999;
+    z-index: 99;
     bottom: 0;
     overflow: visible;
     height: 100%;
@@ -56,28 +56,45 @@
   @media((min-width:764px)and (max-width:1024px)){
     .overlay-absolute-text {
       position: relative !important;
-      top: -250px !important;
-      left: 47% !important;
+      top: -531px !important;
+      left: 72% !important;
       transform: translate(-50%, -50%);
       text-align: center;
       color: #fff !important;
-      width: 100% !important;
+      width: 46% !important;
       z-index: 1;
+  }
+  .text-video-wrap h2 {
+    font-size: 44px !important; 
+
+  }
+    .bottommark-3::before {
+      content: "";
+      position: absolute;
+      top: 350%;
+      left: 46%;
+      right: 0%;
+      width: 100%;
+      height: 209%;
+      transform: translateX(-58%) translateY(432%) rotate(180deg);
     }
+    .bottom-mark{
+      transform: translateX(-114%)translateY(138%) rotate(161deg) !important;
+    }
+    
   }
   
  
 @media((min-width:1025px)and (max-width:1440px)) {
-.overlay-absolute-text {
-    top: 70% !important;
+  .overlay-absolute-text {
+    top: 68% !important;
     position: absolute !important;
-    left: 70% !important;
+    left: 63% !important;
     transform: translate(-50%, -50%) !important;
     text-align: center;
     color: #fff;
- 
     z-index: 1;
-    width: 36% !important;
+    width: 62% !important;
 }
 
 }
@@ -89,7 +106,7 @@
   text-align: center;
   color: #fff;
 
-  z-index: 1;
+  z-index: 9999;
   width: 36% ;
 }
 .text-video-wrap p{
@@ -103,7 +120,7 @@
   .text-video-wrap h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    font-size: 37px;
+    font-size: 67px;
     color: white;
     text-align: left;
     margin-left: 10px;
@@ -171,6 +188,9 @@
   .home-main{
     height: 75vh !important;
   }
+  .text-video-wrap h2{
+    font-size: 25px;
+  }
   .video-container{
     width: 100%;
     height: 75vh;
@@ -184,6 +204,29 @@
     top: -198px !important;
     width: 100%;
 }
+.bottommark-3::before {
+  content: "";
+  position: absolute;
+  top: 350%;
+  left: 1%;
+  right: 0%;
+  width: 100%;
+  height: 209%;
+  transform: translateX(-2%) translateY(302%) rotate(180deg);
+}
+.bottom-mark{
+  transform: translateX(-82%)translateY(40%) rotate(161deg) !important;
+  }
+  .bottommark-2::before {
+    content: "";
+    position: relative;
+    top: 35%;
+    display: block;
+    left: 101.5%;
+    width: 57%;
+    height: 209%;
+    transform: translateX(-80%) translateY(89%) rotate(360deg);
+  }
 
 }
 .para-wrap {
@@ -221,8 +264,11 @@ text-align: left;
   .overlay-absolute-text {
     left: 50% !important;
     position: relative !important;
-    top: -259px !important;
+    top: -40vh !important;
     width: 100%;
+}
+.text-video-wrap h2{
+  font-size: 26px;
 }
   .para-wrap{
     padding: 0px  ;
@@ -233,19 +279,76 @@ text-align: left;
   .video-container {
     height: 80vh;
 }
+
+.bottom-mark {
+  transform: translateX(-100%)translateY(18%) rotate(146deg) !important;
+}
+.bottommark-2::before {
+  content: "";
+  position: relative;
+  top: 35%;
+  display: block;
+  left: 101.5%;
+  width: 57%;
+  height: 209%;
+  transform: translateX(-80%) translateY(47%) rotate(360deg);
+}
+.bottommark-3::before {
+  transform: translateX(-70%) translateY(111%) rotate(147deg);
+}
 }
 
 
-.bottom-mark{
-  
-    position: absolute;
-    bottom: 0;
-    left: 31%;
-    overflow: hidden;
-    /* left: -49%; */
-    transform: translateX(-114%)translateY(127%) rotate(180deg);
-    width: 100%;
-    height: 100%;
+
+.bottom-mark {
+  position: absolute;
+  bottom: 0;
+  left: 31%;
+  overflow: hidden;
+  /* left: -49%; */
+  transform: translateX(-114%)translateY(117%) rotate(161deg);
+  width: 100%;
+  height: 100%;
   background-image: url(./../../Assets/AboutImages/watermark.png);
 
+}
+
+@media (device-width: 820px) and (device-height: 1180px)  {
+  /* Styles for Samsung Galaxy ipad air */
+  .bottom-mark {
+    transform: translateX(-97%)translateY(55%) rotate(161deg) !important;
+}
+.bottommark-2::before{
+  height: 100% !important;
+}
+.bottommark-3::before{
+  height: 100% !important;
+  top: 0px !important;
+}
+}
+@media (device-width: 1440px) and (device-height: 566px) {
+  .bottom-mark{
+    transform: translateX(-114%)translateY(157%) rotate(161deg);
+  }
+}
+@media (device-width: 425px) and (device-height: 509px) {
+.bottom-mark{
+  transform: translateX(-100%)translateY(46%) rotate(146deg) !important;
+}
+}
+@media (device-width: 425px) and (device-height: 509px) {
+  .bottommark-3::before {
+    transform: translateX(-72%) translateY(329%) rotate(147deg);
+}
+}
+@media (device-width: 375px) and (device-height: 509px) {
+  .bottommark-3::before {
+    transform: translateX(-72%) translateY(294%) rotate(147deg);
+}
+}
+@media (device-width: 768px) and (device-height: 1024px) {
+  .bottommark-3::before{
+    top: 0px;
+    transform: translateX(-58%) translateY(152%) rotate(180deg);
+  }
 }

@@ -29,7 +29,7 @@ Control your stress.</h2>
 <p>Micro-regulation tools for stress. Any time, anywhere.</p>
           </div>
      </div>
-     <div className="bottom-mark"></div>
+   <div className="bottom-mark"></div> 
      </>
    
 

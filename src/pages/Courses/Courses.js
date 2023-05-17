@@ -66,7 +66,7 @@ const courseApi = async () => {
      
     <Col md={12} sm={12}>
         <div className="headwrapabout">
-           <h1>Cources</h1>
+           <h1>Courses</h1>
         </div>
     </Col>
 

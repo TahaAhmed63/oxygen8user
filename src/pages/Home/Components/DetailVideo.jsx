@@ -10,9 +10,9 @@ export const DetailVideo = () => {
 <>
 
 <section className='Home-detail'>
-
-<Container fluid>
 <div className="bottommark-2"></div> 
+<Container fluid>
+
   <Container>
     <Row className='flex-direction-column'>
     
