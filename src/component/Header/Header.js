@@ -2,9 +2,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 // import NavDropdown from 'react-bootstrap/NavDropdown';
-import myLogo from "./Logooxygen.png";
+import myLogo from "./../../Assets/AboutImages/Oxygen icon.png"
 import Button from "react-bootstrap/Button";
 import { useNavigate, Link } from "react-router-dom";
+
 function Header() {
   const navigate = useNavigate();
   const token = localStorage.getItem("accesstoken");
@@ -21,10 +22,10 @@ function Header() {
     <Navbar style={{ backgroundColor: "transparent" }} expand="lg">
       <Container>
         <Link to="/">
-          <img src={myLogo} alt="" width="80" height="80" />
+          <img src={myLogo} alt="" width="100" height="auto" />
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" style={{ textAlign: "center" }}>
+        <Navbar.Collapse id="basic-navbar-nav" style={{ textAlign: "center",zindex:9999 }}>
           <Nav className="mx-auto">
           <Link
               to="/"
