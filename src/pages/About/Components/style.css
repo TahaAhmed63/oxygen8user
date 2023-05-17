@@ -20,8 +20,8 @@
 
 }
 .img-wrap img{
-    width: 80%;
-    height: 250px;
+    width: 100%;
+    height: 350px;
 }
 .owner1{
     width: 80%;
@@ -62,21 +62,51 @@
             text-align: left;
             font-family: Inter,sans-serif;
         }
-        .owner1{
-            width: 100%;
-            height: auto;  
+        .owner1-wrap{
+            width: 50%;
+        }
+        .owner2-wrap{
+            width: 50%;
+        } 
+      
+        .owner2 {
+            width: 80%;
+            height: 100% !important;
         }
         .img-wrap img {
             width: 100%;
             height: 250px;
         }
+        .owner-image-wrap{
+            gap: 0px !important;
+        }
+        .both-btn{
+            margin-left: 0px;
+        }
+        .bottommark-4::before{
+            display: none !important; 
+        }
+
 }
+.bottommark-4{
+    position: absolute;
+    bottom: 0;
+    width: 88%;
+    height: 50%;
+  }
 @media(min-width:768px){
     .img-wrap{
         width: 100%;
     }
 
+
 }
+/* .img-wrap {
+    display: flex;
+    width: 100%;
+    margin: 5px auto;
+} */
+
 .img-wrap {
     display: flex;
     width: 100%;
@@ -106,7 +136,7 @@
 }
 .para-wrap-about p {
     font-size: 20px;
-    line-height: 46px;
+    line-height: 41px;
     color: white;
     text-align: left;
     font-family: Inter,sans-serif;
@@ -122,9 +152,18 @@
         font-size: 16px;
         line-height: 31px;
     }
- 
+
 }
 
+@media((min-width:769px)and (max-width:1024px)){
+    .both-btn {
+        margin-left: 1.7rem !important;
+
+    }
+    .button-wrap{
+        gap: 2em !important;
+    }
+}
 @media(max-width:768px){
     .para-wrap-about p{
         font-size: 14px;
@@ -168,3 +207,155 @@ margin-left: 5rem;
     
     
 }
+
+.bottommark-4::before {
+    content: "";
+    position: relative;
+    display: block;
+    top: 150%;
+    left: 1%;
+    right: 0%;
+    width: 100%;
+    height: 150%;
+    transform: translateX(-20%) translateY(100%) rotate(360deg) !important;
+    background-image: url(./../../../Assets/AboutImages/watermark.png);
+    background-repeat: no-repeat;
+}
+  @media (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles for iPhone 6/7/8 */
+    .bottommark-4::before {
+        transform: translateX(-58%) translateY(-78%) rotate(383deg) !important;
+    }
+  
+  }
+  @media (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+    /* Styles for iPhone 6/7/8 Plus */
+    .bottommark-4::before {
+        transform: translateX(-55%) translateY(-85%) rotate(360deg) !important;  }
+  }
+  @media (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    /* Styles for iPhone X/XS/11 Pro */
+    .bottommark-4::before {
+        transform: translateX(-55%) translateY(-85%) rotate(360deg) !important;  }
+  }
+  @media (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles for iPhone XR/11 */
+    .bottommark-4::before {
+        transform: translateX(-71%) translateY(-205%) rotate(374deg) !important;
+    }
+  }
+  @media (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+    /* Styles for iPhone XR/11 */
+    .bottommark-4::before {
+        transform: translateX(-55%) translateY(-85%) rotate(360deg) !important;  }
+  }
+  @media (device-width: 411px) and (device-height: 731px) and (-webkit-device-pixel-ratio: 2.625) {
+    /* Styles for Google Pixel 2 */
+    .bottommark-4::before {
+        transform: translateX(-55%) translateY(-85%) rotate(360deg) !important;  }
+  }
+  @media (device-width: 411px) and (device-height: 731px) and (-webkit-device-pixel-ratio: 2.625) {
+    /* Styles for Google Pixel 2 */
+    .bottommark-4::before {
+        transform: translateX(-55%) translateY(-85%) rotate(360deg) !important;  }
+  }
+  @media (device-width: 360px) and (device-height: 740px) and (-webkit-device-pixel-ratio: 4) {
+    /* Styles for Samsung Galaxy S9/S9+/S8/S8+ */
+    .bottommark-4::before {
+        transform: translateX(-55%) translateY(-85%) rotate(360deg) !important;  }
+  }
+  
+  @media (device-width: 412px) and (device-height: 915px)  {
+    /* Styles for Samsung Galaxy S9/S9+/S8/S8+ */
+    .bottommark-4::before {
+        transform: translateX(-55%) translateY(-85%) rotate(360deg) !important;  }
+  }
+  @media (device-width: 393px) and (device-height: 851px) {
+    .bottommark-4::before {
+        content: "";
+        position: absolute;
+        top: 350%;
+        left: 1%;
+        right: 0%;
+        width: 122%;
+        height: 209%;
+        transform: translateX(-20%) translateY(-99%) rotate(360deg) !important;
+        background-image: url(http://localhost:3000/static/media/watermark.abf6a66….png);
+        background-repeat: no-repeat;
+    }
+
+  }
+  @media (device-width: 360px) and (device-height: 640px)  {
+    /* Styles for Samsung Galaxy S9/S9+/S8/S8+ */
+    .bottommark-4::before {
+        transform: translateX(-58%) translateY(-74%) rotate(383deg) !important;
+    }
+  }
+  @media (device-width: 1440px) and (device-height: 566px){
+    .bottommark-4::before {
+        transform: translateX(-25%) translateY(197%) rotate(360deg) !important;
+        height: 121%;
+        width: 121%;
+    }
+}
+@media (device-width: 1024px) and (device-height: 509px){
+
+    .bottommark-4::before {
+        transform: translateX(-58%) translateY(-21%) rotate(-243deg) !important;
+        height: 86%;
+    }
+}
+@media (device-width: 320px) and (device-height: 509px){
+.bottommark-4::before{
+transform: translateX(-13%) translateY(-101%) rotate(390deg) !important;
+}
+}
+.owner2{
+    width: 80%;
+    height: auto;
+}
+
+@media (device-width: 768px) and (device-height: 509px){
+
+       .owner1-wrap{
+            width: 50%;
+        }
+        .owner2-wrap{
+            width: 50%;
+        } 
+
+        .owner2 {
+            width: 80%;
+            height: 100%;
+        }
+    }
+    .close-img{
+        --bs-gutter-x: 0.5rem !important;
+    }
+    /* @media (device-width: 768px) and (device-height: 509px){
+        .bottommark-4::before{
+            transform: translateX(-51%) translateY(-12%) rotate(360deg) !important;
+        }
+    }
+    @media (device-width: 390px) and (device-height:844px){
+        .bottommark-4::before{
+           display: none;
+        }
+    } */
+    @media (device-width: 1444px) and (device-height:679px){
+        .bottommark-4::before {
+            height: 100%;
+            transform: translateX(-20%) translateY(78%) rotate(360deg) !important;
+            top: 0%;
+        }}
+        @media(device-width:1316px) and (device-height:509px){
+            .bottommark-4::before{
+            transform: translateX(-20%) translateY(74%) rotate(360deg) !important;
+            }
+        }
+        @media(device-width:1441px) and (device-height:559px){
+            .bottommark-4::before{
+                transform: translateX(-20%) translateY(189%) rotate(360deg) !important;
+            }
+
+        }

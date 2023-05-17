@@ -8603,3 +8603,6 @@ p.checkout-coupon input[type=text]:focus {
   height: 100%;
 }
 /*# sourceMappingURL=style.css.map */
+.navbar{
+  z-index: 99999;
+}

@@ -47,7 +47,7 @@ export const AboutDetail = () => {
 <section className="About-image py-5">
         <Container fluid>
          <Container>
-             <Row>
+             <Row className='close-img'>
 
       
           
