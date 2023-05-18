@@ -9,6 +9,7 @@ export const AboutFullDetails = () => {
   return (
     <>
       <section className="main-about mt-5">
+      <div className="parent-container">
       <div className="bottommark-4"></div> 
           <Container>
     
@@ -83,7 +84,7 @@ export const AboutFullDetails = () => {
               </Row>
             </div>
           </Container>
-
+</div>
       </section>
     </>
   );
