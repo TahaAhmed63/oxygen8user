@@ -22,6 +22,7 @@ function Rounting() {
       <Route exact path="/videolibrary" element={<Playlist />} />
       <Route exact path="/subscription" element={<Subscription />} />
       <Route exact path="/consultant" element={<Consultant />} />
+
       <Route
         exact
         path="/coursedetail/:id"

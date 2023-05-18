@@ -6,7 +6,10 @@ export const LibraraySpan = () => {
     <>
 
     <section className="libraryspan">
-    <div className="bottommark-3"></div> 
+   <div className="parent-container">
+      <div className="bottommark-3"></div> 
+ 
+
         <div className="librarycontent-">
             <div className="library-head">
                 <h4>Try the Libraries for Free</h4>
@@ -21,7 +24,7 @@ export const LibraraySpan = () => {
                  </div>
                  </div>
         </div>
-        
+        </div>
         </section>    
     </>
   )
