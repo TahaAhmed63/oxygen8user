@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Footer from '../../component/Footer/Footer'
 import Header from '../../component/Header/Header'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -9,6 +9,7 @@ import { ColorRing } from "react-loader-spinner";
 import "./../About/Components/style.css"
 import {Row,Col} from "react-bootstrap"
 
+import { Contact2 } from '../Home/Components/Contact2';
 const Contact = () => {
    const [name,setName]=useState()
    const [email,setEmail]=useState()
@@ -238,7 +239,7 @@ const Contact = () => {
                </div>
             </div> */}
          {/* </section> */}
-
+<Contact2/>
         <Footer/>
 
     </div>

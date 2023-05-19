@@ -12,6 +12,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import "./../../../src/pages/About/Components/style.css"
 import {Row,Col} from 'react-bootstrap'
+import { Contact2 } from "../Home/Components/Contact2";
 const Subscription = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -258,7 +259,7 @@ const Subscription = () => {
           </div>
         </div>
       </section>
-
+<Contact2/>
       <Footer />
     </div>
   );

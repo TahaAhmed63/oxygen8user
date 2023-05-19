@@ -86,6 +86,40 @@
         .bottommark-4::before{
          transform: translateX(-58%) translateY(-60%) rotate(180deg);
         }
+        .bottommark-5::before{
+            transform: translateX(-46%) translateY(-117%) rotate(180deg);
+        }
+        .list .dot{
+            font-size: 22px !important;
+        }
+        .owner3{
+            width: 80% !important;
+            height: auto;
+        }
+        .owner3-image-wrap{
+            flex-direction: column !important;
+        }
+        .list-item-corperate{
+        
+        justify-content: center;
+        }
+        .list-head{
+            text-align: center !important;
+        }
+        .list .dot{
+            text-align: center !important;
+        }
+        .corphead h3 {
+            color: #317C74;
+            font-size: 17px !important;
+            line-height: 34px !important;
+            font-family: Inter,sans-serif;
+        }
+  .list .dash{
+    text-align: center !important;
+  }
+  
+ 
 
 }
 .bottommark-4{
@@ -182,11 +216,19 @@
     justify-content: center;
     gap: 4em;
 }
-.button-about-1{
+.button-about-3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 100%;
+}
+.button-about-1 {
     width: 200px;
     height: 60px;
-    font-size: 17px;
-
+    font-size: 12px !important;
+    padding: 10px;
 }
 .both-btn{
 margin-left: 5rem;
@@ -206,6 +248,19 @@ margin-left: 5rem;
     display: flex;
     
     
+}
+.button-about-3 button {
+    width: 187px;
+    height: 49px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    background-color: beige;
+    color: #317C74;
+    display: flex;
 }
 
 .bottommark-4::before {
@@ -370,3 +425,129 @@ margin-left: 5rem;
         }
         
 
+        .corperate-head{
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+            background: transparent;
+        }
+        .corp-head-wrap{
+            display:flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+        }
+        .corphead{
+            text-align: left;
+            width: 100%;
+
+        }
+        .corphead h3{
+            color: #317C74;
+            font-size: 35px;
+            line-height: 45px;
+            font-family: Inter,sans-serif;
+        }
+        .para-corp{
+            width: 100%;
+            text-align: left;
+        }
+        .para-corp p{
+              color: #317C74;
+              font-size: 16px;
+              font-weight: 600;
+        }
+        .owner3{
+            width: 100%;
+            height: 100%;
+
+        }
+        .list-item-corperate{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+        }
+        .list-head{
+            text-align: left;
+        }
+        .list-head h4{
+            font-size: 35px;
+            color: rgba(255, 255, 255, 0.828);
+        }
+        
+      .list{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
+      .dot::before {
+        content: ".";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        color: rgba(255, 255, 255, 0.828);
+        font-size: 54px;
+    }
+    .list .dot{
+        text-align: left;
+        font-size: 30px;
+        color: rgba(255, 255, 255, 0.828);
+        font-family: Inter,sans-serif;
+     
+        margin-bottom: 5px !important;
+    }
+    .dash::before{
+        content: "-";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        color: rgba(255, 255, 255, 0.828);
+        font-size: 24px;
+    }
+    .list .dash{
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: rgba(255, 255, 255, 0.828);
+        text-align: left;
+        
+    }
+    .btn-contact{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        height: 100%;
+    }
+    .owner3-image-wrap {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        gap: 20px;
+    }
+    .owner3-wrap{
+        width: 100% !important;
+    }
+
+    .bottommark-5 {
+        position: absolute;
+        bottom: 0;
+        width: 88vw;
+        height: 50vw;
+    }
+    .bottommark-5::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 1%;
+        display: block;
+        transform: translateX(-69%) translateY(-103%) rotate(180deg);
+        width: 200%;
+        height: 628%;
+        /* transform: translateX(-46%) translateY(-117%) rotate(180deg); */
+        background-image: url(../../../../src/Assets/AboutImages/watermark.png);
+        background-repeat: no-repeat;
+    }

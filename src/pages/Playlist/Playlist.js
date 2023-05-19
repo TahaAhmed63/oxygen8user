@@ -9,6 +9,7 @@ import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import VideoCardSkeleton from "../../component/Skeleton/VideoCardSkeleton";
 import "./../../../src/pages/About/Components/style.css"
 import {Row,Col} from 'react-bootstrap'
+import { Contact2 } from "../Home/Components/Contact2";
 
 const Playlist = () => {
   const [loading, setLoading] = useState(false);
@@ -84,7 +85,9 @@ const Playlist = () => {
           </div>
         </div>
       </section>
+      <Contact2/>
       <Footer />
+  
     </div>
   );
 };
