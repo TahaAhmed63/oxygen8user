@@ -9,6 +9,7 @@ import BaseUrl from '../../component/BaseUrl/BaseUrl'
 import CardSkeleton from '../../component/Skeleton/CardSkeleton'
 import "./../About/Components/style.css"
 import { Row, Col } from "react-bootstrap"
+import { Contact2 } from '../Home/Components/Contact2';
 
 const Courses = () => {
 
@@ -97,7 +98,7 @@ const Courses = () => {
 
             </div>
          </section>
-
+<Contact2/>
          <Footer />
 
       </div>

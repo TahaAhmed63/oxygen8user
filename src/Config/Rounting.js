@@ -10,6 +10,8 @@ import Subscription from "../pages/Subscription/Subscription";
 import VideoLibraryDetail from "../pages/VideoLibraryDetail/VideoLibraryDetail";
 import About from "../pages/About/About";
 import Consultant from "../pages/Consultant/Consultant";
+import Coorperate from "../pages/Corperate/Corperate";
+
 
 function Rounting() {
   
@@ -22,6 +24,10 @@ function Rounting() {
       <Route exact path="/videolibrary" element={<Playlist />} />
       <Route exact path="/subscription" element={<Subscription />} />
       <Route exact path="/consultant" element={<Consultant />} />
+
+      <Route exact path="/corperate" element={<Coorperate/>}/>
+
+     
 
       <Route
         exact

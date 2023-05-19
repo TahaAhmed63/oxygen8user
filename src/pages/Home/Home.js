@@ -8,7 +8,7 @@ import Header from "../../component/Header/Header";
 // import { useState, useEffect } from "react";
 // import BaseUrl from "../../component/BaseUrl/BaseUrl";
 // import CardSkeleton from "../../component/Skeleton/CardSkeleton";
-import { Contact } from "./Components/Contact";
+import { Contact2 } from "./Components/Contact2";
 import {Col} from 'react-bootstrap'
 import mylogo from './Fav.png'
 
@@ -219,7 +219,7 @@ function Home() {
 <DetailVideo/>
 <Blogs/>
 <LibraraySpan/>
-<Contact/>
+<Contact2/>
 
       {/* <section className="course__area pt-115 pb-120 grey-bg">
         <div className="container">

@@ -6,9 +6,10 @@ import {BsInstagram} from 'react-icons/bs'
 import Form from 'react-bootstrap/Form';
 import contactlogo  from  "./../Fav.png"
 import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 
-export const Contact = () => {
+export const Contact2 = () => {
   return (
  <>
     <section className="contact">
