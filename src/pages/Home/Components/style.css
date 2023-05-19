@@ -650,5 +650,7 @@ form button {
     flex-direction: row;
     align-items: center;
 }
-
+.dropdown .dropbtn{
+  font-size: 15px !important;
+}
 }

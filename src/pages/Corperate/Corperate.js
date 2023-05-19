@@ -5,7 +5,10 @@ import "./../About/Components/style.css"
 import {Container, Row, Col } from "react-bootstrap"
 import owner3 from "./../../../src/Assets/AboutImages/Ben-Conference-From-Left.png"
 import {Contact2} from '../Home/Components/Contact2';
+import { useNavigate } from 'react-router-dom';
  const Coorperate = () => {
+
+  const navigate = useNavigate();
   return (
    <>
    
@@ -108,7 +111,9 @@ import {Contact2} from '../Home/Components/Contact2';
 </Row>
 </div>
 <div className=' button-about-3'>
-            <button style={{background:"#fff",color:"#317C74"}}>Contact</button>
+            <button   onClick={() => {
+                            navigate("/contact");
+                          }} style={{background:"#fff",color:"#317C74"}}>Contact</button>
           </div>
 </Container>
 </section>

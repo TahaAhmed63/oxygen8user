@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import owner1 from "./../../../Assets/AboutImages/Ben-In-Front-Of-Roll-Mats.png";
 import owner2 from "./../../../Assets/AboutImages/Ben2.png"
 import { useNavigate } from "react-router";
+
 export const AboutFullDetails = () => {
   const navigate = useNavigate();
   return (
@@ -72,6 +73,7 @@ export const AboutFullDetails = () => {
                         <button
                           onClick={() => {
                             navigate("/videolibrary");
+                            console.log("click")
                           }}
                         >
                           {" "}
