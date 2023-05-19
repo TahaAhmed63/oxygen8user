@@ -232,6 +232,7 @@
 }
 .both-btn{
 margin-left: 5rem;
+z-index: 999999;
 }
 .button-about-1 button{
  
