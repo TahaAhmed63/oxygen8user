@@ -4,7 +4,7 @@ import Header from "../../component/Header/Header";
 // import { Link } from "react-router-dom";
 import { AboutDetail } from "./Components/AboutDetail";
 import { AboutFullDetails } from "./Components/AboutFullDetails";
-import { Contact } from "../Home/Components/Contact";
+import { Contact2 } from "../Home/Components/Contact2";
 
 const About = () => {
   return (
@@ -15,7 +15,7 @@ const About = () => {
       <AboutFullDetails/>
 
 
-      <Contact/>
+      <Contact2/>
    
 
       {/* <section

@@ -10,6 +10,9 @@ import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import CardSkeleton from "../../component/Skeleton/CardSkeleton";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import "./../../../src/pages/About/Components/style.css"
+import {Row,Col} from 'react-bootstrap'
+import { Contact2 } from "../Home/Components/Contact2";
 const Subscription = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -86,7 +89,7 @@ const Subscription = () => {
     <div>
       <Header />
 
-      <section
+      {/* <section
         className="page__title-area page__title-height page__title-overlay d-flex align-items-center"
         style={{
           background: "url('/assets/img/page-title/yoga4.jpg')",
@@ -104,7 +107,20 @@ const Subscription = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+        <section className="AboutPage">
+            <Row>
+
+               <Col md={12} sm={12}>
+                  <div className="headwrapabout">
+                     <h1>Video Library</h1>
+                  </div>
+               </Col>
+
+
+            </Row>
+
+         </section>
 
       <section className="course__area pt-120 pb-120">
         <div className="container">
@@ -243,7 +259,7 @@ const Subscription = () => {
           </div>
         </div>
       </section>
-
+<Contact2/>
       <Footer />
     </div>
   );

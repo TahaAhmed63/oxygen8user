@@ -17,6 +17,7 @@ import * as Yup from "yup";
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
 import Swal from "sweetalert2";
+import { Contact2 } from "../Home/Components/Contact2";
 
 const locales = {
   "en-US": enUS,
@@ -244,6 +245,7 @@ const Consultant = () => {
           )}
         </Formik>
       </Modal>
+      <Contact2/>
       <Footer />
     </>
   );

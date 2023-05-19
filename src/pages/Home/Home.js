@@ -8,7 +8,7 @@ import Header from "../../component/Header/Header";
 // import { useState, useEffect } from "react";
 // import BaseUrl from "../../component/BaseUrl/BaseUrl";
 // import CardSkeleton from "../../component/Skeleton/CardSkeleton";
-import { Contact } from "./Components/Contact";
+import { Contact2 } from "./Components/Contact2";
 import {Col} from 'react-bootstrap'
 import mylogo from './Fav.png'
 
@@ -207,8 +207,7 @@ function Home() {
  
         <div className="para-wrap">
             <p>
-            Whether you are looking for stress or anxiety management, burnout recovery, or resilience building, Oxygen8 offers a comprehensive and integrative approach to dealing with the stresses of life. We offer you the tools to directly regulate your nervous system in both the short and long term using Conscious Nervous System Feedback (CNSF) exercises. These methods become an arsenal of quick-fire techniques that cover you anytime, anywhere.
-            </p>
+            Whether you are looking for stress or anxiety management, burnout recovery, or resilience building, Oxygen8 offers a comprehensive and integrative approach to dealing with the stresses of life. We offer you the tools to directly regulate your nervous system in both the short and long term using Conscious Nervous System Feedback (CNSF) and Optimising exercises. These methods become an arsenal of quick-fire techniques that cover you anytime, anywhere.            </p>
           </div>
         
         </Col>
@@ -220,7 +219,7 @@ function Home() {
 <DetailVideo/>
 <Blogs/>
 <LibraraySpan/>
-<Contact/>
+<Contact2/>
 
       {/* <section className="course__area pt-115 pb-120 grey-bg">
         <div className="container">

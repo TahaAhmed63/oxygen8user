@@ -10,7 +10,9 @@ export const DetailVideo = () => {
 <>
 
 <section className='Home-detail'>
+
 <div className="bottommark-2"></div> 
+
 <Container fluid>
 
   <Container>
@@ -38,6 +40,7 @@ export const DetailVideo = () => {
     </Row>
 </Container>
 </Container>
+
 </section>
 
 

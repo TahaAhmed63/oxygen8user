@@ -7,6 +7,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import VideoCardSkeleton from "../../component/Skeleton/VideoCardSkeleton";
+import "./../../../src/pages/About/Components/style.css"
+import {Row,Col} from 'react-bootstrap'
+import { Contact2 } from "../Home/Components/Contact2";
 
 const Playlist = () => {
   const [loading, setLoading] = useState(false);
@@ -42,7 +45,7 @@ const Playlist = () => {
   return (
     <div>
       <Header />
-      <section
+      {/* <section
         className="page__title-area page__title-height page__title-overlay d-flex align-items-center"
         style={{ background: "url('/assets/img/page-title/page-title.jpg')" }}
       >
@@ -55,7 +58,20 @@ const Playlist = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+               <section className="AboutPage">
+            <Row>
+
+               <Col md={12} sm={12}>
+                  <div className="headwrapabout">
+                     <h1>Video Library</h1>
+                  </div>
+               </Col>
+
+
+            </Row>
+
+         </section>
 
       <section className="course__area pt-120 pb-120">
         <div className="container">
@@ -69,7 +85,9 @@ const Playlist = () => {
           </div>
         </div>
       </section>
+      <Contact2/>
       <Footer />
+  
     </div>
   );
 };
