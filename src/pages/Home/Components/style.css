@@ -100,6 +100,9 @@
   .email-info h4 {
     font-size: 18px !important;
   }
+  .dropdown .dropbtn{
+    font-size: 15px !important;
+  }
   .email-info p {
     font-size: 16px;
   }
@@ -650,7 +653,5 @@ form button {
     flex-direction: row;
     align-items: center;
 }
-.dropdown .dropbtn{
-  font-size: 15px !important;
-}
+
 }
