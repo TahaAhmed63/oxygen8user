@@ -40,6 +40,30 @@ function Header() {
               Home
             </Link>
             <Link
+              to="/about"
+              style={{
+                fontSize: "18px",
+                color: "#337c75",
+                fontWeight: "500",
+                paddingRight: "25px",
+                textDecoration:"none"
+              }}
+            >
+              About
+            </Link>
+            <Link
+              to="/corperate"
+              style={{
+                fontSize: "18px",
+                color: "#337c75",
+                fontWeight: "500",
+                paddingRight: "25px",
+                textDecoration:"none"
+              }}
+            >
+              Corporate
+            </Link>
+            <Link
               to="/courses"
               style={{
                 fontSize: "18px",
@@ -51,18 +75,7 @@ function Header() {
             >
               Courses
             </Link>
-            <Link
-              to="/"
-              style={{
-                fontSize: "18px",
-                color: "#337c75",
-                fontWeight: "500",
-                paddingRight: "25px",
-                textDecoration:"none"
-              }}
-            >
-              Corporate
-            </Link>
+          
             <Link
               to="/consultant"
               style={{
@@ -75,18 +88,7 @@ function Header() {
             >
               Consultant
             </Link>
-            <Link
-              to="/about"
-              style={{
-                fontSize: "18px",
-                color: "#337c75",
-                fontWeight: "500",
-                paddingRight: "25px",
-                textDecoration:"none"
-              }}
-            >
-              About
-            </Link>
+     
             <Link
               to="/contact"
               style={{

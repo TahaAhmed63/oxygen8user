@@ -4,11 +4,13 @@ import { Container, Row, Col } from "react-bootstrap";
 import owner1 from "./../../../Assets/AboutImages/Ben-In-Front-Of-Roll-Mats.png";
 import owner2 from "./../../../Assets/AboutImages/Ben2.png"
 import { useNavigate } from "react-router";
+
 export const AboutFullDetails = () => {
   const navigate = useNavigate();
   return (
     <>
       <section className="main-about mt-5">
+      <div className="parent-container">
       <div className="bottommark-4"></div> 
           <Container>
     
@@ -71,6 +73,7 @@ export const AboutFullDetails = () => {
                         <button
                           onClick={() => {
                             navigate("/videolibrary");
+                            console.log("click")
                           }}
                         >
                           {" "}
@@ -83,7 +86,7 @@ export const AboutFullDetails = () => {
               </Row>
             </div>
           </Container>
-
+</div>
       </section>
     </>
   );
