@@ -1,129 +1,133 @@
-import React from 'react'
+import React from "react";
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
-import "./../About/Components/style.css"
-import {Container, Row, Col } from "react-bootstrap"
-import owner3 from "./../../../src/Assets/AboutImages/Ben-Conference-From-Left.png"
-import {Contact2} from '../Home/Components/Contact2';
-import { useNavigate } from 'react-router-dom';
- const Coorperate = () => {
-
+import "./../About/Components/style.css";
+import { Container, Row, Col } from "react-bootstrap";
+import owner3 from "./../../../src/Assets/AboutImages/Ben-Conference-From-Left.png";
+import { Contact2 } from "../Home/Components/Contact2";
+import { useNavigate } from "react-router-dom";
+const Coorperate = () => {
   const navigate = useNavigate();
   return (
-   <>
-   
-   <Header/>
-   <section className="AboutPage">
-            <Row>
-
-               <Col md={12} sm={12}>
-                  <div className="headwrapabout">
-                     <h1>Corperate</h1>
-                  </div>
-               </Col>
-
-
-            </Row>
-
-         </section>
-         <section className='corperate-head'>
+    <>
+      <Header />
+      <section className="AboutPage">
+        <Row>
+          <Col md={12} sm={12}>
+            <div className="headwrapabout">
+              <h1>Corporate</h1>
+            </div>
+          </Col>
+        </Row>
+      </section>
+      <section className="corperate-head">
         <Container>
-           <div className='corp-head-wrap'>
-            <div className='corphead'>
+          <div className="corp-head-wrap">
+            <div className="corphead">
               <h3>
-                "the uk has suffers a collective 23.3 MILLION stress-related sick days per year ."
+                "The UK suffers a collective 23.3 MILLION stress-related sick
+                days per year ."
               </h3>
             </div>
             <div className="para-corp">
-              <p>
-                 - Center of Ecnomic and Bussiness Research
-              </p>
+              <p>- Center of Ecnomic and Bussiness Research</p>
             </div>
-           </div>
+          </div>
         </Container>
-        
+      </section>
+      <section className="main-about mt-5">
+        <Container>
+          <div className="more-detail-wrap">
+            <Row>
+              <Col lg={4} md={4} sm={12}>
+                <div className="owner3-image-wrap">
+                  <div className="owner3-wrap">
+                    <img src={owner3} className="owner3" alt="" />
+                  </div>
 
-
-         </section>
-         <section className="main-about mt-5">
-         <Container>
-    
-    <div className="more-detail-wrap">
-      <Row>
-        <Col lg={4} md={4} sm={12}>
-          <div className="owner3-image-wrap">
-            <div className="owner3-wrap">
-              <img src={owner3} className="owner3" alt="" />
-            </div>
-        
-
-
-  <div className='list-item-corperate'>
-    <div className='list-head'>
-      <h4>Corperate Services:</h4>
-
-    </div>
-    <div className='list'>
-    <p className='dot'>Workshops for:</p>
-    <p className='dash'>Down-Regulation</p>
-    <p className='dash'>Resilience Building</p>
-    <p className='dash'>Sustainable Productivity</p>
-    <p className='dot'>Online Cources</p>
-    <p className='dot'>Online Libraries</p>
-    <p className='dot'>Physiology</p>
-    <div className='parent-container'>
-  <div className='bottommark-5'></div>
-</div>
-    </div>
-  </div>
+                  <div className="list-item-corperate">
+                    <div className="list-head">
+                      <h4>Corporate Services:</h4>
+                    </div>
+                    <div className="list">
+                      <p className="dot">Workshops for:</p>
+                      <p className="dash">Down-Regulation</p>
+                      <p className="dash">Resilience Building</p>
+                      <p className="dash">Sustainable Productivity</p>
+                      <p className="dot">Online Cources</p>
+                      <h6 className="dot">Online Libraries</h6>
+                      <h6 className="dot">Physiology</h6>
+                      <h6 className="withdot">Optimisation</h6>
+                      <h6 className="withdot">Presentations</h6>
+                      <div className="parent-container">
+                        <div className="bottommark-5"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Col>
+              <Col lg={7} md={8} sm={12}>
+                <div className="para-wrap-about mt-0">
+                  <p className="para-wrap-about-heading">
+                    Stress burnout and the associated mental health illnesses
+                    cost the UK economy an estimated <strong>£28ben</strong>{" "}
+                    each year...
+                  </p>
+                  <p className="para-wrap-about-para">
+                    ....and thats before we consider the personal impact its has
+                    no the welfare of employees. 1 in 5 employees have taken a
+                    day off due to excessive stress. yet 90% of those stated a
+                    deifferent reason to avoid any associated stigma. (Mind,
+                    2023)
+                    <br />
+                  </p>
+                  <br />
+                  <p className="para-wrap-about-para">
+                    We grow up learning how to push ourselve, but we are not
+                    taught how to come back down from these heightened and
+                    unsustainable states.
+                    <br />
+                  </p>
+                  <br/>
+                  <p className="para-wrap-about-para">
+                    I have curated Workshops and presentations that can be
+                    tailored to support employees' individuals needs. Oxygen8
+                    offer the tools and information needs. to build an arsenal
+                    of self-regulating techniques to manage stress levels. These
+                    techniques can be used discreetly throughtout the working
+                    day, but also be adapted to cover employees any time,
+                    anywhere. <br />
+                  </p>
+                  <br/>
+                  <p className="para-wrap-about-para">
+                    {" "}
+                    The methods use biofeedback in the form of CNSF and
+                    Physiology Optimisation to empower your employees resilience
+                    and influence over stress. with greater resilience come not
+                    only greater. health and wellness, but increased,
+                    sustainable productivity and efficiency.
+                    <br />
+                  </p>
+                </div>
+              </Col>
+            </Row>
           </div>
-        </Col>
-        <Col lg={7} md={8} sm={12}>
-          <div className="para-wrap-about mt-0">
-            <p>
-              My name is Ben Perham and am the Founder of
-              Oxygens - welcome! I left university with a First-Class
-              Honours degree in Mechanical Engineering, and had a
-              sucosssful six-year career designing and building
-              spacecraft. However, the long hours: and high pressure led
-              me 10 a signficant bumout, causing numerous health issues.
-              Overnight 1 went from working as a Lead Spacecraft
-              Production Enginser for a NASA project to not being able
-              to leave my bed. My nervous system became heavily
-              dysregulated and  had to contend with a range of health
-              problems that took years to recover from. In search of a
-              solution,  explored my recovery 2s  would a
-              systems-engineering problem.  tried a myriad of
-              science-based techniques alongside medical help Lo fix the
-              sues that medications ould not help with an essence
-              methods 1o control my stress and anxety 10 alow my body to
-              recover. now offer thoco techniques 26 3 comprohencive
-              arceni to provent others from burning out by better
-              regulating thei tress and buliding resilience using
-              Conscious Nervous System Feedback (CNS) protocols, whie
-              considering each cllents unique nervous system responses.
-              These micro-CNSF's are designed 10 ft In to your day
-              regardless of where you are or what time it is. 1hope they
-              are of benefit to you
-            </p>
+          <div className=" button-about-3">
+            <button
+              onClick={() => {
+                navigate("/contact");
+              }}
+              style={{ background: "#fff", color: "#317C74" }}
+            >
+              Contact
+            </button>
           </div>
-        </Col>
-</Row>
-</div>
-<div className=' button-about-3'>
-            <button   onClick={() => {
-                            navigate("/contact");
-                          }} style={{background:"#fff",color:"#317C74"}}>Contact</button>
-          </div>
-</Container>
-</section>
-    
-      
+        </Container>
+      </section>
 
-<Contact2/>
-   <Footer/>
-   
-   </>
-  )
-}
-export default Coorperate
+      <Contact2 />
+      <Footer />
+    </>
+  );
+};
+export default Coorperate;
