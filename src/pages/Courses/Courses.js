@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import BaseUrl from '../../component/BaseUrl/BaseUrl'
 import CardSkeleton from '../../component/Skeleton/CardSkeleton'
 import "./../About/Components/style.css"
-import { Row, Col } from "react-bootstrap"
+import { Row, Col,Container } from "react-bootstrap"
 import { Contact2 } from '../Home/Components/Contact2';
 
 const Courses = () => {
@@ -67,7 +67,12 @@ const Courses = () => {
 
                <Col md={12} sm={12}>
                   <div className="headwrapabout">
-                     <h1>Courses</h1>
+                  <h1> The Oxygen8 <em style={
+                      {
+                        fontSize: "12px",
+                            position: "relative",
+                            bottom: "2rem"}
+                     }>TM</em> Courses</h1>
                   </div>
                </Col>
 
@@ -75,8 +80,34 @@ const Courses = () => {
             </Row>
 
          </section>
+         <section style={{
+          marginTop:"4rem"
+        }} className="library-text">
+          <Container>
+            <Row>
+              
+              <Col md={12} xl={12} xs={12} xxl={12}>
+                <h3 style={{
+                  color:"#317C74",
+                  fontSize:"30px"
 
-         <section className="course__area pt-120 pb-120">
+                }}>Science Based  techniques to boost resilience,productivity or recovery  </h3>
+                <p style={{
+                  color:"#317C74",
+                  fontSize:"24px",
+                  lineHeight:"45px",
+                  textAlign:"left",
+                  marginLeft:"80px"
+
+                }}>"Learn up to date,proven biofeedback techniques for micro-regulation of stress ,anxiety , and overwhelm at anytime ,anywhere by complimenting with guided macro-changes you can optimise your body's resilience to stress and improve your overall health" </p>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+         <section className="course__area pt-120 pb-120" style={{
+backgroundColor:"#317C74",
+         }}>
             <div className="container">
 
                <div className="row">

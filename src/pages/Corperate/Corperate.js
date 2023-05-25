@@ -50,7 +50,7 @@ import { useNavigate } from 'react-router-dom';
     
     <div className="more-detail-wrap">
       <Row>
-        <Col lg={4} md={4} sm={12}>
+        <Col lg={4} xl={4} xxl={4} md={4} sm={12}>
           <div className="owner3-image-wrap">
             <div className="owner3-wrap">
               <img src={owner3} className="owner3" alt="" />
@@ -71,6 +71,8 @@ import { useNavigate } from 'react-router-dom';
     <p className='dot'>Online Cources</p>
     <p className='dot'>Online Libraries</p>
     <p className='dot'>Physiology</p>
+    <p className='ml-14 pt-5'>Optimisation</p>
+    <p className='ml-14 pt-5'>Presentations</p>
     <div className='parent-container'>
   <div className='bottommark-5'></div>
 </div>
@@ -78,35 +80,49 @@ import { useNavigate } from 'react-router-dom';
   </div>
           </div>
         </Col>
-        <Col lg={7} md={8} sm={12}>
-          <div className="para-wrap-about mt-0">
-            <p>
-              My name is Ben Perham and am the Founder of
-              Oxygens - welcome! I left university with a First-Class
-              Honours degree in Mechanical Engineering, and had a
-              sucosssful six-year career designing and building
-              spacecraft. However, the long hours: and high pressure led
-              me 10 a signficant bumout, causing numerous health issues.
-              Overnight 1 went from working as a Lead Spacecraft
-              Production Enginser for a NASA project to not being able
-              to leave my bed. My nervous system became heavily
-              dysregulated and  had to contend with a range of health
-              problems that took years to recover from. In search of a
-              solution,  explored my recovery 2s  would a
-              systems-engineering problem.  tried a myriad of
-              science-based techniques alongside medical help Lo fix the
-              sues that medications ould not help with an essence
-              methods 1o control my stress and anxety 10 alow my body to
-              recover. now offer thoco techniques 26 3 comprohencive
-              arceni to provent others from burning out by better
-              regulating thei tress and buliding resilience using
-              Conscious Nervous System Feedback (CNS) protocols, whie
-              considering each cllents unique nervous system responses.
-              These micro-CNSF's are designed 10 ft In to your day
-              regardless of where you are or what time it is. 1hope they
-              are of benefit to you
-            </p>
-          </div>
+        <Col lg={7} xl={7} xxl={7} md={8} sm={12}>
+        <div className="para-wrap-about mt-0">
+                  <p className="para-wrap-about-heading">
+                    Stress burnout and the associated mental health illnesses
+                    cost the UK economy an estimated <strong>£28ben</strong>{" "}
+                    each year...
+                  </p>
+                  <p className="para-wrap-about-para">
+                    ....and thats before we consider the personal impact its has
+                    no the welfare of employees. 1 in 5 employees have taken a
+                    day off due to excessive stress. yet 90% of those stated a
+                    deifferent reason to avoid any associated stigma. (Mind,
+                    2023)
+                    <br />
+                  </p>
+                  <br />
+                  <p className="para-wrap-about-para">
+                    We grow up learning how to push ourselve, but we are not
+                    taught how to come back down from these heightened and
+                    unsustainable states.
+                    <br />
+                  </p>
+                  <br/>
+                  <p className="para-wrap-about-para">
+                    I have curated Workshops and presentations that can be
+                    tailored to support employees' individuals needs. Oxygen8
+                    offer the tools and information needs. to build an arsenal
+                    of self-regulating techniques to manage stress levels. These
+                    techniques can be used discreetly throughtout the working
+                    day, but also be adapted to cover employees any time,
+                    anywhere. <br />
+                  </p>
+                  <br/>
+                  <p className="para-wrap-about-para">
+                    {" "}
+                    The methods use biofeedback in the form of CNSF and
+                    Physiology Optimisation to empower your employees resilience
+                    and influence over stress. with greater resilience come not
+                    only greater. health and wellness, but increased,
+                    sustainable productivity and efficiency.
+                    <br />
+                  </p>
+                </div>
         </Col>
 </Row>
 </div>

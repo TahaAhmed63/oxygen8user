@@ -24,9 +24,10 @@ function Video() {
 
      <div className="overlay-absolute-text">
           <div className="text-video-wrap">
-            <h2>Control your nervous system.
+            <h2 >Control your nervous system.</h2>
+            <h2 >
 Control your stress.</h2>
-<p>Micro-regulation tools for stress. Any time, anywhere.</p>
+<p >Micro-regulation tools for stress. Any time, anywhere.</p>
           </div>
      </div>
    <div className="bottom-mark"></div> 
