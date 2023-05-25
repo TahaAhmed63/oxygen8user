@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import VideoCardSkeleton from "../../component/Skeleton/VideoCardSkeleton";
 import "./../../../src/pages/About/Components/style.css"
-import {Row,Col} from 'react-bootstrap'
+import {Row,Col,Container} from 'react-bootstrap'
 import { Contact2 } from "../Home/Components/Contact2";
 
 const Playlist = () => {
@@ -64,7 +64,12 @@ const Playlist = () => {
 
                <Col md={12} sm={12}>
                   <div className="headwrapabout">
-                     <h1>Video Library</h1>
+                     <h1> The Oxygen8 <em style={
+                      {
+                        fontSize: "12px",
+                            position: "relative",
+                            bottom: "2rem"}
+                     }>TM</em> Library</h1>
                   </div>
                </Col>
 
@@ -72,6 +77,30 @@ const Playlist = () => {
             </Row>
 
          </section>
+        <section style={{
+          marginTop:"4rem"
+        }} className="library-text">
+          <Container>
+            <Row>
+              
+              <Col md={12} xl={12} xs={12} xxl={12}>
+                <h3 style={{
+                  color:"#317C74",
+                  fontSize:"44px"
+
+                }}>Guided session to influence your nervous system</h3>
+                <p style={{
+                  color:"#317C74",
+                  fontSize:"44px",
+                  lineHeight:"45px",
+                  textAlign:"left",
+                  marginLeft:"80px"
+
+                }}>the Video library offers accessible down-regulation performance-enhancing and anxiety management tools in the form of guided sessions. </p>
+              </Col>
+            </Row>
+          </Container>
+        </section>
 
       <section className="course__area pt-120 pb-120">
         <div className="container">
