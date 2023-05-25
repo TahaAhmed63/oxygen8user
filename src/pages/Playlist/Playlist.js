@@ -64,10 +64,12 @@ const Playlist = () => {
 
                <Col md={12} sm={12}>
                   <div className="headwrapabout">
-                     <h1> The Oxygen8 <em style={{
-"    font-size": "12px",
-   " position": "relative",
-    "bottom": "2rem"}}>TM</em> Library</h1>
+                     <h1> The Oxygen8 <em style={
+                      {
+                        "font-size": "12px",
+                           " position": "relative",
+                            "bottom": "2rem"}
+                     }>TM</em> Library</h1>
                   </div>
                </Col>
 
