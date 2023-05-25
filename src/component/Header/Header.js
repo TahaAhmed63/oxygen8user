@@ -86,7 +86,7 @@ function Header() {
                 textDecoration:"none"
               }}
             >
-              Consultant
+              Book
             </Link>
      
             <Link
@@ -109,7 +109,7 @@ function Header() {
                   color:"#337c75"
 
                 }}
-                >Video Library</Link>
+                > Library</Link>
                 <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content">

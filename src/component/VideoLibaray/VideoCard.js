@@ -50,7 +50,7 @@ const VideoCard = ({...item}) => {
                   </div>
                   <div className="course__btn">
                     <Link style={{textDecoration:"none",color:"#000"}} className="link-btn" to='/videolibrarydetail'>
-                      Know Details
+               Find Out More
                       <i className="far fa-arrow-right"></i>
                       <i className="far fa-arrow-right"></i>
                     </Link>

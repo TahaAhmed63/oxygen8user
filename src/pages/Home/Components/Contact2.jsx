@@ -39,7 +39,7 @@ export const Contact2 = () => {
                       </div>
                       <div className="email-info">
                       <h4>
-                      @Oxygen8_Breathwork
+                      @Oxygen8_Stress_Wellness
                                             </h4>
                       </div>
                   

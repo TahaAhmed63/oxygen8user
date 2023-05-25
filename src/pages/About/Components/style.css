@@ -42,6 +42,9 @@
 
         
         }
+        .list p{
+            text-align: center !important;
+        }
         .button-wrap{
             display: flex;
             width: 100%;
@@ -169,8 +172,8 @@
     height: 100%;
 }
 .para-wrap-about p {
-    font-size: 20px;
-    line-height: 41px;
+    font-size: 16px;
+    line-height: 33px;
     color: white;
     text-align: left;
     font-family: Inter,sans-serif;
@@ -184,7 +187,7 @@
 @media((min-width:756px)and (max-width:1024px)){
     .para-wrap-about p {
         font-size: 16px;
-        line-height: 31px;
+        line-height: 22px;
     }
 
 }
@@ -193,6 +196,9 @@
     .both-btn {
         margin-left: 1.7rem !important;
 
+    }
+    .bottommark-5::before{
+        transform: translateX(-34%) translateY(-95%) rotate(180deg) !important;
     }
     .button-wrap{
         gap: 2em !important;
@@ -244,7 +250,7 @@ z-index: 999999;
     border: none;
     border-radius: 50px;
     outline: none;
-    background-color: beige;
+    background-color: white;
     color: #317C74;
     display: flex;
     
@@ -270,9 +276,10 @@ z-index: 999999;
     top: 100%;
     left: 1%;
     display: block;
-    width: 100%;
-    height: 150%;
-    transform: translateX(-58%) translateY(-60%) rotate(180deg);
+    height: 200%;
+    transform: translateX(-89%) translateY(-97%) rotate(180deg) !important;
+    width: 176%;
+    background-size: 690px;
     background-image: url(./../../../../src/Assets/AboutImages/watermark.png);
     background-repeat: no-repeat;
 }
@@ -356,18 +363,18 @@ z-index: 999999;
   }
   @media (device-width: 1440px) and (device-height: 566px){
     .bottommark-4::before {
-        height: 121%;
-           transform: translateX(-58%) translateY(-60%) rotate(180deg) !important;
-
-        width: 121%;
+        height: 200%;
+        transform: translateX(-89%) translateY(-97%) rotate(180deg) !important;
+        width: 176%;
+        background-size: 690px;
     }
 }
 @media (device-width: 1024px) and (device-height: 509px){
 
     .bottommark-4::before {
-           transform: translateX(-58%) translateY(-60%) rotate(180deg) !important;
-
-        height: 86%;
+        transform: translateX(-71%) translateY(-101%) rotate(180deg) !important;
+        height: 140%;
+        background-size: 690px;
     }
 }
 @media (device-width: 320px) and (device-height: 509px){
@@ -496,7 +503,7 @@ z-index: 999999;
         color: rgba(255, 255, 255, 0.828);
         font-family: Inter,sans-serif;
      
-        margin-bottom: 5px !important;
+        margin-bottom: 13px !important;
     }
     .dash::before{
         content: "-";
@@ -540,15 +547,25 @@ z-index: 999999;
         height: 50vw;
     }
     .bottommark-5::before {
+        background-image: url(./../../../Assets/AboutImages/watermark.png);
+        background-repeat: no-repeat;
         content: "";
+        background-size: 1306px;
+        display: block;
+        height: 271%;
+        left: 1%;
         position: absolute;
         top: 100%;
-        left: 1%;
-        display: block;
-        transform: translateX(-69%) translateY(-103%) rotate(180deg);
-        width: 200%;
-        height: 628%;
-        /* transform: translateX(-46%) translateY(-117%) rotate(180deg); */
-        background-image: url(../../../../src/Assets/AboutImages/watermark.png);
-        background-repeat: no-repeat;
+        transform: translateX(-48%) translateY(-95%) rotate(180deg);
+        width: 142%;
+    }
+    .list p {
+        text-align: left;
+        font-size: 30px;
+        color: rgba(255, 255, 255, 0.828);
+        font-family: Inter,sans-serif;
+        margin-bottom: 13px !important;
+    }
+    .list .ml-14{
+        margin-left: 14px;
     }
