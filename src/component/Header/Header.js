@@ -101,21 +101,24 @@ function Header() {
             >
               Contact
             </Link>
-            <div class="dropdown">
-              <button class="dropbtn">
+            {/* <div class="dropdown"> */}
+              {/* <button class="dropbtn"> */}
                 <Link to="/videolibrary"
                 style={{
-                  textDecoration:"none",
-                  color:"#337c75"
+                  fontSize: "18px",
+                  color: "#337c75",
+                  fontWeight: "500",
+                  paddingRight: "25px",
+                  textDecoration:"none"
 
                 }}
                 > Library</Link>
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
+                {/* <i class="fa fa-caret-down"></i>
+              </button> */}
+              {/* <div class="dropdown-content">
                 <Link to="/subscription">Subscription</Link>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </Nav>
 
           {token && (
