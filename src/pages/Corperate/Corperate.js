@@ -50,7 +50,7 @@ import { useNavigate } from 'react-router-dom';
     
     <div className="more-detail-wrap">
       <Row>
-        <Col lg={4} md={4} sm={12}>
+        <Col lg={4} xl={4} xxl={4} md={4} sm={12}>
           <div className="owner3-image-wrap">
             <div className="owner3-wrap">
               <img src={owner3} className="owner3" alt="" />
@@ -71,6 +71,8 @@ import { useNavigate } from 'react-router-dom';
     <p className='dot'>Online Cources</p>
     <p className='dot'>Online Libraries</p>
     <p className='dot'>Physiology</p>
+    <p className='ml-14 pt-5'>Optimisation</p>
+    <p className='ml-14 pt-5'>Presentations</p>
     <div className='parent-container'>
   <div className='bottommark-5'></div>
 </div>
@@ -78,7 +80,7 @@ import { useNavigate } from 'react-router-dom';
   </div>
           </div>
         </Col>
-        <Col lg={7} md={8} sm={12}>
+        <Col lg={7} xl={7} xxl={7} md={8} sm={12}>
           <div className="para-wrap-about mt-0">
             <p>
               My name is Ben Perham and am the Founder of

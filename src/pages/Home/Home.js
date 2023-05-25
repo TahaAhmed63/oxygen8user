@@ -186,7 +186,7 @@ function Home() {
   
       <Container>
         <Row  >
-          <Col md={12} xs={12}>
+          <Col md={12} xs={12} xl={12} xxl={12}>
    
 
             <div className="header-wrap">
@@ -203,7 +203,7 @@ function Home() {
           
           
           </Col>
-        <Col md={12}>
+        <Col md={12} xs={12} xl={12} xxl={12}>
  
         <div className="para-wrap">
             <p>

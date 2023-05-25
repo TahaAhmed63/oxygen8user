@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import { Container, Row, Col } from "react-bootstrap";
 import owner1 from "./../../../Assets/AboutImages/Ben-In-Front-Of-Roll-Mats.png";
-import owner2 from "./../../../Assets/AboutImages/Ben2.png"
+// import owner2 from "./../../../Assets/AboutImages/Ben2.png"
 import { useNavigate } from "react-router";
 
 export const AboutFullDetails = () => {
@@ -17,44 +17,37 @@ export const AboutFullDetails = () => {
             <div className="more-detail-wrap">
               <Row>
                 <Col lg={4} md={4} sm={12}>
-                  <div className="owner-image-wrap">
+            
                     <div className="owner1-wrap">
                       <img src={owner1} className="owner1" alt="" />
                     </div>
-                    <div className="owner2-wrap">
+                    {/* <div className="owner2-wrap">
                       <img src={owner2} className="owner2" alt="" />
-                    </div>
-                  </div>
+                    </div> */}
+            
                 </Col>
                 <Col lg={7} md={8} sm={12}>
                   <div className="para-wrap-about">
                     <p>
-                      My name is Ben Perham and am the Founder of
-                      Oxygens - welcome! I left university with a First-Class
-                      Honours degree in Mechanical Engineering, and had a
-                      sucosssful six-year career designing and building
-                      spacecraft. However, the long hours: and high pressure led
-                      me 10 a signficant bumout, causing numerous health issues.
-                      Overnight 1 went from working as a Lead Spacecraft
-                      Production Enginser for a NASA project to not being able
-                      to leave my bed. My nervous system became heavily
-                      dysregulated and  had to contend with a range of health
-                      problems that took years to recover from. In search of a
-                      solution,  explored my recovery 2s  would a
-                      systems-engineering problem.  tried a myriad of
-                      science-based techniques alongside medical help Lo fix the
-                      sues that medications ould not help with an essence
-                      methods 1o control my stress and anxety 10 alow my body to
-                      recover. now offer thoco techniques 26 3 comprohencive
-                      arceni to provent others from burning out by better
-                      regulating thei tress and buliding resilience using
-                      Conscious Nervous System Feedback (CNS) protocols, whie
-                      considering each cllents unique nervous system responses.
-                      These micro-CNSF's are designed 10 ft In to your day
-                      regardless of where you are or what time it is. 1hope they
-                      are of benefit to you
+                    Welcome! My name is Ben Perham and I am the Founder of Oxygen8.
+                    <br/>
+                    
+                    <br/>
+
+I left university with a First-Class Honours degree in Mechanical Engineering, and had a successful six-year career designing and building spacecraft. However, the long hours and high pressure led me to a significant burnout, causing numerous health issues. Overnight I went from working on a spacecraft for a NASA to not being able to leave my bed.
+<br/>
+<br/>
+My nervous system became heavily dysregulated and I had to contend with a range of health problems that took years to recover from. In search of a solution, I explored my recovery as I would a systems-engineering problem. I tried a myriad of science-based techniques alongside medical help to fix the issues that medications could not help with...in essence methods to control my stress and anxiety to allow my body space to recover.
                     </p>
                   </div>
+
+                </Col>
+                <Col lg={12} sm={12} xxl={12} xl={12}>
+                <div className="para-wrap-about">
+                  <p>I now offer these techniques as a comprehensive arsenal to prevent others from burning out. By better regulating stress and building resilience using Conscious Nervous System Feedback  (CNSF) and Optimising protocols, we can cover each client's unique nervous system responses. These micro-CNSF's and Macro-Optimisations  are designed to fit in to your day regardless of where you are or what time it is.
+<br/><br/>
+I hope they are of benefit to you!</p>
+                </div>
                 </Col>
                 <div className="mt-5 both-btn">
                   <Col md={12} sm={12}>
@@ -66,7 +59,7 @@ export const AboutFullDetails = () => {
                           }}
                         >
                           {" "}
-                          Explore Cources{" "}
+                          Explore Courses{" "}
                         </button>
                       </div>
                       <div className="button-about-1">
