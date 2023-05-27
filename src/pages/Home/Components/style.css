@@ -62,8 +62,8 @@
 }
 @media(max-width:763px){
   .Home-detail {
-    padding-top: 1rem !important;
-    height: 80vh;
+    padding-top: 10vh !important;
+    height: 82vh;
 }
 }
 @media (max-width: 769px) {

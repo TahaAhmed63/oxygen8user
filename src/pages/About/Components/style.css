@@ -569,3 +569,30 @@ z-index: 999999;
     .list .ml-14{
         margin-left: 14px;
     }
+
+
+    @media((min-width:1800px) and (max-width:2600px)){
+        .bottommark-2::before{
+            background-size: 2788px;
+            height: 2000px;
+            transform: translateX(100%) translateY(-9%) rotate(0deg);
+
+
+        }
+        .bottom-mark{
+            background-size: 2617px;
+        }
+        .bottommark-3::before{
+            transform: translateX(-53%) translateY(-58%) rotate(180deg) !important;
+    background-size: 1522px;
+
+        }
+        .bottommark-5::before{
+            transform: translateX(-56%) translateY(-95%) rotate(180deg);
+            background-size: 1506px;
+        }
+        .bottommark-4::before{
+            transform: translateX(-78%) translateY(-97%) rotate(180deg) !important;
+            background-size: 890px;
+        }
+    }
