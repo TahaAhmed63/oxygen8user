@@ -121,20 +121,20 @@ function Header() {
             {/* </div> */}
           </Nav>
 
-          {token && (
+          {/* {token && (
             <Link
               to="#"
               style={{
-                fontSize: "18px",
+             //fontSize: "18px",
                 color: "#337c75",
                 fontWeight: "500",
                 paddingRight: "25px",
                 textDecoration:"none"
               }}
             >
-              {currentuser?.email}
+              // {currentuser?.email}
             </Link>
-          )}
+          )} */}
           <br/>
           {token ? (
             <Button

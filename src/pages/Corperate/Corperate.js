@@ -18,7 +18,7 @@ import { useNavigate } from 'react-router-dom';
 
                <Col md={12} sm={12}>
                   <div className="headwrapabout">
-                     <h1>Corperate</h1>
+                     <h1>Corporate</h1>
                   </div>
                </Col>
 
@@ -60,7 +60,7 @@ import { useNavigate } from 'react-router-dom';
 
   <div className='list-item-corperate'>
     <div className='list-head'>
-      <h4>Corperate Services:</h4>
+      <h4>Corporate Services:</h4>
 
     </div>
     <div className='list'>
@@ -68,7 +68,7 @@ import { useNavigate } from 'react-router-dom';
     <p className='dash'>Down-Regulation</p>
     <p className='dash'>Resilience Building</p>
     <p className='dash'>Sustainable Productivity</p>
-    <p className='dot'>Online Cources</p>
+    <p className='dot'>Online Courses</p>
     <p className='dot'>Online Libraries</p>
     <p className='dot'>Physiology</p>
     <p className='ml-14 pt-5'>Optimisation</p>
