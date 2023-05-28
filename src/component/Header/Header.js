@@ -10,7 +10,8 @@ function Header() {
   const navigate = useNavigate();
   const token = localStorage.getItem("accesstoken");
   // let user = localStorage.getItem("user");
-  // const currentuser = JSON.parse(user);
+  //const currentuser = JSON.parse(user);
+  
 
   function Logout() {
     localStorage.removeItem("accesstoken");
