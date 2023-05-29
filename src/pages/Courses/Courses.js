@@ -71,8 +71,9 @@ const Courses = () => {
                       {
                         fontSize: "12px",
                             position: "relative",
-                            bottom: "2rem"}
-                     }>TM</em> Courses</h1>
+                            bottom: "2rem",
+                            left: "-16px"}
+                     }>TM</em>Courses</h1>
                   </div>
                </Col>
 
@@ -81,7 +82,8 @@ const Courses = () => {
 
          </section>
          <section style={{
-          marginTop:"4rem"
+          marginTop:"4rem",
+          marginBottom:"4rem"
         }} className="library-text">
           <Container>
             <Row>
@@ -91,15 +93,15 @@ const Courses = () => {
                   color:"#317C74",
                   fontSize:"30px"
 
-                }}>Science Based  techniques to boost resilience,productivity or recovery  </h3>
+                }}>Science-based techniques to boost stress resilience, productivity and recovery. </h3>
                 <p style={{
                   color:"#317C74",
                   fontSize:"24px",
                   lineHeight:"45px",
                   textAlign:"left",
-                  marginLeft:"80px"
+                  marginLeft:"58px"
 
-                }}>"Learn up to date,proven biofeedback techniques for micro-regulation of stress ,anxiety , and overwhelm at anytime ,anywhere by complimenting with guided macro-changes you can optimise your body's resilience to stress and improve your overall health" </p>
+                }}>"Discover the latest, evidence-based biofeedback techniques that enable you to effectively regulate stress, anxiety, and overwhelm at any time and in any location. By combining these techniques with guided macro-level adjustments, you can enhance your body's resilience to stress and promote overall health improvement." </p>
               </Col>
             </Row>
           </Container>

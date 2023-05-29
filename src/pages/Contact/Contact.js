@@ -96,7 +96,7 @@ const Contact = () => {
                      <div className="contact__wrapper">
                         <div className="section__title-wrapper mb-40">
                            <h2 className="section__title">Get in touch</h2>
-                           <p>Any questions or just want to reach out? .</p>
+                           <p>Any questions or just want to reach out? </p>
                         </div>   
                         <div className="contact__form">
                            <form >
