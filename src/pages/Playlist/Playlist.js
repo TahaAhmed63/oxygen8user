@@ -93,11 +93,13 @@ const Playlist = () => {
 
                 }}>Guided sessions to influence your nervous system.</h3>
                 <p style={{
-                  color:"rgb(49, 124, 116)",
-                  fontSize:"24px",
-                  lineHeight:"45px",
-                  textAlign:"left",
-                  marginLeft:"88px"
+                 color:"#317C74",
+                 fontSize:"24px",
+                 lineHeight:"45px",
+                 textAlign:"left",
+                 // marginLeft:"58px"
+                 maxWidth:"981px",
+                 margin:"0 auto"
 
                 }}>The Oxygen8 <em style={
                   {

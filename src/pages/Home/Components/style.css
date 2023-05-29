@@ -1,7 +1,8 @@
+
 .Home-detail {
   background-color: #317c74;
-  height: 125vh;
-  padding-top: 4rem;
+  height: 153vh;
+  padding-top: 11.5vh;
 }
 
 .head-wrap {
@@ -106,6 +107,11 @@
   border-radius: 20px !important;
   background-color: #317c74 !important;
   margin-top: 20px;
+}
+@media((min-width:1256px) and (max-width:1860px)){
+.video-container-2{
+  width: 1200px;
+}
 }
 @media (min-width: 920px) and (max-width: 1025px) {
   .card {
@@ -512,8 +518,15 @@ form button {
   object-fit: cover;
 
 }
+.video-container-2 video{
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
 .video-details {
-  height: 80vh;
+  height: 100vh;
   gap: 2rem;
   display: flex;
   align-items: center;

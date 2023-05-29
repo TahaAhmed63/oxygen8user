@@ -6,10 +6,12 @@ import Card from '../../component/Card/Card'
 import axios from "axios";
 import { useState, useEffect } from "react";
 import BaseUrl from '../../component/BaseUrl/BaseUrl'
-import CardSkeleton from '../../component/Skeleton/CardSkeleton'
+// import CardSkeleton from '../../component/Skeleton/CardSkeleton'
 import "./../About/Components/style.css"
 import { Row, Col,Container } from "react-bootstrap"
 import { Contact2 } from '../Home/Components/Contact2';
+import VideoCardSkeleton from "../../component/Skeleton/VideoCardSkeleton";
+
 
 const Courses = () => {
 
@@ -99,7 +101,9 @@ const Courses = () => {
                   fontSize:"24px",
                   lineHeight:"45px",
                   textAlign:"left",
-                  marginLeft:"58px"
+                  // marginLeft:"58px"
+                  maxWidth:"1056px",
+                  margin:"0 auto"
 
                 }}>"Discover the latest, evidence-based biofeedback techniques that enable you to effectively regulate stress, anxiety, and overwhelm at any time and in any location. By combining these techniques with guided macro-level adjustments, you can enhance your body's resilience to stress and promote overall health improvement." </p>
               </Col>
@@ -110,21 +114,19 @@ const Courses = () => {
          <section className="course__area pt-120 pb-120" style={{
 backgroundColor:"#317C74",
          }}>
-            <div className="container">
-
-               <div className="row">
-                  <div className="col-xxl-12">
+         <div className="container">
+          <div className="row">
                      <div className="course__tab-conent">
                         <div className="tab-content" id="courseTabContent">
                            <div className="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
                               <div className="row">
-                                 {loading && arr.map(item => <CardSkeleton loading={loading} />)}
+                                 {loading && arr.map(item => <VideoCardSkeleton loading={loading} />)}
 
                                  {courses?.map(item => <Card {...item} />)}
                               </div>
                            </div>
 
-                        </div>
+                 
                      </div>
                   </div>
                </div>

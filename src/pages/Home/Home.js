@@ -197,7 +197,8 @@ function Home() {
                         fontSize: "16px",
                             position: "relative",
                             bottom: "1.8rem",
-                          left:"-5px"
+                            fontStyle:"normal",
+                          left:"-9px"
                           }
                      }>TM</em> Stress Wellness
 
@@ -214,7 +215,10 @@ function Home() {
  
         <div className="para-wrap">
             <p style={{
-              color:"#317C74"
+              color:"#317C74",
+              maxWidth:"1024px"
+
+
             }}>
             Whether you are looking for stress or anxiety management, burnout recovery, or resilience building, Oxygen8 <em style={
                       {
