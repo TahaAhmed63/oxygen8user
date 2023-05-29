@@ -420,6 +420,8 @@ color: #fff;
   background-color: #fff;
   font-size: 18.5px;
   border-radius: 50px;
+  z-index: 99999;
+  position: relative;
 }
 
 /* library span */
