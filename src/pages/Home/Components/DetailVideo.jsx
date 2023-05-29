@@ -2,7 +2,7 @@ import React,{useState,useRef} from 'react'
 import "./style.css"
 import { Container,Row,Col } from 'react-bootstrap'
 import mainvideo from "./../../../../src/Assets/videohome/090523_Oxygen8-Website-Medium-Loop_4x3.mp4"
-import skeleton from "./../../../../src/Assets/Videoaboutimages/skeleton.png"
+// import skeleton from "./../../../../src/Assets/Videoaboutimages/skeleton.png"
 import playButtonIcon from "./../../../Assets/AboutImages/videobtn-removebg-preview.png"
 
 export const DetailVideo = () => {
