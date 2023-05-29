@@ -192,7 +192,14 @@ function Home() {
             <div className="header-wrap">
             <div className="about-head">
           <h4>
-          Welcome to Oxygen8 Stress Wellness
+          Welcome to Oxygen8 <em style={
+                      {
+                        fontSize: "16px",
+                            position: "relative",
+                            bottom: "1.8rem",
+                          left:"-5px"
+                          }
+                     }>TM</em> Stress Wellness
 
           </h4>
            </div>
@@ -206,8 +213,15 @@ function Home() {
         <Col md={12} xs={12} xl={12} xxl={12}>
  
         <div className="para-wrap">
-            <p>
-            Whether you are looking for stress or anxiety management, burnout recovery, or resilience building, Oxygen8 offers a comprehensive and integrative approach to dealing with the stresses of life. We offer you the tools to directly regulate your nervous system in both the short and long term using Conscious Nervous System Feedback (CNSF) and Optimising exercises. These methods become an arsenal of quick-fire techniques that cover you anytime, anywhere.            </p>
+            <p style={{
+              color:"#317C74"
+            }}>
+            Whether you are looking for stress or anxiety management, burnout recovery, or resilience building, Oxygen8 <em style={
+                      {
+                        fontSize: "12px",
+                            position: "relative",
+                            bottom: "0.8rem"}
+                     }>TM</em> offers a comprehensive and integrative approach to dealing with the stresses of life. We offer you the tools to directly regulate your nervous system in both the short and long term using Conscious Nervous System Feedback (CNSF) and Optimising exercises. These methods become an arsenal of quick-fire techniques that cover you anytime, anywhere.            </p>
           </div>
         
         </Col>

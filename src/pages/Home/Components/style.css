@@ -451,15 +451,15 @@ color: #fff;
   justify-content: center;
   margin-top: 2rem;
 }
-.contact-img-wrap img {
+/* .contact-img-wrap img {
   width: 100px;
   height: 100px;
-}
+} */
 @media (max-width: 768px) {
-  .contact-img-wrap img {
+  /* .contact-img-wrap img {
     width: 100px;
     height: 100px;
-  }
+  } */
   .contact-info {
     margin-top: 22px;
   }
