@@ -2,7 +2,8 @@
 .Home-detail {
   background-color: #317c74;
   height: 153vh;
-  padding-top: 11.5vh;
+  padding-top: 5rem;
+  padding-bottom: 65rem;
 }
 
 .head-wrap {
@@ -526,7 +527,7 @@ form button {
 
 }
 .video-details {
-  height: 100vh;
+  height: 100%;
   gap: 2rem;
   display: flex;
   align-items: center;
