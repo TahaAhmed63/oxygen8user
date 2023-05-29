@@ -28,7 +28,7 @@ function Card({...item}) {
             <div className="course__lesson">
               <span>
                 <i className="far fa-book-alt"></i>
-                {chapters?.length} chapters`{" "}
+                {chapters?.length} Sessions`{" "}
               </span>
             </div>
           </div>
@@ -44,7 +44,8 @@ function Card({...item}) {
           </div>
           <div className="course__btn">
             <Link style={{textDecoration:"none"}} href="#" className="link-btn" to="/coursedetail">
-              Know Details
+
+Find Out More
               <i className="far fa-arrow-right"></i>
               <i className="far fa-arrow-right"></i>
             </Link>
