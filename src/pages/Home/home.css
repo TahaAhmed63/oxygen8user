@@ -20,8 +20,7 @@
       left: 49%;
       overflow: hidden;
       /* left: -49%; */
-      transform: translateX(-236vh)translateY(126vh) rotate(161deg) !important;
-      width: 76%;
+      transform: translateX(-231vh)translateY(121vh) rotate(161deg) !important;      width: 76%;
       height: 153%;
       background-size: 1605px;
     background-image: url(./../../Assets/AboutImages/watermark.png);
@@ -67,6 +66,16 @@
     bottom: 0;
     overflow: visible;
     height: 100%;
+}
+.video-container-2 {
+  top: 0px;
+  position: relative;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  bottom: 0;
+  overflow: visible;
+  height: 100%;
 }
   
  
@@ -128,26 +137,26 @@
 .overlay-absolute-text {
   top: 70%;
   position: absolute ;
-  left: 70% ;
+  left: 60% ;
   transform: translate(-50%, -50%) ;
   text-align: center;
   color: #fff;
 
   z-index: 9999;
-  width: 36% ;
+  width: 46% ;
 }
 .text-video-wrap p{
   margin-left: 10px;
 }
-  .text-video-wrap {
-    max-width: 600px;
-    margin: 0 auto;
-  }
+.text-video-wrap {
+  max-width: 2738px;
+  margin: 0 auto;
+}
   
   .text-video-wrap h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    font-size: 37px;
+    font-size: 57px;
     color: white;
 
     text-align: end;
@@ -163,23 +172,25 @@
   
 
   .text-video-wrap p {
-    font-size: 21px;
+    font-size: 31px;
     padding-left: 3rem;
     text-align: end;
 }
+
 @media(min-width:1440){
   .video-container{
     height: 625px;
   }
 }
+
 .home-main {
   height: 100% !important;
 }
 
 
 .about-home {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   background-color: transparent;
 }
 

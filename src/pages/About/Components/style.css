@@ -174,7 +174,7 @@
 .para-wrap-about p {
     font-size: 18px;
     line-height: 33px;
-    width: 600px;
+    width: 89%;
     color: white;
     text-align: left;
     font-family: Inter,sans-serif;
@@ -548,17 +548,18 @@ z-index: 999999;
     }
     .bottommark-5::before {
         background-image: url(./../../../Assets/AboutImages/watermark.png);
-        background-repeat: no-repeat;
-        content: "";
-        background-size: 1306px;
-        display: block;
-        height: 271%;
-        left: 1%;
-        position: absolute;
-        top: 100%;
-        transform: translateX(-48%) translateY(-95%) rotate(180deg);
-        width: 142%;
-    }
+ 
+            background-repeat: no-repeat;
+            content: "";
+            background-size: 1306px;
+            display: block;
+            height: 271%;
+            left: 1%;
+            position: absolute;
+            top: 100%;
+            transform: translateX(-53%) translateY(-111%) rotate(180deg);
+            width: 142%;
+        }
     .list p {
         text-align: left;
         font-size: 30px;
@@ -587,8 +588,8 @@ z-index: 999999;
     background-size: 1522px;
 
         }
-        .bottommark-5::before{
-            transform: translateX(-56%) translateY(-95%) rotate(180deg);
+        .bottommark-5::before {
+            transform: translateX(-56%) translateY(-105%) rotate(180deg);
             background-size: 1506px;
         }
         .bottommark-4::before {
