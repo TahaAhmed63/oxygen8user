@@ -9,8 +9,9 @@ import { useNavigate, Link } from "react-router-dom";
 function Header() {
   const navigate = useNavigate();
   const token = localStorage.getItem("accesstoken");
-  let user = localStorage.getItem("user");
-  const currentuser = JSON.parse(user);
+  // let user = localStorage.getItem("user");
+  //const currentuser = JSON.parse(user);
+  
 
   function Logout() {
     localStorage.removeItem("accesstoken");

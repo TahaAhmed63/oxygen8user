@@ -49,14 +49,14 @@ export const AboutDetail = () => {
            <div className='corp-head-wrap'>
             <div className='corphead'>
               <h3>
-                "Overnight I went from building a spacecraft for NASA to not being able to leave ."
+                "Overnight I went from building a spacecraft for NASA to not being able to leave my bed ."
               </h3>
             </div>
-            <div className="para-corp">
+            {/* <div className="para-corp">
               <p>
                  -Center of Ecnomic and Bussiness Research
               </p>
-            </div>
+            </div> */}
            </div>
         </Container>
         

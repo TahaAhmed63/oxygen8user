@@ -24,7 +24,7 @@
     height: 350px;
 }
 .owner1{
-    width: 80%;
+    width: 100%;
     height: auto;  
 }
 .all-image-wrap{
@@ -172,11 +172,12 @@
     height: 100%;
 }
 .para-wrap-about p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 33px;
     color: white;
     text-align: left;
     font-family: Inter,sans-serif;
+    margin-bottom: 0px;
 }
 @media(max-width:768px){
    .owner-image-wrap{
@@ -187,7 +188,7 @@
 @media((min-width:756px)and (max-width:1024px)){
     .para-wrap-about p {
         font-size: 16px;
-        line-height: 22px;
+        line-height: 26px;
     }
 
 }
@@ -209,18 +210,13 @@
         font-size: 14px;
     }
 }
-@media(min-width:756px){
-    .para-wrap-about{
-        margin-top: 10px;
-    }
 
-}
-.button-wrap{
+.button-wrap {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: center;
-    gap: 4em;
+    gap: 2em;
 }
 .button-about-3 {
     width: 100%;
@@ -231,8 +227,8 @@
     font-size: 100%;
 }
 .button-about-1 {
-    width: 200px;
-    height: 60px;
+    width: 220px;
+    height: 68px;
     font-size: 12px !important;
     padding: 10px;
 }
@@ -240,8 +236,7 @@
 margin-left: 5rem;
 z-index: 999999;
 }
-.button-about-1 button{
- 
+.button-about-1 button {
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -253,8 +248,7 @@ z-index: 999999;
     background-color: white;
     color: #317C74;
     display: flex;
-    
-    
+    font-size: 17px;
 }
 .button-about-3 button {
     width: 187px;
@@ -372,7 +366,7 @@ z-index: 999999;
 @media (device-width: 1024px) and (device-height: 509px){
 
     .bottommark-4::before {
-        transform: translateX(-71%) translateY(-101%) rotate(180deg) !important;
+        transform: translateX(-85%) translateY(-99%) rotate(180deg) !important;
         height: 140%;
         background-size: 690px;
     }
@@ -420,11 +414,11 @@ z-index: 999999;
                transform: translateX(-58%) translateY(-60%) rotate(180deg) !important;
            top: 0%;
         }}
-        @media(device-width:1316px) and (device-height:509px){
+        /* @media(device-width:1316px) and (device-height:509px){
             .bottommark-4::before{
                transform: translateX(-58%) translateY(-60%) rotate(180deg) !important;
            }
-        }
+        } */
         @media(device-width:1441px) and (device-height:559px){
             .bottommark-4::before{
                    transform: translateX(-58%) translateY(-60%) rotate(180deg) !important;
@@ -591,8 +585,8 @@ z-index: 999999;
             transform: translateX(-56%) translateY(-95%) rotate(180deg);
             background-size: 1506px;
         }
-        .bottommark-4::before{
-            transform: translateX(-78%) translateY(-97%) rotate(180deg) !important;
-            background-size: 890px;
+        .bottommark-4::before {
+            transform: translateX(-90%) translateY(-97%) rotate(180deg) !important;
+            background-size: 870px;
         }
     }

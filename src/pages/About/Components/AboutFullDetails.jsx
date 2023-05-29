@@ -29,28 +29,34 @@ export const AboutFullDetails = () => {
                 <Col lg={7} md={8} sm={12}>
                   <div className="para-wrap-about">
                     <p>
-                    Welcome! My name is Ben Perham and I am the Founder of Oxygen8.
+                    Welcome! I'm Ben Perham, the Founder of Oxygen8  <em style={
+                      {
+                        fontSize: "12px",
+                            position: "relative",
+                            bottom: "0.8rem"}
+                     }>TM</em>.
                     <br/>
                     
                     <br/>
 
-I left university with a First-Class Honours degree in Mechanical Engineering, and had a successful six-year career designing and building spacecraft. However, the long hours and high pressure led me to a significant burnout, causing numerous health issues. Overnight I went from working on a spacecraft for a NASA to not being able to leave my bed.
+
+
+                    After graduating with a First-Class Honours degree in Mechanical Engineering, I enjoyed a successful six-year career designing and building spacecraft. However, the demanding workload and significant pressure eventually took their toll, leading me to a significant burnout that resulted in numerous health issues. Overnight, I went from working on spacecraft for NASA to being unable to leave my bed.<br/>
 <br/>
-<br/>
-My nervous system became heavily dysregulated and I had to contend with a range of health problems that took years to recover from. In search of a solution, I explored my recovery as I would a systems-engineering problem. I tried a myriad of science-based techniques alongside medical help to fix the issues that medications could not help with...in essence methods to control my stress and anxiety to allow my body space to recover.
+My nervous system became severely dysregulated, and I had to confront a range of health problems that took years to overcome. Determined to find a solution, I approached my recovery as if it were a systems-engineering problem. I explored a multitude of science-based techniques, supplemented with medical assistance, to address the issues that medications alone couldn't resolve. I focussed on methods to effectively manage stress and anxiety, creating the necessary conditions for my body to heal.
                     </p>
                   </div>
 
                 </Col>
                 <Col lg={12} sm={12} xxl={12} xl={12}>
                 <div className="para-wrap-about">
-                  <p>I now offer these techniques as a comprehensive arsenal to prevent others from burning out. By better regulating stress and building resilience using Conscious Nervous System Feedback  (CNSF) and Optimising protocols, we can cover each client's unique nervous system responses. These micro-CNSF's and Macro-Optimisations  are designed to fit in to your day regardless of where you are or what time it is.
+                  <p>Now, I offer these techniques as a comprehensive arsenal to help others avoid or recover from burnout. By improving stress regulation and building resilience through Conscious Nervous System Feedback (CNSF) techniques and Optimisation protocols, we can cater to the unique responses of each client's nervous system. Whether through Micro-CNSFs or Macro-Optimisations, these strategies are designed to seamlessly integrate into your day, regardless of your location or the time.
 <br/><br/>
-I hope they are of benefit to you!</p>
+I hope these techniques prove valuable to you!</p>
                 </div>
                 </Col>
-                <div className="mt-5 both-btn">
-                  <Col md={12} sm={12}>
+            
+                  <Col md={12} sm={12} className="mt-5">
                     <div className="button-wrap">
                       <div className="button-about-1">
                         <button
@@ -75,7 +81,7 @@ I hope they are of benefit to you!</p>
                       </div>
                     </div>
                   </Col>
-                </div>
+              
               </Row>
             </div>
           </Container>

@@ -105,7 +105,13 @@ import { useNavigate } from 'react-router-dom';
                   <br/>
                   <p className="para-wrap-about-para">
                     I have curated Workshops and presentations that can be
-                    tailored to support employees' individuals needs. Oxygen8
+                    tailored to support employees' individuals needs. Oxygen8  <em style={
+                      {
+                        fontSize: "12px",
+                        left:"-5px",
+                            position: "relative",
+                            bottom: "0.5rem"}
+                     }>TM</em>
                     offer the tools and information needs. to build an arsenal
                     of self-regulating techniques to manage stress levels. These
                     techniques can be used discreetly throughtout the working
