@@ -27,7 +27,7 @@ export const AboutFullDetails = () => {
             
                 </Col>
                 <Col lg={7} md={8} sm={12}>
-                  <div className="para-wrap-about" style={{width:"715px"}}>
+                  <div className="para-wrap-about" >
                     <p>
                     Welcome! I'm Ben Perham, the Founder of Oxygen8  <em style={
                       {
@@ -51,7 +51,7 @@ My nervous system became severely dysregulated, and I had to confront a range of
 
                 </Col>
                 <Col lg={12} sm={12} xxl={12} xl={12}>
-                <div className="para-wrap-about">
+                <div className="para-wrap-about-2">
                   <p>Now, I offer these techniques as a comprehensive arsenal to help others avoid or recover from burnout. By improving stress regulation and building resilience through Conscious Nervous System Feedback (CNSF) techniques and Optimisation protocols, we can cater to the unique responses of each client's nervous system. Whether through Micro-CNSFs or Macro-Optimisations, these strategies are designed to seamlessly integrate into your day, regardless of your location or the time.
 <br/><br/>
 I hope these techniques prove valuable to you!</p>
