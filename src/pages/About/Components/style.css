@@ -37,6 +37,9 @@
     .img-wrap{
         width: 100%;
     }
+    .mb-left{
+        text-align: left !important;
+    }
     .both-btn{
         margin-left: 0px !important;
 
