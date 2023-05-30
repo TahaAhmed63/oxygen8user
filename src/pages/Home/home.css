@@ -153,15 +153,14 @@
   margin: 0 auto;
 }
   
-  .text-video-wrap h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-size: 57px;
-    color: white;
-
-    text-align: end;
-    margin-left: 10px;
-  }
+.text-video-wrap h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-size: 43px;
+  color: white;
+  text-align: end;
+  margin-left: 10px;
+}
   
   .text-video-wrap p {
     font-size: 1.5rem;
