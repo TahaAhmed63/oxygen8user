@@ -230,7 +230,7 @@
   height: 100%;
   align-items: center;
 }
-@media((min-width:320px) and (max-width:524px)){
+@media((min-width: 100px) and (max-width: 524px)){
   .home-main{
     height: 75vh !important;
   }
@@ -318,7 +318,7 @@ text-align: left;
   }
 }
 
-@media((min-width:321px) and (max-width:764px)){
+@media(((min-width: 100px) and (max-width: 764px))){
   .home-main {
     height: 50vh !important;
 }
