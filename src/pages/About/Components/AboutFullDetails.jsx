@@ -33,7 +33,9 @@ export const AboutFullDetails = () => {
                       {
                         fontSize: "12px",
                             position: "relative",
-                            bottom: "0.8rem"}
+                            bottom: "0.8rem",
+                          fontStyle:"normal"
+                          }
                      }>TM</em>.
                     <br/>
                     

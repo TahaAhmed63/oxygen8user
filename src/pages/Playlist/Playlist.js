@@ -69,7 +69,8 @@ const Playlist = () => {
                         fontSize: "12px",
                             position: "relative",
                             bottom: "2rem",
-                            left: "-16px"
+                            left: "-16px",
+                            fontStyle:"normal"
                           }
                      }>TM</em>Library</h1>
                   </div>
@@ -106,7 +107,8 @@ const Playlist = () => {
                     fontSize: "12px",
                         position: "relative",
                         bottom: "0.8rem",
-                      left:"-5px"
+                      left:"-5px",
+                      fontStyle:"normal"
                       }
                  }>TM</em>.Library offers accessible down-regulation, performance-enhancing and anxiety management tools in the form of guided audio sessions for on-the-go or at home practices. </p>
               </Col>
