@@ -88,7 +88,7 @@ const Playlist = () => {
             <Row>
               
               <Col md={12} xl={12} xs={12} xxl={12}>
-                <h3 style={{
+                <h3 className="mb-left" style={{
                   color:"#317C74",
                   fontSize:"44px"
 
