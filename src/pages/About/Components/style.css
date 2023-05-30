@@ -580,6 +580,10 @@ z-index: 999999;
 
 
         }
+        .head-wrap h3 {
+            font-size: 40.3px;
+        }
+
         .bottom-mark{
             background-size: 2617px;
         }
