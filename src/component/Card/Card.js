@@ -12,7 +12,7 @@ function Card({...item}) {
 
   return (
     <div
-      className="col-xxl-12 col-xl-12 col-lg-4 col-md-6 grid-item cat1 cat2 cat4"
+      className="col-xxl-12 col-xl-12 col-lg-12 col-md-6 grid-item cat1 cat2 cat4"
       onClick={() => {
         getDetail(id);
       }}
