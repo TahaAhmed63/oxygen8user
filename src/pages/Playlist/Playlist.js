@@ -68,8 +68,11 @@ const Playlist = () => {
                       {
                         fontSize: "12px",
                             position: "relative",
-                            bottom: "2rem"}
-                     }>TM</em> Library</h1>
+                            bottom: "2rem",
+                            left: "-16px",
+                            fontStyle:"normal"
+                          }
+                     }>TM</em>Library</h1>
                   </div>
                </Col>
 
@@ -78,7 +81,8 @@ const Playlist = () => {
 
          </section>
         <section style={{
-          marginTop:"4rem"
+          marginTop:"4rem",
+          marginBottom:"3rem"
         }} className="library-text">
           <Container>
             <Row>
@@ -88,21 +92,33 @@ const Playlist = () => {
                   color:"#317C74",
                   fontSize:"44px"
 
-                }}>Guided session to influence your nervous system</h3>
+                }}>Guided sessions to influence your nervous system.</h3>
                 <p style={{
-                  color:"#317C74",
-                  fontSize:"44px",
-                  lineHeight:"45px",
-                  textAlign:"left",
-                  marginLeft:"80px"
+                 color:"#317C74",
+                 fontSize:"24px",
+                 lineHeight:"45px",
+                 textAlign:"left",
+                 // marginLeft:"58px"
+                 maxWidth:"981px",
+                 margin:"0 auto"
 
-                }}>the Video library offers accessible down-regulation performance-enhancing and anxiety management tools in the form of guided sessions. </p>
+                }}>The Oxygen8 <em style={
+                  {
+                    fontSize: "12px",
+                        position: "relative",
+                        bottom: "0.8rem",
+                      left:"-5px",
+                      fontStyle:"normal"
+                      }
+                 }>TM</em>.Library offers accessible down-regulation, performance-enhancing and anxiety management tools in the form of guided audio sessions for on-the-go or at home practices. </p>
               </Col>
             </Row>
           </Container>
         </section>
 
-      <section className="course__area pt-120 pb-120">
+      <section className="course__area pt-120 pb-120" style={{
+backgroundColor:"#317C74",
+         }}>
         <div className="container">
           <div className="row">
             {loading &&

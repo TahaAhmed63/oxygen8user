@@ -174,6 +174,7 @@
 .para-wrap-about p {
     font-size: 18px;
     line-height: 33px;
+    width: 89%;
     color: white;
     text-align: left;
     font-family: Inter,sans-serif;
@@ -182,6 +183,9 @@
 @media(max-width:768px){
    .owner-image-wrap{
     flex-direction: row;
+   }
+   .para-wrap-about p{
+    width: 100%;
    }
  
 }
@@ -198,8 +202,8 @@
         margin-left: 1.7rem !important;
 
     }
-    .bottommark-5::before{
-        transform: translateX(-34%) translateY(-95%) rotate(180deg) !important;
+    .bottommark-5::before {
+        transform: translateX(-51%) translateY(-95%) rotate(180deg) !important;
     }
     .button-wrap{
         gap: 2em !important;
@@ -544,17 +548,18 @@ z-index: 999999;
     }
     .bottommark-5::before {
         background-image: url(./../../../Assets/AboutImages/watermark.png);
-        background-repeat: no-repeat;
-        content: "";
-        background-size: 1306px;
-        display: block;
-        height: 271%;
-        left: 1%;
-        position: absolute;
-        top: 100%;
-        transform: translateX(-48%) translateY(-95%) rotate(180deg);
-        width: 142%;
-    }
+ 
+            background-repeat: no-repeat;
+            content: "";
+            background-size: 1306px;
+            display: block;
+            height: 271%;
+            left: 1%;
+            position: absolute;
+            top: 100%;
+            transform: translateX(-53%) translateY(-111%) rotate(180deg);
+            width: 142%;
+        }
     .list p {
         text-align: left;
         font-size: 30px;
@@ -575,6 +580,19 @@ z-index: 999999;
 
 
         }
+
+.text-video-wrap h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-size: 57px;
+    color: white;
+    text-align: end;
+    margin-left: 10px;
+}
+        .head-wrap h3 {
+            font-size: 40.3px;
+        }
+
         .bottom-mark{
             background-size: 2617px;
         }
@@ -583,12 +601,57 @@ z-index: 999999;
     background-size: 1522px;
 
         }
-        .bottommark-5::before{
-            transform: translateX(-56%) translateY(-95%) rotate(180deg);
+        .bottommark-5::before {
+            transform: translateX(-56%) translateY(-105%) rotate(180deg);
             background-size: 1506px;
         }
         .bottommark-4::before {
             transform: translateX(-90%) translateY(-97%) rotate(180deg) !important;
             background-size: 870px;
         }
+    }
+
+    .accordion-button::after{
+        background-image: url(./../../../../public/assets/img/Services/plus\ \(1\).png)!important;
+    }
+    .accordion-button:not(.collapsed)::after{
+        background-image: url(./../../../../public/assets/img/Services/minus-sign.png) !important;
+    }
+    .accordion-item:first-of-type .accordion-button {
+        border-top-left-radius: 0.25rem;
+        font-size: 24px !important;
+        color: #317C74 !important;
+        font-weight: 900 !important;
+        border-top-right-radius: 0.25rem;
+    }
+    .accordion-button.collapsed{
+        border-top-left-radius: 0.25rem;
+        font-size: 24px !important;
+        color: #317C74 !important;
+        font-weight: 900 !important;
+        border-top-right-radius: 0.25rem;
+    }
+    .accordion-button{
+        border-top-left-radius: 0.25rem;
+        font-size: 24px !important;
+        color: #317C74 !important;
+        font-weight: 900 !important;
+        border-top-right-radius: 0.25rem;
+    }
+    .accordion-body{
+        background-color: #317C74;
+        color: white;
+    }
+    .accordion-button:not(.collapsed){
+        background-color: #fff !important;
+    }
+    .accordion-button:focus{
+        z-index: 3; 
+  border-color: #303132 !important; 
+    outline: 0; 
+  box-shadow: 0 0 0 0.25rem #fffbfb;
+    }
+    .accordion{
+        width: 80%;
+        margin: 0 auto;
     }
