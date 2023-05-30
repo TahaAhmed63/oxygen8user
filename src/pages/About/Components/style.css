@@ -610,3 +610,48 @@ z-index: 999999;
             background-size: 870px;
         }
     }
+
+    .accordion-button::after{
+        background-image: url(./../../../../public/assets/img/Services/plus\ \(1\).png)!important;
+    }
+    .accordion-button:not(.collapsed)::after{
+        background-image: url(./../../../../public/assets/img/Services/minus-sign.png) !important;
+    }
+    .accordion-item:first-of-type .accordion-button {
+        border-top-left-radius: 0.25rem;
+        font-size: 24px !important;
+        color: #317C74 !important;
+        font-weight: 900 !important;
+        border-top-right-radius: 0.25rem;
+    }
+    .accordion-button.collapsed{
+        border-top-left-radius: 0.25rem;
+        font-size: 24px !important;
+        color: #317C74 !important;
+        font-weight: 900 !important;
+        border-top-right-radius: 0.25rem;
+    }
+    .accordion-button{
+        border-top-left-radius: 0.25rem;
+        font-size: 24px !important;
+        color: #317C74 !important;
+        font-weight: 900 !important;
+        border-top-right-radius: 0.25rem;
+    }
+    .accordion-body{
+        background-color: #317C74;
+        color: white;
+    }
+    .accordion-button:not(.collapsed){
+        background-color: #fff !important;
+    }
+    .accordion-button:focus{
+        z-index: 3; 
+  border-color: #303132 !important; 
+    outline: 0; 
+  box-shadow: 0 0 0 0.25rem #fffbfb;
+    }
+    .accordion{
+        width: 80%;
+        margin: 0 auto;
+    }
