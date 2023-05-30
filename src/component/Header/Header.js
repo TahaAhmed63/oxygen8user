@@ -53,7 +53,19 @@ function Header() {
               About
             </Link>
             <Link
-              to="/corperate"
+              to="/services"
+              style={{
+                fontSize: "18px",
+                color: "#337c75",
+                fontWeight: "500",
+                paddingRight: "25px",
+                textDecoration:"none"
+              }}
+            >
+              Services
+            </Link>
+            <Link
+              to="/corporate"
               style={{
                 fontSize: "18px",
                 color: "#337c75",
