@@ -580,6 +580,15 @@ z-index: 999999;
 
 
         }
+
+.text-video-wrap h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-size: 57px;
+    color: white;
+    text-align: end;
+    margin-left: 10px;
+}
         .head-wrap h3 {
             font-size: 40.3px;
         }
