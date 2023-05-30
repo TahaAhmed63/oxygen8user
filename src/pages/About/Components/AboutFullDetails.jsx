@@ -27,13 +27,15 @@ export const AboutFullDetails = () => {
             
                 </Col>
                 <Col lg={7} md={8} sm={12}>
-                  <div className="para-wrap-about">
+                  <div className="para-wrap-about" style={{width:"715px"}}>
                     <p>
                     Welcome! I'm Ben Perham, the Founder of Oxygen8  <em style={
                       {
                         fontSize: "12px",
                             position: "relative",
-                            bottom: "0.8rem"}
+                            bottom: "0.8rem",
+                          fontStyle:"normal"
+                          }
                      }>TM</em>.
                     <br/>
                     

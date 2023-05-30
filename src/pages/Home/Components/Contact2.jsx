@@ -56,7 +56,7 @@ export const Contact2 = () => {
             <div className="contact-info">
             
             <div className="contact-head">
-                <h4>Support</h4>
+                <h4>Subscribe</h4>
             </div>
             <div className="email-info">
           <p>Find out about events, techniques and 

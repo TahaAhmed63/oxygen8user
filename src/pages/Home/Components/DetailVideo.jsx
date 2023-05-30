@@ -2,7 +2,7 @@ import React,{useState,useRef} from 'react'
 import "./style.css"
 import { Container,Row,Col } from 'react-bootstrap'
 import mainvideo from "./../../../../src/Assets/videohome/090523_Oxygen8-Website-Medium-Loop_4x3.mp4"
-import skeleton from "./../../../../src/Assets/Videoaboutimages/skeleton.png"
+// import skeleton from "./../../../../src/Assets/Videoaboutimages/skeleton.png"
 import playButtonIcon from "./../../../Assets/AboutImages/videobtn-removebg-preview.png"
 
 export const DetailVideo = () => {
@@ -34,12 +34,12 @@ export const DetailVideo = () => {
   <Container>
     <Row className='flex-direction-column'>
     
-       <Col md={8} xl={8} xxl={8} className='video-details'>
+       <Col md={12} xl={12} xxl={12} className='video-details'>
         <div className="head-wrap">
             <h3 className='text-center'>Conscious Nervous System Feedback </h3>
             <h3 className='text-center'>(CNSF) and Optimization</h3>
         </div>
-        <div className="video-container">
+        <div className="video-container-2">
                   <video ref={videoRef} src={mainvideo} controls />
                   {!isVideoPlaying && (
                     <div className="play-button" onClick={handleVideoToggle}>
@@ -48,7 +48,7 @@ export const DetailVideo = () => {
                   )}
                 </div>
        </Col>
-     <Col md={4} xl={4} xxl={4} className='img-section'>
+     {/* <Col md={4} xl={4} xxl={4} className='img-section'>
       
    
         <div className="about-img-wrap">
@@ -56,7 +56,7 @@ export const DetailVideo = () => {
         </div>
      
      
-     </Col>
+     </Col> */}
     </Row>
 </Container>
 </Container>
