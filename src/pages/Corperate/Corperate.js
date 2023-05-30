@@ -75,14 +75,16 @@ import { useNavigate } from 'react-router-dom';
                         fontSize: "12px",
                         left:"-5px",
                             position: "relative",
-                            bottom: "0.5rem"}
+                            bottom: "0.5rem",
+                            fontStyle:"normal"}
                      }>TM</em>Courses</p>
     <p className='dash'>The Oxygen8  <em style={
                       {
                         fontSize: "12px",
                         left:"-5px",
                             position: "relative",
-                            bottom: "0.5rem"}
+                            bottom: "0.5rem",
+                            fontStyle:"normal"}
                      }>TM</em> Libraries</p>
     {/* <p className='dot'>Physiology</p>
     <p className='ml-14 pt-5'>Optimisation</p>

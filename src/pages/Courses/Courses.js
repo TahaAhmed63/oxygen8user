@@ -74,7 +74,8 @@ const Courses = () => {
                         fontSize: "12px",
                             position: "relative",
                             bottom: "2rem",
-                            left: "-16px"}
+                            left: "-16px",
+                            fontStyle:"normal"}
                      }>TM</em>Courses</h1>
                   </div>
                </Col>
