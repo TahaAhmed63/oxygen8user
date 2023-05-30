@@ -121,7 +121,9 @@
   .list .dash{
     text-align: center !important;
   }
-  
+  .para-wrap-about {
+    width: 100% !important;
+}
  
 
 }
@@ -168,8 +170,23 @@
 .para-wrap-about {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 98%;
     height: 100%;
+}
+.para-wrap-about-2 {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    height: 100%;
+}
+.para-wrap-about-2 p {
+    font-size: 18px;
+    line-height: 33px;
+    width: 89%;
+    color: white;
+    text-align: left;
+    font-family: Inter,sans-serif;
+    margin-bottom: 0px;
 }
 .para-wrap-about p {
     font-size: 18px;
@@ -191,6 +208,10 @@
 }
 @media((min-width:756px)and (max-width:1024px)){
     .para-wrap-about p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .para-wrap-about-2 p {
         font-size: 16px;
         line-height: 26px;
     }
