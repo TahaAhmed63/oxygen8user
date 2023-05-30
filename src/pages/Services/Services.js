@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../../component/Header/Header'
-import {Row,Col,Container} from 'react-bootstrap'
+import {Row,Col} from 'react-bootstrap'
 import Accordion from 'react-bootstrap/Accordion';
 import "./../About/Components/style.css"
 import { useNavigate } from 'react-router-dom';
@@ -39,7 +39,7 @@ import Footer from '../../component/Footer/Footer';
 
             }}>
                 <div  style={{
-                    width:"870px",
+                    width:"97%",
                     paddingBottom:"2rem"
                 }}>
    <p style={{color:"#fff",
@@ -92,7 +92,7 @@ appointment and individualised plan.
 
             }}>
                 <div  style={{
-                    width:"870px",
+                    width:"97%",
                     paddingBottom:"2rem"
                 }}>
    <p style={{color:"#fff",
@@ -110,20 +110,7 @@ backed by scientific research.
 The methods on offer cover a range of needs and preferences. Whether beginner to experienced,
 the courses are specifically designed to seamlessly integrate into your workweek. From 3 minute
 videos to watch on the go, to month-long integrations, the courses have you covered.
-{/* <br/>
-<br/>
-To maximise the impact of our sessions, we structure them into three parts. We begin with an initial
-consultation, where we discuss your goals, lifestyle and emotional wellbeing, before learning some
-quick-fire downregulating techniques. Following this, you receive a tailored plan to assimilate into
-your day-to-day life. You have access to email support, allowing you to reach out with any
-questions or concerns between appointments. At our second appointment, we evaluate your
-progress and make any necessary adjustments to further enhance your ability to cope with stress.
-As progress will be likely we can alter plans as required further appointments as you progress.
-<br/>
-<br/>
-The package pricing is £200 which includes the initial appointment, email support, follow-up
-appointment and individualised plan. */}
-    
+
    </p>
    </div>
    <div className=' button-about-3'>
@@ -144,7 +131,7 @@ appointment and individualised plan. */}
 
             }}>
                 <div  style={{
-                    width:"870px",
+                    width:"97%",
                     paddingBottom:"2rem"
                 }}>
    <p style={{color:"#fff",
@@ -184,7 +171,7 @@ and an increase in your aerobic capacity.
 
             }}>
                 <div  style={{
-                    width:"870px",
+                    width:"97%",
                     paddingBottom:"2rem"
                 }}>
    <p style={{color:"#fff",
@@ -195,11 +182,7 @@ textAlign:"left"
 Having experienced severe burnout working in engineering, Oxygen8 was founded with the sole
 intention of helping prevent as many people as possible head down the same path. To learn more
 about corporate offerings, please follow the link above.
-{/* <br/>
-<br/>
-The Performance Library offers guided sessions for improving your fitness through Oxygen
-Advantage techniques, of which Ben is a fully qualified instructor. Expect breath holds, challenges,
-and an increase in your aerobic capacity. */}
+
 
     
    </p>
@@ -222,7 +205,7 @@ and an increase in your aerobic capacity. */}
 
             }}>
                 <div  style={{
-                    width:"870px",
+                    width:"97%",
                     paddingBottom:"2rem"
                 }}>
    <p style={{color:"#fff",
@@ -248,11 +231,7 @@ that acts to help release trauma and allow emotional processing.
 <br/>
 If breathwork is something you would like to explore, please feel free to get in contact to see how it
 could be of benefit to you!
-{/* <br/>
-<br/>
-The Performance Library offers guided sessions for improving your fitness through Oxygen
-Advantage techniques, of which Ben is a fully qualified instructor. Expect breath holds, challenges,
-and an increase in your aerobic capacity. */}
+
 
     
    </p>
