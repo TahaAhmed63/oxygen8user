@@ -44,7 +44,7 @@ gap:"11px",
             <div className="course__lesson">
               <span>
                 <i className="far fa-book-alt"></i>
-                {chapters?.length} Sessions`{" "}
+                {chapters?.length} Sessions{" "}
               </span>
             </div>
           </div>

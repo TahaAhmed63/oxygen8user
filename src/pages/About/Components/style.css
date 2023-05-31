@@ -634,8 +634,9 @@ z-index: 999999;
             background-size: 2617px;
         }
         .bottommark-3::before{
-            transform: translateX(-53%) translateY(-58%) rotate(180deg) !important;
-    background-size: 1522px;
+            background-size: 1321px;
+            -webkit-transform: translateX(-53%) translateY(-58%) rotate(180deg)!important;
+            transform: translateX(-36%) translateY(-65%) rotate(180deg)!important;
 
         }
         .bottommark-5::before {
