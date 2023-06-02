@@ -9,8 +9,9 @@ import { useNavigate, Link } from "react-router-dom";
 function Header() {
   const navigate = useNavigate();
   const token = localStorage.getItem("accesstoken");
-  let user = localStorage.getItem("user");
-  const currentuser = JSON.parse(user);
+  // let user = localStorage.getItem("user");
+  //const currentuser = JSON.parse(user);
+  
 
   function Logout() {
     localStorage.removeItem("accesstoken");
@@ -52,7 +53,19 @@ function Header() {
               About
             </Link>
             <Link
-              to="/corperate"
+              to="/services"
+              style={{
+                fontSize: "18px",
+                color: "#337c75",
+                fontWeight: "500",
+                paddingRight: "25px",
+                textDecoration:"none"
+              }}
+            >
+              Services
+            </Link>
+            <Link
+              to="/corporate"
               style={{
                 fontSize: "18px",
                 color: "#337c75",
@@ -86,7 +99,7 @@ function Header() {
                 textDecoration:"none"
               }}
             >
-              Consultant
+              Book
             </Link>
      
             <Link
@@ -101,37 +114,40 @@ function Header() {
             >
               Contact
             </Link>
-            <div class="dropdown">
-              <button class="dropbtn">
+            {/* <div class="dropdown"> */}
+              {/* <button class="dropbtn"> */}
                 <Link to="/videolibrary"
                 style={{
-                  textDecoration:"none",
-                  color:"#337c75"
+                  fontSize: "18px",
+                  color: "#337c75",
+                  fontWeight: "500",
+                  paddingRight: "25px",
+                  textDecoration:"none"
 
                 }}
-                >Video Library</Link>
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
+                > Library</Link>
+                {/* <i class="fa fa-caret-down"></i>
+              </button> */}
+              {/* <div class="dropdown-content">
                 <Link to="/subscription">Subscription</Link>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </Nav>
 
-          {token && (
+          {/* {token && (
             <Link
               to="#"
               style={{
-                fontSize: "18px",
+             //fontSize: "18px",
                 color: "#337c75",
                 fontWeight: "500",
                 paddingRight: "25px",
                 textDecoration:"none"
               }}
             >
-              {currentuser?.email}
+              // {currentuser?.email}
             </Link>
-          )}
+          )} */}
           <br/>
           {token ? (
             <Button

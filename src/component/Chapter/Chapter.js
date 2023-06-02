@@ -2,7 +2,7 @@ import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Lesson from "../Lesson/Lesson";
 
-const Chapter = ({ ...item }) => {
+const Chapter = ({ item,buy }) => {
   const { id, lectures } = item;
 
   return (
@@ -12,7 +12,7 @@ const Chapter = ({ ...item }) => {
           <Accordion.Header>Chapter # {id}</Accordion.Header>
           <Accordion.Body>
             {lectures?.map((item) => (
-              <Lesson {...item} />
+              <Lesson item={item} buy={buy} />
             ))}
           </Accordion.Body>
         </Accordion.Item>

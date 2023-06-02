@@ -95,9 +95,9 @@ const Contact = () => {
                   <div className="col-xxl-7 col-xl-7 col-lg-6 mx-auto">
                      <div className="contact__wrapper">
                         <div className="section__title-wrapper mb-40">
-                           <h2 className="section__title">Get in<span className="yellow-bg yellow-bg-big">touch<img src="assets/img/shape/yellow-bg.png" alt=""/></span></h2>
-                           <p>Any questions or just want to reach out? .</p>
-                        </div>
+                           <h2 className="section__title">Get in touch</h2>
+                           <p>Any questions or just want to reach out? </p>
+                        </div>   
                         <div className="contact__form">
                            <form >
                               <div className="row">
@@ -118,7 +118,7 @@ const Contact = () => {
                                  </div>
                                  <div className="col-xxl-12">
                                     <div className="contact__form-input">
-                                       <textarea placeholder="Enter Your Message" name="message" value={userMessage} onChange={(e)=>{setUserMessage(e.target.value)}}></textarea>
+                                       <textarea placeholder="Please Enter Your Message Here" name="message" value={userMessage} onChange={(e)=>{setUserMessage(e.target.value)}}></textarea>
                                     </div>
                                  </div>
                                  <div className="col-xxl-12 " >
