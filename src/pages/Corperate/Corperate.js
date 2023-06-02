@@ -1,13 +1,12 @@
-import React from 'react'
+import React from "react";
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
-import "./../About/Components/style.css"
-import {Container, Row, Col } from "react-bootstrap"
-import owner3 from "./../../../src/Assets/AboutImages/Ben-Conference-From-Left.png"
-import {Contact2} from '../Home/Components/Contact2';
-import { useNavigate } from 'react-router-dom';
- const Coorperate = () => {
-
+import "./../About/Components/style.css";
+import { Container, Row, Col } from "react-bootstrap";
+import owner3 from "./../../../src/Assets/AboutImages/Ben-Conference-From-Left.png";
+import { Contact2 } from "../Home/Components/Contact2";
+import { useNavigate } from "react-router-dom";
+const Coorperate = () => {
   const navigate = useNavigate();
   return (
    <>
@@ -28,18 +27,16 @@ import { useNavigate } from 'react-router-dom';
          </section>
          <section className='corperate-head'>
         <Container>
-           <div className='corp-head-wrap'>
-            <div className='corphead'>
+          <div className="corp-head-wrap">
+            <div className="corphead">
               <h3>
                 "The UK  suffers a collective 23.3 MILLION stress-related sick days per year ."
               </h3>
             </div>
             <div className="para-corp">
-              <p>
-                 - Center of Ecnomic and Bussiness Research
-              </p>
+              <p>- Center of Ecnomic and Bussiness Research</p>
             </div>
-           </div>
+          </div>
         </Container>
         
 
@@ -148,15 +145,12 @@ import { useNavigate } from 'react-router-dom';
                             navigate("/contact");
                           }} style={{background:"#fff",color:"#317C74"}}>Contact</button>
           </div>
-</Container>
-</section>
-    
-      
+        </Container>
+      </section>
 
-<Contact2/>
-   <Footer/>
-   
-   </>
-  )
-}
-export default Coorperate
+      <Contact2 />
+      <Footer />
+    </>
+  );
+};
+export default Coorperate;

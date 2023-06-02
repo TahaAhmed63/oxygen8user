@@ -21,7 +21,7 @@ const CourseDetail = () => {
   const [course, setCourse] = useState();
   const [monthly, setMonthly] = useState([]);
   const [yearly, setYearly] = useState([]);
-  const [subscription, setSubscription] = useState();
+  const [, setSubscription] = useState();
   const userToken = localStorage.getItem("accesstoken");
   // const date = new Date();
 
