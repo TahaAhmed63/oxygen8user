@@ -263,6 +263,7 @@
 }
 .button-about-3 {
     width: 100%;
+    margin-top: 10px ; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -320,6 +321,16 @@ z-index: 999999;
     background-image: url(./../../../../src/Assets/AboutImages/watermark.png);
     background-repeat: no-repeat;
 }
+.para-wrap-about-heading{
+    color: #fff;
+    font-size: 26px !important;
+    text-align: left;
+  }
+
+  .para-wrap-about-para{
+
+    line-height: 30px !important;
+  }
   @media (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
     /* Styles for iPhone 6/7/8 */
     .bottommark-4::before {
@@ -418,6 +429,10 @@ z-index: 999999;
 .bottommark-4::before{
            transform: translateX(-58%) translateY(-60%) rotate(180deg) !important;
 }
+.list-item-corperate{
+    text-align: left !important;
+    
+            }
 }
 .owner2{
     width: 80%;
@@ -539,6 +554,16 @@ z-index: 999999;
         font-size: 30px;
         color: rgba(255, 255, 255, 0.828);
         font-family: Inter,sans-serif;
+        margin-bottom: 1px !important;
+    }
+    .list .withdot{
+        text-align: left;
+        font-size: 30px;
+        text-decoration: none;
+        padding-top: 5px;
+        margin-left: 20px;
+        color: rgba(255, 255, 255, 0.828);
+        font-family: Inter,sans-serif;
      
         margin-bottom: 13px !important;
     }
@@ -551,8 +576,9 @@ z-index: 999999;
         font-size: 24px;
     }
     .list .dash{
-        font-size: 16px;
-        margin-bottom: 5px;
+        font-size: 18px;
+        margin-top: 2px;
+        margin-bottom: 2px;
         color: rgba(255, 255, 255, 0.828);
         text-align: left;
         
