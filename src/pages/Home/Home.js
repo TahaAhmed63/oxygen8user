@@ -1,25 +1,11 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
-// import Card from "../../component/Card/Card";
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
-// import { Link } from "react-router-dom";
-// import axios from "axios";
-// import { useState, useEffect } from "react";
-// import BaseUrl from "../../component/BaseUrl/BaseUrl";
-// import CardSkeleton from "../../component/Skeleton/CardSkeleton";
-import { Contact2 } from "./Components/Contact2";
-import {Col} from 'react-bootstrap'
-import mylogo from './Fav.png'
 
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/effect-fade";
-// import "swiper/css/navigation";
-// import { Pagination,Navigation, EffectFade } from "swiper";
-// import "swiper/css/effect-fade";
-import './home.css'
+import { Contact2 } from "./Components/Contact2";
+import { Col } from "react-bootstrap";
+import mylogo from "./Fav.png";
+
+import "./home.css";
 import Video from "./Video/Video";
 import { Container, Row } from "react-bootstrap";
 import { DetailVideo } from "./Components/DetailVideo";
@@ -27,44 +13,12 @@ import { Blogs } from "./Components/Blogs";
 import { LibraraySpan } from "./Components/LibraraySpan";
 
 function Home() {
-//   const [loading, setLoading] = useState(false);
-//   const [course, setCourse] = useState([]);
-//   const userToken = localStorage.getItem("accesstoken");
-// const arr=[1,1,1,1,1,1];
 
-//   useEffect(() => {
-//     courseApi();
-//   }, []);
 
-//   const courseApi = async () => {
-//     setLoading(true);
-//     try {
-//       var config = {
-//         method: "get",
-//         url: `${BaseUrl.baseurl}/user/course`,
-//         headers: {
-//           Accept: "application/json",
-//           Authorization: `Bearer ${userToken}`,
-//         },
-//       };
-      
-//       const response = await axios(config);
-//       setCourse(response.data.courses);
-//       localStorage.setItem("image_link", response.data.image_link);
-//       localStorage.setItem("video_link", response.data.videolink);
-//       setLoading(false);
-
-//     } catch (error) {
-//       setLoading(false);
-//       console.log(error?.response?.message);
-//     }
-//   };
-  
   return (
     <main>
       <Header />
-   
-     
+
       {/* <Swiper
         spaceBetween={30}
         effect={"fade"}
@@ -83,7 +37,7 @@ function Home() {
         <SwiperSlide><img src='https://ahgroup-pk.com/assets/images/slider.jpg' alt='' className="img-fluid slider-img"/></SwiperSlide>
        
       </Swiper> */}
-     {/* <section>
+      {/* <section>
         <div>
         <video src='assets/video/video1.mp4' alt="" border="3" height="50%" width="100%" autoPlay muted loop playsInline ><source src='assets/video/video1.mp4' type='video/mp4'/></video>
         </div>
@@ -174,103 +128,74 @@ function Home() {
         </div>
 
       </section> */}
-    <div className="main-video">
-      <section className="home-main">
-        
-      <Video/>
-
-      </section>
-     
+      <div className="main-video">
+        <section className="home-main">
+          <Video />
+        </section>
       </div>
-     <section className="about-home">
-  
-      <Container>
-        <Row  >
-          <Col md={12} xs={12} xl={12} xxl={12}>
-   
-
-            <div className="header-wrap">
-            <div className="about-head">
-          <h4>
-          Welcome to Oxygen8 <em style={
-                      {
+      <section className="about-home">
+        <Container>
+          <Row>
+            <Col md={12} xs={12} xl={12} xxl={12}>
+              <div className="header-wrap">
+                <div className="about-head">
+                  <h4>
+                    Welcome to Oxygen8{" "}
+                    <em
+                      style={{
                         fontSize: "16px",
-                            position: "relative",
-                            bottom: "1.8rem",
-                            fontStyle:"normal",
-                          left:"-9px"
-                          }
-                     }>TM</em> Stress Wellness
-
-          </h4>
-           </div>
-           <div className="logo">
-             <img src={mylogo} alt=''/>
-           </div>
-            </div>
-          
-          
-          </Col>
-        <Col md={12} xs={12} xl={12} xxl={12}>
- 
-        <div className="para-wrap">
-            <p style={{
-              color:"#317C74",
-              maxWidth:"1024px"
-
-
-            }}>
-            Whether you are looking for stress or anxiety management, burnout recovery, or resilience building, Oxygen8 <em style={
-                      {
-                        fontSize: "12px",
-                            position: "relative",
-                            bottom: "0.8rem"}
-                     }>TM</em> offers a comprehensive and integrative approach to dealing with the stresses of life. We offer you the tools to directly regulate your nervous system in both the short and long term using Conscious Nervous System Feedback (CNSF) and Optimising exercises. These methods become an arsenal of quick-fire techniques that cover you anytime, anywhere.            </p>
-          </div>
-        
-        </Col>
-        </Row>
-      </Container>
-
-     </section>
-
-<DetailVideo/>
-<Blogs/>
-<LibraraySpan/>
-<Contact2/>
-
-      {/* <section className="course__area pt-115 pb-120 grey-bg">
-        <div className="container">
-          <div class="row align-items-end">
-            <div class="col-xxl-5 col-xl-6 col-lg-6">
-              <div
-                class="section__title-wrapper mb-60 text-start"
-              >
-                <h2 class="section__title">
-                  Find the Right
-                  <br />
-                  Online{" "}
-                  <span class="yellow-bg yellow-bg-big">
-                    Course
-                    <img src="assets/img/shape/yellow-bg.png" alt="" />
-                  </span>{" "}
-                  for you
-                </h2>
-                <p>
-                  You don't have to struggle alone, you've got our assistance
-                  and help.
+                        position: "relative",
+                        bottom: "1.8rem",
+                        fontStyle: "normal",
+                        left: "-9px",
+                      }}
+                    >
+                      TM
+                    </em>{" "}
+                    Stress Wellness
+                  </h4>
+                </div>
+                <div className="logo">
+                  <img src={mylogo} alt="" />
+                </div>
+              </div>
+            </Col>
+            <Col md={12} xs={12} xl={12} xxl={12}>
+              <div className="para-wrap">
+                <p
+                  style={{
+                    color: "#317C74",
+                    maxWidth: "1024px",
+                  }}
+                >
+                  Whether you are looking for stress or anxiety management,
+                  burnout recovery, or resilience building, Oxygen8{" "}
+                  <em
+                    style={{
+                      fontSize: "12px",
+                      position: "relative",
+                      bottom: "0.8rem",
+                    }}
+                  >
+                    TM
+                  </em>{" "}
+                  offers a comprehensive and integrative approach to dealing
+                  with the stresses of life. We offer you the tools to directly
+                  regulate your nervous system in both the short and long term
+                  using Conscious Nervous System Feedback (CNSF) and Optimising
+                  exercises. These methods become an arsenal of quick-fire
+                  techniques that cover you anytime, anywhere.{" "}
                 </p>
               </div>
-            </div>
-          </div>
-          <div className="row grid">
-            {loading && arr.map(item=> <CardSkeleton loading={loading} />)}
-            {course?.map((item) => (
-              <Card {...item} />
-            ))}
-          </div>
-        </div>
-      </section> */}
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <DetailVideo />
+      <Blogs />
+      <LibraraySpan />
+      <Contact2 />
 
       <Footer />
     </main>
