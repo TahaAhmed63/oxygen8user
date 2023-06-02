@@ -29,13 +29,17 @@ import Footer from '../../component/Footer/Footer';
             <div className="container">
                <div className="row">
                   <div className="col-xxl-12 col-xl-12 col-lg-12 mx-auto">
-                  <Accordion eventKey="0">
+                  <Accordion eventKey="0" className='services-acord'>
       <Accordion.Item eventKey="0">
-        <Accordion.Header>CNSF & Optimisation Consultency</Accordion.Header>
-        <Accordion.Body>
+        <Accordion.Header className='button-after'>CNSF & Optimisation Consultency</Accordion.Header>
+        <Accordion.Body style={{
+     backgroundColor: "#317C74",
+     color: "white"
+        }}>
             <section style={{
                 paddingTop:"2rem",
-                paddingBottom:"2rem"
+                paddingBottom:"2rem",
+         
 
             }}>
                 <div  style={{
@@ -84,8 +88,11 @@ appointment and individualised plan.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
-        <Accordion.Header>The Oxygen8  Courses</Accordion.Header>
-        <Accordion.Body>
+        <Accordion.Header  className='button-after'>The Oxygen8  Courses</Accordion.Header>
+        <Accordion.Body  style={{
+     backgroundColor: "#317C74",
+     color: "white"
+        }}>
         <section style={{
                 paddingTop:"2rem",
                 paddingBottom:"2rem"
@@ -123,8 +130,11 @@ videos to watch on the go, to month-long integrations, the courses have you cove
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="2">
-        <Accordion.Header>The Oxygen8 Library</Accordion.Header>
-        <Accordion.Body>
+        <Accordion.Header  className='button-after'>The Oxygen8 Library</Accordion.Header>
+        <Accordion.Body style={{
+     backgroundColor: "#317C74",
+     color: "white"
+        }}>
         <section style={{
                 paddingTop:"2rem",
                 paddingBottom:"2rem"
@@ -163,8 +173,11 @@ and an increase in your aerobic capacity.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="3">
-        <Accordion.Header>Corporate</Accordion.Header>
-        <Accordion.Body>
+        <Accordion.Header  className='button-after'>Corporate</Accordion.Header>
+        <Accordion.Body style={{
+     backgroundColor: "#317C74",
+     color: "white"
+        }}>
         <section style={{
                 paddingTop:"2rem",
                 paddingBottom:"2rem"
@@ -197,8 +210,11 @@ about corporate offerings, please follow the link above.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="4">
-        <Accordion.Header>Breathwork</Accordion.Header>
-        <Accordion.Body>
+        <Accordion.Header  className='button-after'>Breathwork</Accordion.Header>
+        <Accordion.Body style={{
+     backgroundColor: "#317C74",
+     color: "white"
+        }}>
         <section style={{
                 paddingTop:"2rem",
                 paddingBottom:"2rem"
