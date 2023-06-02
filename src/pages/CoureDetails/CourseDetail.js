@@ -64,7 +64,7 @@ const CourseDetail = () => {
         response.data.course.packages.filter((item) => item.period === "year")
       );
       setLoading(false);
-      console.log('subscription----------------->>',subscription)
+
     } catch (error) {
       setLoading(false);
       console.log(error?.response?.message);
@@ -127,7 +127,7 @@ const CourseDetail = () => {
       ) : (
         <main>
           <section className="page__title-area pt-120 pb-90">
-            <div className="page__title-shape">
+            {/* <div className="page__title-shape">
               <img
                 className="page-title-shape-5 d-none d-sm-block"
                 src="/assets/img/page-title/page-title-shape-1.png"
@@ -143,7 +143,7 @@ const CourseDetail = () => {
                 src="/assets/img/page-title/page-title-shape-4.png"
                 alt=""
               />
-            </div>
+            </div> */}
             <div className="container">
               <div className="row">
                 <div className="col-xxl-8 col-xl-8 col-lg-8">
@@ -210,7 +210,7 @@ const CourseDetail = () => {
                           >
                             {" "}
                             <i className="icon_book_alt"></i>{" "}
-                            <span>Curriculum</span>{" "}
+                            <span>Overview</span>{" "}
                           </button>
                         </li>
                       </ul>
@@ -237,16 +237,12 @@ const CourseDetail = () => {
                           id="curriculum"
                           role="tabpanel"
                           aria-labelledby="curriculum-tab"
-                        >
-                          {course?.pack ? (
+                        >  
                             <div class="course__curriculum">
                               {course?.chapters?.map((item) => (
-                                <Chapter {...item} />
+                                <Chapter item={item} buy={course?.pack} />
                               ))}
                             </div>
-                          ) : (
-                            "First Buy this course"
-                          )}
                         </div>
                       </div>
                     </div>

@@ -1,6 +1,9 @@
+
 .Home-detail {
   background-color: #317c74;
-
+  height: 100%;
+  padding-top: 6rem;
+  padding-bottom: 8rem;
 }
 
 .head-wrap {
@@ -25,7 +28,7 @@
 @media (min-width: 768px) {
   .head-wrap {
     padding: 0;
-    margin-top: 35px;
+    /* margin-top: 35px; */
 }
   .video-wrap {
     padding: 0px !important;
@@ -33,33 +36,43 @@
 }
 .head-wrap h3 {
   font-family: Inter, sans-serif;
-  font-size: 29.5px;
-  font-weight: 300;
+  font-size: 33.5px;
+  font-weight: 800;
   text-align: left;
   color: white;
 }
 
+
 .video-wrap {
-  width: 100%;
-  height: 100%;
+  width: 100vh;
+  height: 100vh;
   padding: 0px 21px 0px 60px;
 }
+
 .video-wrap video {
-  width: 100%;
-  height: 100%;
+  width: 100vh;
+  height: 70vh;
 }
+
 .about-img-wrap {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 30vw;
+}
+@media(max-width:763px){
+  /* .Home-detail {
+    padding-top: 10vh !important;
+    height: 82vh;
+} */
 }
 @media (max-width: 769px) {
   .about-img-wrap {
     display: none;
   }
+
   .head-wrap {
     padding: 0px;
   }
@@ -68,8 +81,11 @@
   }
 }
 .about-img-wrap img {
-  width: 1376px;
-  height: 768px;
+  width: 707px;
+  height: 1112px;
+  top: 10%;
+  bottom: 10%;
+  position: relative;
 }
 
 /* Blogs component */
@@ -93,6 +109,11 @@
   background-color: #317c74 !important;
   margin-top: 20px;
 }
+@media((min-width:1256px) and (max-width:1860px)){
+.video-container-2{
+  width: 1200px;
+}
+}
 @media (min-width: 920px) and (max-width: 1025px) {
   .card {
     width: 17em !important ;
@@ -106,18 +127,25 @@
   .email-info p {
     font-size: 16px;
   }
-  .img-section {
+  .library-para p {
+    color: #fff;
+    font-size: 23.7px !important;
+}
+.library-head h4 {
+  font-size: 31.7px !important;
+  color: #fff;
+}
+  /* .img-section {
     height: 400px;
     margin-top: 122px;
-}
+} */
   .video-details {
-    height: 509px !important;
-    gap: 0px !important;
-    /* margin-top: 5%; */
-    display: flex !important ;
-    flex-direction: column !important;
-    margin-top: 6% !important;
-    margin-bottom: 6% !important;
+height: 100vh;
+}
+
+.bottommark-2::before {
+  transform: translateX(53%) translateY(-18%) rotate(0deg) !important;
+  width: 139% !important;
 }
 .bottommark-3::before {
   content: "";
@@ -137,6 +165,14 @@
     width: 14em !important;
     height: 33em !important;
   }
+  .library-para p {
+    color: #fff;
+    font-size: 23.7px !important;
+}
+.library-head h4 {
+  font-size: 31.7px !important;
+  color: #fff;
+}
   .card-list ul {
     padding: 0px 44px 0px 5px !important;
   }
@@ -154,10 +190,25 @@
     height: 100% !important;
     gap: 0px !important;
     width: 100%;
-    margin-top: 5% !important;
+    margin-top: 0% !important;
     margin-bottom: 5% !important;
     display: flex !important;
     flex-direction: column !important;
+}
+
+
+.Home-detail {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  height: 100%;
+}
+.library-para p {
+  color: #fff;
+  font-size: 23.7px !important;
+}
+.library-head h4 {
+font-size: 31.7px !important;
+color: #fff;
 }
   .email-info h4 {
     font-size: 16px !important;
@@ -209,7 +260,7 @@
     width: 88%;
     height: 50%;
   }
-  .bottommark-2::before {
+  /* .bottommark-2::before {
     content: "";
     position: relative;
     top: 46%;
@@ -220,7 +271,7 @@
     transform: translateX(-58%) translateY(131%) rotate(360deg);
     background-image: url(./../../../Assets/AboutImages/watermark.png);
     background-repeat: no-repeat;
-}
+} */
 }
 .librarycontent- {
   display: flex;
@@ -231,12 +282,13 @@
   align-items: center;
   position: absolute;
 }
+
 .libraryspan {
-  height: 300px;
+  height: 500px;
   background-color: #317c74;
 }
 .library-head h4 {
-  font-size: 31.8px;
+  font-size: 38.8px;
   color: #fff;
 }
 .card-content {
@@ -251,14 +303,14 @@
     height: 27em !important;
     width: 15em !important;
 }
-.video-details {
-  height: 350px !important;
+/* .video-details {
+  height: 325px !important;
   gap: 0px !important;
   margin-top: 5%;
   margin-bottom: 5%;
   display: flex;
   flex-direction: column;
-}
+} */
   .card-img {
     height: 25%;
     display: flex;
@@ -378,6 +430,8 @@
   background-color: #fff;
   font-size: 18.5px;
   border-radius: 50px;
+  z-index: 99999;
+  position: relative;
 }
 
 /* library span */
@@ -388,7 +442,7 @@
 }
 .library-para p {
   color: #fff;
-  font-size: 21.7px;
+  font-size: 28.7px;
 }
 
 /* contact */
@@ -409,15 +463,15 @@
   justify-content: center;
   margin-top: 2rem;
 }
-.contact-img-wrap img {
+/* .contact-img-wrap img {
   width: 100px;
   height: 100px;
-}
+} */
 @media (max-width: 768px) {
-  .contact-img-wrap img {
+  /* .contact-img-wrap img {
     width: 100px;
     height: 100px;
-  }
+  } */
   .contact-info {
     margin-top: 22px;
   }
@@ -459,15 +513,29 @@ form button {
   border-radius: 50px;
   background: #317c74;
   color: #fff;
+
 }
-.video-details {
-  height: 510px;
-  gap: 40px;
-  margin-top: 5%;
-  margin-bottom: 5%;
+.video-container video{
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+.video-container-2 video{
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+ .video-details {
+  height: 100%;
+  gap: 2rem;
   display: flex;
+  align-items: center;
   flex-direction: column;
-}
+} 
 .subform {
   display: flex;
   gap: 20px;
@@ -485,8 +553,8 @@ form button {
 }
 
 .Blogs-home {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
   background-color: transparent;
   max-width: 1300px;
   margin: auto;
@@ -504,20 +572,49 @@ form button {
   width: 88%;
   height: 50%;
 }
+.watermark-container {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 50%;
+  /* height: 100%; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+  /* overflow: hidden; */
+}
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.play-button img {
+  width: 100px;
+  height: 100px;
+}
+  
 .bottommark-2::before {
   background-repeat: no-repeat;
   content: "";
   display: block;
-  height: 209%;
-  left: 103.5%;
+  height: 1006px;
+  background-image: url(../../../Assets/AboutImages/watermark\ 1\ \(1\).png);
+  background-size: 1874px;
+    z-index: 99999;
+  right: 0;
+  /* background-color: red; */
   position: relative;
-  top: 46%;
-  -webkit-transform: translateX(-58%) translateY(99%) rotate(1turn);
-  transform: translateX(-58%) translateY(99%) rotate(1turn);
-  width: 24%;
-    background-image: url(./../../../Assets/AboutImages/watermark.png);
+  color: red;
+  top: 3%;
+  transform: translateX(100%) translateY(-19%) rotate(0deg);
+  width: 106%;
   background-repeat: no-repeat;
 }
+
 .parent-container {
   position: relative;
   width: 100%;
@@ -549,10 +646,12 @@ form button {
   top: 20%;
   left: 1%;
   display: block;
+  
   width: 100%;
-  height: 300%;
-  transform: translateX(-49%) translateY(-50%) rotate(180deg);
-  background-image: url(../../../../src/Assets/AboutImages/watermark.png);
+  height: 350%;
+    transform: translateX(-32%) translateY(-74%) rotate(180deg) !important;
+    background-size: 1133px;
+    background-image: url(../../../../src/Assets/AboutImages/watermark\ 1\ \(1\).png);
   background-repeat: no-repeat;
 }
 
@@ -624,29 +723,29 @@ form button {
 @media (device-width: 820px) and (device-height: 1180px)  {
   /* Styles for Samsung Galaxy ipad air */
 
-.bottommark-2::before{
+/* .bottommark-2::before{
   transform: translateX(-74%) translateY(-3%) rotate(180deg) !important;
   top: 0px;
-}
+} */
 
 }
 @media (device-width: 1440px) and (device-height: 566px)  {
   /* Styles for Samsung Galaxy ipad air */
 
   .bottommark-3::before {
-    transform: translateX(-49%) translateY(-50%) rotate(180deg) !important;
+    transform: translateX(-22%) translateY(-56%) rotate(180deg) !important;
+    background-size: 1297px;
 }
 }
-@media (device-width: 1368px) and (device-height: 912px){
-   .bottommark-3::before{
-  height: 184%;
-  transform: translateX(-74%) translateY(-3%) rotate(180deg) !important;
-  top: 0px;
-  }
-  .bottommark-2::before{
+@media (device-width: 1440px) and (device-height: 566px){
+.bottommark-3::before {
+    transform: translateX(-32%) translateY(-74%) rotate(180deg) !important;
+    background-size: 1133px;
+}
+  /* .bottommark-2::before{
     height: 100%;
 
-  }
+  } */
 
 }
 @media (min-width: 992px){

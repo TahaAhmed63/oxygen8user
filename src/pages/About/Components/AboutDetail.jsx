@@ -3,10 +3,10 @@ import "./style.css"
 import { Row,Col } from 'react-bootstrap'
 
 import { Container } from 'react-bootstrap'
-import about1 from './../../../../src/Assets/AboutImages/About1.jpg'
-import about2 from "./../../../../src/Assets/AboutImages/About2.jpg"
-import about3 from "./../../../../src/Assets/AboutImages/About3.jpg"
-import about4 from "./../../../../src/Assets/AboutImages/About4.jpg"
+// import about1 from './../../../../src/Assets/AboutImages/About1.jpg'
+// import about2 from "./../../../../src/Assets/AboutImages/About2.jpg"
+// import about3 from "./../../../../src/Assets/AboutImages/About3.jpg"
+// import about4 from "./../../../../src/Assets/AboutImages/About4.jpg"
 
 
 
@@ -44,7 +44,26 @@ export const AboutDetail = () => {
         </Row>
 
     </section> 
-<section className="About-image py-5">
+    <section className='corperate-head'>
+        <Container>
+           <div className='corp-head-wrap'>
+            <div className='corphead'>
+              <h3>
+                "Overnight I went from building a spacecraft for NASA to not being able to leave my bed ."
+              </h3>
+            </div>
+            {/* <div className="para-corp">
+              <p>
+                 -Center of Ecnomic and Bussiness Research
+              </p>
+            </div> */}
+           </div>
+        </Container>
+        
+
+
+         </section>
+{/* <section className="About-image py-5">
         <Container fluid>
          <Container>
              <Row className='close-img'>
@@ -80,7 +99,7 @@ export const AboutDetail = () => {
          </Container>
         </Container>
     
-    </section> 
+    </section>  */}
     </>
     
   )

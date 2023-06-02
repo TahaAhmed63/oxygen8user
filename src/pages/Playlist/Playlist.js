@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import VideoCardSkeleton from "../../component/Skeleton/VideoCardSkeleton";
 import "./../../../src/pages/About/Components/style.css"
-import {Row,Col} from 'react-bootstrap'
+import {Row,Col,Container} from 'react-bootstrap'
 import { Contact2 } from "../Home/Components/Contact2";
 
 const Playlist = () => {
@@ -34,6 +34,8 @@ const Playlist = () => {
       };
       const response = await axios(config);
       setLoading(false);
+      localStorage.setItem("image_link", response.data.image_link);
+      localStorage.setItem("video_link", response.data.videolink);
       setPlaylist(response.data.playlists);
       console.log(response);
     } catch (error) {
@@ -64,7 +66,15 @@ const Playlist = () => {
 
                <Col md={12} sm={12}>
                   <div className="headwrapabout">
-                     <h1>Video Library</h1>
+                     <h1> The Oxygen8 <em style={
+                      {
+                        fontSize: "12px",
+                            position: "relative",
+                            bottom: "2rem",
+                            left: "-16px",
+                            fontStyle:"normal"
+                          }
+                     }>TM</em>Library</h1>
                   </div>
                </Col>
 
@@ -72,8 +82,45 @@ const Playlist = () => {
             </Row>
 
          </section>
+        <section style={{
+          marginTop:"4rem",
+          marginBottom:"3rem"
+        }} className="library-text">
+          <Container>
+            <Row>
+              
+              <Col md={12} xl={12} xs={12} xxl={12}>
+                <h3 className="mb-left" style={{
+                  color:"#317C74",
+                  fontSize:"44px"
 
-      <section className="course__area pt-120 pb-120">
+                }}>Guided sessions to influence your nervous system.</h3>
+                <p style={{
+                 color:"#317C74",
+                 fontSize:"24px",
+                 lineHeight:"45px",
+                 textAlign:"left",
+                 // marginLeft:"58px"
+                 maxWidth:"981px",
+                 margin:"0 auto"
+
+                }}>The Oxygen8 <em style={
+                  {
+                    fontSize: "12px",
+                        position: "relative",
+                        bottom: "0.8rem",
+                      left:"-5px",
+                      fontStyle:"normal"
+                      }
+                 }>TM</em>.Library offers accessible down-regulation, performance-enhancing and anxiety management tools in the form of guided audio sessions for on-the-go or at home practices. </p>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+      <section className="course__area pt-120 pb-120" style={{
+backgroundColor:"#317C74",
+         }}>
         <div className="container">
           <div className="row">
             {loading &&

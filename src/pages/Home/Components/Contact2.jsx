@@ -4,7 +4,7 @@ import { Container,Row,Col } from 'react-bootstrap'
 import {RxEnvelopeClosed} from 'react-icons/rx'
 import {BsInstagram} from 'react-icons/bs'
 import Form from 'react-bootstrap/Form';
-import contactlogo  from  "./../Fav.png"
+import contactlogo  from  "./../../../Assets/AboutImages/Oxygen icon.png"
 import { Link } from 'react-router-dom'
 // import { Link } from 'react-router-dom'
 
@@ -27,9 +27,13 @@ export const Contact2 = () => {
                       <i><RxEnvelopeClosed/></i>
                       </div>
                       <div className="email-info">
+                        <Link to="/contact">
                       <h4>
-                      info@oxygen8breathwork.com
+              Get In Touch
                       </h4>
+                      
+                      
+</Link>
                       </div>
                   
                     </div>
@@ -39,7 +43,7 @@ export const Contact2 = () => {
                       </div>
                       <div className="email-info">
                       <h4>
-                      @Oxygen8_Breathwork
+                      @Oxygen8_Stress_Wellness
                                             </h4>
                       </div>
                   
@@ -52,7 +56,7 @@ export const Contact2 = () => {
             <div className="contact-info">
             
             <div className="contact-head">
-                <h4>Support</h4>
+                <h4>Subscribe</h4>
             </div>
             <div className="email-info">
           <p>Find out about events, techniques and 
@@ -71,7 +75,7 @@ stress management strategies.</p>
               </Col>
               <Col md={12} sm={12}>
     <div className="contact-img-wrap">
-      <img src={contactlogo} alt=""  className='img-fluid'/>
+      <img src={contactlogo} width="100px" height="100px" alt=""  className='img-fluid'/>
     </div>
               </Col>
             </Row>
