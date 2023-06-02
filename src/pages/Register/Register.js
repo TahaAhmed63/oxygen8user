@@ -65,31 +65,6 @@ function Register() {
   return (
     <div>
       <section className="signup__area po-rel-z1 pt-100 pb-145">
-        <div className="sign__shape">
-          <img className="man-1" src="assets/img/icon/sign/man-3.png" alt="" />
-          <img
-            className="man-2 man-22"
-            src="assets/img/icon/sign/man-2.png"
-            alt=""
-          />
-          <img
-            className="circle"
-            src="assets/img/icon/sign/circle.png"
-            alt=""
-          />
-          <img
-            className="zigzag"
-            src="assets/img/icon/sign/zigzag.png"
-            alt=""
-          />
-          <img className="dot" src="assets/img/icon/sign/dot.png" alt="" />
-          <img className="bg" src="assets/img/icon/sign/sign-up.png" alt="" />
-          <img
-            className="flower"
-            src="assets/img/icon/sign/flower.png"
-            alt=""
-          />
-        </div>
         <div className="container">
           <div className="row">
             <div className="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
@@ -97,7 +72,7 @@ function Register() {
                 <h2 className="section__title">
                   Create a free <br /> Account
                 </h2>
-                <p>I'm a subhead that goes with a story.</p>
+                <p>Access free tutorials and stay up-to-date.</p>
               </div>
             </div>
           </div>

@@ -82,8 +82,8 @@ const VideoLibraryDetail = () => {
       const data1 = new FormData();
       data1.append("plan_id", yearly[0]?.id);
       data1.append("source", token.id);
-      data1.append("bulk_id", '');
-      data1.append("type", 'plan');
+      data1.append("bulk_id", "");
+      data1.append("type", "plan");
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/subscription`,
@@ -103,7 +103,6 @@ const VideoLibraryDetail = () => {
       console.log(response);
       videoApi();
     } catch (e) {
-     
       Swal.fire({
         title: "Good job!",
         text: e.message,
@@ -118,8 +117,8 @@ const VideoLibraryDetail = () => {
       const data1 = new FormData();
       data1.append("plan_id", monthly[0]?.id);
       data1.append("source", token.id);
-      data1.append("bulk_id", '');
-      data1.append("type", 'plan');
+      data1.append("bulk_id", "");
+      data1.append("type", "plan");
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/subscription`,
@@ -145,23 +144,7 @@ const VideoLibraryDetail = () => {
       ) : (
         <main>
           <section className="page__title-area pt-120 pb-90">
-            {/* <div className="page__title-shape">
-              <img
-                className="page-title-shape-5 d-none d-sm-block"
-                src="/assets/img/page-title/page-title-shape-1.png"
-                alt=""
-              />
-              <img
-                className="page-title-shape-6"
-                src="/assets/img/page-title/page-title-shape-6.png"
-                alt=""
-              />
-              <img
-                className="page-title-shape-7"
-                src="/assets/img/page-title/page-title-shape-4.png"
-                alt=""
-              />
-            </div> */}
+           
             <div className="container">
               <div className="row">
                 <div className="col-xxl-8 col-xl-8 col-lg-8">
@@ -174,7 +157,7 @@ const VideoLibraryDetail = () => {
                               <Link to="/">Home</Link>
                             </li>
                             <li className="breadcrumb-item">
-                              <Link  to="/videolibrary">Oxygen8TM Library</Link>
+                              <Link to="/videolibrary">Oxygen8TM Library</Link>
                             </li>
                             <li
                               className="breadcrumb-item active"
@@ -196,7 +179,6 @@ const VideoLibraryDetail = () => {
                         alt=""
                         width={450}
                         height={500}
-                        
                       />
                     </div>
                     <div className="course__tab-2 mb-45">
@@ -273,15 +255,14 @@ const VideoLibraryDetail = () => {
                                       role="tabpanel"
                                       aria-labelledby="grid-tab"
                                     >
-                                      
-                                        <div className="row">
-                                          {video?.playlist_videos?.map(
-                                            (item) => (
-                                              <VideoList item={item} buy={video?.pack} />
-                                            )
-                                          )}
-                                        </div>
-                                     
+                                      <div className="row">
+                                        {video?.playlist_videos?.map((item) => (
+                                          <VideoList
+                                            item={item}
+                                            buy={video?.pack}
+                                          />
+                                        ))}
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -349,7 +330,6 @@ const VideoLibraryDetail = () => {
                                     </div>
                                   </li>
 
-                                 
                                   <li className="d-flex align-items-center">
                                     <div className="course__video-info">
                                       <h5>
@@ -473,7 +453,7 @@ const VideoLibraryDetail = () => {
                                   <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
                                     <div className="course__video-price">
                                       <h5>
-                                      £{yearly[0] ? yearly[0]?.price : 0}
+                                        £{yearly[0] ? yearly[0]?.price : 0}
                                       </h5>
                                     </div>
                                   </div>
@@ -499,7 +479,7 @@ const VideoLibraryDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
-                                     
+
                                       <li className="d-flex align-items-center">
                                         <div className="course__video-info">
                                           <h5>
@@ -593,7 +573,7 @@ const VideoLibraryDetail = () => {
                                   <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
                                     <div className="course__video-price">
                                       <h5>
-                                      £{monthly[0] ? monthly[0]?.price : 0}
+                                        £{monthly[0] ? monthly[0]?.price : 0}
                                       </h5>
                                     </div>
                                   </div>

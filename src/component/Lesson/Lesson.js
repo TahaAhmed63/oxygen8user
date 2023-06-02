@@ -15,15 +15,7 @@ const {title,video}=item
   const video_link = localStorage.getItem("video_link");
 
   const handleClose = () => setShow(false);
-
-
-  const handleLoadedMetadata = () => {
-    const videolength = videoEl.current;
-    const temp =(Math.floor(videolength.duration)/60)
-    settime(temp.toFixed(2))
-    if (!videolength) return videolength.duration
-  };
-  function playVideo(){
+  const handleShow = () => {
     if(buy){
       setShow(true)
     }
@@ -35,9 +27,18 @@ const {title,video}=item
         button: "Ok",
       });
     }
-  }
+  };
+
+  const handleLoadedMetadata = () => {
+    const videolength = videoEl.current;
+    const temp =(Math.floor(videolength.duration)/60)
+    settime(temp.toFixed(2))
+    if (!videolength) return videolength.duration
+
+  };
+
   return (
-    <div className="course__curriculum-content d-sm-flex justify-content-between align-items-center" onClick={playVideo} style={{cursor:'pointer'}}> 
+    <div className="course__curriculum-content d-sm-flex justify-content-between align-items-center" > 
       <div className="course__curriculum-info">
         <svg className="document" viewBox="0 0 24 24">
           <path
@@ -58,7 +59,7 @@ const {title,video}=item
         
         </h3>
       </div>
-      <div className="course__curriculum-meta" >
+      <div className="course__curriculum-meta" onClick={handleShow} style={{cursor:'pointer'}}>
         <span className="time">
           {" "}
           <i className="icon_clock_alt"></i> {time} minutes
