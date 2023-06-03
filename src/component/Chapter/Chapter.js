@@ -9,7 +9,7 @@ const Chapter = ({ item,buy }) => {
     <div className="accordion" id="course__accordion">
       <Accordion>
         <Accordion.Item eventKey={id}>
-          <Accordion.Header>Chapter # {id}</Accordion.Header>
+          <Accordion.Header>Chapter  {id}</Accordion.Header>
           <Accordion.Body>
             {lectures?.map((item) => (
               <Lesson item={item} buy={buy} />
