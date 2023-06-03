@@ -64,32 +64,16 @@ function SignIn() {
   return (
     <div>
       <section className="signup__area po-rel-z1 pt-100 pb-145">
-        <div className="sign__shape">
-          <img className="man-1" src="assets/img/icon/sign/man-1.png" alt="" />
-          <img className="man-2" src="assets/img/icon/sign/man-2.png" alt="" />
-          <img
-            className="circle"
-            src="assets/img/icon/sign/circle.png"
-            alt=""
-          />
-          <img
-            className="zigzag"
-            src="assets/img/icon/sign/zigzag.png"
-            alt=""
-          />
-          <img className="dot" src="assets/img/icon/sign/dot.png" alt="" />
-          <img className="bg" src="assets/img/icon/sign/sign-up.png" alt="" />
-        </div>
         <div className="container">
           <div className="row">
             <div className="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
               <div className="section__title-wrapper text-center mb-55">
                 <h2 className="section__title">
-                  Sign in to <br /> recharge direct.
+                Sign up to access the<br />  Oxygen8 Courses.
                 </h2>
                 <p>
-                  it you don't have an account you can{" "}
-                  <Link to="/register">Register here!</Link>
+                Access free content and stay up-to-date{" "}
+                
                 </p>
               </div>
             </div>

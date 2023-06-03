@@ -75,7 +75,7 @@ const VideoList = ({item,buy }) => {
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body> <video src={`${video_link}${video}`}  onLoadedMetadata={handleLoadedMetadata} alt=""  height="100%" width="100%" autoPlay muted loop playsInline controls><source src={`${video_link}${video}`} type='video/mp4'/></video></Modal.Body>
+        <Modal.Body> <video src={`${video_link}${video}`}  alt=""  height="100%" width="100%" autoPlay muted loop playsInline controls><source src={`${video_link}${video}`} type='video/mp4'/></video></Modal.Body>
       </Modal>
   </div>
   );

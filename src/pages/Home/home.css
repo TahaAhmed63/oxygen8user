@@ -136,14 +136,13 @@
 }
 .overlay-absolute-text {
   top: 70%;
-  position: absolute ;
-  left: 60% ;
-  transform: translate(-50%, -50%) ;
+  position: absolute;
+  left: 60%;
+  transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
-
-  z-index: 9999;
-  width: 46% ;
+  z-index: 99;
+  width: 46%;
 }
 .text-video-wrap p{
   margin-left: 10px;
