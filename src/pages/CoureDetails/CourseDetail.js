@@ -222,11 +222,15 @@ const CourseDetail = () => {
                           role="tabpanel"
                           aria-labelledby="curriculum-tab"
                         >  
+                          {course?.pack ? (
                             <div class="course__curriculum">
-                              {course?.chapters?.map((item) => (
+                              {course?.chapters?.map((item ) => (
                                 <Chapter item={item} buy={course?.pack} />
                               ))}
                             </div>
+                          ) : (
+                            "First Buy this course"
+                          )}
                         </div>
                       </div>
                     </div>
