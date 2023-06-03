@@ -15,13 +15,13 @@ function Register() {
   const SignupSchema = Yup.object().shape({
     first_name: Yup.string("please enter a first name").required("Required"),
     last_name: Yup.string("please enter a last name").required("Required"),
-    phone_number: Yup.string().required("Required").min(11, "Phone number  is too short - should be 11 chars minimum."),
+    phone_number: Yup.string().required("Required").min(10, "Phone number  is too short - should be 10 chars minimum."),
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string().required("Required").min(8, "Password is too short - should be 8 chars minimum."),
     password_confirmation: Yup.string().required("Required").oneOf(
       [Yup.ref("password"), null],
       "Must be same your password"
-    ),
+    ),  
   });
 
   async function handleSubmit(i) {
@@ -97,7 +97,7 @@ function Register() {
                 <h2 className="section__title">
                   Create a free <br /> Account
                 </h2>
-                <p>I'm a subhead that goes with a story.</p>
+                <p>Access free tutorials and stay up-to-date.</p>
               </div>
             </div>
           </div>

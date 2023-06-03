@@ -491,6 +491,7 @@ z-index: 999999;
             font-size: 35px;
             line-height: 45px;
             font-family: Inter,sans-serif;
+            margin-bottom: 0px;
         }
         .para-corp{
             width: 100%;
