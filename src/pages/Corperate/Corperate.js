@@ -31,12 +31,12 @@ import { useNavigate } from 'react-router-dom';
            <div className='corp-head-wrap'>
             <div className='corphead'>
               <h3>
-                "The UK  suffers a collective 23.3 MILLION stress-related sick days per year ."
+                "The UK  suffers a collective 23.3 MILLION stress-related sick days per year."
               </h3>
             </div>
             <div className="para-corp">
               <p>
-                 - Center of Ecnomic and Bussiness Research
+                 - Centre of Ecnomic and Bussiness Research
               </p>
             </div>
            </div>
@@ -106,6 +106,7 @@ import { useNavigate } from 'react-router-dom';
                     cost the UK economy an estimated <strong>£28billion</strong>{" "}
                     each year...
                   </p>
+                  <br/>
                   <p className="para-wrap-about-para">
                   ...and that is before we consider the personal impact these issues have on employees' wellbeing. One in five people has taken a day off due to excessive stress, yet 90% of them cited a different reason to avoid potential stigma. (Mind, 2023.)
                     <br />
