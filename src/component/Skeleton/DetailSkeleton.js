@@ -8,23 +8,7 @@ const DetailSkeleton = (loading) => {
     <div>
       <main>
         <section className="page__title-area pt-120 pb-90">
-          <div className="page__title-shape">
-            <img
-              className="page-title-shape-5 d-none d-sm-block"
-              src="/assets/img/page-title/page-title-shape-1.png"
-              alt=""
-            />
-            <img
-              className="page-title-shape-6"
-              src="/assets/img/page-title/page-title-shape-6.png"
-              alt=""
-            />
-            <img
-              className="page-title-shape-7"
-              src="/assets/img/page-title/page-title-shape-4.png"
-              alt=""
-            />
-          </div>
+        
           <div className="container">
             <div className="row">
               <div className="col-xxl-8 col-xl-8 col-lg-8">

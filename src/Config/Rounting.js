@@ -19,6 +19,7 @@ function Rounting() {
   return (
     <Routes>
       <Route exact path="/" element={<Home />} />
+
       <Route exact path="/register" element={<Register />} />
       <Route exact path="/signin" element={<SignIn />} />
       <Route exact path="/courses" element={<Courses />} />

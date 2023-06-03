@@ -1,8 +1,9 @@
 import React from "react";
 import { useState,useRef } from "react";
 import Modal from 'react-bootstrap/Modal';
+import Swal from "sweetalert2";
 
-const Lesson = ({...item}) => {
+const Lesson = ({item,buy}) => {
 
 const {title,video}=item
 
@@ -14,7 +15,19 @@ const {title,video}=item
   const video_link = localStorage.getItem("video_link");
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    if(buy){
+      setShow(true)
+    }
+    else{
+      Swal.fire({
+        title: "OOps!",
+        text: 'You are not Enrolled in this Course',
+        icon: "danger",
+        button: "Ok",
+      });
+    }
+  };
 
   const handleLoadedMetadata = () => {
     const videolength = videoEl.current;
