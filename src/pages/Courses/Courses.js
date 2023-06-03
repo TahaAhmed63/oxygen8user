@@ -21,31 +21,59 @@ const Courses = () => {
 
    const arr = [1, 2, 3, 4, 5, 6]
 
-   useEffect(() => {
-      courseApi()
-   }, [])
+   // useEffect(() => {
+   //    courseApi()
+   // }, [])
 
-   const courseApi = async () => {
+   // const courseApi = async () => {
+   //    setLoading(true);
+   //    try {
+   //       var config = {
+   //          method: "get",
+   //          url: `${BaseUrl.baseurl}/user/course`,
+   //          headers: {
+   //             Accept: "application/json",
+   //             Authorization: `Bearer ${userToken}`,
+   //          },
+   //       };
+
+   //       const response = await axios(config);
+   //       setCourses(response.data.courses);
+   //       setLoading(false);
+
+   //    } catch (error) {
+   //       setLoading(false);
+   //       console.log(error?.response?.message);
+   //    }
+   // };
+
+    useEffect(() => {
+      courseApi();
+    }, []);
+
+    const courseApi = async () => {
       setLoading(true);
       try {
-         var config = {
-            method: "get",
-            url: `${BaseUrl.baseurl}/user/course`,
-            headers: {
-               Accept: "application/json",
-               Authorization: `Bearer ${userToken}`,
-            },
-         };
+        var config = {
+          method: "get",
+          url: `${BaseUrl.baseurl}/user/course`,
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${userToken}`,
+          },
+        };
 
-         const response = await axios(config);
-         setCourses(response.data.courses);
-         setLoading(false);
+        const response = await axios(config);
+        setCourses(response.data.courses);
+        localStorage.setItem("image_link", response.data.image_link);
+        localStorage.setItem("video_link", response.data.videolink);
+        setLoading(false);
 
       } catch (error) {
-         setLoading(false);
-         console.log(error?.response?.message);
+        setLoading(false);
+        console.log(error?.response?.message);
       }
-   };
+    };
 
    return (
       <div>

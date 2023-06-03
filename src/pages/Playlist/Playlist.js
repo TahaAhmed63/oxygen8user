@@ -34,6 +34,8 @@ const Playlist = () => {
       };
       const response = await axios(config);
       setLoading(false);
+      localStorage.setItem("image_link", response.data.image_link);
+      localStorage.setItem("video_link", response.data.videolink);
       setPlaylist(response.data.playlists);
       console.log(response);
     } catch (error) {

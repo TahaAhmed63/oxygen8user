@@ -145,7 +145,7 @@ const VideoLibraryDetail = () => {
       ) : (
         <main>
           <section className="page__title-area pt-120 pb-90">
-            <div className="page__title-shape">
+            {/* <div className="page__title-shape">
               <img
                 className="page-title-shape-5 d-none d-sm-block"
                 src="/assets/img/page-title/page-title-shape-1.png"
@@ -161,7 +161,7 @@ const VideoLibraryDetail = () => {
                 src="/assets/img/page-title/page-title-shape-4.png"
                 alt=""
               />
-            </div>
+            </div> */}
             <div className="container">
               <div className="row">
                 <div className="col-xxl-8 col-xl-8 col-lg-8">
@@ -174,7 +174,7 @@ const VideoLibraryDetail = () => {
                               <Link to="/">Home</Link>
                             </li>
                             <li className="breadcrumb-item">
-                              <Link  to="/videolibrary">Video Library</Link>
+                              <Link  to="/videolibrary">Oxygen8TM Library</Link>
                             </li>
                             <li
                               className="breadcrumb-item active"
@@ -234,7 +234,7 @@ const VideoLibraryDetail = () => {
                           >
                             {" "}
                             <i className="icon_book_alt"></i>{" "}
-                            <span>Curriculum</span>{" "}
+                            <span>Overview</span>{" "}
                           </button>
                         </li>
                       </ul>
@@ -248,7 +248,7 @@ const VideoLibraryDetail = () => {
                           aria-labelledby="description-tab"
                         >
                           <div className="course__description text-start">
-                            <h3>Video Library Overview</h3>
+                            {/* <h3>Video Library Overview</h3> */}
                             <p>{video?.description}</p>
                           </div>
                         </div>
@@ -273,17 +273,15 @@ const VideoLibraryDetail = () => {
                                       role="tabpanel"
                                       aria-labelledby="grid-tab"
                                     >
-                                      {video?.pack ? (
+                                      
                                         <div className="row">
                                           {video?.playlist_videos?.map(
                                             (item) => (
-                                              <VideoList {...item} />
+                                              <VideoList item={item} buy={video?.pack} />
                                             )
                                           )}
                                         </div>
-                                      ) : (
-                                        "First buy this VideoList"
-                                      )}
+                                     
                                     </div>
                                   </div>
                                 </div>

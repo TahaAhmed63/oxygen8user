@@ -280,6 +280,7 @@ color: #fff;
   height: 100%;
   justify-content: center;
   align-items: center;
+  position: absolute;
 }
 
 .libraryspan {
@@ -633,7 +634,7 @@ form button {
 }
 
 .bottommark-3 {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 88%;
   height: 50%;
@@ -641,7 +642,7 @@ form button {
 
 .bottommark-3::before {
   content: "";
-  position: absolute;
+  position: relative;
   top: 20%;
   left: 1%;
   display: block;
