@@ -44,7 +44,7 @@ const Services = () => {
                     >
                       <div
                         style={{
-                          width: "97%",
+                    
                           paddingBottom: "2rem",
                         }}
                       >
@@ -52,8 +52,10 @@ const Services = () => {
                           style={{
                             color: "#fff",
                             fontSize: "18px",
+                            width:"98%",
+                            margin:"0 auto",
                             fontWeight: "500",
-                            textAlign: "left",
+                            textAlign: "justify",
                           }}
                         >
                           1:1 appointments provide a highly personalised
@@ -127,7 +129,7 @@ const Services = () => {
                     >
                       <div
                         style={{
-                          width: "97%",
+                    
                           paddingBottom: "2rem",
                         }}
                       >
@@ -135,8 +137,10 @@ const Services = () => {
                           style={{
                             color: "#fff",
                             fontSize: "18px",
+                            width:"98%",
+                            margin:"0 auto",
                             fontWeight: "500",
-                            textAlign: "left",
+                            textAlign: "justify",
                           }}
                         >
                           The Oxygen8 Courses provide a comprehensive array of
@@ -188,7 +192,7 @@ const Services = () => {
                     >
                       <div
                         style={{
-                          width: "97%",
+                    
                           paddingBottom: "2rem",
                         }}
                       >
@@ -196,8 +200,10 @@ const Services = () => {
                           style={{
                             color: "#fff",
                             fontSize: "18px",
+                            width:"98%",
+                            margin:"0 auto",
                             fontWeight: "500",
-                            textAlign: "left",
+                            textAlign: "justify",
                           }}
                         >
                           The Oxygen8 Library is split into 3 sections: Stress,
@@ -249,7 +255,7 @@ const Services = () => {
                     >
                       <div
                         style={{
-                          width: "97%",
+                    
                           paddingBottom: "2rem",
                         }}
                       >
@@ -257,8 +263,10 @@ const Services = () => {
                           style={{
                             color: "#fff",
                             fontSize: "18px",
+                            width:"98%",
+                            margin:"0 auto",
                             fontWeight: "500",
-                            textAlign: "left",
+                            textAlign: "justify",
                           }}
                         >
                           Having experienced severe burnout working in
@@ -299,7 +307,7 @@ const Services = () => {
                     >
                       <div
                         style={{
-                          width: "97%",
+                    
                           paddingBottom: "2rem",
                         }}
                       >
@@ -307,8 +315,10 @@ const Services = () => {
                           style={{
                             color: "#fff",
                             fontSize: "18px",
+                            width:"98%",
+                            margin:"0 auto",
                             fontWeight: "500",
-                            textAlign: "left",
+                            textAlign: "justify",
                           }}
                         >
                           Breathwork is a powerful practice that harnesses the

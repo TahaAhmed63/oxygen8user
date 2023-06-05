@@ -143,11 +143,10 @@ function Home() {
                     Welcome to Oxygen8{" "}
                     <em
                       style={{
-                        fontSize: "16px",
+                        fontSize: "11px",
                         position: "relative",
-                        bottom: "1.8rem",
-                        fontStyle: "normal",
-                        left: "-9px",
+                        bottom: "1.4rem",
+                        left:"-11px"
                       }}
                     >
                       TM
@@ -164,17 +163,19 @@ function Home() {
               <div className="para-wrap">
                 <p
                   style={{
-                    color: "#317C74",
-                    maxWidth: "1024px",
+                    color: "#317C74"
+              
                   }}
                 >
                   Whether you are looking for stress or anxiety management,
                   burnout recovery, or resilience building, Oxygen8{" "}
                   <em
                     style={{
-                      fontSize: "12px",
+                      fontSize: "11px",
                       position: "relative",
                       bottom: "0.8rem",
+                      left:"-5px",
+                      fontStyle:"normal"
                     }}
                   >
                     TM

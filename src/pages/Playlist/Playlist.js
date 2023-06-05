@@ -99,9 +99,9 @@ const Playlist = () => {
                  color:"#317C74",
                  fontSize:"24px",
                  lineHeight:"45px",
-                 textAlign:"left",
+                 textAlign:"justify",
                  // marginLeft:"58px"
-                 maxWidth:"981px",
+                 maxWidth:"989px",
                  margin:"0 auto"
 
                 }}>The Oxygen8 <em style={
@@ -112,7 +112,7 @@ const Playlist = () => {
                       left:"-5px",
                       fontStyle:"normal"
                       }
-                 }>TM</em>.Library offers accessible down-regulation, performance-enhancing and anxiety management tools in the form of guided audio sessions for on-the-go or at home practices. </p>
+                 }>TM</em>Library offers accessible down-regulation, performance-enhancing and anxiety management tools in the form of guided audio sessions for on-the-go or at home practices. </p>
               </Col>
             </Row>
           </Container>

@@ -37,7 +37,7 @@ export const DetailVideo = () => {
        <Col md={12} xl={12} xxl={12} className='video-details'>
         <div className="head-wrap">
             <h3 className='text-center'>Conscious Nervous System Feedback </h3>
-            <h3 className='text-center'>(CNSF) and Optimization</h3>
+            <h3 className='text-center'>(CNSF) and Optimisation</h3>
         </div>
         <div className="video-container-2">
                   <video ref={videoRef} src={mainvideo} controls />
