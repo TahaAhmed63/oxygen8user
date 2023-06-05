@@ -135,10 +135,11 @@ const Coorperate = () => {
                     unique needs of employees. Oxygen8{" "}
                     <em
                       style={{
-                        fontSize: "12px",
+                        fontSize: "10px",
                         left: "-5px",
                         position: "relative",
-                        bottom: "0.5rem",
+                        bottom: "0.8rem",
+                        fontStyle:"normal"
                       }}
                     >
                       TM
