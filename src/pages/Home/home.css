@@ -303,7 +303,8 @@
 .para-wrap {
     display: flex;
     padding: 0px 125px 0px 145px;
-    width: 1040px;
+    width: 89% !important;   
+
 }
 .para-wrap p {
   text-align: justify;
@@ -351,6 +352,10 @@
 }
   .para-wrap{
     padding: 0px  ;
+    width: 100% !important;
+  }
+  .para-wrap p{
+    font-size: 14px;
   }
   .text-video-wrap p{
     margin-left: 10px;
