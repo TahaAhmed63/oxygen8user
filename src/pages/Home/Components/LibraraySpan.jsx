@@ -1,8 +1,12 @@
 import React from 'react'
 import "./style.css"
+import { useNavigate } from 'react-router-dom'
 
 export const LibraraySpan = () => {
+  const navigate = useNavigate();
+
   return (
+    
     <>
 
     <section className="libraryspan">
@@ -20,7 +24,13 @@ export const LibraraySpan = () => {
             </div>
             <div className="wrap">
                  <div className="cardBtn">
-                <span>Free Trial</span>
+                <span style={{
+                  cursor:"pointer"
+                }} onClick={()=>{
+                  navigate("/videolibrary")
+                }}>
+
+               Free Trial</span>
                  </div>
                  </div>
         </div>

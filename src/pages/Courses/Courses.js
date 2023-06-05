@@ -129,9 +129,9 @@ const Courses = () => {
                   color:"#317C74",
                   fontSize:"24px",
                   lineHeight:"45px",
-                  textAlign:"left",
+                  textAlign:"justify",
                   // marginLeft:"58px"
-                  maxWidth:"1056px",
+                  maxWidth:"1075px",
                   margin:"0 auto"
 
                 }}>"Discover the latest, evidence-based biofeedback techniques that enable you to effectively regulate stress, anxiety, and overwhelm at any time and in any location. By combining these techniques with guided macro-level adjustments, you can enhance your body's resilience to stress and promote overall health improvement." </p>
