@@ -357,7 +357,7 @@ const Services = () => {
                           }}
                           style={{ background: "#fff", color: "#317C74" }}
                         >
-                          contact
+                          Contact
                         </button>
                       </div>
                     </section>
