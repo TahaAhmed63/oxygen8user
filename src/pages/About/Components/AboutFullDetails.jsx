@@ -29,15 +29,17 @@ export const AboutFullDetails = () => {
                       Welcome! I'm Ben Perham, the Founder of Oxygen8{" "}
                       <em
                         style={{
-                          fontSize: "12px",
+                          fontSize: "10px",
                           position: "relative",
                           bottom: "0.8rem",
+
+                          left: "-5px",
                           fontStyle: "normal",
                         }}
                       >
                         TM
                       </em>
-                      .
+                      
                       <br />
                       <br />
                       After graduating with a First-Class Honours degree in

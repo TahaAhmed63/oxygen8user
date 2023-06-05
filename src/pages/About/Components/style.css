@@ -183,30 +183,31 @@
 .para-wrap-about {
     display: flex;
     flex-direction: column;
-    width: 98%;
+    width: 100%;
     height: 100%;
 }
 .para-wrap-about-2 {
     display: flex;
     flex-direction: column;
     width: 98%;
+    padding-top: 1rem;
     height: 100%;
 }
 .para-wrap-about-2 p {
     font-size: 18px;
     line-height: 33px;
-    width: 89%;
+    width: 94%;
     color: white;
-    text-align: left;
+    text-align: justify;
     font-family: Inter,sans-serif;
     margin-bottom: 0px;
 }
 .para-wrap-about p {
     font-size: 18px;
     line-height: 33px;
-    width: 89%;
+    width: 100%;
     color: white;
-    text-align: left;
+    text-align: justify;
     font-family: Inter,sans-serif;
     margin-bottom: 0px;
 }
@@ -223,10 +224,12 @@
     .para-wrap-about p {
         font-size: 16px;
         line-height: 26px;
+        text-align: justify;
     }
     .para-wrap-about-2 p {
         font-size: 16px;
         line-height: 26px;
+        text-align: justify;
     }
 
 }
@@ -252,8 +255,10 @@
     }
 }
 
+
 .button-wrap {
     display: flex;
+    padding-top: 1.5rem;
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -263,10 +268,12 @@
 }
 .button-about-3 {
     width: 100%;
-    margin-top: 10px ; 
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
     height: 60px;
     font-size: 100%;
 }
@@ -652,6 +659,13 @@ z-index: 999999;
     color: white;
     text-align: end;
     margin-left: 10px;
+}
+.para-wrap-about p {
+    line-height: 33.5px;
+    font-size: 20px;
+}
+.para-wrap-about-2 p{
+    font-size: 20px;
 }
         .head-wrap h3 {
             font-size: 40.3px;
