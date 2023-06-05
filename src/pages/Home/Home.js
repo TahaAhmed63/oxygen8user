@@ -146,7 +146,9 @@ function Home() {
                         fontSize: "11px",
                         position: "relative",
                         bottom: "1.4rem",
-                        left:"-11px"
+                        left:"-11px",
+                        fontStyle:"normal"
+
                       }}
                     >
                       TM
