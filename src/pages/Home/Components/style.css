@@ -162,7 +162,7 @@ height: 100vh;
 }
 @media (min-width: 769px) and (max-width: 920px) {
   .card {
-    width: 14em !important;
+    width:13em !important;
     height: 33em !important;
   }
   .library-para p {
