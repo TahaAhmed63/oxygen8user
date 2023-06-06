@@ -829,3 +829,144 @@ only screen and (min--moz-device-pixel-ratio: 2.6),
 
 
  }
+ @media only screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles for iPhone 5/SE and iPhone 6/6s/7/8 */
+  .home-main {
+    height: 50vh!important;
+}
+.video-container {
+  height: 50vh;
+  width: 100%;
+}
+.overlay-absolute-text {
+left: 50%!important;
+position: relative!important;
+top: -123px!important;
+width: 100%;
+}
+.text-video-wrap {
+margin: 0 auto;
+max-width: 2738px;
+}
+.text-video-wrap h2 {
+font-size: 26px;
+}
+.text-video-wrap p {
+margin-left: 10px;
+}
+.text-video-wrap p {
+font-size: 21px;
+padding-left: 0;
+text-align: left;
+}
+.row {
+align-items: center;
+flex-direction: column;
+justify-content: center;
+}
+.header-wrap {
+justify-content: flex-start;
+text-align: left;
+}
+.para-wrap {
+padding: 0;
+width: 100%!important;
+}
+.Home-detail {
+height: 100%;
+padding-bottom: 2rem;
+padding-top: 2rem;
+}
+.video-details {
+display: flex!important;
+flex-direction: column!important;
+gap: 0!important;
+height: 100%!important;
+margin-bottom: 5%!important;
+margin-top: 0!important;
+width: 100%;
+}
+.head-wrap, .video-wrap {
+padding: 0;
+}
+.head-wrap h3 {
+font-size: 20.5px!important;
+}
+
+
+.video-container-2 {
+width: 100%;
+}
+}
+/* Safari-specific media query for iPhone devices */
+@media only screen and (max-device-width: 414px) and (-webkit-min-device-pixel-ratio: 2), 
+       only screen and (max-device-width: 414px) and (min-resolution: 120dpi) {
+  /* Styles for all iPhone devices */
+  .home-main {
+    height: 50vh!important;
+}
+.video-container {
+  height: 50vh;
+  width: 100%;
+}
+.overlay-absolute-text {
+left: 50%!important;
+position: relative!important;
+top: -123px!important;
+width: 100%;
+}
+.text-video-wrap {
+margin: 0 auto;
+max-width: 2738px;
+}
+.text-video-wrap h2 {
+font-size: 26px;
+}
+.text-video-wrap p {
+margin-left: 10px;
+}
+.text-video-wrap p {
+font-size: 21px;
+padding-left: 0;
+text-align: left;
+}
+.row {
+align-items: center;
+flex-direction: column;
+justify-content: center;
+}
+.header-wrap {
+justify-content: flex-start;
+text-align: left;
+}
+.para-wrap {
+padding: 0;
+width: 100%!important;
+}
+.Home-detail {
+height: 100%;
+padding-bottom: 2rem;
+padding-top: 2rem;
+}
+.video-details {
+display: flex!important;
+flex-direction: column!important;
+gap: 0!important;
+height: 100%!important;
+margin-bottom: 5%!important;
+margin-top: 0!important;
+width: 100%;
+}
+.head-wrap, .video-wrap {
+padding: 0;
+}
+.head-wrap h3 {
+font-size: 20.5px!important;
+}
+
+
+.video-container-2 {
+width: 100%;
+}
+
+}

@@ -67,6 +67,7 @@ a {
 
 .w-img img {
   width: 100%;
+  height: auto;
 }
 
 .m-img img {
