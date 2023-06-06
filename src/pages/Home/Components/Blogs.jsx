@@ -54,7 +54,7 @@ export const Blogs = () => {
    <section className="Blogs-home">
   <Container >
     <div className="card-wraper">
-    <Row className='justify-content-center align-items-center ml-5'>
+    <Row className='justify-content-center align-items-center'>
 
         {
             BLogData.map((BLogData,index)=>{
