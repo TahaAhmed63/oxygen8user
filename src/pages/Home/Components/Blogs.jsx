@@ -60,12 +60,20 @@ export const Blogs = () => {
             BLogData.map((BLogData,index)=>{
                 return(
                   
-                    <Col key={index} md={4} sm={12} xs={12}>
+                    <Col key={index} xl={4} xxl={4} md={4} sm={12} xs={12}>
                   
                     <div className="card">
-                        <div className="card-content">
-                            <div className="card-img">
-                                <img src={BLogData.icon} alt="" />
+                        <div className="card-content ">
+                            <div style={{
+  height: "75%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}} className="card-img">
+                                <img style={{
+                                    width:"82px",
+                                    height:"auto"
+                                }} src={BLogData.icon} alt="" />
                             </div>
                             <div className="card-head">
                                 <h6>
