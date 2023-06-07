@@ -30,7 +30,7 @@ const Coorperate = () => {
             </div>
             <div className="para-corp">
               <p>
-                 - Centre of Ecnomic and Bussiness Research
+                 - Centre of Economic and Bussiness Research
               </p>
             </div>
           </div>
@@ -106,7 +106,7 @@ const Coorperate = () => {
                       lineHeight: "49px",
                     }}
                   >
-                    Stress burnout and the associated mental health issues cost
+                    Stress, burnout and the associated mental health issues cost
                     the UK economy an estimated <strong>£28billion</strong> each
                     year...
                   </p>
