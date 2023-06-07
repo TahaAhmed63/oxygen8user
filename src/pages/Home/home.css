@@ -241,9 +241,9 @@
   align-items: center;
 }
 @media((min-width: 100px) and (max-width: 524px)){
-  .home-main{
+  /* .home-main{
     height: 75vh !important;
-  }
+  } */
   .bottom-mark{
     display: none;
   }
@@ -331,7 +331,7 @@
   }
 }
 
-@media(((min-width: 100px) and (max-width: 764px))){
+ @media(((min-width: 100px) and (max-width: 764px))){
   .home-main {
     height: 50vh !important;
 }
@@ -341,13 +341,13 @@
 
   }
 
-  /* .overlay-absolute-text {
+ .overlay-absolute-text {
     left: 50% !important;
     position: relative !important;
     top: -40vh !important;
     width: 100%;
 } */
-.text-video-wrap h2{
+ .text-video-wrap h2{
   font-size: 26px;
 }
   .para-wrap{
@@ -380,7 +380,7 @@
 .bottommark-3::before {
   transform: translateX(-58%) translateY(-50%) rotate(180deg)
   ;}
-}
+} 
 
 
 
@@ -443,7 +443,75 @@
   }
 }
 
-
+@media only screen and (min-width: 100px) and (max-width: 524px) and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (max-device-width: 414px) and (min-resolution: 120dpi) {
+  /* Styles for all iPhone devices */
+  .home-main {
+    height: 50vh !important;
+  }
+  .video-container {
+    height: 50vh !important;
+    width: 100% !important;
+  }
+  .overlay-absolute-text {
+    left: 50% !important;
+    position: relative !important;
+    top: -123px !important;
+    width: 100% !important;
+  }
+  .text-video-wrap {
+    margin: 0 auto !important;
+    max-width: 2738px !important;
+  }
+  .text-video-wrap h2 {
+    font-size: 26px !important;
+  }
+  .text-video-wrap p {
+    margin-left: 10px !important;
+  }
+  .text-video-wrap p {
+    font-size: 21px !important;
+    padding-left: 0 !important;
+    text-align: left !important;
+  }
+  .row {
+    align-items: center !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  .header-wrap {
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+  .para-wrap {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .Home-detail {
+    height: 100% !important;
+    padding-bottom: 2rem !important;
+    padding-top: 2rem !important;
+  }
+  .video-details {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    height: 100% !important;
+    margin-bottom: 5% !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+  .head-wrap,
+  .video-wrap {
+    padding: 0 !important;
+  }
+  .head-wrap h3 {
+    font-size: 20.5px !important;
+  }
+  .video-container-2 {
+    width: 100% !important;
+  }
+}
 
 @media((min-width:525px)and (max-width:768px)){
   .bottom-mark {
