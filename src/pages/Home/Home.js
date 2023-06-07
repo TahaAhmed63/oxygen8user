@@ -152,7 +152,7 @@ function Home() {
                       }}
                     >
                       TM
-                    </em>{" "}
+                    </em>
                     Stress Wellness
                   </h4>
                 </div>
