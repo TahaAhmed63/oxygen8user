@@ -143,9 +143,9 @@ function Home() {
                     Welcome to Oxygen8{" "}
                     <em
                       style={{
-                        fontSize: "11px",
+                        fontSize: "8px",
                         position: "relative",
-                        bottom: "1.4rem",
+                        bottom: "1rem",
                         left:"-11px",
                         fontStyle:"normal"
 
