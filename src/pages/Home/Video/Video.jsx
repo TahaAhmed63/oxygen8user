@@ -19,7 +19,7 @@ function Video() {
   return (
 <>
 <div className='video-container'>
-  <video src={myvideo} className='myvideo' muted autoPlay loop></video>
+  <video src={myvideo} className='myvideo' playsinline muted autoPlay loop></video>
 </div>
 
      <div className="overlay-absolute-text">
