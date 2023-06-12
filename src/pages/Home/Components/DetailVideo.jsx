@@ -40,7 +40,7 @@ export const DetailVideo = () => {
             <h3 className='text-center'>(CNSF) and Optimisation</h3>
         </div>
         <div className="video-container-2">
-                  <video ref={videoRef} src={mainvideo} controls />
+                  <video ref={videoRef}  playsinline src={mainvideo} controls />
                   {!isVideoPlaying && (
                     <div className="play-button" onClick={handleVideoToggle}>
                       <img src={playButtonIcon} alt="Play Button" />
