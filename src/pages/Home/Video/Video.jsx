@@ -19,14 +19,17 @@ function Video() {
   return (
 <>
 <div className='video-container'>
-  <video src={myvideo} className='myvideo' playsinline muted autoPlay loop></video>
-</div>
+<video autoPlay muted loop playsInline>
+              <source src={myvideo} type="video/mp4" />
+              <source src={myvideo} type="video/webm" />
+              Your browser does not support the video tag.
+            </video></div>
 
      <div className="overlay-absolute-text">
           <div className="text-video-wrap">
             <h2 >Control your nervous system.</h2>
             <h2 >
-Control your stress.</h2>
+Control your stress.</h2> 
 <p >Micro-regulation tools for stress. Any time, anywhere.</p>
           </div>
      </div>

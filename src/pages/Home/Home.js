@@ -140,19 +140,19 @@ function Home() {
               <div className="header-wrap">
                 <div className="about-head">
                   <h4>
-                    Welcome to Oxygen8{" "}
+                    Welcome to Oxygen8
                     <em
                       style={{
-                        fontSize: "8px",
+                        fontSize: "11px",
                         position: "relative",
-                        bottom: "1rem",
-                        left:"-11px",
-                        fontStyle:"normal"
-
-                      }}
+                        bottom: "1.5rem",
+                        left: "-1px",
+                        fontStyle: "normal"
+                    }}
                     >
-                      TM
+                    TM
                     </em>
+                    <br/>
                     Stress Wellness
                   </h4>
                 </div>
@@ -181,7 +181,7 @@ function Home() {
                     }}
                   >
                     TM
-                  </em>{" "}
+                  </em>
                   offers a comprehensive and integrative approach to dealing
                   with the stresses of life. We offer you the tools to directly
                   regulate your nervous system in both the short and long term
