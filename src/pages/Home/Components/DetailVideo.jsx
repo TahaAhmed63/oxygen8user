@@ -4,6 +4,7 @@ import { Container,Row,Col } from 'react-bootstrap'
 import mainvideo from "./../../../../src/Assets/videohome/090523_Oxygen8-Website-Medium-Loop_4x3.mp4"
 // import skeleton from "./../../../../src/Assets/Videoaboutimages/skeleton.png"
 import playButtonIcon from "./../../../Assets/AboutImages/videobtn-removebg-preview.png"
+import mylogo from "./../../../Assets/AboutImages/Oxygen icon W.png"
 
 export const DetailVideo = () => {
   const videoRef = useRef(null);
@@ -38,6 +39,9 @@ export const DetailVideo = () => {
         <div className="head-wrap">
             <h3 className='text-center'>Conscious Nervous System Feedback </h3>
             <h3 className='text-center'>(CNSF) and Optimisation</h3>
+        </div>
+        <div className='middle-img'>
+          <img src={mylogo}  alt="" />
         </div>
         <div className="video-container-2">
                   <video ref={videoRef}  playsinline src={mainvideo} controls />

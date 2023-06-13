@@ -30,7 +30,7 @@ const Coorperate = () => {
             </div>
             <div className="para-corp">
               <p>
-                 - Centre of Economic and Bussiness Research
+                 - Centre of Economic and Business Research
               </p>
             </div>
           </div>
@@ -39,8 +39,8 @@ const Coorperate = () => {
       <section className="main-about mt-5">
         <Container>
           <div className="more-detail-wrap">
-            <Row>
-              <Col lg={4} xl={4} xxl={4} md={4} sm={12}>
+          <Row >
+          <Col lg={4} xl={4} xxl={4} md={4} sm={12} className="order1">
                 <div className="owner3-image-wrap">
                   <div className="owner3-wrap">
                     <img src={owner3} className="owner3" alt="" />
@@ -97,7 +97,7 @@ const Coorperate = () => {
                   </div>
                 </div>
               </Col>
-              <Col lg={7} xl={7} xxl={7} md={8} sm={12}>
+              <Col lg={7} xl={7} xxl={7} md={8} sm={12} className="order2">
                 <div className="para-wrap-about mt-0">
                   <p
                     className="para-wrap-about-heading"
@@ -178,6 +178,7 @@ const Coorperate = () => {
               Contact
             </button>
           </div>
+        
         </Container>
       </section>
 
