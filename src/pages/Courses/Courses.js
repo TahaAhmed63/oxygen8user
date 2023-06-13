@@ -95,16 +95,18 @@ const Courses = () => {
          <section className="AboutPage">
             <Row>
 
-               <Col md={12} sm={12}>
-                  <div className="headwrapabout">
-                  <h1> The Oxygen8 <em style={
-                      {
-                        fontSize: "12px",
-                            position: "relative",
-                            bottom: "2rem",
-                            left: "-16px",
-                            fontStyle:"normal"}
-                     }>TM</em>Courses</h1>
+                  <Col md={12} sm={12}>
+                     <div className="headwrapabout">
+                     <h1> The Oxygen8 <em style={
+                        {
+                           fontSize: "12px",
+                              position: "relative",
+                              bottom: "2rem",
+                              left: "-16px",
+                              fontStyle:"normal"}
+                        }>TM</em>
+                     <br className='break-mobile'/>
+                        Courses</h1>
                   </div>
                </Col>
 
@@ -125,7 +127,7 @@ const Courses = () => {
                   fontSize:"30px"
 
                 }}>Science-based techniques to boost stress resilience, productivity and recovery. </h3>
-                <p style={{
+                <p  style={{
                   color:"#317C74",
                   fontSize:"24px",
                   lineHeight:"45px",

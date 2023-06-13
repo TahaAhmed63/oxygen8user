@@ -24,16 +24,13 @@ const VideoLibraryDetail = () => {
   const [monthly, setMonthly] = useState([]);
   const [yearly, setYearly] = useState([]);
   const [video, setVideo] = useState();
-  const [, setSubscription] = useState();
+  // const [, setSubscription] = useState();
   const userToken = localStorage.getItem("accesstoken");
 
   useEffect(() => {
-    if (!userToken) {
-      navigate("/signin");
-    }
     videoApi();
   }, []);
-
+console.log('token----->',userToken)
   async function videoApi() {
     setLoading(true);
     try {
@@ -45,18 +42,18 @@ const VideoLibraryDetail = () => {
           Authorization: `Bearer ${userToken}`,
         },
       };
-      var config1 = {
-        method: "get",
-        url: `${BaseUrl.baseurl}/user/subscription/playlist/${id}`,
-        headers: {
-          Accept: "application/json",
-          Authorization: `Bearer ${userToken}`,
-        },
-      };
+      // var config1 = {
+      //   method: "get",
+      //   url: `${BaseUrl.baseurl}/user/subscription/playlist/${id}`,
+      //   headers: {
+      //     Accept: "application/json",
+      //     Authorization: `Bearer ${userToken}`,
+      //   },
+      // };
       const response = await axios(config);
-      const response1 = await axios(config1);
+      // const response1 = await axios(config1);
       setLoading(false);
-      setSubscription(response1.data);
+      // setSubscription(response1.data);
       setVideo(response.data.playlist);
       console.log(response.data);
       setMonthly(
@@ -78,65 +75,66 @@ const VideoLibraryDetail = () => {
 
   const onToken = async (token) => {
     setLoading(true);
-    try {
-      const data1 = new FormData();
-      data1.append("plan_id", yearly[0]?.id);
-      data1.append("source", token.id);
-      data1.append("bulk_id", '');
-      data1.append("type", 'plan');
-      var config = {
-        method: "post",
-        url: `${BaseUrl.baseurl}/user/subscription`,
-        data: data1,
-        headers: {
-          Accept: "application/json",
-          Authorization: `Bearer ${userToken}`,
-        },
-      };
-      const response = await axios(config);
-      Swal.fire({
-        title: "Good job!",
-        text: response.message,
-        icon: "success",
-        button: "Ok",
-      });
-      console.log(response);
-      videoApi();
-    } catch (e) {
-     
-      Swal.fire({
-        title: "Good job!",
-        text: e.message,
-        icon: "success",
-        button: "Ok",
-      });
-    }
+      try {
+        const data1 = new FormData();
+        data1.append("plan_id", yearly[0]?.id);
+        data1.append("source", token.id);
+        data1.append("bulk_id", "");
+        data1.append("type", "plan");
+        var config = {
+          method: "post",
+          url: `${BaseUrl.baseurl}/user/subscription`,
+          data: data1,
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${userToken}`,
+          },
+        };
+        const response = await axios(config);
+        Swal.fire({
+          title: "Good job!",
+          text: response.message,
+          icon: "success",
+          button: "Ok",
+        });
+        console.log(response);
+        videoApi();
+      } catch (e) {
+        Swal.fire({
+          title: "Good job!",
+          text: e.message,
+          icon: "success",
+          button: "Ok",
+        });
+      }
   };
 
+  const checktoken = () => {
+      navigate('/signin')
+  };
   const onToken1 = async (token) => {
-    try {
-      const data1 = new FormData();
-      data1.append("plan_id", monthly[0]?.id);
-      data1.append("source", token.id);
-      data1.append("bulk_id", '');
-      data1.append("type", 'plan');
-      var config = {
-        method: "post",
-        url: `${BaseUrl.baseurl}/user/subscription`,
-        data: data1,
-        headers: {
-          Accept: "application/json",
-          Authorization: `Bearer ${userToken}`,
-        },
-      };
-      const response = await axios(config);
-      console.log(response);
-      videoApi();
-    } catch (e) {
-      console.log(e);
-    }
+      try {
+        const data1 = new FormData();
+        data1.append("plan_id", monthly[0]?.id);
+        data1.append("source", token.id);
+        data1.append("bulk_id", "");
+        data1.append("type", "plan");
+        var config = {
+          method: "post",
+          url: `${BaseUrl.baseurl}/user/subscription`,
+          data: data1,
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${userToken}`,
+          },
+        };
+        const response = await axios(config);
+        console.log(response);
+        videoApi();
+      } catch (e) {
+        console.log(e);
+      }
   };
-
   return (
     <div>
       <Header />
@@ -174,7 +172,7 @@ const VideoLibraryDetail = () => {
                               <Link to="/">Home</Link>
                             </li>
                             <li className="breadcrumb-item">
-                              <Link  to="/videolibrary">Oxygen8TM Library</Link>
+                              <Link to="/videolibrary">Oxygen8TM Library</Link>
                             </li>
                             <li
                               className="breadcrumb-item active"
@@ -196,7 +194,6 @@ const VideoLibraryDetail = () => {
                         alt=""
                         width={450}
                         height={500}
-                        
                       />
                     </div>
                     <div className="course__tab-2 mb-45">
@@ -273,15 +270,14 @@ const VideoLibraryDetail = () => {
                                       role="tabpanel"
                                       aria-labelledby="grid-tab"
                                     >
-                                      
-                                        <div className="row">
-                                          {video?.playlist_videos?.map(
-                                            (item) => (
-                                              <VideoList item={item} buy={video?.pack} />
-                                            )
-                                          )}
-                                        </div>
-                                     
+                                      <div className="row">
+                                        {video?.playlist_videos?.map((item) => (
+                                          <VideoList
+                                            item={item}
+                                            buy={video?.pack}
+                                          />
+                                        ))}
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -349,7 +345,6 @@ const VideoLibraryDetail = () => {
                                     </div>
                                   </li>
 
-                                 
                                   <li className="d-flex align-items-center">
                                     <div className="course__video-info">
                                       <h5>
@@ -473,7 +468,7 @@ const VideoLibraryDetail = () => {
                                   <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
                                     <div className="course__video-price">
                                       <h5>
-                                      £{yearly[0] ? yearly[0]?.price : 0}
+                                        £{yearly[0] ? yearly[0]?.price : 0}
                                       </h5>
                                     </div>
                                   </div>
@@ -499,7 +494,7 @@ const VideoLibraryDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
-                                     
+
                                       <li className="d-flex align-items-center">
                                         <div className="course__video-info">
                                           <h5>
@@ -521,7 +516,8 @@ const VideoLibraryDetail = () => {
                                     //     Enrolled
                                     //   </button>
                                     //  :  */}
-                                    <StripeCheckout
+                                    {userToken ?
+                                     <StripeCheckout
                                       token={onToken}
                                       stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
                                       amount={yearly[0]?.price * 100}
@@ -550,8 +546,13 @@ const VideoLibraryDetail = () => {
                                           "Buy"
                                         )}
                                       </button>
-                                    </StripeCheckout>
-                                    {/* } */}
+                                    </StripeCheckout> 
+                                    :
+                                    <button
+                                    onClick={()=>{checktoken()}}
+                                    className="e-btn e-btn-7 w-100"
+                                    style={{ background: "#337c75" }}
+                                  >Buy</button>  }
                                   </div>
                                 </div>
                               </div>
@@ -593,7 +594,7 @@ const VideoLibraryDetail = () => {
                                   <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
                                     <div className="course__video-price">
                                       <h5>
-                                      £{monthly[0] ? monthly[0]?.price : 0}
+                                        £{monthly[0] ? monthly[0]?.price : 0}
                                       </h5>
                                     </div>
                                   </div>
@@ -647,6 +648,7 @@ const VideoLibraryDetail = () => {
                                     //     Enrolled
                                     //   </button>
                                     //  :  */}
+                                    {userToken ? 
                                     <StripeCheckout
                                       token={onToken1}
                                       stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
@@ -677,7 +679,13 @@ const VideoLibraryDetail = () => {
                                         )}
                                       </button>
                                     </StripeCheckout>
-                                    {/* } */}
+                                    :  <button
+                                    onClick={()=>{checktoken()}}
+                                    className="e-btn e-btn-7 w-100"
+                                    style={{ background: "#337c75" }}
+                                  >Buy</button>}
+
+                          
                                   </div>
                                 </div>
                               </div>

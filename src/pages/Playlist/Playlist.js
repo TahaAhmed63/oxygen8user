@@ -66,15 +66,16 @@ const Playlist = () => {
 
                <Col md={12} sm={12}>
                   <div className="headwrapabout">
-                     <h1> The Oxygen8 <em style={
+                     <h1> The Oxygen8  <em style={
                       {
                         fontSize: "12px",
                             position: "relative",
                             bottom: "2rem",
                             left: "-16px",
-                            fontStyle:"normal"
-                          }
-                     }>TM</em>Library</h1>
+                            fontStyle:"normal"}
+                     }>TM</em>
+                     <br className="break-mobile"/>
+                    Library</h1>
                   </div>
                </Col>
 

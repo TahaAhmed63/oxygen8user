@@ -113,7 +113,17 @@ const Services = () => {
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
                   <Accordion.Header className="button-after">
-                    The Oxygen8 Courses
+                    The Oxygen8  <em
+                    style={{
+                      fontSize: "11px",
+                      position: "relative",
+                      bottom: "0.8rem",
+                      left:"-5px",
+                      fontStyle:"normal"
+                    }}
+                  >
+                    TM
+                  </em> Courses 
                   </Accordion.Header>
                   <Accordion.Body
                     style={{
@@ -143,7 +153,17 @@ const Services = () => {
                             textAlign: "justify",
                           }}
                         >
-                          The Oxygen8 Courses provide a comprehensive array of
+                          The Oxygen8   <em
+                    style={{
+                      fontSize: "11px",
+                      position: "relative",
+                      bottom: "0.8rem",
+                      left:"-5px",
+                      fontStyle:"normal"
+                    }}
+                  >
+                    TM
+                  </em> Courses provide a comprehensive array of
                           science-based techniques. They are designed to equip
                           you with a diverse arsenal of stress management
                           methods that range from biofeedback practices like
@@ -176,7 +196,17 @@ const Services = () => {
                 </Accordion.Item>
                 <Accordion.Item eventKey="2">
                   <Accordion.Header className="button-after">
-                    The Oxygen8 Library
+                    The Oxygen8   <em
+                    style={{
+                      fontSize: "11px",
+                      position: "relative",
+                      bottom: "0.8rem",
+                      left:"-5px",
+                      fontStyle:"normal"
+                    }}
+                  >
+                    TM
+                  </em> Library
                   </Accordion.Header>
                   <Accordion.Body
                     style={{
@@ -206,7 +236,17 @@ const Services = () => {
                             textAlign: "justify",
                           }}
                         >
-                          The Oxygen8 Library is split into 3 sections: Stress,
+                          The Oxygen8   <em
+                    style={{
+                      fontSize: "11px",
+                      position: "relative",
+                      bottom: "0.8rem",
+                      left:"-5px",
+                      fontStyle:"normal"
+                    }}
+                  >
+                    TM
+                  </em> Library is split into 3 sections: Stress,
                           Anxiety and Performance. The stress and anxiety
                           libraries offer guided sessions where all you have to
                           do is listen to the instructions and relax with guided
@@ -270,7 +310,17 @@ const Services = () => {
                           }}
                         >
                           Having experienced severe burnout working in
-                          engineering, Oxygen8 was founded with the sole
+                          engineering, Oxygen8  <em
+                    style={{
+                      fontSize: "11px",
+                      position: "relative",
+                      bottom: "0.8rem",
+                      left:"-5px",
+                      fontStyle:"normal"
+                    }}
+                  >
+                    TM
+                  </em> was founded with the sole
                           intention of helping prevent as many people as
                           possible head down the same path. To learn more about
                           corporate offerings, please follow the link above.

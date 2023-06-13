@@ -4,7 +4,7 @@ import icon1 from './../../../Assets/Blogs/Blog1.png'
 import icon2 from './../../../Assets/Blogs/Blog2.png'
 import icon3 from './../../../Assets/Blogs/Blog3.png'
 import { Link } from 'react-router-dom'
-import { Container,Row,Col } from 'react-bootstrap'
+import { Container} from 'react-bootstrap'
 export const Blogs = () => {
     const BLogData =[
 
@@ -54,13 +54,11 @@ export const Blogs = () => {
    <section className="Blogs-home">
   <Container >
     <div className="card-wraper">
-    <Row className='justify-content-center align-items-center'>
 
         {
             BLogData.map((BLogData,index)=>{
                 return(
                   
-                    <Col key={index} xl={4} xxl={4} md={4} sm={12} xs={12}>
                   
                     <div className="card">
                         <div className="card-content ">
@@ -102,7 +100,6 @@ export const Blogs = () => {
                         </div>
                
                     </div>
-                    </Col>
                 
                 )
             })
@@ -113,7 +110,7 @@ export const Blogs = () => {
         
    
     
-    </Row>
+  
     </div>
   </Container>
 
