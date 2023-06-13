@@ -21,16 +21,12 @@ const CourseDetail = () => {
   const [course, setCourse] = useState();
   const [monthly, setMonthly] = useState([]);
   const [yearly, setYearly] = useState([]);
-  const [, setSubscription] = useState();
+  // const [, setSubscription] = useState();
   const userToken = localStorage.getItem("accesstoken");
   // const date = new Date();
-
   const { id } = useParams();
 
   useEffect(() => {
-    if (!userToken) {
-      navigate("/signin");
-    }
     courseApi();
   }, []);
 
@@ -43,19 +39,20 @@ const CourseDetail = () => {
         headers: {
           Accept: "application/json",
           Authorization: `Bearer ${userToken}`,
+          
         },
       };
-      var config1 = {
-        method: "get",
-        url: `${BaseUrl.baseurl}/user/subscription/course/${id}`,
-        headers: {
-          Accept: "application/json",
-          Authorization: `Bearer ${userToken}`,
-        },
-      };
+      // var config1 = {
+      //   method: "get",
+      //   url: `${BaseUrl.baseurl}/user/subscription/course/${id}`,
+      //   headers: {
+      //     Accept: "application/json",
+      //     Authorization: `Bearer ${userToken}`,
+      //   },
+      // };
       const response = await axios(config);
-      const response1 = await axios(config1);
-      setSubscription(response1.data);
+      // const response1 = await axios(config1);
+      // setSubscription(response1.data);
       setCourse(response.data.course);
       setMonthly(
         response.data.course.packages.filter((item) => item.period === "month")
@@ -72,52 +69,61 @@ const CourseDetail = () => {
   };
 
   const onToken = async (token) => {
+   
     setLoading(true);
-    try {
-      const data1 = new FormData();
-      data1.append("plan_id", yearly[0]?.id);
-      data1.append("source", token.id);
-      data1.append("type", 'plan');
-      var config = {
-        method: "post",
-        url: `${BaseUrl.baseurl}/user/subscription`,
-        data: data1,
-        headers: {
-          Accept: "application/json",
-          Authorization: `Bearer ${userToken}`,
-        },
-      };
-      const response = await axios(config);
-      console.log(response);
-      courseApi();
-    } catch (e) {
-      console.log(e);
-    }
+   
+      try {
+        const data1 = new FormData();
+        data1.append("plan_id", yearly[0]?.id);
+        data1.append("source", token.id);
+        data1.append("type", 'plan');
+        var config = {
+          method: "post",
+          url: `${BaseUrl.baseurl}/user/subscription`,
+          data: data1,
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${userToken}`,
+          },
+        };
+        const response = await axios(config);
+        console.log(response);
+        courseApi();
+      } catch (e) {
+        console.log(e);
+      }
+    
   };
 
   const onToken1 = async (token) => {
     setLoading(true);
-    try {
-      const data1 = new FormData();
-      data1.append("plan_id", monthly[0]?.id);
-      data1.append("source", token.id);
-      data1.append("type", 'plan');
-      var config = {
-        method: "post",
-        url: `${BaseUrl.baseurl}/user/subscription`,
-        data: data1,
-        headers: {
-          Accept: "application/json",
-          Authorization: `Bearer ${userToken}`,
-        },
-      };
-      const response = await axios(config);
-      console.log(response);
-      courseApi();
-    } catch (e) {
-      console.log(e);
-    }
+ 
+      try {
+        const data1 = new FormData();
+        data1.append("plan_id", monthly[0]?.id);
+        data1.append("source", token.id);
+        data1.append("type", 'plan');
+        var config = {
+          method: "post",
+          url: `${BaseUrl.baseurl}/user/subscription`,
+          data: data1,
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${userToken}`,
+          },
+        };
+        const response = await axios(config);
+        console.log(response);
+        courseApi();
+      } catch (e) {
+        console.log(e);
+      }
+  
   };
+
+  const checktoken = () => {
+    navigate('/signin')
+};
 
   return (
     <>
@@ -466,6 +472,7 @@ const CourseDetail = () => {
                                     //     Enrolled
                                     //   </button>
                                     //  :  */}
+                                    {userToken ?
                                       <StripeCheckout
                                         token={onToken}
                                         stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
@@ -496,7 +503,13 @@ const CourseDetail = () => {
                                           )}
                                         </button>
                                       </StripeCheckout>
-                                     {/* } */}
+                                    :
+                                    <button
+                                    onClick={()=>{checktoken()}}
+                                    className="e-btn e-btn-7 w-100"
+                                    style={{ background: "#337c75" }}
+                                  >Buy</button>
+                                  }
                                   </div>
                                 </div>
                               </div>
@@ -574,8 +587,9 @@ const CourseDetail = () => {
                                         Enrolled
                                       </button>
                                     :  */}
+                                    {userToken ? 
                                       <StripeCheckout
-                                        token={onToken1}
+                                         token={onToken1}
                                         stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
                                         amount={monthly[0]?.price * 100}
                                       >
@@ -604,7 +618,12 @@ const CourseDetail = () => {
                                           )}
                                         </button>
                                       </StripeCheckout>
-                                    {/* } */}
+                                      :
+                                     <button
+                                     onClick={()=>{checktoken()}}
+                                     className="e-btn e-btn-7 w-100"
+                                     style={{ background: "#337c75" }}
+                                   >Buy</button>}
                                   </div>
                                 </div>
                               </div>

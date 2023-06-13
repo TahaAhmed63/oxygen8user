@@ -453,8 +453,8 @@ transform: translateX(-100%)translateY(46%) rotate(146deg) !important;
   width: 100% !important;
 }
 .about-head h4 {
-  font-size: 29px;
-  line-height: 42px;
+    font-size: 23px;
+    line-height: 42px;
 }
 .overlay-absolute-text {
   left: 50% !important;
@@ -516,7 +516,7 @@ transform: translateX(-100%)translateY(46%) rotate(146deg) !important;
 }
 }
 
-@media((min-width:525px)and (max-width:768px)){
+@media only screen and (min-width: 525px) and (max-width: 768px){
 .bottom-mark {
   transform: translateX(-145vh)translateY(115vh) rotate(161deg) !important;
   background-size: 900px !important;
@@ -546,7 +546,7 @@ padding: 0;
 width:100% !important;
 }
 }
-@media only screen and ((min-width:527px)and(max-width: 920px)) and (-webkit-device-pixel-ratio: 2) {
+@media only screen and (min-width:769px)and(max-width: 920px)  {
 .overlay-absolute-text {
   color: #fff!important;
   left: 63%!important;
@@ -557,6 +557,10 @@ width:100% !important;
   transform: translate(-50%,-50%);
   width: 53%!important;
   z-index: 1;
+}
+.text-video-wrap h2 {
+    text-align: left;
+    font-size: 21px;
 }
 .head-wrap{
 justify-content: initial;
