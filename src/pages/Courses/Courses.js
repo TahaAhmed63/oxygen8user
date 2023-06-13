@@ -127,7 +127,7 @@ const Courses = () => {
                   fontSize:"30px"
 
                 }}>Science-based techniques to boost stress resilience, productivity and recovery. </h3>
-                <p style={{
+                <p  style={{
                   color:"#317C74",
                   fontSize:"24px",
                   lineHeight:"45px",
