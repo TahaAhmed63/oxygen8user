@@ -152,8 +152,7 @@ function Home() {
                     >
                     TM
                     </em>
-                    <br className='break-mobile'/>
-                    Stress Wellness
+                    Stress <br className='break-mobile'/> Wellness
                   </h4>
                 </div>
                 <div className="logo">
