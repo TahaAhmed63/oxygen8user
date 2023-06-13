@@ -580,34 +580,6 @@ transform: translateX(-100%)translateY(46%) rotate(146deg) !important;
     width: 100% !important;
   }
 }
-.bottom-mark {
-  transform: translateX(-145vh)translateY(115vh) rotate(161deg) !important;
-  background-size: 900px !important;
-}
-.text-video-wrap h2 {
-text-align: left;
-font-size: 21px;
-}
-.text-video-wrap p{
-text-align: left;
-padding-left: 0rem;
-font-size: 12px;
-}
-.home-main {
-  height: 80vh !important;
-}
-.overlay-absolute-text {
-  width: 64% !important;
-  display: flex;
-  height: 66%;
-  align-items: flex-start;
-  left: 36% !important;
-  /* position: relative; */
-  /* bottom: 8rem; */
-}.para-wrap {
-padding: 0;
-width:100% !important;
-}
 
 @media only screen and (min-device-width : 525px) and (max-device-width : 768px) and (orientation : portrait)  {
     .bottom-mark {
