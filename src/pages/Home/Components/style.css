@@ -1020,6 +1020,16 @@ width: 100%;
     width: 100% !important;
   }
 }
+@media only screen and (min-device-width : 769px) and (max-device-width : 932px){
+  .card-wraper{
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .card{
+    width: 50% !important;
+
+  }
+}
 
 @media only screen and (min-width: 100px) and (max-width: 524px) and (-webkit-min-device-pixel-ratio: 2),
        only screen and (max-device-width: 414px) and (min-resolution: 120dpi) {
