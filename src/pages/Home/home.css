@@ -87,7 +87,7 @@ padding: 0;
 width: 794px !important;
 }
 }
-@media((min-width:764px)and (max-width:1024px)){
+@media ((min-width:764px)and (max-width:1024px)){
   .overlay-absolute-text {
     /* left: 50%!important; */
     position: relative!important;
@@ -126,6 +126,41 @@ width: 794px !important;
   
    
   
+}
+@supports (-webkit-touch-callout: none) {
+  @media screen and (min-width: 764px) and (max-width: 1024px) {
+    .overlay-absolute-text {
+      position: relative !important;
+      top: -122px !important;
+      height: 100%;
+      display: flex;
+      top: -122px !important;
+      justify-content: flex-start;
+      align-items: flex-start !important;
+      width: 100%;
+      align-items: center;
+    }
+    .text-video-wrap h2 {
+      font-size: 26px !important;
+    }
+    .text-video-wrap p {
+      font-size: 14px !important;
+      padding-left: 1rem !important;
+    }
+    .bottommark-3::before {
+      content: "";
+      position: absolute;
+      top: 20%;
+      left: 1%;
+      display: block;
+      width: 100%;
+      height: 300%;
+      -webkit-transform: translateX(-20%) translateY(-63%) rotate(180deg) !important;
+      transform: translateX(-20%) translateY(-63%) rotate(180deg) !important;
+      background-image: url(../../../src/Assets/AboutImages/watermark.png);
+      background-repeat: no-repeat;
+    }
+  }
 }
 
 
@@ -546,6 +581,39 @@ padding: 0;
 width:100% !important;
 }
 }
+@supports (-webkit-touch-callout: none) {
+  @media only screen and (min-width: 525px) and (max-width: 768px) {
+    .bottom-mark {
+      -webkit-transform: translateX(-145vh) translateY(115vh) rotate(161deg) !important;
+      transform: translateX(-145vh) translateY(115vh) rotate(161deg) !important;
+      background-size: 900px !important;
+    }
+    .text-video-wrap h2 {
+      text-align: left;
+      font-size: 21px;
+    }
+    .text-video-wrap p {
+      text-align: left;
+      padding-left: 0rem;
+      font-size: 12px;
+    }
+    .home-main {
+      height: 80vh !important;
+    }
+    .overlay-absolute-text {
+      width: 64% !important;
+      display: flex;
+      height: 66%;
+      align-items: flex-start;
+      left: 36% !important;
+    }
+    .para-wrap {
+      padding: 0;
+      width: 100% !important;
+    }
+  }
+}
+
 @media only screen and (min-width:769px)and(max-width: 920px)  {
 .overlay-absolute-text {
   color: #fff!important;
