@@ -666,7 +666,9 @@ transform: translateX(-100%)translateY(46%) rotate(146deg) !important;
 justify-content: initial;
 font-size: 25px;
 }
-
+.card-wraper{
+flex-direction: column !important;
+}
 .text-video-wrap h2 {
 font-size: 29px !important;
 }
