@@ -370,12 +370,8 @@ color: #fff;
   .middle-img{
     padding-bottom: 1rem;
   }
-  .middle-img img{
-    width: 100px;
-    height: 100px;
-    }
-}
 
+}
 .card-para p {
   color: #d9d9d9;
   position: relative;
@@ -670,8 +666,8 @@ form button {
   height: 50%;
 }
 .middle-img img{
-width: 150px;
-height: 100px;
+width: 140px;
+height: auto;
 }
 .bottommark-3::before {
   content: "";
