@@ -166,6 +166,7 @@ height: 100vh;
     height: 33em !important;
   }
   .middle-img{
+    padding-top: 1rem !important;
     padding-bottom: 1rem !important;
   }
   .library-para p {
@@ -372,6 +373,7 @@ color: #fff;
   }
   .middle-img{
     padding-bottom: 1rem;
+    padding-top: 1rem;
   }
 
 }
@@ -953,8 +955,10 @@ width: 100%;
     flex-direction: column-reverse;
     text-align: left !important;
 }
-  .about-head {
-    width: 100% !important;
+.about-head {
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
 }
 
   .video-container {

@@ -1169,12 +1169,14 @@ p {
   .header__search-3 {
     min-height: 300px;
   }
+  
 }
 @media (max-width: 575px) {
   .header__search-3 {
     padding-top: 30px;
     min-height: 300px;
   }
+
 }
 .header__search-3.search-opened {
   top: 0;
@@ -3167,7 +3169,7 @@ p {
 @media (max-width: 575px) {
   .course__sidebar {
     margin-top: 50px;
-    padding-left: 0;
+    padding-left: 0px !important;
   }
 }
 .course__sidebar-widget {

@@ -44,12 +44,17 @@ export const DetailVideo = () => {
           <img src={mylogo}  alt="" />
         </div>
         <div className="video-container-2">
-                  <video ref={videoRef}  playsinline src={mainvideo} controls />
-                  {!isVideoPlaying && (
+      <video ref={videoRef}controls playsInline>
+              <source src={mainvideo} type="video/mp4" />
+              <source src={mainvideo} type="video/webm" />
+              Your browser does not support the video tag.
+            </video>           
+                   {!isVideoPlaying && (
                     <div className="play-button" onClick={handleVideoToggle}>
                       <img src={playButtonIcon} alt="Play Button" />
                     </div>
                   )}
+            
                 </div>
        </Col>
      {/* <Col md={4} xl={4} xxl={4} className='img-section'>
