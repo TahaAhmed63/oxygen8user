@@ -81,6 +81,7 @@ export const DetailVideo = () => {
                   <video ref={videoRef} muted  playsInline   >
                     <source src={mainvideo} type="video/mp4"  />
                     <source src={mainvideo} type="video/webm" />
+                    <source src={mainvideo} type="video/mov" />
                     Your browser does not support the video tag.
                   </video> 
                   {!showPlayButton && !isVideoPlaying && (
