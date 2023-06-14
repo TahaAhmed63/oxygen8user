@@ -487,8 +487,9 @@ transform: translateX(-100%)translateY(46%) rotate(146deg) !important;
   width: 100% !important;
 }
 .about-head h4 {
-    font-size: 23px;
-    line-height: 42px;
+  font-size: 26px;
+  line-height: 42px;
+  text-align: center;
 }
 .overlay-absolute-text {
   left: 50% !important;
@@ -761,8 +762,9 @@ transform: translateX(-20%) translateY(-63%) rotate(180deg) !important;
   max-width: 2738px !important;
 }
 .about-head h4 {
-  font-size: 27px;
+  font-size: 28px;
   line-height: 42px;
+  text-align: center;
 }
 
 .text-video-wrap h2 {
@@ -788,9 +790,10 @@ transform: translateX(-20%) translateY(-63%) rotate(180deg) !important;
   flex-direction: column-reverse;
   text-align: left !important;
 }
-.about-head{
-  width: 100%;
-
+.about-head {
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
 }
 .para-wrap {
   padding: 0 !important;
