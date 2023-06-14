@@ -28,7 +28,7 @@ const Services = () => {
               <Accordion eventKey="0" className="services-acord">
                 <Accordion.Item eventKey="0">
                   <Accordion.Header className="button-after">
-                    CNSF & Optimisation Consultency
+                    CNSF & Optimisation Consultancy  
                   </Accordion.Header>
                   <Accordion.Body
                     style={{
@@ -118,7 +118,7 @@ const Services = () => {
                       fontSize: "11px",
                       position: "relative",
                       bottom: "0.8rem",
-                      left:"-5px",
+                      left:"-1px",
                       fontStyle:"normal"
                     }}
                   >
@@ -201,7 +201,7 @@ const Services = () => {
                       fontSize: "11px",
                       position: "relative",
                       bottom: "0.8rem",
-                      left:"-5px",
+                      left:"-1px",
                       fontStyle:"normal"
                     }}
                   >
@@ -241,7 +241,7 @@ const Services = () => {
                       fontSize: "11px",
                       position: "relative",
                       bottom: "0.8rem",
-                      left:"-5px",
+                      left:"-1px",
                       fontStyle:"normal"
                     }}
                   >
