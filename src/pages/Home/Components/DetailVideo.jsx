@@ -21,23 +21,44 @@ export const DetailVideo = () => {
     }
   };
   
-  useEffect(() => {
-    if(videoRef.current){
-      // videoRef.current.autoplay = true
-      console.log(videoRef)
+//  useEffect(() => {
+//   const videoElement = videoRef.current;
+//    if(videoElement.current){
+    
+//     videoElement.current.autoplay = true
+     
       
-    }
-    const handleCanPlay = () => {
-      setShowPlayButton(false);
-    };
+//    }
+//    const handleCanPlay = () => {
+//      setShowPlayButton(false);
+//    };
+//    videoElement.current.addEventListener('canplay', handleCanPlay);
 
-    videoRef.current.addEventListener('canplay', handleCanPlay);
+//    return () => {
+//      videoElement.current.removeEventListener('canplay', handleCanPlay);
+//    }
+//  }, []);
 
-    return () => {
-      videoRef.current.removeEventListener('canplay', handleCanPlay);
-    };
-  }, []);
 
+  
+ useEffect(() => {
+   const videoElement = videoRef.current; 
+
+   if (videoElement) {
+    // videoElement.autoplay = true;
+   
+   }
+
+   const handleCanPlay = () => {
+     setShowPlayButton(false);
+   };
+
+   videoElement.addEventListener('canplay', handleCanPlay);
+
+   return () => {
+     videoElement.removeEventListener('canplay', handleCanPlay);
+   };
+ }, []);
   return (
     <>
       <section className="Home-detail">
