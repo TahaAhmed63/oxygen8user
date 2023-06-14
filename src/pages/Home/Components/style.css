@@ -741,6 +741,7 @@ height: auto;
 }
 }
 
+
 @media (device-width: 412px) and (device-height: 915px)  {
   /* Styles for Samsung Galaxy S9/S9+/S8/S8+ */
   .bottommark-3::before {
