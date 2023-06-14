@@ -13,7 +13,7 @@ export const DetailVideo = () => {
   const handleVideoToggle = () => {
     if (videoRef.current.paused) {
       videoRef.current.play();
-
+      videoRef.current.autoplay = true
       setIsVideoPlaying(true);
     } else {
       videoRef.current.pause();
@@ -57,12 +57,12 @@ export const DetailVideo = () => {
                   <img src={mylogo} alt="" />
                 </div>
                 <div className="video-container-2">
-                  <video ref={videoRef}  playsInline autoPlay controls >
+                  <video ref={videoRef}  playsInline   >
                     <source src={mainvideo} type="video/mp4"  />
                     <source src={mainvideo} type="video/webm" />
                     Your browser does not support the video tag.
                   </video> 
-                  { !isVideoPlaying && (
+                  {!showPlayButton && !isVideoPlaying && (
                     <div className="play-button" onClick={handleVideoToggle}>
                       <img src={playButtonIcon} alt="Play Button" />
                     </div>
