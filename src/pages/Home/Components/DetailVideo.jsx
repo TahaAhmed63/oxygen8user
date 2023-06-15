@@ -78,13 +78,13 @@ export const DetailVideo = () => {
                   <img src={mylogo} alt="" />
                 </div>
                 <div className="video-container-2">
-                  <video ref={videoRef} muted  playsInline   >
+                  <video ref={videoRef} muted  playsInline controls  >
                     <source src={mainvideo} type="video/mp4"  />
                     <source src={mainvideo} type="video/webm" />
                     <source src={mainvideo} type="video/mov" />
                     Your browser does not support the video tag.
                   </video> 
-                  {!showPlayButton && !isVideoPlaying && (
+                  {!showPlayButton && !isVideoPlaying &&(
                     <div className="play-button" onClick={handleVideoToggle}>
                       <img src={playButtonIcon} alt="Play Button" />
                     </div>
