@@ -659,6 +659,9 @@ transform: translateX(-100%)translateY(46%) rotate(146deg) !important;
   width: 53%!important;
   z-index: 1;
 }
+.main-video {
+  height: 120vh!important;
+}
 .text-video-wrap h2 {
     text-align: left;
     font-size: 21px;
@@ -696,7 +699,7 @@ transform: translateX(-20%) translateY(-63%) rotate(180deg) !important;
 
 
 }
-@media only screen and ((min-width:921px)and(max-width: 1025px)) and (-webkit-device-pixel-ratio: 2) {
+@media only screen and (min-width:921px)and(max-width: 1025px) and (-webkit-device-pixel-ratio: 2) {
 
 .overlay-absolute-text {
   color: #fff!important;
@@ -716,7 +719,9 @@ transform: translateX(-20%) translateY(-63%) rotate(180deg) !important;
 justify-content: initial;
 font-size: 25px;
 }
-
+.main-video {
+  height: 120vh!important;
+}
 .text-video-wrap h2 {
 font-size: 29px !important;
 }
