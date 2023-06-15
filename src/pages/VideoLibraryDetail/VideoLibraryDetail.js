@@ -24,13 +24,14 @@ const VideoLibraryDetail = () => {
   const [monthly, setMonthly] = useState([]);
   const [yearly, setYearly] = useState([]);
   const [video, setVideo] = useState();
-  // const [, setSubscription] = useState();
+  const [PlaylistId, setPlaylistId] = useState();
+  const [Trail, setTrail] = useState();
   const userToken = localStorage.getItem("accesstoken");
 
   useEffect(() => {
     videoApi();
   }, []);
-console.log('token----->',userToken)
+  // console.log("token----->", userToken);
   async function videoApi() {
     setLoading(true);
     try {
@@ -55,7 +56,7 @@ console.log('token----->',userToken)
       setLoading(false);
       // setSubscription(response1.data);
       setVideo(response.data.playlist);
-      console.log(response.data);
+      setPlaylistId(response.data.playlist.id);
       setMonthly(
         response.data.playlist.playlist_package.filter(
           (item) => item.period === "month"
@@ -75,66 +76,110 @@ console.log('token----->',userToken)
 
   const onToken = async (token) => {
     setLoading(true);
-      try {
-        const data1 = new FormData();
-        data1.append("plan_id", yearly[0]?.id);
-        data1.append("source", token.id);
-        data1.append("bulk_id", "");
-        data1.append("type", "plan");
-        var config = {
-          method: "post",
-          url: `${BaseUrl.baseurl}/user/subscription`,
-          data: data1,
-          headers: {
-            Accept: "application/json",
-            Authorization: `Bearer ${userToken}`,
-          },
-        };
-        const response = await axios(config);
-        Swal.fire({
-          title: "Good job!",
-          text: response.message,
-          icon: "success",
-          button: "Ok",
-        });
-        console.log(response);
-        videoApi();
-      } catch (e) {
-        Swal.fire({
-          title: "Good job!",
-          text: e.message,
-          icon: "success",
-          button: "Ok",
-        });
-      }
+    try {
+      const data1 = new FormData();
+      data1.append("plan_id", yearly[0]?.id);
+      data1.append("source", token.id);
+      data1.append("bulk_id", "");
+      data1.append("type", "plan");
+      var config = {
+        method: "post",
+        url: `${BaseUrl.baseurl}/user/subscription`,
+        data: data1,
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+      };
+      const response = await axios(config);
+      Swal.fire({
+        title: "Good job!",
+        text: response.message,
+        icon: "success",
+        button: "Ok",
+      });
+      console.log(response);
+      videoApi();
+    } catch (e) {
+      Swal.fire({
+        title: "Good job!",
+        text: e.message,
+        icon: "success",
+        button: "Ok",
+      });
+    }
   };
 
   const checktoken = () => {
-      navigate('/signin')
+    navigate("/signin");
   };
   const onToken1 = async (token) => {
-      try {
-        const data1 = new FormData();
-        data1.append("plan_id", monthly[0]?.id);
-        data1.append("source", token.id);
-        data1.append("bulk_id", "");
-        data1.append("type", "plan");
-        var config = {
-          method: "post",
-          url: `${BaseUrl.baseurl}/user/subscription`,
-          data: data1,
-          headers: {
-            Accept: "application/json",
-            Authorization: `Bearer ${userToken}`,
-          },
-        };
-        const response = await axios(config);
-        console.log(response);
-        videoApi();
-      } catch (e) {
-        console.log(e);
-      }
+    try {
+      const data1 = new FormData();
+      data1.append("plan_id", monthly[0]?.id);
+      data1.append("source", token.id);
+      data1.append("bulk_id", "");
+      data1.append("type", "plan");
+      var config = {
+        method: "post",
+        url: `${BaseUrl.baseurl}/user/subscription`,
+        data: data1,
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+      };
+      const response = await axios(config);
+      console.log(response);
+      videoApi();
+    } catch (e) {
+      console.log(e);
+    }
   };
+
+  const FreeTrail = () => {
+    setLoading(true)
+    try {
+      const data1 = new FormData();
+      data1.append("playlist_id", PlaylistId);
+      var config = {
+        method: "post",
+        url: `${BaseUrl.baseurl}/user/subscriptions/free/trail`,
+        data: data1,
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+      };
+      axios(config).then((response) => {
+        setLoading(false)
+        console.log(response);
+
+        setTrail(response.data);
+        if (response.data.status === true) {
+          Swal.fire({
+            title: "Good job!",
+            text: response.data.message,
+            icon: "success",
+            button: "Ok",
+          });
+        } else {
+          Swal.fire({
+            title: "Opps",
+            text: response.data.message,
+            icon: "danger",
+            button: "Ok",
+          });
+        }
+      });
+      videoApi();
+    } catch (e) {
+      setLoading(false)
+      console.log(e);
+    }
+  };
+
+  const currDate = new Date();
   return (
     <div>
       <Header />
@@ -516,43 +561,115 @@ console.log('token----->',userToken)
                                     //     Enrolled
                                     //   </button>
                                     //  :  */}
-                                    {userToken ?
-                                     <StripeCheckout
-                                      token={onToken}
-                                      stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
-                                      amount={yearly[0]?.price * 100}
-                                    >
-                                      <button
-                                        className="e-btn e-btn-7 w-100"
-                                        style={{ background: "#337c75" }}
-                                      >
-                                        {loading === true ? (
-                                          <ColorRing
-                                            visible={true}
-                                            height="40"
-                                            width="40"
-                                            ariaLabel="blocks-loading"
-                                            wrapperStyle={{}}
-                                            wrapperClass="blocks-wrapper"
-                                            colors={[
-                                              "#fff",
-                                              "#fff",
-                                              "#fff",
-                                              "#fff",
-                                              "#fff",
-                                            ]}
-                                          />
+                                    {userToken ? (
+                                      <>
+                                        <StripeCheckout
+                                          token={onToken}
+                                          stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
+                                          amount={yearly[0]?.price * 100}
+                                        >
+                                          <button
+                                            className="e-btn e-btn-7 w-100"
+                                            style={{ background: "#337c75" }}
+                                          >
+                                            {loading === true ? (
+                                              <ColorRing
+                                                visible={true}
+                                                height="40"
+                                                width="40"
+                                                ariaLabel="blocks-loading"
+                                                wrapperStyle={{}}
+                                                wrapperClass="blocks-wrapper"
+                                                colors={[
+                                                  "#fff",
+                                                  "#fff",
+                                                  "#fff",
+                                                  "#fff",
+                                                  "#fff",
+                                                ]}
+                                              />
+                                            ) : (
+                                              "Buy"
+                                            )}
+                                          </button>
+                                        </StripeCheckout>
+                                        {Trail?.subscripton.expiry_date >
+                                        currDate ? (
+                                          <button
+                                            className="e-btn e-btn-7 w-100 mt-3"
+                                            style={{ background: "#337c75" }}
+                                            disabled
+                                          >
+                                            Free Trail End
+                                          </button>
                                         ) : (
-                                          "Buy"
+                                          <button
+                                            className="e-btn e-btn-7 w-100 mt-3"
+                                            style={{ background: "#337c75" }}
+                                            onClick={FreeTrail}
+                                          >
+                                            {loading === true ? (
+                                              <ColorRing
+                                                visible={true}
+                                                height="40"
+                                                width="40"
+                                                ariaLabel="blocks-loading"
+                                                wrapperStyle={{}}
+                                                wrapperClass="blocks-wrapper"
+                                                colors={[
+                                                  "#fff",
+                                                  "#fff",
+                                                  "#fff",
+                                                  "#fff",
+                                                  "#fff",
+                                                ]}
+                                              />
+                                            ) : (
+                                              "Free Trail"
+                                            )}
+                                          </button>
                                         )}
-                                      </button>
-                                    </StripeCheckout> 
-                                    :
-                                    <button
-                                    onClick={()=>{checktoken()}}
-                                    className="e-btn e-btn-7 w-100"
-                                    style={{ background: "#337c75" }}
-                                  >Buy</button>  }
+                                      </>
+                                    ) : (
+                                      <>
+                                        <button
+                                          onClick={() => {
+                                            checktoken();
+                                          }}
+                                          className="e-btn e-btn-7 w-100"
+                                          style={{ background: "#337c75" }}
+                                        >
+                                          Buy
+                                        </button>
+                                        <button
+                                          className="e-btn e-btn-7 w-100 mt-3"
+                                          style={{ background: "#337c75" }}
+                                          onClick={() => {
+                                            checktoken();
+                                          }}
+                                        >
+                                          {loading === true ? (
+                                            <ColorRing
+                                              visible={true}
+                                              height="40"
+                                              width="40"
+                                              ariaLabel="blocks-loading"
+                                              wrapperStyle={{}}
+                                              wrapperClass="blocks-wrapper"
+                                              colors={[
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                              ]}
+                                            />
+                                          ) : (
+                                            "Free Trail"
+                                          )}
+                                        </button>
+                                      </>
+                                    )}
                                   </div>
                                 </div>
                               </div>
@@ -648,44 +765,116 @@ console.log('token----->',userToken)
                                     //     Enrolled
                                     //   </button>
                                     //  :  */}
-                                    {userToken ? 
-                                    <StripeCheckout
-                                      token={onToken1}
-                                      stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
-                                      amount={monthly[0]?.price * 100}
-                                    >
-                                      <button
-                                        className="e-btn e-btn-7 w-100"
-                                        style={{ background: "#337c75" }}
-                                      >
-                                        {loading === true ? (
-                                          <ColorRing
-                                            visible={true}
-                                            height="40"
-                                            width="40"
-                                            ariaLabel="blocks-loading"
-                                            wrapperStyle={{}}
-                                            wrapperClass="blocks-wrapper"
-                                            colors={[
-                                              "#fff",
-                                              "#fff",
-                                              "#fff",
-                                              "#fff",
-                                              "#fff",
-                                            ]}
-                                          />
+                                    {userToken ? (
+                                      <>
+                                        <StripeCheckout
+                                          token={onToken1}
+                                          stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
+                                          amount={monthly[0]?.price * 100}
+                                        >
+                                          <button
+                                            className="e-btn e-btn-7 w-100"
+                                            style={{ background: "#337c75" }}
+                                          >
+                                            {loading === true ? (
+                                              <ColorRing
+                                                visible={true}
+                                                height="40"
+                                                width="40"
+                                                ariaLabel="blocks-loading"
+                                                wrapperStyle={{}}
+                                                wrapperClass="blocks-wrapper"
+                                                colors={[
+                                                  "#fff",
+                                                  "#fff",
+                                                  "#fff",
+                                                  "#fff",
+                                                  "#fff",
+                                                ]}
+                                              />
+                                            ) : (
+                                              "Buy"
+                                            )}
+                                          </button>
+                                        </StripeCheckout>
+                                        {Trail?.subscripton.expiry_date >
+                                        currDate ? (
+                                          <button
+                                            className="e-btn e-btn-7 w-100 mt-3"
+                                            style={{ background: "#337c75" }}
+                                            disabled
+                                          >
+                                            Free Trail End
+                                          </button>
                                         ) : (
-                                          "Buy"
+                                          <button
+                                            className="e-btn e-btn-7 w-100 mt-3"
+                                            style={{ background: "#337c75" }}
+                                            onClick={FreeTrail}
+                                          >
+                                            {loading === true ? (
+                                              <ColorRing
+                                                visible={true}
+                                                height="40"
+                                                width="40"
+                                                ariaLabel="blocks-loading"
+                                                wrapperStyle={{}}
+                                                wrapperClass="blocks-wrapper"
+                                                colors={[
+                                                  "#fff",
+                                                  "#fff",
+                                                  "#fff",
+                                                  "#fff",
+                                                  "#fff",
+                                                ]}
+                                              />
+                                            ) : (
+                                              "Free Trail"
+                                            )}
+                                          </button>
                                         )}
-                                      </button>
-                                    </StripeCheckout>
-                                    :  <button
-                                    onClick={()=>{checktoken()}}
-                                    className="e-btn e-btn-7 w-100"
-                                    style={{ background: "#337c75" }}
-                                  >Buy</button>}
+                                      </>
+                                    ) : (
+                                      <>
+                                        <button
+                                          onClick={() => {
+                                            checktoken();
+                                          }}
+                                          className="e-btn e-btn-7 w-100"
+                                          style={{ background: "#337c75" }}
+                                        >
+                                          Buy
+                                        </button>
 
-                          
+                                        <button
+                                          className="e-btn e-btn-7 w-100 mt-3"
+                                          style={{ background: "#337c75" }}
+                                          onClick={() => {
+                                            checktoken();
+                                          }}
+                                        >
+                                          {loading === true ? (
+                                            <ColorRing
+                                              visible={true}
+                                              height="40"
+                                              width="40"
+                                              ariaLabel="blocks-loading"
+                                              wrapperStyle={{}}
+                                              wrapperClass="blocks-wrapper"
+                                              colors={[
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                              ]}
+                                            />
+                                          ) : (
+                                            "Free Trail"
+                                          )}
+                                        </button>
+                                      </>
+                                    )}
                                   </div>
                                 </div>
                               </div>
