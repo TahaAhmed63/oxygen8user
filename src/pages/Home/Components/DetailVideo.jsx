@@ -78,7 +78,7 @@ export const DetailVideo = () => {
                   <img src={mylogo} alt="" />
                 </div>
                 <div className="video-container-2">
-                  <video ref={videoRef} muted  playsInline controls  >
+                  <video ref={videoRef} preload='yes' muted  playsInline controls  >
                     <source src={mainvideo} type="video/mp4"  />
                     <source src={mainvideo} type="video/webm" />
                     <source src={mainvideo} type="video/mov" />
