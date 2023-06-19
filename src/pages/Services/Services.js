@@ -28,7 +28,7 @@ const Services = () => {
               <Accordion eventKey="0" className="services-acord">
                 <Accordion.Item eventKey="0">
                   <Accordion.Header className="button-after">
-                    CNSF & Optimisation Consultancy  
+                    CNSF & Optimisation Consultancy
                   </Accordion.Header>
                   <Accordion.Body
                     style={{
@@ -44,20 +44,10 @@ const Services = () => {
                     >
                       <div
                         style={{
-                    
                           paddingBottom: "2rem",
                         }}
                       >
-                        <p
-                          style={{
-                            color: "#fff",
-                            fontSize: "18px",
-                            width:"98%",
-                            margin:"0 auto",
-                            fontWeight: "500",
-                            textAlign: "justify",
-                          }}
-                        >
+                        <p className="acordin-para">
                           1:1 appointments provide a highly personalised
                           approach to developing resilience and enhancing your
                           relationship with stress.
@@ -113,17 +103,19 @@ const Services = () => {
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
                   <Accordion.Header className="button-after">
-                    The Oxygen8  <em
-                    style={{
-                      fontSize: "11px",
-                      position: "relative",
-                      bottom: "0.8rem",
-                      left:"-1px",
-                      fontStyle:"normal"
-                    }}
-                  >
-                    TM
-                  </em> Courses 
+                    The Oxygen8{" "}
+                    <em
+                      style={{
+                        fontSize: "11px",
+                        position: "relative",
+                        bottom: "0.8rem",
+                        left: "-1px",
+                        fontStyle: "normal",
+                      }}
+                    >
+                      TM
+                    </em>
+                    {"   "} Courses
                   </Accordion.Header>
                   <Accordion.Body
                     style={{
@@ -139,38 +131,24 @@ const Services = () => {
                     >
                       <div
                         style={{
-                    
                           paddingBottom: "2rem",
                         }}
                       >
-                        <p
-                          style={{
-                            color: "#fff",
-                            fontSize: "18px",
-                            width:"98%",
-                            margin:"0 auto",
-                            fontWeight: "500",
-                            textAlign: "justify",
-                          }}
-                        >
-                          The Oxygen8   <em
-                    style={{
-                      fontSize: "11px",
-                      position: "relative",
-                      bottom: "0.8rem",
-                      left:"-5px",
-                      fontStyle:"normal"
-                    }}
-                  >
-                    TM
-                  </em> Courses provide a comprehensive array of
-                          science-based techniques. They are designed to equip
-                          you with a diverse arsenal of stress management
-                          methods that range from biofeedback practices like
-                          breathwork, to macro-level adjustments to your
-                          circadian rhythms. These courses offer the flexibility
-                          to select only the techniques that resonate best with
-                          you, all backed by scientific research.
+                        <p className="acordin-para">
+                          The Oxygen8{" "}
+                          <em
+                      className="em-style-para"
+                          >
+                            TM
+                          </em>{" "}
+                          Courses provide a comprehensive array of science-based
+                          techniques. They are designed to equip you with a
+                          diverse arsenal of stress management methods that
+                          range from biofeedback practices like breathwork, to
+                          macro-level adjustments to your circadian rhythms.
+                          These courses offer the flexibility to select only the
+                          techniques that resonate best with you, all backed by
+                          scientific research.
                           <br />
                           <br />
                           The methods on offer cover a range of needs and
@@ -196,17 +174,19 @@ const Services = () => {
                 </Accordion.Item>
                 <Accordion.Item eventKey="2">
                   <Accordion.Header className="button-after">
-                    The Oxygen8   <em
-                    style={{
-                      fontSize: "11px",
-                      position: "relative",
-                      bottom: "0.8rem",
-                      left:"-1px",
-                      fontStyle:"normal"
-                    }}
-                  >
-                    TM
-                  </em> Library
+                    The Oxygen8{" "}
+                    <em
+                      style={{
+                        fontSize: "11px",
+                        position: "relative",
+                        bottom: "0.8rem",
+                        left: "-1px",
+                        fontStyle: "normal",
+                      }}
+                    >
+                      TM
+                    </em>
+                    {"  "} Library
                   </Accordion.Header>
                   <Accordion.Body
                     style={{
@@ -222,39 +202,25 @@ const Services = () => {
                     >
                       <div
                         style={{
-                    
                           paddingBottom: "2rem",
                         }}
                       >
-                        <p
-                          style={{
-                            color: "#fff",
-                            fontSize: "18px",
-                            width:"98%",
-                            margin:"0 auto",
-                            fontWeight: "500",
-                            textAlign: "justify",
-                          }}
-                        >
-                          The Oxygen8   <em
-                    style={{
-                      fontSize: "11px",
-                      position: "relative",
-                      bottom: "0.8rem",
-                      left:"-1px",
-                      fontStyle:"normal"
-                    }}
-                  >
-                    TM
-                  </em> Library is split into 3 sections: Stress,
-                          Anxiety and Performance. The stress and anxiety
-                          libraries offer guided sessions where all you have to
-                          do is listen to the instructions and relax with guided
-                          sessions incorporating a hybrid mix of breathwork,
-                          somatics and meditation that allow you to release your
-                          sympathetic arousal wherever you are. With sessions
-                          ranging from 2 minutes to full 20+ minute sessions,
-                          you are covered any time, anywhere.
+                        <p className="acordin-para">
+                          The Oxygen8{" "}
+                          <em className="em-style-para"
+                        
+                          >
+                            TM
+                          </em>{" "}
+                          Library is split into 3 sections: Stress, Anxiety and
+                          Performance. The stress and anxiety libraries offer
+                          guided sessions where all you have to do is listen to
+                          the instructions and relax with guided sessions
+                          incorporating a hybrid mix of breathwork, somatics and
+                          meditation that allow you to release your sympathetic
+                          arousal wherever you are. With sessions ranging from 2
+                          minutes to full 20+ minute sessions, you are covered
+                          any time, anywhere.
                           <br />
                           <br />
                           The Performance Library offers guided sessions for
@@ -295,35 +261,27 @@ const Services = () => {
                     >
                       <div
                         style={{
-                    
                           paddingBottom: "2rem",
                         }}
                       >
-                        <p
-                          style={{
-                            color: "#fff",
-                            fontSize: "18px",
-                            width:"98%",
-                            margin:"0 auto",
-                            fontWeight: "500",
-                            textAlign: "justify",
-                          }}
-                        >
+                        <p className="acordin-para">
                           Having experienced severe burnout working in
-                          engineering, Oxygen8  <em
-                    style={{
-                      fontSize: "11px",
-                      position: "relative",
-                      bottom: "0.8rem",
-                      left:"-5px",
-                      fontStyle:"normal"
-                    }}
-                  >
-                    TM
-                  </em> was founded with the sole
-                          intention of helping prevent as many people as
-                          possible head down the same path. To learn more about
-                          corporate offerings, please follow the link above.
+                          engineering, Oxygen8{" "}
+                          <em
+                            style={{
+                              fontSize: "11px",
+                              position: "relative",
+                              bottom: "0.8rem",
+                              left: "-5px",
+                              fontStyle: "normal",
+                            }}
+                          >
+                            TM
+                          </em>{" "}
+                          was founded with the sole intention of helping prevent
+                          as many people as possible head down the same path. To
+                          learn more about corporate offerings, please follow
+                          the link above.
                         </p>
                       </div>
                       <div className=" button-about-3">
@@ -357,20 +315,10 @@ const Services = () => {
                     >
                       <div
                         style={{
-                    
                           paddingBottom: "2rem",
                         }}
                       >
-                        <p
-                          style={{
-                            color: "#fff",
-                            fontSize: "18px",
-                            width:"98%",
-                            margin:"0 auto",
-                            fontWeight: "500",
-                            textAlign: "justify",
-                          }}
-                        >
+                        <p className="acordin-para">
                           Breathwork is a powerful practice that harnesses the
                           innate connection between our breath and our autonomic
                           nervous system. Through intentional and conscious

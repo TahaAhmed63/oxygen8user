@@ -8,7 +8,7 @@ import mylogo from "./Fav.png";
 import "./home.css";
 import Video from "./Video/Video";
 import { Container, Row } from "react-bootstrap";
-import { DetailVideo } from "./Components/DetailVideo";
+import  DetailVideo  from "./Components/DetailVideo";
 import { Blogs } from "./Components/Blogs";
 import { LibraraySpan } from "./Components/LibraraySpan";
 
