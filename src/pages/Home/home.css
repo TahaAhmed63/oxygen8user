@@ -251,9 +251,9 @@ font-family: Inter,sans-serif;
 color: #317C74;
 text-align: left;
 }
-.logo img{
-width: 100px;
-height: 100px;
+.logo img {
+  width: 100px;
+  height: auto;
 }
 @media (min-width: 768px) and (max-width: 1025px){
   .main-video {
@@ -497,6 +497,14 @@ transform: translateX(-100%)translateY(46%) rotate(146deg) !important;
 .video-container {
   height: 50vh !important;
   width: 100% !important;
+}
+.react-player__play-icon {
+      
+  width: 100px;
+  height: 9px;
+  margin-left: 0px !important;
+  background-position: center center !important;
+
 }
 .about-head h4 {
   font-size: 26px;
