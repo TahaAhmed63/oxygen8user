@@ -408,7 +408,8 @@ background: none!important;
       
       width: 100px;
       height: 9px;
-      margin-left: 12px !important;
+      margin-left: 0px !important;
+      background-position: center center !important;
       background-image: url(./../../../Assets/AboutImages/videobtn-removebg-preview.png);
   }
     .react-player__preview{
@@ -931,6 +932,14 @@ background: none!important;
       
     width: 100px;
     height: 9px;
+    margin-left: 0px !important;
+    background-position: center center !important;
+    background-image: url(./../../../Assets/AboutImages/videobtn-removebg-preview.png);
+}
+  .react-player__play-icon {
+      
+    width: 100px;
+    height: 9px;
     margin-left: 12px !important;
     background-image: url(./../../../Assets/AboutImages/videobtn-removebg-preview.png);
 }
@@ -1023,6 +1032,14 @@ background: none!important;
       left: -5px;
       font-style: normal
     }
+    .react-player__play-icon {
+      
+      width: 100px;
+      height: 9px;
+      margin-left: 0px !important;
+      background-position: center center !important;
+      background-image: url(./../../../Assets/AboutImages/videobtn-removebg-preview.png);
+  }
     .library-main-para {
       color: #317C74;
       font-size: 14px !important;
