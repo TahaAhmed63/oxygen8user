@@ -251,9 +251,9 @@ font-family: Inter,sans-serif;
 color: #317C74;
 text-align: left;
 }
-.logo img{
-width: 100px;
-height: 100px;
+.logo img {
+  width: 100px;
+  height: auto;
 }
 @media (min-width: 768px) and (max-width: 1025px){
   .main-video {

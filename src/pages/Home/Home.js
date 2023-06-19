@@ -3,7 +3,7 @@ import Header from "../../component/Header/Header";
 
 import { Contact2 } from "./Components/Contact2";
 import { Col } from "react-bootstrap";
-import mylogo from "./Fav.png";
+import mylogo from "./../../Assets/AboutImages/Oxygen icon.png";
 
 import "./home.css";
 import Video from "./Video/Video";
