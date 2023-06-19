@@ -124,19 +124,11 @@ const Courses = () => {
               <Col md={12} xl={12} xs={12} xxl={12}>
                 <h3 className='mb-left' style={{
                   color:"#317C74",
-                  fontSize:"30px"
+                  fontSize:"30px",
+                  textAlign:"justify"
 
                 }}>Science-based techniques to boost stress resilience, productivity and recovery. </h3>
-                <p  style={{
-                  color:"#317C74",
-                  fontSize:"24px",
-                  lineHeight:"45px",
-                  textAlign:"justify",
-                  // marginLeft:"58px"
-                  maxWidth:"1075px",
-                  margin:"0 auto"
-
-                }}>"Discover the latest, evidence-based biofeedback techniques that enable you to effectively regulate stress, anxiety, and overwhelm at any time and in any location. By combining these techniques with guided macro-level adjustments, you can enhance your body's resilience to stress and promote overall health improvement." </p>
+                <p  className='library-main-para '>"Discover the latest, evidence-based biofeedback techniques that enable you to effectively regulate stress, anxiety, and overwhelm at any time and in any location. By combining these techniques with guided macro-level adjustments, you can enhance your body's resilience to stress and promote overall health improvement." </p>
               </Col>
             </Row>
           </Container>

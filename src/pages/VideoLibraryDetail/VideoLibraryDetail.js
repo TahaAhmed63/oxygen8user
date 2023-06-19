@@ -625,7 +625,7 @@ const VideoLibraryDetail = () => {
                                                 ]}
                                               />
                                             ) : (
-                                              "Free Trail"
+                                              "Free Trial"
                                             )}
                                           </button>
                                         )}
