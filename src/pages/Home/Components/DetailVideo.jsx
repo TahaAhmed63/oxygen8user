@@ -5,14 +5,15 @@ import { Container, Row, Col } from 'react-bootstrap';
 import playButtonIcon from './../../../Assets/AboutImages/videobtn-removebg-preview.png';
 import mainvideo from './../../../../src/Assets/videohome/HomePage CNSf.mp4';
 import mylogo from './../../../Assets/AboutImages/Oxygen icon W.png';
+import mythumbnail from "../../../Assets/AboutImages/Ben-Conference-From-Left.png"
 
-export const DetailVideo = () => {
-  const videoRef = useRef(null);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+ const DetailVideo = () => {
+   const videoRef = useRef(null);
+   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
-  const handleVideoToggle = () => {
-    setIsVideoPlaying(!isVideoPlaying);
-  };
+   const handleVideoToggle = () => {
+     setIsVideoPlaying(!isVideoPlaying);
+   };
 
   return (
     <>
@@ -34,20 +35,23 @@ export const DetailVideo = () => {
                 </div>
                 <div className="video-container-2">
                 <ReactPlayer
-  ref={videoRef}
-  url={mainvideo}
-  playing={isVideoPlaying}
-  controls
-  muted={false}
-  playsinline
-  width="100%"
-  height="100%"
+               ref={videoRef}
+                url={mainvideo}
+             playing={isVideoPlaying}
+                controls
+               light={mythumbnail}
+                muted={false}
+                playsinline
+                width="100%"
+                height="100%"
 />
-                  {!isVideoPlaying && (
+          {!isVideoPlaying && (
+                 
                     <div className="play-button" onClick={handleVideoToggle}>
+              
                       <img src={playButtonIcon} alt="Play Button" />
                     </div>
-                  )}
+                  )}  
                 </div>
               </Col>
             </Row>
@@ -57,3 +61,4 @@ export const DetailVideo = () => {
     </>
   );
 };
+export default DetailVideo;

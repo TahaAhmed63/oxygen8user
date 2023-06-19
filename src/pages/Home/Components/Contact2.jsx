@@ -43,7 +43,7 @@ export const Contact2 = () => {
                       </div>
                       <div className="email-info">
                       <h4>
-                      @Oxygen8_Stress_Wellness
+                      @oxygen8.health
                                             </h4>
                       </div>
                   
