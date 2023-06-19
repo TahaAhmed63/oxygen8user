@@ -498,6 +498,14 @@ transform: translateX(-100%)translateY(46%) rotate(146deg) !important;
   height: 50vh !important;
   width: 100% !important;
 }
+.react-player__play-icon {
+      
+  width: 100px;
+  height: 9px;
+  margin-left: 0px !important;
+  background-position: center center !important;
+  background-image: url(./../../../Assets/AboutImages/videobtn-removebg-preview.png);
+}
 .about-head h4 {
   font-size: 26px;
   line-height: 42px;
