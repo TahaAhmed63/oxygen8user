@@ -382,6 +382,7 @@ background: none!important;
   background-image: url(./../../../Assets/AboutImages/videobtn-removebg-preview.png);
   width: 100px;
   height: 16px;
+  margin-left: 0px !important;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
