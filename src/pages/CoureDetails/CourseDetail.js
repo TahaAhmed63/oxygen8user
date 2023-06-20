@@ -7,23 +7,30 @@ import Chapter from "../../component/Chapter/Chapter";
 import DetailSkeleton from "../../component/Skeleton/DetailSkeleton";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 // import CourseSidebar from "../../component/Sidebar/CourseSidebar";
 import StripeCheckout from "react-stripe-checkout";
 import { ColorRing } from "react-loader-spinner";
+import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
+
 
 const CourseDetail = () => {
   const img_link = localStorage.getItem("image_link");
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
+  const [btnLoader, setBtnLoader] = useState(false);
+  const [btnLoader1, setBtnLoader1] = useState(false);
+  const [code ,setCode]=useState('')
+  const [percentage,setPercentage]=useState(null)
+  const [coupon_id,setCoupon_id]=useState(null)
   const [course, setCourse] = useState();
   const [monthly, setMonthly] = useState([]);
   const [yearly, setYearly] = useState([]);
   // const [, setSubscription] = useState();
   const userToken = localStorage.getItem("accesstoken");
-  // const date = new Date();
   const { id } = useParams();
 
   useEffect(() => {
@@ -31,6 +38,8 @@ const CourseDetail = () => {
   }, []);
 
   const courseApi = async () => {
+    setBtnLoader(false)
+    setBtnLoader1(false)
     setLoading(true);
     try {
       var config = {
@@ -68,15 +77,46 @@ const CourseDetail = () => {
     }
   };
 
+  const handleCoupen =async ()=>{
+    if(code){
+      setBtnLoader(true);
+      try {
+      var config = {
+        method: "get",
+        url: `${BaseUrl.baseurl}/user/subscription/coupon/${code}`,
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,     
+        },
+      };
+      const response = await axios(config);
+      setCoupon_id(response.data.coupon.id)
+      setPercentage(response.data.coupon.percentage)
+      toast.success(`You get a ${response.data.coupon.percentage}% off for this course ! `)
+      setCode('')
+      setBtnLoader(false);
+      
+    } catch (error) {
+      setBtnLoader(false);
+      setCode('')
+      console.log(error?.response?.data?.message)
+      toast.error(`${error?.response?.data?.message}`)
+    }
+   }
+   else{
+    toast.error('first enter a coupon code')
+   }
+  } 
+ 
   const onToken = async (token) => {
-   
-    setLoading(true);
+    setBtnLoader1(true);
    
       try {
         const data1 = new FormData();
         data1.append("plan_id", yearly[0]?.id);
         data1.append("source", token.id);
         data1.append("type", 'plan');
+        data1.append("coupon_id", coupon_id);
         var config = {
           method: "post",
           url: `${BaseUrl.baseurl}/user/subscription`,
@@ -87,22 +127,35 @@ const CourseDetail = () => {
           },
         };
         const response = await axios(config);
-        console.log(response);
+        Swal.fire({
+          title: "Good Job",
+          text: response?.data?.message,
+          icon: "success",
+          button: "Ok",
+        });
         courseApi();
       } catch (e) {
         console.log(e);
+        setBtnLoader1(false)
+        Swal.fire({
+          title: "Oops!",
+          text: e?.response?.data?.message,
+          icon: "error",
+          button: "Ok",
+        });
+        
       }
     
   };
 
   const onToken1 = async (token) => {
-    setLoading(true);
- 
+    setBtnLoader1(true);
       try {
         const data1 = new FormData();
         data1.append("plan_id", monthly[0]?.id);
         data1.append("source", token.id);
         data1.append("type", 'plan');
+        data1.append("coupon_id", coupon_id);
         var config = {
           method: "post",
           url: `${BaseUrl.baseurl}/user/subscription`,
@@ -113,10 +166,21 @@ const CourseDetail = () => {
           },
         };
         const response = await axios(config);
-        console.log(response);
+        Swal.fire({
+          title: "Good Job",
+          text: response?.data?.message,
+          icon: "success",
+          button: "Ok",
+        });
         courseApi();
       } catch (e) {
-        console.log(e);
+        setBtnLoader1(false)
+        Swal.fire({
+          title: "Oops!",
+          text: e?.response?.data?.message,
+          icon: "error",
+          button: "Ok",
+        });
       }
   
   };
@@ -257,18 +321,6 @@ const CourseDetail = () => {
                             role="tabpanel"
                             aria-labelledby="yearly-tab"
                           >
-                            {/* <CourseSidebar
-                        courseID={id}
-                        id={yearly[0]?.id}
-                          length={course?.chapters?.length}
-                          img={course?.image}
-                          duration={`${yearly[0]?.duration} ${yearly[0]?.period}`}
-                          price={yearly[0]?.price}
-                          buy={subscription?.subscription?.plan?.period === 'year' ? true : false}
-                          loading={loading}
-                          api={courseApi}
-                          /> */}
-
                             <div className="course__video">
                               <div
                                 className="course__video-thumb w-img mb-25"
@@ -399,18 +451,6 @@ const CourseDetail = () => {
                                 role="tabpanel"
                                 aria-labelledby="yearly-tab"
                               >
-                                {/* <CourseSidebar
-                        courseID={id}
-                        id={yearly[0]?.id}
-                          length={course?.chapters?.length}
-                          img={course?.image}
-                          duration={`${yearly[0]?.duration} ${yearly[0]?.period}`}
-                          price={yearly[0]?.price}
-                          buy={subscription?.subscription?.plan?.period === 'year' ? true : false}
-                          loading={loading}
-                          api={courseApi}
-                          /> */}
-
                                 <div className="course__video">
                                   <div
                                     className="course__video-thumb w-img mb-25"
@@ -458,31 +498,52 @@ const CourseDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
+                                      <li className="d-flex-column align-items-center ">
+                                          <h5>
+                                            <span>Do you have Any Coupen Code ?</span>
+                                          </h5>
+                                      <input type='text' className="form-control" value={code} placeholder="Enter your Coupen Code" onChange={(e)=>setCode(e.target.value)}/>
+                                      <button
+                                      onClick={handleCoupen}
+                                          className="e-btn e-btn-7 w-100 mt-3"
+                                          style={{ background: "#337c75" }}
+                                        >
+                                          {btnLoader === true ? (
+                                            <ColorRing
+                                              visible={true}
+                                              height="40"
+                                              width="40"
+                                              ariaLabel="blocks-loading"
+                                              wrapperStyle={{}}
+                                              wrapperClass="blocks-wrapper"
+                                              colors={[
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                              ]}
+                                            />
+                                          ) : (
+                                            "Submit Coupon"
+                                          )}
+                                        </button>
+                                      </li>
                                     </ul>
                                   </div>
 
                                   <div className="course__enroll-btn">
-                                   {/* subscription?.subscription?.plan ?.period === "year" ? 
-                                     //   true
-                                    // : false ? 
-                                    //   <button
-                                    //     className="e-btn e-btn-7 w-100"
-                                    //     style={{ background: "#337c75" }}
-                                    //   >
-                                    //     Enrolled
-                                    //   </button>
-                                    //  :  */}
                                     {userToken ?
                                       <StripeCheckout
                                         token={onToken}
                                         stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
-                                        amount={yearly[0]?.price * 100}
+                                        amount={percentage ?   yearly[0]?.price*100 - (yearly[0]?.price*100 * (percentage / 100))  : yearly[0]?.price * 100}
                                       >
                                         <button
                                           className="e-btn e-btn-7 w-100"
-                                          style={{ background: "#337c75" }}
+                                          style={{ background: "#337c75" }} 
                                         >
-                                          {loading === true ? (
+                                          {btnLoader1 === true ? (
                                             <ColorRing
                                               visible={true}
                                               height="40"
@@ -575,23 +636,46 @@ const CourseDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
+                                      <li className="d-flex-column align-items-center ">
+                                          <h5>
+                                            <span>Do you have Any Coupen Code ?</span>
+                                          </h5>
+                                      <input type='text' className="form-control" value={code} placeholder="Enter your Coupen Code" onChange={(e)=>setCode(e.target.value)}/>
+                                      <button
+                                      onClick={handleCoupen}
+                                          className="e-btn e-btn-7 w-100 mt-3"
+                                          style={{ background: "#337c75" }}
+                                        >
+                                          {btnLoader === true ? (
+                                            <ColorRing
+                                              visible={true}
+                                              height="40"
+                                              width="40"
+                                              ariaLabel="blocks-loading"
+                                              wrapperStyle={{}}
+                                              wrapperClass="blocks-wrapper"
+                                              colors={[
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                              ]}
+                                            />
+                                          ) : (
+                                            "Submit Coupon"
+                                          )}
+                                        </button>
+                                      </li>
                                     </ul>
                                   </div>
 
                                   <div className="course__enroll-btn">
-                                    {/* {subscription?.subscription?.plan?.period === "month" ? true: false ? 
-                                      <button
-                                        className="e-btn e-btn-7 w-100"
-                                        style={{ background: "#337c75" }}
-                                      >
-                                        Enrolled
-                                      </button>
-                                    :  */}
                                     {userToken ? 
                                       <StripeCheckout
                                          token={onToken1}
                                         stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
-                                        amount={monthly[0]?.price * 100}
+                                        amount={percentage ?   monthly[0]?.price * 100 - (monthly[0]?.price * 100 * (percentage / 100))  : monthly[0]?.price * 100}
                                       >
                                         <button
                                           className="e-btn e-btn-7 w-100"
@@ -637,6 +721,10 @@ const CourseDetail = () => {
               </div>
             </div>
           </section>
+          <Toaster
+          position="top-right"
+          reverseOrder={false}
+          />
         </main>
       )}
 

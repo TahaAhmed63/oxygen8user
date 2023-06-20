@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import VideoList from "../../component/VideoList/VideoList";
+import toast, { Toaster } from 'react-hot-toast';
 import Swal from "sweetalert2";
 
 const VideoLibraryDetail = () => {
@@ -21,6 +22,11 @@ const VideoLibraryDetail = () => {
   const img_link = localStorage.getItem("image_link");
 
   const [loading, setLoading] = useState(false);
+  const [btnLoader, setBtnLoader] = useState(false);
+  const [btnLoader1, setBtnLoader1] = useState(false);
+  const [code ,setCode]=useState('')
+  const [percentage,setPercentage]=useState(null)
+  const [coupon_id,setCoupon_id]=useState(null)
   const [monthly, setMonthly] = useState([]);
   const [yearly, setYearly] = useState([]);
   const [video, setVideo] = useState();
@@ -31,8 +37,11 @@ const VideoLibraryDetail = () => {
   useEffect(() => {
     videoApi();
   }, []);
-  // console.log("token----->", userToken);
+
+
   async function videoApi() {
+    setBtnLoader(false);
+    setBtnLoader1(false);
     setLoading(true);
     try {
       var config = {
@@ -73,15 +82,46 @@ const VideoLibraryDetail = () => {
       console.log(error?.response?.message);
     }
   }
+  const handleCoupen =async ()=>{
+  if(code){
+    setBtnLoader(true);
+    try {
+      var config = {
+        method: "get",
+        url: `${BaseUrl.baseurl}/user/subscription/coupon/${code}`,
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,     
+        },
+      };
+      const response = await axios(config);
+      setCoupon_id(response.data.coupon.id)
+      setPercentage(response.data.coupon.percentage)
+      toast.success(`You get a ${response.data.coupon.percentage}% off for this course ! `)
+      setCode('')
+      setBtnLoader(false);
+      
+    } catch (error) {
+      setBtnLoader(false);
+      setCode('')
+      console.log(error?.response?.data?.message)
+      toast.error(`${error?.response?.data?.message}`)
+    }
+  }
+  else{
+    toast.error('first enter a coupon code')
+  }
+  } 
 
   const onToken = async (token) => {
-    setLoading(true);
+    setBtnLoader1(true);
     try {
       const data1 = new FormData();
       data1.append("plan_id", yearly[0]?.id);
       data1.append("source", token.id);
       data1.append("bulk_id", "");
       data1.append("type", "plan");
+      data1.append("coupon_id", coupon_id);
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/subscription`,
@@ -94,7 +134,7 @@ const VideoLibraryDetail = () => {
       const response = await axios(config);
       Swal.fire({
         title: "Good job!",
-        text: response.message,
+        text: response?.data?.message,
         icon: "success",
         button: "Ok",
       });
@@ -102,9 +142,9 @@ const VideoLibraryDetail = () => {
       videoApi();
     } catch (e) {
       Swal.fire({
-        title: "Good job!",
-        text: e.message,
-        icon: "success",
+        title: "Oops!",
+        text: e?.response?.data?.message,
+        icon: "error",
         button: "Ok",
       });
     }
@@ -114,12 +154,14 @@ const VideoLibraryDetail = () => {
     navigate("/signin");
   };
   const onToken1 = async (token) => {
+    setBtnLoader1(true);
     try {
       const data1 = new FormData();
       data1.append("plan_id", monthly[0]?.id);
       data1.append("source", token.id);
       data1.append("bulk_id", "");
       data1.append("type", "plan");
+      data1.append("coupon_id", coupon_id);
       var config = {
         method: "post",
         url: `${BaseUrl.baseurl}/user/subscription`,
@@ -130,11 +172,24 @@ const VideoLibraryDetail = () => {
         },
       };
       const response = await axios(config);
-      console.log(response);
+      Swal.fire({
+        title: "Good job!",
+        text: response?.data?.message,
+        icon: "success",
+        button: "Ok",
+      });
       videoApi();
     } catch (e) {
-      console.log(e);
+      Swal.fire({
+        title: "Oops!",
+        text: e?.response?.data?.message,
+        icon: "error",
+        button: "Ok",
+      });
     }
+
+
+
   };
 
   const FreeTrail = () => {
@@ -188,23 +243,6 @@ const VideoLibraryDetail = () => {
       ) : (
         <main>
           <section className="page__title-area pt-120 pb-90">
-            {/* <div className="page__title-shape">
-              <img
-                className="page-title-shape-5 d-none d-sm-block"
-                src="/assets/img/page-title/page-title-shape-1.png"
-                alt=""
-              />
-              <img
-                className="page-title-shape-6"
-                src="/assets/img/page-title/page-title-shape-6.png"
-                alt=""
-              />
-              <img
-                className="page-title-shape-7"
-                src="/assets/img/page-title/page-title-shape-4.png"
-                alt=""
-              />
-            </div> */}
             <div className="container">
               <div className="row">
                 <div className="col-xxl-8 col-xl-8 col-lg-8">
@@ -353,19 +391,8 @@ const VideoLibraryDetail = () => {
                             role="tabpanel"
                             aria-labelledby="yearly-tab"
                           >
-                            {/* <CourseSidebar
-                        courseID={id}
-                        id={yearly[0]?.id}
-                          length={video.chapters?.length}
-                          img={video.image}
-                          duration={`${yearly[0]?.duration} ${yearly[0]?.period}`}
-                          price={yearly[0]?.price}
-                          buy={subscription?.subscription?.plan?.period === 'year' ? true : false}
-                          loading={loading}
-                          api={courseApi}
-                          /> */}
-
-                            <div className="course__video">
+                          
+                          <div className="course__video">
                               <div
                                 className="course__video-thumb w-img mb-25"
                                 style={{ position: "relative" }}
@@ -492,14 +519,7 @@ const VideoLibraryDetail = () => {
                                 role="tabpanel"
                                 aria-labelledby="yearly-tab"
                               >
-                                {/* <Sidebar
-                            id={yearly[0]?.id}
-                            length={video?.playlist_videos?.length}
-                            img={video?.image}
-                            duration={`${yearly[0]?.duration} ${yearly[0]?.period}`}
-                            price={yearly[0]?.price}
-                            buy={subscription?.subscription?.plan?.period === 'year' ? true : false}
-                          /> */}
+                               
                                 <div className="course__video">
                                   <div
                                     className="course__video-thumb w-img mb-25"
@@ -547,32 +567,54 @@ const VideoLibraryDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
+                                      <li className="d-flex-column align-items-center ">
+                                          <h5>
+                                            <span>Do you have Any Coupen Code ?</span>
+                                          </h5>
+                                      <input type='text' className="form-control" value={code} placeholder="Enter your Coupen Code" onChange={(e)=>setCode(e.target.value)}/>
+                                      <button
+                                      onClick={handleCoupen}
+                                          className="e-btn e-btn-7 w-100 mt-3"
+                                          style={{ background: "#337c75" }}
+                                        >
+                                          {btnLoader === true ? (
+                                            <ColorRing
+                                              visible={true}
+                                              height="40"
+                                              width="40"
+                                              ariaLabel="blocks-loading"
+                                              wrapperStyle={{}}
+                                              wrapperClass="blocks-wrapper"
+                                              colors={[
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                              ]}
+                                            />
+                                          ) : (
+                                            "Submit Coupon"
+                                          )}
+                                        </button>
+                                      </li>
                                     </ul>
                                   </div>
 
                                   <div className="course__enroll-btn">
-                                    {/* subscription?.subscription?.plan ?.period === "year" ? 
-                                     //   true
-                                    // : false ? 
-                                    //   <button
-                                    //     className="e-btn e-btn-7 w-100"
-                                    //     style={{ background: "#337c75" }}
-                                    //   >
-                                    //     Enrolled
-                                    //   </button>
-                                    //  :  */}
+                                   
                                     {userToken ? (
                                       <>
                                         <StripeCheckout
                                           token={onToken}
                                           stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
-                                          amount={yearly[0]?.price * 100}
+                                          amount={percentage ?   yearly[0]?.price*100 - (yearly[0]?.price*100 * (percentage / 100))  : yearly[0]?.price * 100}
                                         >
                                           <button
                                             className="e-btn e-btn-7 w-100"
                                             style={{ background: "#337c75" }}
                                           >
-                                            {loading === true ? (
+                                            {btnLoader1 === true ? (
                                               <ColorRing
                                                 visible={true}
                                                 height="40"
@@ -688,16 +730,6 @@ const VideoLibraryDetail = () => {
                                 role="tabpanel"
                                 aria-labelledby="yearly-tab"
                               >
-                                {/* {
-                            <Sidebar
-                            id={monthly[0]?.id}
-                              length={video?.playlist_videos?.length}
-                              img={video?.image}
-                              duration={`${monthly[0]?.duration} ${monthly[0]?.period}`}
-                              price={monthly[0]?.price}
-                              buy={subscription?.subscription?.plan?.period === 'month' ? true : false}
-                            />
-                          } */}
                                 <div className="course__video">
                                   <div
                                     className="course__video-thumb w-img mb-25"
@@ -751,32 +783,53 @@ const VideoLibraryDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
+                                      <li className="d-flex-column align-items-center ">
+                                          <h5>
+                                            <span>Do you have Any Coupen Code ?</span>
+                                          </h5>
+                                      <input type='text' className="form-control" value={code} placeholder="Enter your Coupen Code" onChange={(e)=>setCode(e.target.value)}/>
+                                      <button
+                                      onClick={handleCoupen}
+                                          className="e-btn e-btn-7 w-100 mt-3"
+                                          style={{ background: "#337c75" }}
+                                        >
+                                          {btnLoader === true ? (
+                                            <ColorRing
+                                              visible={true}
+                                              height="40"
+                                              width="40"
+                                              ariaLabel="blocks-loading"
+                                              wrapperStyle={{}}
+                                              wrapperClass="blocks-wrapper"
+                                              colors={[
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                              ]}
+                                            />
+                                          ) : (
+                                            "Submit Coupon"
+                                          )}
+                                        </button>
+                                      </li>
                                     </ul>
                                   </div>
 
                                   <div className="course__enroll-btn">
-                                    {/* subscription?.subscription?.plan ?.period === "year" ? 
-                                     //   true
-                                    // : false ? 
-                                    //   <button
-                                    //     className="e-btn e-btn-7 w-100"
-                                    //     style={{ background: "#337c75" }}
-                                    //   >
-                                    //     Enrolled
-                                    //   </button>
-                                    //  :  */}
                                     {userToken ? (
                                       <>
                                         <StripeCheckout
                                           token={onToken1}
                                           stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
-                                          amount={monthly[0]?.price * 100}
+                                          amount={percentage ?   monthly[0]?.price*100 - (monthly[0]?.price*100 * (percentage / 100))  : monthly[0]?.price * 100}
                                         >
                                           <button
                                             className="e-btn e-btn-7 w-100"
                                             style={{ background: "#337c75" }}
                                           >
-                                            {loading === true ? (
+                                            {btnLoader1 === true ? (
                                               <ColorRing
                                                 visible={true}
                                                 height="40"
@@ -888,6 +941,10 @@ const VideoLibraryDetail = () => {
               </div>
             </div>
           </section>
+          <Toaster
+         position="top-right"
+         reverseOrder={false}
+         />
         </main>
       )}
       <Footer />
