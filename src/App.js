@@ -8,6 +8,7 @@ import "./../src/Assets/css/animate.min.css"
 import "./../src/Assets/css/jquery.fancybox.min.css"
 import "./../src/Assets/css/swiper-bundle.css"
 import "./../src/Assets/css/meanmenu.css"
+import './../src/'
 
 
 function App() {

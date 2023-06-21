@@ -13,6 +13,8 @@ import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import VideoList from "../../component/VideoList/VideoList";
 import toast, { Toaster } from 'react-hot-toast';
 import Swal from "sweetalert2";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 const VideoLibraryDetail = () => {
   // const arr=[1,2,3,4]
@@ -20,7 +22,8 @@ const VideoLibraryDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const img_link = localStorage.getItem("image_link");
-
+  const [show, setShow] = useState(false);
+  const [show1, setShow1] = useState(false);
   const [loading, setLoading] = useState(false);
   const [btnLoader, setBtnLoader] = useState(false);
   const [btnLoader1, setBtnLoader1] = useState(false);
@@ -32,6 +35,10 @@ const VideoLibraryDetail = () => {
   const [video, setVideo] = useState();
   const [PlaylistId, setPlaylistId] = useState();
   const [Trail, setTrail] = useState();
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const handleClose1 = () => setShow1(false);
+  const handleShow1 = () => setShow1(true)
   const userToken = localStorage.getItem("accesstoken");
 
   useEffect(() => {
@@ -82,36 +89,39 @@ const VideoLibraryDetail = () => {
       console.log(error?.response?.message);
     }
   }
-  const handleCoupen =async ()=>{
-  if(code){
-    setBtnLoader(true);
-    try {
-      var config = {
-        method: "get",
-        url: `${BaseUrl.baseurl}/user/subscription/coupon/${code}`,
-        headers: {
-          Accept: "application/json",
-          Authorization: `Bearer ${userToken}`,     
-        },
-      };
-      const response = await axios(config);
-      setCoupon_id(response.data.coupon.id)
-      setPercentage(response.data.coupon.percentage)
-      toast.success(`You get a ${response.data.coupon.percentage}% off for this course ! `)
-      setCode('')
-      setBtnLoader(false);
-      
-    } catch (error) {
-      setBtnLoader(false);
-      setCode('')
-      console.log(error?.response?.data?.message)
-      toast.error(`${error?.response?.data?.message}`)
+
+  const handleCoupen = async () => {
+    if (code) {
+      setBtnLoader(true);
+      try {
+        var config = {
+          method: "get",
+          url: `${BaseUrl.baseurl}/user/subscription/coupon/${code}`,
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${userToken}`,
+          },
+        };
+        const response = await axios(config);
+        setCoupon_id(response.data.coupon.id);
+        setPercentage(response.data.coupon.percentage);
+        handleShow()
+        setCode("");
+        setBtnLoader(false);
+      } catch (error) {
+        setBtnLoader(false);
+        setCode("");
+        Swal.fire({
+          title: "Oops",
+          text: `${error?.response?.data?.message}`,
+          icon: "error",
+          button: "Ok",
+        });
+      }
+    } else {
+      toast.error("first enter a coupon code");
     }
-  }
-  else{
-    toast.error('first enter a coupon code')
-  }
-  } 
+  };
 
   const onToken = async (token) => {
     setBtnLoader1(true);
@@ -139,8 +149,12 @@ const VideoLibraryDetail = () => {
         button: "Ok",
       });
       console.log(response);
+      handleClose()
       videoApi();
     } catch (e) {
+      console.log(e);
+      setBtnLoader1(false);
+      handleClose()
       Swal.fire({
         title: "Oops!",
         text: e?.response?.data?.message,
@@ -178,8 +192,12 @@ const VideoLibraryDetail = () => {
         icon: "success",
         button: "Ok",
       });
+      handleClose1()
       videoApi();
     } catch (e) {
+      console.log(e);
+      setBtnLoader1(false);
+      handleClose1()
       Swal.fire({
         title: "Oops!",
         text: e?.response?.data?.message,
@@ -190,6 +208,39 @@ const VideoLibraryDetail = () => {
 
 
 
+  };
+
+  const handleCoupen1 = async () => {
+    if (code) {
+      setBtnLoader(true);
+      try {
+        var config = {
+          method: "get",
+          url: `${BaseUrl.baseurl}/user/subscription/coupon/${code}`,
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${userToken}`,
+          },
+        };
+        const response = await axios(config);
+        setCoupon_id(response.data.coupon.id);
+        setPercentage(response.data.coupon.percentage);
+        handleShow1()
+        setCode("");
+        setBtnLoader(false);
+      } catch (error) {
+        setBtnLoader(false);
+        setCode("");
+        Swal.fire({
+          title: "Oops",
+          text: `${error?.response?.data?.message}`,
+          icon: "error",
+          button: "Ok",
+        });
+      }
+    } else {
+      toast.error("first enter a coupon code");
+    }
   };
 
   const FreeTrail = () => {
@@ -789,7 +840,7 @@ const VideoLibraryDetail = () => {
                                           </h5>
                                       <input type='text' className="form-control" value={code} placeholder="Enter your Coupen Code" onChange={(e)=>setCode(e.target.value)}/>
                                       <button
-                                      onClick={handleCoupen}
+                                      onClick={handleCoupen1}
                                           className="e-btn e-btn-7 w-100 mt-3"
                                           style={{ background: "#337c75" }}
                                         >
@@ -945,6 +996,102 @@ const VideoLibraryDetail = () => {
          position="top-right"
          reverseOrder={false}
          />
+           <Modal show={show} onHide={handleClose}>
+         <Modal.Header closeButton>
+           <Modal.Title>Coupon Information</Modal.Title>
+         </Modal.Header>
+         <Modal.Body>{`You get a ${percentage}% off for this course`}</Modal.Body>
+         <Modal.Footer>
+           <Button variant="secondary" onClick={handleClose}>
+             Close
+           </Button>
+           <StripeCheckout
+                                         token={onToken}
+                                         stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
+                                         amount={
+                                           percentage
+                                             ? yearly[0]?.price * 100 -
+                                               yearly[0]?.price *
+                                                 100 *
+                                                 (percentage / 100)
+                                             : yearly[0]?.price * 100
+                                         }
+                                       >
+                                         <button
+                                           className="e-btn e-btn-7 w-100"
+                                           style={{ background: "#337c75" }}
+                                         >
+                                           {btnLoader1 === true ? (
+                                             <ColorRing
+                                               visible={true}
+                                               height="40"
+                                               width="40"
+                                               ariaLabel="blocks-loading"
+                                               wrapperStyle={{}}
+                                               wrapperClass="blocks-wrapper"
+                                               colors={[
+                                                 "#fff",
+                                                 "#fff",
+                                                 "#fff",
+                                                 "#fff",
+                                                 "#fff",
+                                               ]}
+                                             />
+                                           ) : (
+                                             "Buy"
+                                           )}
+                                         </button>
+           </StripeCheckout>
+         </Modal.Footer>
+           </Modal>
+           <Modal show={show1} onHide={handleClose1}>
+         <Modal.Header closeButton>
+           <Modal.Title>Coupon Information</Modal.Title>
+         </Modal.Header>
+         <Modal.Body>{`You get a ${percentage}% off for this course`}</Modal.Body>
+         <Modal.Footer>
+           <Button variant="secondary" onClick={handleClose1}>
+             Close
+           </Button>
+           <StripeCheckout
+                                         token={onToken1}
+                                         stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
+                                         amount={
+                                           percentage
+                                             ? monthly[0]?.price * 100 -
+                                               monthly[0]?.price *
+                                                 100 *
+                                                 (percentage / 100)
+                                             : monthly[0]?.price * 100
+                                         }
+                                       >
+                                         <button
+                                           className="e-btn e-btn-7 w-100"
+                                           style={{ background: "#337c75" }}
+                                         >
+                                           {loading === true ? (
+                                             <ColorRing
+                                               visible={true}
+                                               height="40"
+                                               width="40"
+                                               ariaLabel="blocks-loading"
+                                               wrapperStyle={{}}
+                                               wrapperClass="blocks-wrapper"
+                                               colors={[
+                                                 "#fff",
+                                                 "#fff",
+                                                 "#fff",
+                                                 "#fff",
+                                                 "#fff",
+                                               ]}
+                                             />
+                                           ) : (
+                                             "Buy"
+                                           )}
+                                         </button>
+           </StripeCheckout>
+         </Modal.Footer>
+           </Modal>
         </main>
       )}
       <Footer />
