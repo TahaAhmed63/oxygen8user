@@ -808,11 +808,11 @@ const CourseDetail = () => {
             </div>
           </section>
           <Toaster position="top-right" reverseOrder={false} />
-          <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Coupon Information</Modal.Title>
+          <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" centered>
+        <Modal.Header >
+          <Modal.Title><h5>Coupon Information</h5></Modal.Title>
         </Modal.Header>
-        <Modal.Body>{`You get a ${percentage}% off for this course`}</Modal.Body>
+        <Modal.Body><h5>{`You get a ${percentage}% off for this course`}</h5></Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
@@ -856,11 +856,11 @@ const CourseDetail = () => {
           </StripeCheckout>
         </Modal.Footer>
           </Modal>
-          <Modal show={show1} onHide={handleClose1}>
-        <Modal.Header closeButton>
-          <Modal.Title>Coupon Information</Modal.Title>
+          <Modal show={show1} onHide={handleClose1} aria-labelledby="contained-modal-title-vcenter" centered>
+        <Modal.Header >
+          <Modal.Title><h5>Coupon Information</h5></Modal.Title>
         </Modal.Header>
-        <Modal.Body>{`You get a ${percentage}% off for this course`}</Modal.Body>
+        <Modal.Body><h5>{`You get a ${percentage}% off for this course`}</h5></Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose1}>
             Close
