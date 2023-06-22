@@ -25,7 +25,9 @@ const CourseDetail = () => {
   const userToken = localStorage.getItem("accesstoken");
   // const date = new Date();
   const { id } = useParams();
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     courseApi();
   }, []);

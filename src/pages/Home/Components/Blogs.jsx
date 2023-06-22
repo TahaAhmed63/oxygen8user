@@ -6,6 +6,7 @@ import icon3 from './../../../Assets/Blogs/Blog3.png'
 import { Link } from 'react-router-dom'
 import { Container} from 'react-bootstrap'
 export const Blogs = () => {
+
     const BLogData =[
 
         {
@@ -27,7 +28,7 @@ export const Blogs = () => {
             list2:"Tailored sessions",
             list3:"Facilitated sessions",
             btn:"Find Out More",
-            linkto:"/consultant"
+            linkto:"/services"
             
          },
          {
@@ -47,6 +48,8 @@ export const Blogs = () => {
 
 
     ]
+ 
+  
   return (
 
     <>
