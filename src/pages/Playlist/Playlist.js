@@ -16,7 +16,9 @@ const Playlist = () => {
   const [playlist, setPlaylist] = useState([]);
   const userToken = localStorage.getItem("accesstoken");
   const arr = [1, 1, 1, 1];
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     playlistApi();
   }, []);

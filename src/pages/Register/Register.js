@@ -4,13 +4,16 @@ import { ColorRing } from "react-loader-spinner";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Swal from "sweetalert2";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 
 function Register() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const SignupSchema = Yup.object().shape({
     first_name: Yup.string("please enter a first name").required("Required"),
@@ -226,7 +229,7 @@ function Register() {
                           </button>
                           <div className="sign__new text-center mt-20">
                             <p>
-                              Already in Markit ?{" "}
+                            Already have an Account? {" "}
                               <Link to="/signin"> Sign In</Link>
                             </p>
                           </div>

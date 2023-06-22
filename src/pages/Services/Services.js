@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Header from "../../component/Header/Header";
 import { Row, Col } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
@@ -8,7 +8,9 @@ import { Contact2 } from "../Home/Components/Contact2";
 import Footer from "../../component/Footer/Footer";
 const Services = () => {
   const navigate = useNavigate();
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header />
