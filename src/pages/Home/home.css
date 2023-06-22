@@ -139,6 +139,9 @@ width: 794px !important;
       width: 100%;
       align-items: center;
     }
+    .react-player__preview {
+      zoom: 6.5;
+  }
     .text-video-wrap h2 {
       font-size: 26px !important;
     }

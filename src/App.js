@@ -8,10 +8,23 @@ import "./../src/Assets/css/animate.min.css"
 import "./../src/Assets/css/jquery.fancybox.min.css"
 import "./../src/Assets/css/swiper-bundle.css"
 import "./../src/Assets/css/meanmenu.css"
-import './../src/'
+import { useEffect } from 'react';
 
 
-function App() {
+const App=()=>{
+
+
+  // useEffect(() => {
+  //   if (location.pathname === '/') {
+  //     window.scrollTo(0, 0);
+  //   }
+  // }, [location]);
+
+  useEffect(() => { 
+    console.log("hell")
+      // window.onload = ()=> window.scrollTo(0,0)
+      window.history.scrollRestoration ="manual"
+  }, []);
   return (
     <div className="App">
      <Rounting/>

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import Footer from "../../component/Footer/Footer";
 import Headers from "../../component/Header/Header";
@@ -40,8 +39,13 @@ const CourseDetail = () => {
   const handleShow1 = () => setShow1(true)
 
   useEffect(() => {
-    courseApi();
+    window.scrollTo(0, 0);
   }, []);
+  useEffect(() => {
+    courseApi();
+    // eslint-disable-next-line
+  }, []);
+
 
   const courseApi = async () => {
     setBtnLoader(false);

@@ -1,6 +1,6 @@
 import Footer from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
-
+import { useEffect } from "react";
 import { Contact2 } from "./Components/Contact2";
 import { Col } from "react-bootstrap";
 import mylogo from "./../../Assets/AboutImages/Oxygen icon.png";
@@ -15,6 +15,13 @@ import { LibraraySpan } from "./Components/LibraraySpan";
 function Home() {
 
 
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
+  
+
+  
   return (
     <main>
       <Header />
