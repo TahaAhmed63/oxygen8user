@@ -520,14 +520,14 @@ const CourseDetail = () => {
                                       <li className="d-flex align-items-center">
                                         <div className="course__video-info">
                                           <h5>
-                                            <span>chapters :</span>
+                                            <span>Chapters :</span>
                                             {course?.chapters
                                               ? course?.chapters?.length
                                               : 0}
                                           </h5>
                                         </div>
                                       </li>
-                                      <li className="d-flex align-items-center">
+                                      {/* <li className="d-flex align-items-center">
                                         <div className="course__video-info">
                                           <h5>
                                             <span>Duration :</span>
@@ -536,7 +536,7 @@ const CourseDetail = () => {
                                               : 0}
                                           </h5>
                                         </div>
-                                      </li>
+                                      </li> */}
 
                                       <li className="d-flex align-items-center">
                                         <div className="course__video-info">
@@ -548,7 +548,7 @@ const CourseDetail = () => {
                                       <li className="d-flex-column align-items-center ">
                                         <h5>
                                           <span>
-                                            Do you have Any Coupen Code ?
+                                          Discount Code
                                           </span>
                                         </h5>
                                         <input
@@ -601,7 +601,7 @@ const CourseDetail = () => {
                                                 100 *
                                                 (percentage / 100)
                                             : yearly[0]?.price * 100
-                                        }
+                                        } 
                                       >
                                         <button
                                           className="e-btn e-btn-7 w-100"

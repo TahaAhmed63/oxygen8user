@@ -41,7 +41,10 @@
     text-align: left;
     color: white;
   }
-
+  .card-list ul li {
+    font-size: 18px;
+    color: #fff;
+}
 
   .video-wrap {
     width: 100vh;
@@ -118,6 +121,9 @@
     .card {
       width: 100% !important ;
     }
+    .dot::before{
+      bottom: 0px;
+    }
 
     .em-style-para-2{
       font-size: 11px;
@@ -184,6 +190,9 @@
   .library-head h4 {
     font-size: 31.7px !important;
     color: #fff;
+  }
+  .dot::before{
+    bottom: 4px !important;
   }
     .card-list ul {
       padding: 0px 44px 0px 5px !important;
@@ -258,7 +267,8 @@
       font-size: 30px !important ;
     }
     .card-list ul li {
-      font-size: 14px;
+      font-size: 18px;
+      color: #fff;
     }
   }
   @media (min-width: 1440px) {
@@ -332,12 +342,13 @@
       font-size: 17px !important;
   }
 
-    .card-para p {
-      font-size: 13px !important;
-    }
+  .card-para p {
+    font-size: 15px !important;
+}
     .card-list ul li {
-      font-size: 14px;
-    }
+      font-size: 15px;
+      color: white;
+  }
     .emails i {
       font-size: 25px;
     }
@@ -365,9 +376,10 @@
   .card-para {
     left: 0;
     width: 100%;
-    text-align: left;
-    margin-left: 20px;
+    text-align: center;
+    margin-left: 0px;
   }
+
   .card-wrap {
     display: flex;
     gap: 0px;
@@ -379,7 +391,7 @@
 background: none!important;
   }
 .react-player__play-icon{
-  background-image: url(./../../../Assets/AboutImages/videobtn-removebg-preview.png);
+  background-image: url(./../../../Assets/AboutImages/videobtnicon.png);
   width: 100px;
   height: 16px;
   margin-left: 0px !important;
@@ -423,7 +435,8 @@ background: none!important;
 
   }
   .card-para p {
-    color: #d9d9d9;
+    color: #fff;
+    font-size: 18px;
     position: relative;
     left: 0;
   }
@@ -1033,6 +1046,9 @@ background: none!important;
       left: -5px;
       font-style: normal
     }
+    .dot::before{
+      bottom: 0px;
+    }
     .react-player__play-icon {
       
       width: 100px;
@@ -1285,6 +1301,9 @@ background: none!important;
     .video-container {
       height: 50vh !important;
       width: 100% !important;
+    }
+    .dot::before{
+      bottom: 0px;
     }
     .overlay-absolute-text {
       left: 50% !important;
