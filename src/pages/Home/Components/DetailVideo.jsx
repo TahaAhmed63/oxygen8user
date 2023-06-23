@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import ReactPlayer from 'react-player';
 import './style.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import playButtonIcon from './../../../Assets/AboutImages/videobtn-removebg-preview.png';
+import playButtonIcon from './../../../Assets/AboutImages/videobtnicon.png';
 import mainvideo from './../../../../src/Assets/videohome/HomePage CNSf.mp4';
 import mylogo from './../../../Assets/AboutImages/Oxygen icon W.png';
 import mythumbnail from "../../../Assets/AboutImages/Homepage_Thumbnail.png"
