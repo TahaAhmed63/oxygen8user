@@ -16,7 +16,9 @@ const Playlist = () => {
   const [playlist, setPlaylist] = useState([]);
   const userToken = localStorage.getItem("accesstoken");
   const arr = [1, 1, 1, 1];
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     playlistApi();
   }, []);
@@ -93,27 +95,11 @@ const Playlist = () => {
               <Col md={12} xl={12} xs={12} xxl={12}>
                 <h3 className="mb-left" style={{
                   color:"#317C74",
-                  fontSize:"44px"
+                  fontSize:"44px",
+                  textAlign:"center"
 
                 }}>Guided sessions to influence your nervous system.</h3>
-                <p style={{
-                 color:"#317C74",
-                 fontSize:"24px",
-                 lineHeight:"45px",
-                 textAlign:"justify",
-                 // marginLeft:"58px"
-                 maxWidth:"989px",
-                 margin:"0 auto"
-
-                }}>The Oxygen8 <em style={
-                  {
-                    fontSize: "12px",
-                        position: "relative",
-                        bottom: "0.8rem",
-                      left:"-5px",
-                      fontStyle:"normal"
-                      }
-                 }>TM</em>Library offers accessible down-regulation, performance-enhancing and anxiety management tools in the form of guided audio sessions for on-the-go or at home practices. </p>
+                <p className="library-main-para" >The Oxygen8 <em className="em-style-para-2">TM</em>Library offers accessible down-regulation, performance-enhancing and anxiety management tools in the form of guided audio sessions for on-the-go or at home practices. </p>
               </Col>
             </Row>
           </Container>

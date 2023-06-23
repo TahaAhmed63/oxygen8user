@@ -8,11 +8,13 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import {setSession} from '../Utlilities/jwt'
-
+import { useEffect } from "react";
 function SignIn() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const SignupSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string()
