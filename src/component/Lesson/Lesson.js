@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import { useState,useRef } from "react";
 import Modal from 'react-bootstrap/Modal';
@@ -55,16 +56,25 @@ const {title,video}=item
           <div className="course__item white-bg mb-30 fix" style={{display:'none'}}>
       <video src={`${video_link}${video}`}  ref={videoEl} onLoadedMetadata={handleLoadedMetadata}  alt=""  height="300" width="250" autoPlay muted loop playsInline ><source src={`${video_link}${video}`} type='video/mp4'/></video>
     </div>
+    
           <span>{title}</span> 
         
         </h3>
       </div>
+      {item.type === "video"?
+      <>
       <div className="course__curriculum-meta" onClick={handleShow} style={{cursor:'pointer'}}>
         <span className="time">
           {" "}
           <i className="icon_clock_alt"></i> {time} minutes
         </span>
       </div>
+      </>
+      :
+      <>
+      <a href={`${video_link}${video}`} target="_blank">View</a>
+      </>
+}
        <Modal show={show} onHide={handleClose} fullscreen={true}>
         <Modal.Header closeButton>
         </Modal.Header>
