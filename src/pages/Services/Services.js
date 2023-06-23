@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import Header from "../../component/Header/Header";
 import { Row, Col } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
@@ -61,33 +61,60 @@ const Services = () => {
                           circumstances. By tailoring a comprehensive plan that
                           fits into your weekly routine, we address both
                           immediate stress relief techniques and long-term
-                          changes that lead to substantial benefits over time.
-                          In addition to utilising various helpful Conscious
-                          Nervous System Feedback (CNSF) resources to regulate
-                          your nervous system, we focus on optimising your
-                          physiology. Over time, you will feel this resilience
-                          extend to every aspect of your life.
+                          changes that lead to increased resilience. In addition
+                          to utilising various helpful Conscious Nervous System
+                          Feedback (CNSF) resources to regulate your nervous
+                          system, we focus on optimising your physiology with
+                          macro-level changes to improve your baseline
+                          resilience in any challenging situation.
                           <br />
                           <br />
                           To maximise the impact of our sessions, we structure
                           them into three parts. We begin with an initial
                           consultation, where we discuss your goals, lifestyle
-                          and emotional wellbeing, before learning some
-                          quick-fire downregulating techniques. Following this,
-                          you receive a tailored plan to assimilate into your
-                          day-to-day life. You have access to email support,
-                          allowing you to reach out with any questions or
-                          concerns between appointments. At our second
-                          appointment, we evaluate your progress and make any
-                          necessary adjustments to further enhance your ability
-                          to cope with stress. As progress will be likely we can
-                          alter plans as required further appointments as you
-                          progress.
+                          and emotional wellbeing, delving into information that
+                          is useful for the second stage. After this
+                          appointment, a tailored plan to assimilate into your
+                          day-to-day life will be created. As this plan is
+                          unique to you, our follow-up appointment runs through
+                          the suggested changes and techniques, teaching you the
+                          methods that have been included. If required, you have
+                          access to email support for any queries after our
+                          follow-up to help as you integrate these techniques
+                          into your life. After our second appointment, further
+                          appointments can be booked as we evaluate your
+                          progress and make any necessary adjustments to further
+                          enhance your ability to cope with stress.
                           <br />
                           <br />
-                          The package pricing is £200 which includes the initial
-                          appointment, email support, follow-up appointment and
-                          individualised plan.
+                          <h2
+                            style={{
+                              fontSize: "18px",
+                              fontWeight: "bold",
+                              color: "#fff",
+                            }}
+                          >
+                            pricing
+                          </h2>
+                          <p>Initial Consultation: £240*</p>
+                          <p>Follow-up Appointments: £100</p>
+                          <p>1:1 Guided Sessions: £85**</p>
+                          <p>
+                            {" "}
+                            <p>
+                              *Includes initial consultation, tailored plan, and
+                              follow-up appointment to learn the techniques in
+                              the plan.
+                            </p>
+                            <p>
+                              **Depending on the outcome of your initial
+                              consultancy, I may recommend a 1:1 guided session,
+                              for example Conscious Connected Breathwork. It is
+                              entirely at your discretion and not compulsory,
+                              but the session falls outside of the scope of the
+                              appointments and CNSF techniques.
+                            </p>
+                          </p>
                         </p>
                       </div>
                       <div className=" button-about-3">
@@ -116,8 +143,8 @@ const Services = () => {
                       }}
                     >
                       TM
-                    </em>
-                    {"   "} Courses
+                    </em> &nbsp;
+                    Courses 
                   </Accordion.Header>
                   <Accordion.Body
                     style={{
@@ -137,12 +164,7 @@ const Services = () => {
                         }}
                       >
                         <p className="acordin-para">
-                          The Oxygen8{" "}
-                          <em
-                      className="em-style-para"
-                          >
-                            TM
-                          </em>{" "}
+                          The Oxygen8 <em className="em-style-para">TM</em>{" "}
                           Courses provide a comprehensive array of science-based
                           techniques. They are designed to equip you with a
                           diverse arsenal of stress management methods that
@@ -154,7 +176,7 @@ const Services = () => {
                           <br />
                           <br />
                           The methods on offer cover a range of needs and
-                          preferences. Whether beginner to experienced, the
+                          preferences. Whether beginner or experienced, the
                           courses are specifically designed to seamlessly
                           integrate into your workweek. From 3 minute videos to
                           watch on the go, to month-long integrations, the
@@ -188,7 +210,7 @@ const Services = () => {
                     >
                       TM
                     </em>
-                    {"  "} Library
+                    &nbsp; Library
                   </Accordion.Header>
                   <Accordion.Body
                     style={{
@@ -208,28 +230,27 @@ const Services = () => {
                         }}
                       >
                         <p className="acordin-para">
-                          The Oxygen8{" "}
-                          <em className="em-style-para"
-                        
-                          >
-                            TM
-                          </em>{" "}
+                          The Oxygen8 <em className="em-style-para">TM</em>{" "}
                           Library is split into 3 sections: Stress, Anxiety and
-                          Performance. The stress and anxiety libraries offer
-                          guided sessions where all you have to do is listen to
-                          the instructions and relax with guided sessions
-                          incorporating a hybrid mix of breathwork, somatics and
-                          meditation that allow you to release your sympathetic
-                          arousal wherever you are. With sessions ranging from 2
-                          minutes to full 20+ minute sessions, you are covered
-                          any time, anywhere.
+                          Performance.
                           <br />
                           <br />
-                          The Performance Library offers guided sessions for
-                          improving your fitness through Oxygen Advantage
-                          techniques, of which Ben is a fully qualified
-                          instructor. Expect breath holds, challenges, and an
-                          increase in your aerobic capacity.
+                          The Stress and Anxiety libraries offer guided sessions
+                          where all you have to do is listen to the instructions
+                          and find yourself relaxing through a hybrid mix of
+                          breathwork, somatics and meditation that allow you to
+                          release your sympathetic arousal wherever you are.
+                          With sessions ranging from 2 minutes to full 20+
+                          minute sessions, you are covered any time, anywhere.
+                          <br />
+                          <br />
+                          Ben is a fully qualified Oxygen Advantage instructor,
+                          and the Performance Library offers guided sessions for
+                          improving your fitness through these techniques.
+                          Expect breath holds, challenges, and an increase in
+                          your aerobic capacity to find yourself at the next
+                          level of fitness, whilst simultaneously experiencing a
+                          lower load on your cardiovascular system.
                         </p>
                       </div>
                       <div className=" button-about-3">
@@ -267,8 +288,7 @@ const Services = () => {
                         }}
                       >
                         <p className="acordin-para">
-                          Having experienced severe burnout working in
-                          engineering, Oxygen8{" "}
+                          Oxygen8{" "}
                           <em
                             style={{
                               fontSize: "11px",
@@ -280,10 +300,14 @@ const Services = () => {
                           >
                             TM
                           </em>{" "}
-                          was founded with the sole intention of helping prevent
-                          as many people as possible head down the same path. To
-                          learn more about corporate offerings, please follow
-                          the link above.
+                          was initially founded with the sole intention of
+                          helping prevent workplace burnout, providing tools for
+                          stress regulation to allow an increase in health and
+                          wellbeing, but also productivity.
+                          <br />
+                          <br />
+                          To learn more about corporate offerings, please follow
+                          the link to the dedicated Corporate page.
                         </p>
                       </div>
                       <div className=" button-about-3">
@@ -321,7 +345,7 @@ const Services = () => {
                         }}
                       >
                         <p className="acordin-para">
-                          Breathwork is a powerful practice that harnesses the
+                          {/* Breathwork is a powerful practice that harnesses the
                           innate connection between our breath and our autonomic
                           nervous system. Through intentional and conscious
                           control of the breath, the techniques offer a pathway
@@ -347,7 +371,125 @@ const Services = () => {
                           <br />
                           If breathwork is something you would like to explore,
                           please feel free to get in contact to see how it could
-                          be of benefit to you!
+                          be of benefit to you! */}
+                          <h1
+                            style={{
+                              fontSize: "24px",
+                              fontWeight: "bold",
+                              color: "#fff",
+                            }}
+                          >
+                            Ben's Breathwork Services
+                          </h1>
+                          <h2
+                            style={{
+                              fontSize: "20px",
+                              fontWeight: "bold",
+                              color: "#fff",
+                            }}
+                          >
+                            About Breathwork
+                          </h2>
+                          <p
+                         className="acordin-para"
+                          >
+                            Ben is a fully qualified breathwork facilitator and
+                            practitioner across the spectrum of breathwork
+                            techniques. Breathwork harnesses the innate
+                            connection between our conscious breathing and our
+                            autonomic nervous system. Through intentional
+                            control of the breath, the techniques offer a
+                            pathway to deep relaxation, stress reduction,
+                            anxiety management, and increased self-awareness.
+                            Incorporating breathwork into your daily routine has
+                            been shown to offer numerous health benefits in
+                            studies by renowned neuroscientist Dr. Andrew
+                            Huberman at Stanford University.
+                          </p>
+                          <h2
+                            style={{
+                              fontSize: "20px",
+                              fontWeight: "bold",
+                              color: "#fff",
+                            }}
+                          >
+                            Offerings
+                          </h2>
+                          <ul>
+                            <li  className="acordin-para-li" >
+                              - Down-regulating Breathwork for stress and
+                              anxiety management.
+                            </li>
+                            <li  className="acordin-para-li">
+                              - Performance-enhancing Breathwork using the
+                              Oxygen Advantage breathing techniques.
+                            </li>
+                            <li  className="acordin-para-li">
+                              - Conscious Connected Breathing using a form of
+                              therapeutic breathwork that acts to help release
+                              trauma and allow emotional processing through
+                              transient hypofrontality.
+                            </li>
+                          </ul>
+                          <h3
+                            style={{
+                              fontSize: "20px",
+                              fontWeight: "bold",
+                              color: "#fff",
+                            }}
+                          >
+                            How to Get Started
+                          </h3>
+                          <p
+                            style={{
+                             
+                              marginBottom: "10px",
+                              color: "#fff",
+                            }}
+                            className="acordin-para"
+                          >
+                            To learn down-regulating breathwork, head to the{" "}
+                          
+                              Courses
+                            {" "}
+                            to build your own arsenal of techniques that
+                            resonate with you. For guided breathwork sessions,
+                            head to the{" "}
+                        
+                            
+                              Library
+                           {" "}
+                            offerings for the most accessible route into
+                            breathwork for relaxation. Performance-enhancing
+                            options can be found in both the Course and Library
+                            sections of the website.
+                          </p>
+                          <p
+                            style={{
+                              
+                              marginBottom: "10px",
+                              color: "#fff",
+                            }}
+                            className="acordin-para"
+                          >
+                            I offer Conscious Connected Breathwork as a 1:1
+                            session only due to the emotional and therapeutic
+                            nature of the technique. If this is something you
+                            would like to explore, please feel free to{" "}
+                            get in contact
+                           {" "}
+                            to see how it could be of benefit to you.
+                          </p>
+                          <h3
+                            style={{
+                              fontSize: "20px",
+                              fontWeight: "bold",
+                              color: "#fff",
+                            }}
+                          >
+                            Pricing
+                          </h3>
+                          Conscious Connected Breathwork Session, 75mins: £85
                         </p>
                       </div>
                       <div className=" button-about-3">

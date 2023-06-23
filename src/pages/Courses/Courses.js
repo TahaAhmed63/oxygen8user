@@ -128,10 +128,12 @@ const Courses = () => {
                 <h3 className='mb-left' style={{
                   color:"#317C74",
                   fontSize:"30px",
-                  textAlign:"justify"
+                  textAlign:"center",
+                  width:"98%",
+                  margin:"0 auto"
 
                 }}>Science-based techniques to boost stress resilience, productivity and recovery. </h3>
-                <p  className='library-main-para '>"Discover the latest, evidence-based biofeedback techniques that enable you to effectively regulate stress, anxiety, and overwhelm at any time and in any location. By combining these techniques with guided macro-level adjustments, you can enhance your body's resilience to stress and promote overall health improvement." </p>
+                <p  className='library-main-para '>Discover the latest, evidence-based biofeedback techniques that enable you to effectively regulate stress, anxiety, and overwhelm at any time and in any location. By combining these techniques with guided macro-level adjustments, you can enhance your body's resilience to stress and promote overall health improvement. </p>
               </Col>
             </Row>
           </Container>
