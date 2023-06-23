@@ -101,11 +101,13 @@ const Services = () => {
                           <p>1:1 Guided Sessions: £85**</p>
                           <p>
                             {" "}
+                            <br/>
                             <p>
                               *Includes initial consultation, tailored plan, and
                               follow-up appointment to learn the techniques in
                               the plan.
                             </p>
+                          
                             <p>
                               **Depending on the outcome of your initial
                               consultancy, I may recommend a 1:1 guided session,
@@ -372,24 +374,7 @@ const Services = () => {
                           If breathwork is something you would like to explore,
                           please feel free to get in contact to see how it could
                           be of benefit to you! */}
-                          <h1
-                            style={{
-                              fontSize: "24px",
-                              fontWeight: "bold",
-                              color: "#fff",
-                            }}
-                          >
-                            Ben's Breathwork Services
-                          </h1>
-                          <h2
-                            style={{
-                              fontSize: "20px",
-                              fontWeight: "bold",
-                              color: "#fff",
-                            }}
-                          >
-                            About Breathwork
-                          </h2>
+                         
                           <p
                          className="acordin-para"
                           >
@@ -406,6 +391,8 @@ const Services = () => {
                             studies by renowned neuroscientist Dr. Andrew
                             Huberman at Stanford University.
                           </p>
+                     
+                          <br/>
                           <h2
                             style={{
                               fontSize: "20px",
@@ -431,15 +418,8 @@ const Services = () => {
                               transient hypofrontality.
                             </li>
                           </ul>
-                          <h3
-                            style={{
-                              fontSize: "20px",
-                              fontWeight: "bold",
-                              color: "#fff",
-                            }}
-                          >
-                            How to Get Started
-                          </h3>
+                    
+                        <br/>
                           <p
                             style={{
                              
@@ -480,6 +460,7 @@ const Services = () => {
                            {" "}
                             to see how it could be of benefit to you.
                           </p>
+                          <br/>
                           <h3
                             style={{
                               fontSize: "20px",
@@ -489,6 +470,7 @@ const Services = () => {
                           >
                             Pricing
                           </h3>
+                
                           Conscious Connected Breathwork Session, 75mins: £85
                         </p>
                       </div>

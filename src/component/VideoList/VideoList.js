@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
@@ -59,9 +60,12 @@ const VideoList = ({item,buy }) => {
         </h3>
       </div>
       <div className="course__more d-flex justify-content-between align-items-center  cursor-pointer">
+          {item.type === "video"?
+          <>
           <div className="course__btn">
             <span className="theme-btn">{time} min </span>
           </div>
+
           <div className="course__btn" onClick={playVideo}>
             <Link href="#" className="link-btn" to="">
               Play
@@ -69,7 +73,17 @@ const VideoList = ({item,buy }) => {
               <i className="far fa-play"></i>
             </Link>
           </div>
-        </div>
+          </>
+          :
+          <>
+<div className="course__btn">
+            <a href={`${video_link}${video}`} className="link-btn" target="_blank">
+              View Document
+            </a>
+          </div>          
+          </>
+      }
+      </div>
     </div>
     <Modal show={show} onHide={handleClose} fullscreen={true}>
         <Modal.Header closeButton>
