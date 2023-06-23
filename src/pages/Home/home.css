@@ -139,6 +139,9 @@ width: 794px !important;
       width: 100%;
       align-items: center;
     }
+    .dot::before{
+      bottom: 4px !important;
+    }
     .react-player__preview {
       zoom: 6.5;
   }
@@ -299,6 +302,9 @@ width: 100%;
 .text-video-wrap h2 {
   font-size: 25px;
   text-align: left;
+}
+.dot::before{
+  bottom: 4px !important;
 }
 .head-wrap h3{
 font-size: 20.5px !important;
@@ -500,6 +506,9 @@ transform: translateX(-100%)translateY(46%) rotate(146deg) !important;
 .video-container {
   height: 50vh !important;
   width: 100% !important;
+}
+.dot::before{
+  bottom: 4px !important;
 }
 .react-player__play-icon {
       

@@ -113,7 +113,7 @@ const Coorperate = () => {
                   <br/>
                   <p className="para-wrap-about-para">
                     ...and that is before we consider the personal impact these
-                    issues have on employees' wellbeing. One in five people has
+                    issues have on employees' wellbeing. One in five people have
                     taken a day off due to excessive stress, yet 90% of them
                     cited a different reason to avoid potential stigma. (Mind,
                     2023.)

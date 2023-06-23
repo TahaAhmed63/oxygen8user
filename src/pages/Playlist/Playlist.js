@@ -96,7 +96,7 @@ const Playlist = () => {
                 <h3 className="mb-left" style={{
                   color:"#317C74",
                   fontSize:"44px",
-                  textAlign:"justify"
+                  textAlign:"center"
 
                 }}>Guided sessions to influence your nervous system.</h3>
                 <p className="library-main-para" >The Oxygen8 <em className="em-style-para-2">TM</em>Library offers accessible down-regulation, performance-enhancing and anxiety management tools in the form of guided audio sessions for on-the-go or at home practices. </p>

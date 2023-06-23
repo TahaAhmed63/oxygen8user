@@ -603,7 +603,7 @@ const VideoLibraryDetail = () => {
                                           </h5>
                                         </div>
                                       </li>
-                                      <li className="d-flex align-items-center">
+                                      {/* <li className="d-flex align-items-center">
                                         <div className="course__video-info">
                                           <h5>
                                             <span>Duration :</span>
@@ -612,7 +612,7 @@ const VideoLibraryDetail = () => {
                                               : 0}
                                           </h5>
                                         </div>
-                                      </li>
+                                      </li> */}
 
                                       <li className="d-flex align-items-center">
                                         <div className="course__video-info">
@@ -623,7 +623,7 @@ const VideoLibraryDetail = () => {
                                       </li>
                                       <li className="d-flex-column align-items-center ">
                                           <h5>
-                                            <span>Do you have Any Coupen Code ?</span>
+                                            <span>Discount Code ?</span>
                                           </h5>
                                       <input type='text' className="form-control" value={code} placeholder="Enter your Coupen Code" onChange={(e)=>setCode(e.target.value)}/>
                                       <button
