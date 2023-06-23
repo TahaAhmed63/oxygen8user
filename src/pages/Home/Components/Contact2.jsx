@@ -42,9 +42,11 @@ export const Contact2 = () => {
                       <i><BsInstagram/></i>
                       </div>
                       <div className="email-info">
+                  <Link to="https://www.instagram.com/oxygen8.health/"> 
                       <h4>
-                      @Oxygen8_Stress_Wellness
-                                            </h4>
+                      @oxygen8.health
+                       </h4>
+                   </Link>
                       </div>
                   
                     </div>

@@ -19,6 +19,14 @@
     color: #fff;
     text-align: center;
 }
+.acordin-para p{
+    color: #fff;
+    font-size: 18px;
+    width: 100%;
+    margin-bottom: 2px;
+    font-weight: 500;
+    text-align: justify;
+}
 .img-wrap img{
     width: 100%;
     height: 350px;
@@ -36,11 +44,50 @@
 .break-mobile{
     display: none;
   }
+  .em-style-para{
+    font-size: 11px;
+    position: relative;
+    bottom: 0.8rem;
+    left: -5px;
+    font-style: normal
+  }
+  .em-style-para-2 {
+    font-size: 11px;
+    position: relative;
+    bottom: 0.8rem;
+    left: -8px;
+    font-style: normal;
+}
 @media(min-width:320px) and (max-width:768px){
     .img-wrap{
         width: 100%;
     }
-
+    .em-style-para{
+        font-size: 8px;
+        position: relative;
+        bottom: 0.5rem;
+        left: -5px;
+        font-style: normal
+      }
+      .dot::before{
+        bottom: 0px;
+      }
+      .acordin-para-li{
+        font-size: 11px !important;
+    width: 100% !important;
+    margin: 0 auto;
+    font-weight: 500;
+    text-align: justify;
+      }
+    
+    .acordin-para{
+        color: #fff;
+        font-size: 12px !important;
+        width:100% !important;
+        margin:0 auto;
+        font-weight: 500;
+        text-align: justify;
+    }
     .order1 {
         order: 2;
         padding-top: 1rem;
@@ -55,9 +102,10 @@
         order: 1;
       }
   
-    .mb-left {
+      .mb-left {
         text-align: left !important;
         margin-bottom: 3rem;
+        font-size: 25px !important;
     }
     .both-btn{
         margin-left: 0px !important;
@@ -184,7 +232,23 @@
     width: 100%;
     margin: 5px auto;
 }
-
+.acordin-para{
+    color: #fff;
+    font-size: 18px;
+    width:98%;
+    margin:0 auto;
+    font-weight: 500;
+    text-align: justify;
+}
+.acordin-para-li {
+    color: #fff;
+    font-size: 18px;
+    width: 98%;
+    margin-bottom: 6px;
+    /* margin: 0 auto; */
+    font-weight: 500;
+    text-align: justify;
+}
 .main-about{
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -272,6 +336,15 @@
         line-height: 26px;
         text-align: justify;
     }
+    .list .dash {
+        font-size: 15px !important;
+        margin-top: 0px !important;
+        margin-bottom: 10.7px !important;
+    }
+    .list .dot {
+        text-align: left;
+        font-size: 17px !important;
+    }
 
 }
 
@@ -280,6 +353,22 @@
         margin-left: 1.7rem !important;
 
     }
+    .em-style-para-2{
+        font-size: 11px;
+        position: relative;
+        bottom: 0.8rem;
+        left: -12px;
+        font-style: normal;
+    }
+    .library-main-para{
+        color:#317C74;
+        font-size:22px;
+        line-height:45px;
+        text-align:justify;
+      
+      
+        margin:0 auto;
+      }
     .bottommark-5::before {
         transform: translateX(-51%) translateY(-95%) rotate(180deg) !important;
     }
@@ -383,6 +472,9 @@ z-index: 999999;
     /* Styles for iPhone 6/7/8 */
     .bottommark-4::before {
            transform: translateX(-58%) translateY(-60%) rotate(180deg) !important;
+    }
+    .dot::before{
+        bottom: 0px;
     }
   
   }
@@ -551,6 +643,7 @@ z-index: 999999;
         }
         .corphead h3{
             color: #317C74;
+            font-style: italic;
             font-size: 35px;
             line-height: 45px;
             font-family: Inter,sans-serif;
@@ -591,20 +684,22 @@ z-index: 999999;
         width: 100%;
         height: 100%;
       }
-      .dot::before {
+        .dot::before {
         content: ".";
         display: inline-block;
         width: 20px;
         height: 20px;
         color: rgba(255, 255, 255, 0.828);
         font-size: 54px;
+        bottom: 9px;
+        position: relative;
     }
     .list .dot{
         text-align: left;
         font-size: 30px;
         color: rgba(255, 255, 255, 0.828);
         font-family: Inter,sans-serif;
-        margin-bottom: 1px !important;
+        margin-bottom: 11px !important;
     }
     .list .withdot{
         text-align: left;

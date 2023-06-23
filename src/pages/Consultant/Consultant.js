@@ -37,6 +37,10 @@ const Consultant = () => {
   const [loader, setLoaders] = useState(false);
   const [show, setShow] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const SignupSchema = Yup.object().shape({
     first_name: Yup.string("please enter a first name").required("Required"),
     email: Yup.string().email("Invalid email").required("Required"),

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Footer from '../../component/Footer/Footer'
 import Header from '../../component/Header/Header'
 // import { Link } from 'react-router-dom'
@@ -16,6 +16,10 @@ const Contact = () => {
    const [subject,setSubject]=useState()
    const [userMessage,setUserMessage]=useState()
    const [loading,setLoading]=useState(false)
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
    
    async function handleSubmit(i) {
