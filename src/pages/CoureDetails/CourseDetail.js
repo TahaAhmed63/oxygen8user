@@ -548,14 +548,14 @@ const CourseDetail = () => {
                                       <li className="d-flex-column align-items-center ">
                                         <h5>
                                           <span>
-                                          Discount Code
+                                          Discount Code 
                                           </span>
                                         </h5>
                                         <input
                                           type="text"
                                           className="form-control"
                                           value={code}
-                                          placeholder="Enter your Coupen Code"
+                                          placeholder="Enter your Discount Code"
                                           onChange={(e) =>
                                             setCode(e.target.value)
                                           }
@@ -582,7 +582,7 @@ const CourseDetail = () => {
                                            ]}
                                          />
                                        ) : (
-                                         "Submit Coupon"
+                                         "Submit"
                                        )}
                                      </button>
                                       </li>
@@ -707,14 +707,14 @@ const CourseDetail = () => {
                                       <li className="d-flex-column align-items-center ">
                                         <h5>
                                           <span>
-                                            Do you have Any Coupen Code ?
+                                           Discount Code
                                           </span>
                                         </h5>
                                         <input
                                           type="text"
                                           className="form-control"
                                           value={code}
-                                          placeholder="Enter your Coupen Code"
+                                          placeholder="Enter your Discount Code"
                                           onChange={(e) =>
                                             setCode(e.target.value)
                                           }
@@ -741,7 +741,7 @@ const CourseDetail = () => {
                                               ]}
                                             />
                                           ) : (
-                                            "Submit Coupon"
+                                            "Submit"
                                           )}
                                         </button>
                                       </li>
