@@ -8,20 +8,14 @@ import mylogo from "./../../Assets/AboutImages/Oxygen icon.png";
 import "./home.css";
 import Video from "./Video/Video";
 import { Container, Row } from "react-bootstrap";
-import  DetailVideo  from "./Components/DetailVideo";
+import DetailVideo from "./Components/DetailVideo";
 import { Blogs } from "./Components/Blogs";
 import { LibraraySpan } from "./Components/LibraraySpan";
 
 function Home() {
-
-
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-
-  
-
-  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <main>
       <Header />
@@ -154,13 +148,12 @@ function Home() {
                         position: "relative",
                         bottom: "1.5rem",
                         left: "-1px",
-                        fontStyle: "normal"
-                    }}
+                        fontStyle: "normal",
+                      }}
                     >
-                    TM
+                      TM
                     </em>
-                    <br className='break-mobile'/>
-                    Stress  Wellness
+                    <br className="break-mobile" /> Stress Wellness
                   </h4>
                 </div>
                 <div className="logo">
@@ -172,29 +165,29 @@ function Home() {
               <div className="para-wrap">
                 <p
                   style={{
-                    color: "#317C74"
-              
+                    color: "#317C74",
                   }}
                 >
-                  Whether you are looking for stress or anxiety management,
-                  burnout recovery, or resilience building, Oxygen8{" "}
+                  Whether you are looking for stress management, burnout
+                  recovery, or resilience building, Oxygen8{" "}
                   <em
                     style={{
                       fontSize: "11px",
                       position: "relative",
                       bottom: "0.8rem",
-                      left:"-5px",
-                      fontStyle:"normal"
+                      left: "-5px",
+                      fontStyle: "normal",
                     }}
                   >
                     TM
                   </em>
-                  offers a comprehensive and integrative approach to dealing
-                  with the stresses of life. We offer you the tools to directly
-                  regulate your nervous system in both the short and long term
-                  using Conscious Nervous System Feedback (CNSF) and Optimising
-                  exercises. These methods become an arsenal of quick-fire
-                  techniques that cover you anytime, anywhere.{" "}
+                  offers a comprehensive approach to dealing with the stresses
+                  of life. We offer tools to downregulate from stress using
+                  Conscious Nervous System Feedback (CNSF) techniques, and
+                  improve the baseline resilience of your physiology through
+                  macro-level, science-backed lifestyle changes. These methods
+                  become an arsenal of quick-fire techniques that cover you any
+                  time, anywhere.{" "}
                 </p>
               </div>
             </Col>
