@@ -44,7 +44,7 @@ export const Contact2 = () => {
                       <div className="email-info">
                   <Link to="https://www.instagram.com/oxygen8.health/"> 
                       <h4>
-                      ben@oxygen8.health
+                      @oxygen8.health
                        </h4>
                    </Link>
                       </div>
