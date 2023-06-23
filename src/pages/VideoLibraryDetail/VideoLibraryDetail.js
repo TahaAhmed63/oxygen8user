@@ -625,7 +625,7 @@ const VideoLibraryDetail = () => {
                                           <h5>
                                             <span>Discount Code ?</span>
                                           </h5>
-                                      <input type='text' className="form-control" value={code} placeholder="Enter your Coupen Code" onChange={(e)=>setCode(e.target.value)}/>
+                                      <input type='text' className="form-control" value={code} placeholder="Enter your Discount Code" onChange={(e)=>setCode(e.target.value)}/>
                                       <button
                                       onClick={handleCoupen}
                                           className="e-btn e-btn-7 w-100 mt-3"
@@ -648,7 +648,7 @@ const VideoLibraryDetail = () => {
                                               ]}
                                             />
                                           ) : (
-                                            "Submit Coupon"
+                                            "Submit"
                                           )}
                                         </button>
                                       </li>
