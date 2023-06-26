@@ -218,6 +218,7 @@
     .img-wrap{
         width: 100%;
     }
+ 
 
 
 }
@@ -278,17 +279,29 @@
     height: 100%;
 }
 .para-wrap-about-2 p {
-    font-size: 18px;
-    line-height: 33px;
+    font-size: 19px;
+    line-height: 39px;
     width: 94%;
     color: white;
     text-align: justify;
     font-family: Inter,sans-serif;
     margin-bottom: 0px;
+    
+}
+@media((min-width:1195px) and (max-width:1366px)){
+    .para-wrap-about p {
+        font-size: 16px !important;
+        line-height: 34px !important;
+    }
+    .para-wrap-about-2 p{
+        font-size: 16px !important;
+        line-height: 34px !important;
+    }
+
 }
 .para-wrap-about p {
-    font-size: 18px;
-    line-height: 33px;
+    font-size: 19px;
+    line-height: 39px;
     width: 100%;
     color: white;
     text-align: justify;
@@ -327,13 +340,13 @@
 
 @media((min-width:756px)and (max-width:1024px)){
     .para-wrap-about p {
-        font-size: 16px;
-        line-height: 26px;
+        font-size: 15px;
+        line-height: 25px;
         text-align: justify;
     }
     .para-wrap-about-2 p {
-        font-size: 16px;
-        line-height: 26px;
+        font-size: 15px;
+        line-height: 25px;
         text-align: justify;
     }
     .list .dash {
