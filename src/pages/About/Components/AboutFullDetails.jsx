@@ -26,52 +26,46 @@ export const AboutFullDetails = () => {
                 <Col lg={7} md={8} sm={12}>
                   <div className="para-wrap-about">
                     <p>
-                      Welcome! I'm Ben Perham, the Founder of Oxygen8
-                      <em className="style-about"
-                      
-                      >
-                        TM
-                      </em>
+                      Welcome! I'm Ben, the Founder of Oxygen8.
+                      <em className="style-about">TM</em>
                       {"."}
-                      
                       <br />
                       <br />
-                      After graduating with a First-Class Honours degree in
-                      Mechanical Engineering, I enjoyed a successful six-year
-                      career designing and building spacecraft. However, the
-                      demanding workload and significant pressure eventually
-                      took their toll, leading me to a significant burnout that
-                      resulted in numerous health issues. Overnight, I went from
-                      working on spacecraft for NASA to being unable to leave my
-                      bed.
+                      My journey into the world of stress wellness and recovery
+                      was born out of necessity. After six years of working as a
+                      lead spacecraft production engineer, a severe burnout
+                      resulted in numerous health issues as my mind and body
+                      shut down. Overnight, I went from building a satellite for
+                      NASA to being unable to leave my bed. Unfortunately this
+                      is not a new story, we are a stressed nation with 74% of
+                      people in the UK experiencing overwhelm and an inability
+                      to cope with rising stress levels. (Mental Health
+                      Foundation, 2018)
                       <br />
                       <br />
-                      My nervous system became severely dysregulated, and I had
-                      to confront a range of health problems that took years to
-                      overcome. Determined to find a solution, I approached my
-                      recovery as if it were a systems-engineering problem. I
-                      explored a multitude of science-based techniques,
-                      supplemented with medical assistance, to address the
-                      issues that medications alone couldn't resolve. I focussed
-                      on methods to effectively manage stress and anxiety,
-                      creating the necessary conditions for my body to heal.
+                      My experience left my nervous system heavily dysregulated,
+                      and medicine was unable to fully help me. Determined to
+                      find a solution, I researched and trialled scientifically
+                      proven methods to manage my stress and anxiety,
+                      cultivating the conditions to re-regulate my nervous
+                      system and allow my body to heal. As part of this process
+                      I developed an effective toolkit of solutions which I
+                      truly believe can benefit anyone, from low level stress to
+                      burnout recovery.
                     </p>
                   </div>
                 </Col>
                 <Col lg={12} sm={12} xxl={12} xl={12}>
                   <div className="para-wrap-about-2">
                     <p>
-                      Now, I offer these techniques as a comprehensive arsenal
-                      to help others avoid or recover from burnout. By improving
-                      stress regulation and building resilience through
-                      Conscious Nervous System Feedback (CNSF) techniques and
-                      Optimisation protocols, we can cater to the unique
-                      responses of each client's nervous system. Whether through
-                      Micro-CNSFs or Macro-Optimisations, these strategies are
-                      designed to seamlessly integrate into your day, regardless
-                      of your location or the time.
+                    I now offer these techniques as a
+                      comprehensive arsenal to help you improve or maintain your
+                      health using a range of techniques that incorporate
+                      Conscious Nervous System Feedback to regulate stress
+                      levels, and combine them with optimising protocols to
+                      increase the baseline resilience of your physiology.
                       <br />
-                      <br />I hope these techniques prove valuable to you!
+                      <br />I hope they prove as valuable and life-improving to you as they have been for me!
                     </p>
                   </div>
                 </Col>

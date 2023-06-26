@@ -5,7 +5,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import playButtonIcon from './../../../Assets/AboutImages/videobtnicon.png';
 import mainvideo from './../../../../src/Assets/videohome/HomePage CNSf.mp4';
 import mylogo from './../../../Assets/AboutImages/Oxygen icon W.png';
-import mythumbnail from "../../../Assets/AboutImages/Homepage_Thumbnail.png"
+import mythumbnail from "../../../Assets/AboutImages/Homepage_Thumbnail_2.png"
+import mysecondvideo from "../../../Assets/videohome/animation.mp4"
 
  const DetailVideo = () => {
    const videoRef = useRef(null);
@@ -33,6 +34,14 @@ import mythumbnail from "../../../Assets/AboutImages/Homepage_Thumbnail.png"
                 <div className="middle-img">
                   <img src={mylogo} alt="" />
                 </div>
+                <div className='video-container'>
+<video autoPlay muted loop playsInline>
+              <source src={mysecondvideo} type="video/mp4" />
+              <source src={mysecondvideo} type="video/webm" />
+              Your browser does not support the video tag.
+            </video></div>
+        
+
                 <div className="video-container-2">
                 <ReactPlayer
                ref={videoRef}
