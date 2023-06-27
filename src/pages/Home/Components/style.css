@@ -451,8 +451,8 @@ background: none!important;
   }
   .card-list ul {
     margin-left: 30px;
-    padding: 0px 76px 0px 15px;
-  }
+    padding: 0px 0px 0px 15px;
+}
   .react-player__preview{
     zoom: 8.5;
   }
@@ -516,6 +516,11 @@ background: none!important;
     font-size: 28.7px;
   }
 
+  @media only screen and (max-width: 786px) and (-webkit-device-pixel-ratio: 2){
+    .hunder {
+      width: 100% !important;
+    }
+  }
   /* contact */
   .contact {
     padding-top: 4rem;

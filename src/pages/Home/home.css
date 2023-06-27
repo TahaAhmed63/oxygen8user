@@ -45,7 +45,11 @@
 }
 
 
-
+.secondV video{
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+}
 
 /* video section */
 .myvideo{
@@ -526,7 +530,7 @@ transform: translateX(-100%)translateY(46%) rotate(146deg) !important;
 .overlay-absolute-text {
   left: 50% !important;
   position: relative !important;
-  top: -123px !important;
+  top: -70px !important;
   width: 100% !important;
 }
 .text-video-wrap {
@@ -873,10 +877,13 @@ transform: translateX(-20%) translateY(-63%) rotate(180deg) !important;
   height: 50vh !important;
   width: 100% !important;
 }
+.secondV{
+  width: 100vw !important;
+}
 .overlay-absolute-text {
   left: 50% !important;
   position: relative !important;
-  top: -81px !important;
+  top: -169px !important;
   width: 100% !important;
 }
 .text-video-wrap {
@@ -910,6 +917,7 @@ transform: translateX(-20%) translateY(-63%) rotate(180deg) !important;
 .header-wrap {
   justify-content: space-between!important;
   flex-direction: column-reverse;
+  gap: 30px;
   text-align: left !important;
 }
 .about-head {

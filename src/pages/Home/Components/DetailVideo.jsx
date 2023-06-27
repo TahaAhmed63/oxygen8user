@@ -34,8 +34,8 @@ import mysecondvideo from "../../../Assets/videohome/animation.mp4"
                 <div className="middle-img">
                   <img src={mylogo} alt="" />
                 </div>
-                <div className='video-container'>
-<video autoPlay muted loop playsInline>
+                <div className='video-container secondV'>
+<video autoPlay muted  playsInline>
               <source src={mysecondvideo} type="video/mp4" />
               <source src={mysecondvideo} type="video/webm" />
               Your browser does not support the video tag.

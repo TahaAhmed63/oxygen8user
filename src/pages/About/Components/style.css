@@ -58,6 +58,11 @@
     left: -8px;
     font-style: normal;
 }
+@media only screen and (min-device-width:320px) and (max-device-width:664px){
+    .break-mobile{
+        display: block;
+    }
+}
 @media(min-width:320px) and (max-width:768px){
     .img-wrap{
         width: 100%;
@@ -92,9 +97,7 @@
         order: 2;
         padding-top: 1rem;
       }
-      .break-mobile{
-        display: block;
-      }
+   
       .headwrapabout h1 {
         white-space: pre-line;
       }
@@ -103,8 +106,8 @@
       }
   
       .mb-left {
-        text-align: left !important;
-        margin-bottom: 3rem;
+        text-align: center!important;
+        width: 100% !important;
         font-size: 25px !important;
     }
     .both-btn{
@@ -347,6 +350,8 @@
     .para-wrap-about-2 p {
         font-size: 15px;
         line-height: 25px;
+        width: 100% !important;
+
         text-align: justify;
     }
     .list .dash {
@@ -392,12 +397,67 @@
 @media(max-width:768px){
     .para-wrap-about p{
         font-size: 14px;
+  
+            font-size: 14px;
+            width: 100%;
+        
     }
-    .para-wrap-about-2 p{
+    .para-wrap-about-2 p {
         font-size: 14px;
+        width: 100%;
     }
 }
-
+@media only screen 
+  and (min-device-width: 769px) 
+  and (max-device-width: 990px) 
+  and (-webkit-min-device-pixel-ratio: 1){
+    .list .dot {
+        text-align: left;
+        font-size: 17px !important;
+    }
+    .list .dash {
+        font-size: 15px !important;
+        margin-top: 0px !important;
+        margin-bottom: 10.7px !important;
+    }
+    
+  }
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .list .dash {
+        font-size: 15px !important;
+        margin-top: 0px !important;
+        margin-bottom: 10.7px !important;
+    }
+    .list .dash {
+        font-size: 15px !important;
+        margin-top: 0px !important;
+        margin-bottom: 10.7px !important;
+    }
+    .para-wrap-about p {
+        font-size: 15px;
+        line-height: 25px;
+        text-align: justify;
+    }
+    .about-head{
+        width: 100%;
+    }
+    .about-head h4{
+        width: 100%;
+    }
+    .para-wrap-about-2 p {
+        font-size: 15px;
+        line-height: 25px;
+        width: 100% !important;
+        text-align: justify;
+    }
+    .list .dot {
+        text-align: left;
+        font-size: 17px !important;
+    }
+}
 
 .button-wrap {
     display: flex;
@@ -643,9 +703,9 @@ z-index: 999999;
             padding-bottom: 2rem;
             background: transparent;
         }
-        .corp-head-wrap{
-            display:flex;
-            width: 100%;
+        .corp-head-wrap {
+            display: flex;
+            width: 91%;
             height: 100%;
             flex-direction: column;
         }
@@ -673,8 +733,12 @@ z-index: 999999;
               font-weight: 600;
         }
         .owner3{
-            width: 100%;
-            height: 100%;
+    
+                width: 100%;
+                height: 100%;
+                z-index: 999999;
+                position: relative;
+            
 
         }
         .list-item-corperate{
