@@ -23,10 +23,10 @@ export const AboutFullDetails = () => {
                       <img src={owner2} className="owner2" alt="" />
                     </div> */}
                 </Col>
-                <Col lg={7} md={8} sm={12}>
+                <Col xxl={7} xl={7} lg={7} md={8}  sm={12} className="hunder">
                   <div className="para-wrap-about">
                     <p>
-                      Welcome! I'm Ben, the Founder of Oxygen8.
+                      Welcome! I'm Ben, the Founder of Oxygen8
                       <em className="style-about">TM</em>
                       {"."}
                       <br />

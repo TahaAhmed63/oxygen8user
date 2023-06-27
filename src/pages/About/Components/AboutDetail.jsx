@@ -49,7 +49,10 @@ export const AboutDetail = () => {
            <div className='corp-head-wrap'>
             <div className='corphead'>
               <h3>
-                "Overnight I went from building a spacecraft for NASA to not being able to leave my bed."
+                "Overnight I went from building a spacecraft for NASA to not
+being able to leave my bed...as part of the recovery process I 
+developed an effective toolkit of stress solutions that I truly believe ~
+can benefit anyone."
               </h3>
             </div>
             {/* <div className="para-corp">
