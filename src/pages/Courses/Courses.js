@@ -130,6 +130,7 @@ const Courses = () => {
                   fontSize:"30px",
                   textAlign:"center",
                   width:"98%",
+                  paddingBottom:"20px",
                   margin:"0 auto"
 
                 }}>Science-based techniques to boost stress resilience, productivity and recovery. </h3>
