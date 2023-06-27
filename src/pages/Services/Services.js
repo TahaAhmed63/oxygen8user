@@ -55,30 +55,35 @@ const Services = () => {
                           relationship with stress.
                           <br />
                           <br />
-                          During these appointments, we explore your unique
-                          nervous system and identify strategies that can
-                          improve your stress management based on your specific
-                          circumstances. By tailoring a comprehensive plan that
-                          fits into your weekly routine, we address both
-                          immediate stress relief techniques and long-term
-                          changes that lead to increased resilience. In addition
-                          to utilising various helpful Conscious Nervous System
-                          Feedback (CNSF) resources to regulate your nervous
-                          system, we focus on optimising your physiology with
-                          macro-level changes to improve your baseline
-                          resilience in any challenging situation.
+                          During these appointments we will:
+                          <br />
+                          - Explore your unique nervous system. - Identify
+                          strategies that can improve your stress
+                          managementbased on your specific circumstances.
+                          <br />
+                          - Tailor a comprehensive plan that merges into your
+                          weekly routine.
+                          <br />
+                          - Address both immediate stress relief techniques and
+                          long-term changes for increased resilience.
                           <br />
                           <br />
                           To maximise the impact of our sessions, we structure
-                          them into three parts. We begin with an initial
-                          consultation, where we discuss your goals, lifestyle
-                          and emotional wellbeing, delving into information that
-                          is useful for the second stage. After this
+                          them into three parts.
+                          <br />
+                          1. Initial consultation: We will discuss your goals
+                          for stress management, lifestyle and emotional
+                          wellbeing, delving into information that is useful to
+                          create a plan unique to you and your life. <br />
+                          2. Individualised Plan: Based upon our first
                           appointment, a tailored plan to assimilate into your
-                          day-to-day life will be created. As this plan is
-                          unique to you, our follow-up appointment runs through
-                          the suggested changes and techniques, teaching you the
-                          methods that have been included. If required, you have
+                          day-to-day life will be created.
+                          <br />
+                          3. Follow-up Appointment: The plan is unique to you,
+                          and our follow-up appointment runs through the
+                          suggested lifestyle changes and down-regulation
+                          techniques, teaching you the methods that have been
+                          included. Additional Support: If required, you have
                           access to email support for any queries after our
                           follow-up to help as you integrate these techniques
                           into your life. After our second appointment, further
@@ -101,13 +106,13 @@ const Services = () => {
                           <p>1:1 Guided Sessions: £85**</p>
                           <p>
                             {" "}
-                            <br/>
+                            <br />
                             <p>
                               *Includes initial consultation, tailored plan, and
                               follow-up appointment to learn the techniques in
-                              the plan.
+                              the plan. Also encompasses email support regarding
+                              the implamentation or learning of the techniques.
                             </p>
-                          
                             <p>
                               **Depending on the outcome of your initial
                               consultancy, I may recommend a 1:1 guided session,
@@ -145,8 +150,8 @@ const Services = () => {
                       }}
                     >
                       TM
-                    </em> &nbsp;
-                    Courses 
+                    </em>{" "}
+                    &nbsp; Courses
                   </Accordion.Header>
                   <Accordion.Body
                     style={{
@@ -374,10 +379,7 @@ const Services = () => {
                           If breathwork is something you would like to explore,
                           please feel free to get in contact to see how it could
                           be of benefit to you! */}
-                         
-                          <p
-                         className="acordin-para"
-                          >
+                          <p className="acordin-para">
                             Ben is a fully qualified breathwork facilitator and
                             practitioner across the spectrum of breathwork
                             techniques. Breathwork harnesses the innate
@@ -391,8 +393,7 @@ const Services = () => {
                             studies by renowned neuroscientist Dr. Andrew
                             Huberman at Stanford University.
                           </p>
-                     
-                          <br/>
+                          <br />
                           <h2
                             style={{
                               fontSize: "20px",
@@ -403,50 +404,39 @@ const Services = () => {
                             Offerings
                           </h2>
                           <ul>
-                            <li  className="acordin-para-li" >
+                            <li className="acordin-para-li">
                               - Down-regulating Breathwork for stress and
                               anxiety management.
                             </li>
-                            <li  className="acordin-para-li">
+                            <li className="acordin-para-li">
                               - Performance-enhancing Breathwork using the
                               Oxygen Advantage breathing techniques.
                             </li>
-                            <li  className="acordin-para-li">
+                            <li className="acordin-para-li">
                               - Conscious Connected Breathing using a form of
                               therapeutic breathwork that acts to help release
                               trauma and allow emotional processing through
                               transient hypofrontality.
                             </li>
                           </ul>
-                    
-                        <br/>
+                          <br />
                           <p
                             style={{
-                             
                               marginBottom: "10px",
                               color: "#fff",
                             }}
                             className="acordin-para"
                           >
                             To learn down-regulating breathwork, head to the{" "}
-                          
-                              Courses
-                            {" "}
-                            to build your own arsenal of techniques that
+                            Courses to build your own arsenal of techniques that
                             resonate with you. For guided breathwork sessions,
-                            head to the{" "}
-                        
-                            
-                              Library
-                           {" "}
-                            offerings for the most accessible route into
-                            breathwork for relaxation. Performance-enhancing
-                            options can be found in both the Course and Library
-                            sections of the website.
+                            head to the Library offerings for the most
+                            accessible route into breathwork for relaxation.
+                            Performance-enhancing options can be found in both
+                            the Course and Library sections of the website.
                           </p>
                           <p
                             style={{
-                              
                               marginBottom: "10px",
                               color: "#fff",
                             }}
@@ -455,12 +445,10 @@ const Services = () => {
                             I offer Conscious Connected Breathwork as a 1:1
                             session only due to the emotional and therapeutic
                             nature of the technique. If this is something you
-                            would like to explore, please feel free to{" "}
-                            get in contact
-                           {" "}
-                            to see how it could be of benefit to you.
+                            would like to explore, please feel free to get in
+                            contact to see how it could be of benefit to you.
                           </p>
-                          <br/>
+                          <br />
                           <h3
                             style={{
                               fontSize: "20px",
@@ -470,7 +458,6 @@ const Services = () => {
                           >
                             Pricing
                           </h3>
-                
                           Conscious Connected Breathwork Session, 75mins: £85
                         </p>
                       </div>
