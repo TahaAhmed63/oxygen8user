@@ -309,7 +309,7 @@ const VideoLibraryDetail = () => {
                               <Link to="/">Home</Link>
                             </li>
                             <li className="breadcrumb-item">
-                              <Link to="/videolibrary">Oxygen8TM Library</Link>
+                              <Link to="/videolibrary">Oxygen8 Library</Link>
                             </li>
                             <li
                               className="breadcrumb-item active"

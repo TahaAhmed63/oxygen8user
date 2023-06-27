@@ -119,7 +119,7 @@ const Coorperate = () => {
                     2023.)
                     <br />
                   </p>
-                  <br />
+                  <br />  
                   <p className="para-wrap-about-para">
                     While we are often taught how to push ourselves, we
                     frequently lack the knowledge and skills to effectively
