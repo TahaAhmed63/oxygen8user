@@ -12,7 +12,7 @@ export const Blogs = () => {
         {
            icon:icon1,
            head:"Courses",
-           para:"Give yourself the tools to",
+           para:"Give yourself the tools to:",
            list1:"Control your own stress ",
            list2:"Build resilience",
            list3:"Cultivate methods to help recover from burnout",
