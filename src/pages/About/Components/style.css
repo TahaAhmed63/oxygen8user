@@ -365,7 +365,31 @@
     }
 
 }
+@media only screen and (min-device-width:769px) and (max-device-width:1024px){
 
+    .para-wrap-about p {
+        font-size: 13px;
+        line-height: 18px;
+        text-align: justify;
+    }
+    .para-wrap-about-2 p {
+        font-size: 13px;
+        line-height: 18px;
+        width: 100% !important;
+
+        text-align: justify;
+    }
+    .list .dash {
+        font-size: 15px !important;
+        margin-top: 0px !important;
+        margin-bottom: 10.7px !important;
+    }
+    .list .dot {
+        text-align: left;
+        font-size: 17px !important;
+    }
+
+}
 @media((min-width:769px)and (max-width:1024px)){
     .both-btn {
         margin-left: 1.7rem !important;
