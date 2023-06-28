@@ -343,13 +343,13 @@
 
 @media((min-width:756px)and (max-width:1024px)){
     .para-wrap-about p {
-        font-size: 15px;
-        line-height: 25px;
+        font-size: 13px;
+        line-height: 18px;
         text-align: justify;
     }
     .para-wrap-about-2 p {
-        font-size: 15px;
-        line-height: 25px;
+        font-size: 13px;
+        line-height: 18px;
         width: 100% !important;
 
         text-align: justify;
