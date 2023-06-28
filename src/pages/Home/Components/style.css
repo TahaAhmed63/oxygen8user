@@ -112,10 +112,23 @@
     background-color: #317c74 !important;
     margin-top: 20px;
   }
+  @media only screen and (min-device-width: 920px) and (max-device-width: 1025px) and (-webkit-device-pixel-ratio: 2){
+    .card {
+      width: 100% !important;
+  }
+  
+  }
+  @media only screen and (min-device-width: 1800px) and (max-device-width: 4000px) and (-webkit-device-pixel-ratio: 2) {
+  .video-container-2{
+    width: 31vw !important;
+  }
+  
+  }
   @media((min-width:1256px) and (max-width:1860px)){
   .video-container-2{
     width: 1200px;
   }
+
   }
   @media (min-width: 920px) and (max-width: 1025px) {
     .card {
@@ -423,7 +436,7 @@ background: none!important;
       height: 9px;
       margin-left: 0px !important;
       background-position: center center !important;
-      background-image: url(./../../../Assets/AboutImages/videobtn-removebg-preview.png);
+      background-image: url(./../../../Assets/AboutImages/newplaybtn.png);
   }
     .react-player__preview{
     
@@ -562,7 +575,23 @@ background: none!important;
       font-size: 25px !important;
     }
   }
-
+  
+  @media only screen and (max-width: 768px){
+    .contact-info {
+      margin-top: 22px;
+    }
+    .card-wraper{
+      flex-direction: column;
+      align-items: center;
+    }
+    .card{
+      width: 19em;
+    }
+    .emails i {
+      font-size: 25px !important;
+    }
+    
+  }
   .contact-head h4 {
     font-size: 30px;
     font-family: Inter, sans-serif;
@@ -860,12 +889,35 @@ background: none!important;
     only screen and (-o-min-device-pixel-ratio: 2.6/1),
     only screen and (min-device-pixel-ratio: 2.6){
       .home-main {
-        height: 50vh!important;
+        height: 120vh!important;
     }
+    .list .dot {
+      text-align: left;
+      font-size: 17px !important;
+  }
+
+  .list .dash {
+      font-size: 15px !important;
+      margin-top: 0px !important;
+      margin-bottom: 10.7px !important;
+  }
     .video-container {
-      height: 50vh;
+      height: 120vh;
       width: 100%;
   }
+   .contact-info {
+      margin-top: 22px;
+    }
+    .card-wraper{
+      flex-direction: column;
+      align-items: center;
+    }
+    .card{
+      width: 19em;
+    }
+    .emails i {
+      font-size: 25px !important;
+    }
   .overlay-absolute-text {
       /* left: 50%!important; */
       position: relative!important;
@@ -899,9 +951,18 @@ background: none!important;
     justify-content: center;
   } */
   .header-wrap {
-    justify-content: flex-start;
-    text-align: left;
+     flex-direction: column-reverse;
+
+
   }
+.about-head{
+  width: 100% !important;
+  justify-content: center;
+
+}
+.about-head h4{
+  text-align: center !important;
+}
   .para-wrap {
     padding: 0;
     width: 100%!important;
@@ -927,7 +988,7 @@ background: none!important;
     font-size: 20.5px!important;
   }
   .card{
-    width: 19em;
+    width: 100%;
   }
 
 
@@ -1060,7 +1121,7 @@ background: none!important;
       height: 9px;
       margin-left: 0px !important;
       background-position: center center !important;
-      background-image: url(./../../../Assets/AboutImages/videobtn-removebg-preview.png);
+      background-image: url(./../../../Assets/AboutImages/newplaybtn.png);
   }
     .library-main-para {
       color: #317C74;
