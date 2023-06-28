@@ -57,13 +57,18 @@ const Services = () => {
                           <br />
                           During these appointments we will:
                           <br />
-                          - Explore your unique nervous system. - Identify
+                          - Explore your unique nervous system.
+                          <br/>
+                          <br/>
+                           - Identify
                           strategies that can improve your stress
                           managementbased on your specific circumstances.
                           <br />
+                          <br/>
                           - Tailor a comprehensive plan that merges into your
                           weekly routine.
                           <br />
+                          <br/>
                           - Address both immediate stress relief techniques and
                           long-term changes for increased resilience.
                           <br />
@@ -71,19 +76,23 @@ const Services = () => {
                           To maximise the impact of our sessions, we structure
                           them into three parts.
                           <br />
+                          <br/>
                           1. Initial consultation: We will discuss your goals
                           for stress management, lifestyle and emotional
                           wellbeing, delving into information that is useful to
-                          create a plan unique to you and your life. <br />
+                          create a plan unique to you and your life. <br /><br/>
                           2. Individualised Plan: Based upon our first
                           appointment, a tailored plan to assimilate into your
                           day-to-day life will be created.
-                          <br />
+                          <br /><br/>
                           3. Follow-up Appointment: The plan is unique to you,
                           and our follow-up appointment runs through the
                           suggested lifestyle changes and down-regulation
                           techniques, teaching you the methods that have been
-                          included. Additional Support: If required, you have
+                          included. 
+                          <br/>
+                          <br/>
+                          Additional Support: If required, you have
                           access to email support for any queries after our
                           follow-up to help as you integrate these techniques
                           into your life. After our second appointment, further
@@ -99,7 +108,7 @@ const Services = () => {
                               color: "#fff",
                             }}
                           >
-                            pricing
+                            Pricing
                           </h2>
                           <p>Initial Consultation: £240*</p>
                           <p>Follow-up Appointments: £100</p>
