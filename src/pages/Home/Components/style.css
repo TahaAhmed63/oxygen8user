@@ -1185,8 +1185,11 @@ background: none!important;
   width: 100%;
   }
   }
-  @media only screen and (min-width: 100px) and (max-width: 524px) and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (max-device-width: 414px) and (min-resolution: 120dpi) {
+  @media only screen and (min-width: 100px) and (max-width: 524px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait),
+  only screen and (max-device-width: 414px) and (min-resolution: 120dpi) and (orientation: portrait) 
+/* Your styles for portrait orientation */
+
+{
     /* Styles for all iPhone devices */
     .home-main {
       height: 50vh !important;
