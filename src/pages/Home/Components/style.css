@@ -708,6 +708,13 @@ background: none!important;
     
 
   }
+  @media only screen and (max-device-width: 812px) and (orientation: landscape) {
+    .home-main,
+    .main-video,
+    .video-container {
+      height: 120vh!important;
+    }
+  }
   @media only screen and (orientation: landscape) {
     .video-container video {
       transform: rotate(0deg); /* Rotate the video 90 degrees counter-clockwise */
@@ -1078,7 +1085,7 @@ background: none!important;
 
 
   }
-  @media only screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+  @media only screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
     /* Styles for iPhone 5/SE and iPhone 6/6s/7/8 */
     .home-main {
       height: 50vh!important;
@@ -1379,7 +1386,8 @@ background: none!important;
     }
   }
   @media only screen and (min-width: 100px) and (max-width: 524px) and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (max-device-width: 414px) and (min-resolution: 120dpi) {
+  only screen and (max-device-width: 414px) and (min-resolution: 120dpi) and (orientation: portrait) {
+
     /* Styles for all iPhone devices */
     .home-main {
       height: 50vh !important;
@@ -1449,7 +1457,7 @@ background: none!important;
   }
 
   /* Safari-specific media query for iPhone devices */
-  @media only screen and (max-width: 526px) and (-webkit-device-pixel-ratio: 2) {
+  @media only screen and (max-width: 526px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait){
     /* Styles for all iPhone devices */
     .home-main {
       height: 50vh !important;
