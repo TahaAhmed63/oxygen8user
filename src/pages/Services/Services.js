@@ -6,6 +6,11 @@ import "./../About/Components/style.css";
 import { useNavigate } from "react-router-dom";
 import { Contact2 } from "../Home/Components/Contact2";
 import Footer from "../../component/Footer/Footer";
+import courseimg from '../../Assets/AboutImages/courses.jpg'
+import libraryimg from './../../Assets/AboutImages/library.jpg'
+import corporateimg from '../../Assets/AboutImages/corporate.jpg'
+import breathworkimg from '../../Assets/AboutImages/breathwork.jpg'
+import mylogo from "./../../Assets/AboutImages/A4 Website Designs (10).png";
 const Services = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -44,6 +49,14 @@ const Services = () => {
                         paddingBottom: "2rem",
                       }}
                     >
+                          <div className="service-img-wrap d-flex justify-content-center  " style={
+                            {
+                              paddingBottom:'2rem'
+                            }
+                           }>
+                            <img src={mylogo} className="img-fluid" alt="asa" width='150' height='120' />
+                           </div>
+                 
                       <div
                         style={{
                           paddingBottom: "2rem",
@@ -53,29 +66,32 @@ const Services = () => {
                           1:1 appointments provide a highly personalised
                           approach to developing resilience and enhancing your
                           relationship with stress.
+                     
                           <br />
-                          <br />
+                          <br/>
                           During these appointments we will:
                           <br />
-                          - Explore your unique nervous system.
                           <br/>
+                          - Explore your unique nervous system.
+                    
                           <br/>
                            - Identify
                           strategies that can improve your stress
                           managementbased on your specific circumstances.
-                          <br />
+                       
                           <br/>
                           - Tailor a comprehensive plan that merges into your
                           weekly routine.
-                          <br />
+                  
                           <br/>
                           - Address both immediate stress relief techniques and
                           long-term changes for increased resilience.
-                          <br />
+                 
                           <br />
                           To maximise the impact of our sessions, we structure
-                          them into three parts.
-                          <br />
+                          them into three parts :
+                    
+                          <br/>
                           <br/>
                           1. Initial consultation: We will discuss your goals
                           for stress management, lifestyle and emotional
@@ -102,7 +118,7 @@ const Services = () => {
                           <br />
                           <br />
                           <h2
-                            style={{
+                            style={{  
                               fontSize: "18px",
                               fontWeight: "bold",
                               color: "#fff",
@@ -110,28 +126,30 @@ const Services = () => {
                           >
                             Pricing
                           </h2>
-                          <p>Initial Consultation: £240*</p>
-                          <p>Follow-up Appointments: £100</p>
-                          <p>1:1 Guided Sessions: £85**</p>
-                          <p>
+                        Initial Consultation: £240*
+                        <br/>
+                     Follow-up Appointments: £100
+                     <br/>
+                    1:1 Guided Sessions: £85**
+                      <br/>
                             {" "}
                             <br />
-                            <p>
+                           
                               *Includes initial consultation, tailored plan, and
                               follow-up appointment to learn the techniques in
                               the plan. Also encompasses email support regarding
                               the implamentation or learning of the techniques.
-                            </p>
-                            <p>
+                       <br/>
+                          <br/>
                               **Depending on the outcome of your initial
                               consultancy, I may recommend a 1:1 guided session,
                               for example Conscious Connected Breathwork. It is
                               entirely at your discretion and not compulsory,
                               but the session falls outside of the scope of the
                               appointments and CNSF techniques.
-                            </p>
+                       <br/>
                           </p>
-                        </p>
+                   
                       </div>
                       <div className=" button-about-3">
                         <button
@@ -170,10 +188,17 @@ const Services = () => {
                   >
                     <section
                       style={{
-                        paddingTop: "2rem",
+                    paddingTop:"2rem",
                         paddingBottom: "2rem",
                       }}
                     >
+                           <div className="service-img-wrap d-flex justify-content-center  " style={
+                            {
+                              paddingBottom:'2rem'
+                            }
+                           }>
+                            <img src={courseimg} alt="asa" width='100' height='100' />
+                           </div>
                       <div
                         style={{
                           paddingBottom: "2rem",
@@ -240,6 +265,13 @@ const Services = () => {
                         paddingBottom: "2rem",
                       }}
                     >
+                          <div className="service-img-wrap d-flex justify-content-center  " style={
+                            {
+                              paddingBottom:'2rem'
+                            }
+                           }>
+                            <img src={libraryimg} alt="asa" width='100' height='100' />
+                           </div>
                       <div
                         style={{
                           paddingBottom: "2rem",
@@ -298,6 +330,13 @@ const Services = () => {
                         paddingBottom: "2rem",
                       }}
                     >
+                          <div className="service-img-wrap d-flex justify-content-center  " style={
+                            {
+                              paddingBottom:'2rem'
+                            }
+                           }>
+                            <img src={corporateimg} alt="asa" width='100' height='100' />
+                           </div>
                       <div
                         style={{
                           paddingBottom: "2rem",
@@ -355,6 +394,13 @@ const Services = () => {
                         paddingBottom: "2rem",
                       }}
                     >
+                          <div className="service-img-wrap d-flex justify-content-center  " style={
+                            {
+                              paddingBottom:'2rem'
+                            }
+                           }>
+                            <img src={breathworkimg} alt="asa" width='100' height='100' />
+                           </div>
                       <div
                         style={{
                           paddingBottom: "2rem",
@@ -468,6 +514,9 @@ const Services = () => {
                             Pricing
                           </h3>
                           Conscious Connected Breathwork Session, 75mins: £85
+                          <br/>
+                        
+                          Down-regulating 1:1 Session, 30 minutes: £55
                         </p>
                       </div>
                       <div className=" button-about-3">
