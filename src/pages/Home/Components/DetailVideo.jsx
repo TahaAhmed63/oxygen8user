@@ -6,7 +6,8 @@ import playButtonIcon from './../../../Assets/AboutImages/newplaybtn.png';
 import mainvideo from './../../../../src/Assets/videohome/HomePage CNSf.mp4';
 import mylogo from './../../../Assets/AboutImages/Oxygen icon W.png';
 import mythumbnail from "../../../Assets/AboutImages/Homepage_Thumbnail_2.png"
-import mysecondvideo from "../../../Assets/videohome/animation.mp4"
+//import mysecondvideo from "../../../Assets/videohome/animation.mp4"
+import gifimage from "../../../Assets/AboutImages/ezgif.com-gif-maker (2).gif"
 
  const DetailVideo = () => {
    const videoRef = useRef(null);
@@ -34,12 +35,15 @@ import mysecondvideo from "../../../Assets/videohome/animation.mp4"
                 <div className="middle-img">
                   <img src={mylogo} alt="" />
                 </div>
-                <div className='video-container secondV'>
+                {/* <div className='video-container secondV'>
 <video autoPlay muted  playsInline webkit-playsinline>
               <source src={mysecondvideo} type="video/mp4" />
               <source src={mysecondvideo} type="video/webm" />
               Your browser does not support the video tag.
-            </video></div>
+            </video></div> */}
+            <div className='d-flex justifty-content-center' >
+              <img src={gifimage} className='img-fluid text-center' alt='img'/>
+            </div>
         
 
                 <div className="video-container-2">
