@@ -88,6 +88,7 @@ const Services = () => {
                           long-term changes for increased resilience.
                  
                           <br />
+                          <br/>
                           To maximise the impact of our sessions, we structure
                           them into three parts :
                     
@@ -335,7 +336,7 @@ const Services = () => {
                               paddingBottom:'2rem'
                             }
                            }>
-                            <img src={corporateimg} alt="asa" width='100' height='100' />
+                            <img src={corporateimg} alt="asa" width='100' height='90' />
                            </div>
                       <div
                         style={{
