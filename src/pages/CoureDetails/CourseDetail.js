@@ -349,7 +349,7 @@ console.log(chapterlength +"chapter length")
                           <div class="course__curriculum">
                           {course?.chapters?.map((item) => {
   if (item.lectures.length > 0) {
-    return <Chapter item={item} buy={course?.pack} chapterLength={chapterlength} />;
+    return <Chapter item={item} buy={course?.pack}  />;
   }
   return null;
 })}

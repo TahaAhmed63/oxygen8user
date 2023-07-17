@@ -2,7 +2,7 @@ import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Lesson from "../Lesson/Lesson";
 
-const Chapter = ({ item,buy,chapterLength }) => {
+const Chapter = ({ item,buy }) => {
  
   const { id, lectures } = item;
 
