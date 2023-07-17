@@ -38,6 +38,13 @@ const CourseDetail = () => {
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true)
 
+
+
+
+
+
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -71,6 +78,7 @@ const CourseDetail = () => {
       const response = await axios(config);
       // const response1 = await axios(config1);
       // setSubscription(response1.data);
+      console.log(response,"course detaik")
       setCourse(response.data.course);
       setMonthly(
         response.data.course.packages.filter((item) => item.period === "month")
@@ -233,6 +241,11 @@ const CourseDetail = () => {
     navigate("/signin");
   };
 
+  const lectureLengths = course?.chapters?.map((item) => item?.lectures?.length);
+  console.log(lectureLengths+"ssd")
+
+
+
   return (
     <>
       <Headers />
@@ -340,9 +353,12 @@ const CourseDetail = () => {
                           aria-labelledby="curriculum-tab"
                         >
                           <div class="course__curriculum">
-                            {course?.chapters?.map((item) => (
+                            {lectureLengths>0 &&
+                            course?.chapters?.map((item) => (
+                       
                               <Chapter item={item} buy={course?.pack} />
                             ))}
+                            
                           </div>
                         </div>
                       </div>
@@ -389,7 +405,7 @@ const CourseDetail = () => {
                                     <div className="course__video-info">
                                       <h5>
                                         <span>Total chapters :</span>
-                                        {course?.chapters
+                                        {lectureLengths && course?.chapters
                                           ? course?.chapters?.length
                                           : 0}
                                       </h5>
@@ -521,7 +537,8 @@ const CourseDetail = () => {
                                         <div className="course__video-info">
                                           <h5>
                                             <span>Chapters :</span>
-                                            {course?.chapters
+                                            
+                                            { course?.chapters
                                               ? course?.chapters?.length
                                               : 0}
                                           </h5>
@@ -680,6 +697,7 @@ const CourseDetail = () => {
                                         <div className="course__video-info">
                                           <h5>
                                             <span>chapters :</span>
+
                                             {course?.chapters
                                               ? course?.chapters?.length
                                               : 0}
