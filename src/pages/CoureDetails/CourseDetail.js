@@ -38,6 +38,7 @@ const CourseDetail = () => {
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
 
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -233,10 +234,11 @@ const CourseDetail = () => {
     navigate("/signin");
   };
 
-  const lectureLengths = course?.chapters?.map(
-    (item) => item?.lectures?.length
-  );
-  console.log(lectureLengths + "ssd");
+  // const lectureLengths = course?.chapters?.map(
+  //   (item) => item?.lectures?.length
+  // );
+const chapterlength=course?.chapters.length
+console.log(chapterlength +"chapter length")
 
   return (
     <>
@@ -345,10 +347,25 @@ const CourseDetail = () => {
                           aria-labelledby="curriculum-tab"
                         >
                           <div class="course__curriculum">
-                            {lectureLengths > 0 &&
-                              course?.chapters?.map((item) => (
-                                <Chapter item={item} buy={course?.pack} />
-                              ))}
+                          {course?.chapters?.map((item) => {
+  if (item.lectures.length > 0) {
+    return <Chapter item={item} buy={course?.pack} chapterLength={chapterlength} />;
+  }
+  return null;
+})}
+                            {
+                            // lectureLengths !==0 ?
+                            //   course?.chapters?.map((item) =>{ 
+                             
+                            //     <Chapter item={item} buy={course?.pack} chapterLength={chapterlength}/>
+                            // })
+                              // :null
+                              }
+                           {/* {  const lectur = e?.filter((lec)=> {lec?.lectures?.length > 0}
+                             console.log(lectur,"lectrure")
+                           
+                           )} */}
+
                           </div>
                         </div>
                       </div>
