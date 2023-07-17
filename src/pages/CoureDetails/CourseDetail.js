@@ -12,8 +12,8 @@ import BaseUrl from "../../component/BaseUrl/BaseUrl";
 import StripeCheckout from "react-stripe-checkout";
 import { ColorRing } from "react-loader-spinner";
 import toast, { Toaster } from "react-hot-toast";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
 
 const CourseDetail = () => {
@@ -36,14 +36,7 @@ const CourseDetail = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleClose1 = () => setShow1(false);
-  const handleShow1 = () => setShow1(true)
-
-
-
-
-
-
-
+  const handleShow1 = () => setShow1(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -52,7 +45,6 @@ const CourseDetail = () => {
     courseApi();
     // eslint-disable-next-line
   }, []);
-
 
   const courseApi = async () => {
     setBtnLoader(false);
@@ -78,7 +70,7 @@ const CourseDetail = () => {
       const response = await axios(config);
       // const response1 = await axios(config1);
       // setSubscription(response1.data);
-      console.log(response,"course detaik")
+      console.log(response, "course detaik");
       setCourse(response.data.course);
       setMonthly(
         response.data.course.packages.filter((item) => item.period === "month")
@@ -108,7 +100,7 @@ const CourseDetail = () => {
         const response = await axios(config);
         setCoupon_id(response.data.coupon.id);
         setPercentage(response.data.coupon.percentage);
-        handleShow()
+        handleShow();
         setCode("");
         setBtnLoader(false);
       } catch (error) {
@@ -151,12 +143,12 @@ const CourseDetail = () => {
         icon: "success",
         button: "Ok",
       });
-      handleClose()
+      handleClose();
       courseApi();
     } catch (e) {
       console.log(e);
       setBtnLoader1(false);
-      handleClose()
+      handleClose();
       Swal.fire({
         title: "Oops!",
         text: e?.response?.data?.message,
@@ -181,7 +173,7 @@ const CourseDetail = () => {
         const response = await axios(config);
         setCoupon_id(response.data.coupon.id);
         setPercentage(response.data.coupon.percentage);
-        handleShow1()
+        handleShow1();
         setCode("");
         setBtnLoader(false);
       } catch (error) {
@@ -223,11 +215,11 @@ const CourseDetail = () => {
         icon: "success",
         button: "Ok",
       });
-      handleClose()
+      handleClose();
       courseApi();
     } catch (e) {
       setBtnLoader1(false);
-      handleClose()
+      handleClose();
       Swal.fire({
         title: "Oops!",
         text: e?.response?.data?.message,
@@ -241,10 +233,10 @@ const CourseDetail = () => {
     navigate("/signin");
   };
 
-  const lectureLengths = course?.chapters?.map((item) => item?.lectures?.length);
-  console.log(lectureLengths+"ssd")
-
-
+  const lectureLengths = course?.chapters?.map(
+    (item) => item?.lectures?.length
+  );
+  console.log(lectureLengths + "ssd");
 
   return (
     <>
@@ -353,12 +345,10 @@ const CourseDetail = () => {
                           aria-labelledby="curriculum-tab"
                         >
                           <div class="course__curriculum">
-                            {lectureLengths>0 &&
-                            course?.chapters?.map((item) => (
-                       
-                              <Chapter item={item} buy={course?.pack} />
-                            ))}
-                            
+                            {lectureLengths > 0 &&
+                              course?.chapters?.map((item) => (
+                                <Chapter item={item} buy={course?.pack} />
+                              ))}
                           </div>
                         </div>
                       </div>
@@ -405,7 +395,7 @@ const CourseDetail = () => {
                                     <div className="course__video-info">
                                       <h5>
                                         <span>Total chapters :</span>
-                                        {lectureLengths && course?.chapters
+                                        {course?.chapters
                                           ? course?.chapters?.length
                                           : 0}
                                       </h5>
@@ -537,8 +527,8 @@ const CourseDetail = () => {
                                         <div className="course__video-info">
                                           <h5>
                                             <span>Chapters :</span>
-                                            
-                                            { course?.chapters
+
+                                            {course?.chapters
                                               ? course?.chapters?.length
                                               : 0}
                                           </h5>
@@ -564,9 +554,7 @@ const CourseDetail = () => {
                                       </li>
                                       <li className="d-flex-column align-items-center ">
                                         <h5>
-                                          <span>
-                                          Discount Code 
-                                          </span>
+                                          <span>Discount Code</span>
                                         </h5>
                                         <input
                                           type="text"
@@ -577,31 +565,31 @@ const CourseDetail = () => {
                                             setCode(e.target.value)
                                           }
                                         />
-                                       <button
-                                       onClick={handleCoupen}
-                                       className="e-btn e-btn-7 w-100 mt-2"
-                                       style={{ background: "#337c75" }}
-                                     >
-                                       {btnLoader === true ? (
-                                         <ColorRing
-                                           visible={true}
-                                           height="40"
-                                           width="40"
-                                           ariaLabel="blocks-loading"
-                                           wrapperStyle={{}}
-                                           wrapperClass="blocks-wrapper"
-                                           colors={[
-                                             "#fff",
-                                             "#fff",
-                                             "#fff",
-                                             "#fff",
-                                             "#fff",
-                                           ]}
-                                         />
-                                       ) : (
-                                         "Submit"
-                                       )}
-                                     </button>
+                                        <button
+                                          onClick={handleCoupen}
+                                          className="e-btn e-btn-7 w-100 mt-2"
+                                          style={{ background: "#337c75" }}
+                                        >
+                                          {btnLoader === true ? (
+                                            <ColorRing
+                                              visible={true}
+                                              height="40"
+                                              width="40"
+                                              ariaLabel="blocks-loading"
+                                              wrapperStyle={{}}
+                                              wrapperClass="blocks-wrapper"
+                                              colors={[
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                                "#fff",
+                                              ]}
+                                            />
+                                          ) : (
+                                            "Submit"
+                                          )}
+                                        </button>
                                       </li>
                                     </ul>
                                   </div>
@@ -618,7 +606,7 @@ const CourseDetail = () => {
                                                 100 *
                                                 (percentage / 100)
                                             : yearly[0]?.price * 100
-                                        } 
+                                        }
                                       >
                                         <button
                                           className="e-btn e-btn-7 w-100"
@@ -724,9 +712,7 @@ const CourseDetail = () => {
                                       </li>
                                       <li className="d-flex-column align-items-center ">
                                         <h5>
-                                          <span>
-                                           Discount Code
-                                          </span>
+                                          <span>Discount Code</span>
                                         </h5>
                                         <input
                                           type="text"
@@ -830,101 +816,103 @@ const CourseDetail = () => {
             </div>
           </section>
           <Toaster position="top-right" reverseOrder={false} />
-          <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" centered>
-        <Modal.Header >
-          <Modal.Title><h5>Coupon Information</h5></Modal.Title>
-        </Modal.Header>
-        <Modal.Body><h5>{`You get a ${percentage}% off for this course`}</h5></Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <StripeCheckout
-                                        token={onToken}
-                                        stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
-                                        amount={
-                                          percentage
-                                            ? yearly[0]?.price * 100 -
-                                              yearly[0]?.price *
-                                                100 *
-                                                (percentage / 100)
-                                            : yearly[0]?.price * 100
-                                        }
-                                      >
-                                        <button
-                                          className="e-btn e-btn-7 w-100"
-                                          style={{ background: "#337c75" }}
-                                        >
-                                          {btnLoader1 === true ? (
-                                            <ColorRing
-                                              visible={true}
-                                              height="40"
-                                              width="40"
-                                              ariaLabel="blocks-loading"
-                                              wrapperStyle={{}}
-                                              wrapperClass="blocks-wrapper"
-                                              colors={[
-                                                "#fff",
-                                                "#fff",
-                                                "#fff",
-                                                "#fff",
-                                                "#fff",
-                                              ]}
-                                            />
-                                          ) : (
-                                            "Buy"
-                                          )}
-                                        </button>
-          </StripeCheckout>
-        </Modal.Footer>
+          <Modal
+            show={show}
+            onHide={handleClose}
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header>
+              <Modal.Title>
+                <h5>Coupon Information</h5>
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <h5>{`You get a ${percentage}% off for this course`}</h5>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+              <StripeCheckout
+                token={onToken}
+                stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
+                amount={
+                  percentage
+                    ? yearly[0]?.price * 100 -
+                      yearly[0]?.price * 100 * (percentage / 100)
+                    : yearly[0]?.price * 100
+                }
+              >
+                <button
+                  className="e-btn e-btn-7 w-100"
+                  style={{ background: "#337c75" }}
+                >
+                  {btnLoader1 === true ? (
+                    <ColorRing
+                      visible={true}
+                      height="40"
+                      width="40"
+                      ariaLabel="blocks-loading"
+                      wrapperStyle={{}}
+                      wrapperClass="blocks-wrapper"
+                      colors={["#fff", "#fff", "#fff", "#fff", "#fff"]}
+                    />
+                  ) : (
+                    "Buy"
+                  )}
+                </button>
+              </StripeCheckout>
+            </Modal.Footer>
           </Modal>
-          <Modal show={show1} onHide={handleClose1} aria-labelledby="contained-modal-title-vcenter" centered>
-        <Modal.Header >
-          <Modal.Title><h5>Coupon Information</h5></Modal.Title>
-        </Modal.Header>
-        <Modal.Body><h5>{`You get a ${percentage}% off for this course`}</h5></Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose1}>
-            Close
-          </Button>
-          <StripeCheckout
-                                        token={onToken1}
-                                        stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
-                                        amount={
-                                          percentage
-                                            ? monthly[0]?.price * 100 -
-                                              monthly[0]?.price *
-                                                100 *
-                                                (percentage / 100)
-                                            : monthly[0]?.price * 100
-                                        }
-                                      >
-                                        <button
-                                          className="e-btn e-btn-7 w-100"
-                                          style={{ background: "#337c75" }}
-                                        >
-                                          {loading === true ? (
-                                            <ColorRing
-                                              visible={true}
-                                              height="40"
-                                              width="40"
-                                              ariaLabel="blocks-loading"
-                                              wrapperStyle={{}}
-                                              wrapperClass="blocks-wrapper"
-                                              colors={[
-                                                "#fff",
-                                                "#fff",
-                                                "#fff",
-                                                "#fff",
-                                                "#fff",
-                                              ]}
-                                            />
-                                          ) : (
-                                            "Buy"
-                                          )}
-                                        </button>
-          </StripeCheckout>
-        </Modal.Footer>
+          <Modal
+            show={show1}
+            onHide={handleClose1}
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header>
+              <Modal.Title>
+                <h5>Coupon Information</h5>
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <h5>{`You get a ${percentage}% off for this course`}</h5>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose1}>
+                Close
+              </Button>
+              <StripeCheckout
+                token={onToken1}
+                stripeKey="pk_test_51MdqNVAOm2Y7pmXtOPM7GnEqm0icL0bkvRAKxCdVUjnRyIKkDh5HGnVexJGiDG48c9B4kLQKxIVwCCC4DyTjdP0o00FWouzEvv"
+                amount={
+                  percentage
+                    ? monthly[0]?.price * 100 -
+                      monthly[0]?.price * 100 * (percentage / 100)
+                    : monthly[0]?.price * 100
+                }
+              >
+                <button
+                  className="e-btn e-btn-7 w-100"
+                  style={{ background: "#337c75" }}
+                >
+                  {loading === true ? (
+                    <ColorRing
+                      visible={true}
+                      height="40"
+                      width="40"
+                      ariaLabel="blocks-loading"
+                      wrapperStyle={{}}
+                      wrapperClass="blocks-wrapper"
+                      colors={["#fff", "#fff", "#fff", "#fff", "#fff"]}
+                    />
+                  ) : (
+                    "Buy"
+                  )}
+                </button>
+              </StripeCheckout>
+            </Modal.Footer>
           </Modal>
         </main>
       )}
