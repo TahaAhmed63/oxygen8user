@@ -237,8 +237,15 @@ const CourseDetail = () => {
   // const lectureLengths = course?.chapters?.map(
   //   (item) => item?.lectures?.length
   // );
-const chapterlength=course?.chapters.length
-console.log(chapterlength +"chapter length")
+// const chapterlength=course?.chapters.length
+// console.log(chapterlength +"chapter length")
+const chapters = course?.chapters;
+
+const chapterLength = chapters?.filter(chapter => chapter.lectures.length > 0).length;
+
+console.log(chapterLength +"CHPTER2VIDEO")
+
+
 
   return (
     <>
@@ -412,9 +419,12 @@ console.log(chapterlength +"chapter length")
                                     <div className="course__video-info">
                                       <h5>
                                         <span>Total chapters :</span>
-                                        {course?.chapters
+                                        {/* {course?.chapters
                                           ? course?.chapters?.length
-                                          : 0}
+                                          : 0} */}
+                                       {
+                                        chapterLength
+                                       }
                                       </h5>
                                     </div>
                                   </li>
@@ -545,9 +555,10 @@ console.log(chapterlength +"chapter length")
                                           <h5>
                                             <span>Chapters :</span>
 
-                                            {course?.chapters
+                                            {/* {course?.chapters
                                               ? course?.chapters?.length
-                                              : 0}
+                                              : 0} */}
+                                              {chapterLength}
                                           </h5>
                                         </div>
                                       </li>
@@ -703,9 +714,10 @@ console.log(chapterlength +"chapter length")
                                           <h5>
                                             <span>chapters :</span>
 
-                                            {course?.chapters
+                                            {/* {course?.chapters
                                               ? course?.chapters?.length
-                                              : 0}
+                                              : 0} */}
+                                              {chapterLength}
                                           </h5>
                                         </div>
                                       </li>
