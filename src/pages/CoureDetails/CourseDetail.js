@@ -354,9 +354,9 @@ console.log(chapterLength +"CHPTER2VIDEO")
                           aria-labelledby="curriculum-tab"
                         >
                           <div class="course__curriculum">
-                          {course?.chapters?.map((item) => {
+                          {course?.chapters?.map((item,index) => {
   if (item.lectures.length > 0) {
-    return <Chapter item={item} buy={course?.pack}  />;
+    return <Chapter item={item} buy={course?.pack} id={index+1} />;
   }
   return null;
 })}
