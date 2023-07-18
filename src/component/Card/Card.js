@@ -9,6 +9,7 @@ function Card({...item }) {
   function getDetail(id) {
     navigate(`/coursedetail/${id}`);
   }
+  const chapterLength = chapters?.filter(chapter => chapter.lectures.length > 0).length;
 
   return (
     <div
@@ -52,7 +53,7 @@ function Card({...item }) {
                 <div className="course__lesson">
                   <span>
                     <i className="far fa-book-alt"></i>
-                    {chapters?.length} Sessions{" "}
+                    {chapterLength} Sessions{" "}
                   </span>
                 </div>
               </div>
