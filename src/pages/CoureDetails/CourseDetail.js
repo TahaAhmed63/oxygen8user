@@ -243,7 +243,7 @@ const chapters = course?.chapters;
 
 const chapterLength = chapters?.filter(chapter => chapter.lectures.length > 0).length;
 
-console.log(chapterLength +"CHPTER2VIDEO")
+console.log(chapterLength +"CHPTER2VIDEs")
 
 
 
