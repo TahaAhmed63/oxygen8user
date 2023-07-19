@@ -36,7 +36,7 @@ const CourseDetail = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleClose1 = () => setShow1(false);
-  const handleShow1 = () => setShow1(true);
+  // const handleShow1 = () => setShow1(true);
 
 
   useEffect(() => {
@@ -159,38 +159,38 @@ const CourseDetail = () => {
     }
   };
 
-  const handleCoupen1 = async () => {
-    if (code) {
-      setBtnLoader(true);
-      try {
-        var config = {
-          method: "get",
-          url: `${BaseUrl.baseurl}/user/subscription/coupon/${code}`,
-          headers: {
-            Accept: "application/json",
-            Authorization: `Bearer ${userToken}`,
-          },
-        };
-        const response = await axios(config);
-        setCoupon_id(response.data.coupon.id);
-        setPercentage(response.data.coupon.percentage);
-        handleShow1();
-        setCode("");
-        setBtnLoader(false);
-      } catch (error) {
-        setBtnLoader(false);
-        setCode("");
-        Swal.fire({
-          title: "Oops",
-          text: `${error?.response?.data?.message}`,
-          icon: "error",
-          button: "Ok",
-        });
-      }
-    } else {
-      toast.error("first enter a coupon code");
-    }
-  };
+  // const handleCoupen1 = async () => {
+  //   if (code) {
+  //     setBtnLoader(true);
+  //     try {
+  //       var config = {
+  //         method: "get",
+  //         url: `${BaseUrl.baseurl}/user/subscription/coupon/${code}`,
+  //         headers: {
+  //           Accept: "application/json",
+  //           Authorization: `Bearer ${userToken}`,
+  //         },
+  //       };
+  //       const response = await axios(config);
+  //       setCoupon_id(response.data.coupon.id);
+  //       setPercentage(response.data.coupon.percentage);
+  //       handleShow1();
+  //       setCode("");
+  //       setBtnLoader(false);
+  //     } catch (error) {
+  //       setBtnLoader(false);
+  //       setCode("");
+  //       Swal.fire({
+  //         title: "Oops",
+  //         text: `${error?.response?.data?.message}`,
+  //         icon: "error",
+  //         button: "Ok",
+  //       });
+  //     }
+  //   } else {
+  //     toast.error("first enter a coupon code");
+  //   }
+  // };
 
   const onToken1 = async (token) => {
     setBtnLoader1(true);
@@ -419,9 +419,7 @@ console.log(chapterLength +"CHPTER2VIDEs")
                                     <div className="course__video-info">
                                       <h5>
                                         <span>Total chapters :</span>
-                                        {/* {course?.chapters
-                                          ? course?.chapters?.length
-                                          : 0} */}
+                                        
                                        {
                                         chapterLength
                                        }
@@ -475,7 +473,7 @@ console.log(chapterLength +"CHPTER2VIDEs")
                   <div className="col-xxl-4 col-xl-4 col-lg-4">
                     <div className="course__sidebar pl-70 p-relative">
                       <div className="course__shape">
-                        <div className="course__tab-2 mb-45 ">
+                        {/* <div className="course__tab-2 mb-45 ">
                           <ul
                             className="nav nav-tabs"
                             id="courseTab"
@@ -514,7 +512,7 @@ console.log(chapterLength +"CHPTER2VIDEs")
                               </button>
                             </li>
                           </ul>
-                        </div>
+                        </div> */}
 
                         <div className="course__tab-content mb-95">
                           <div className="tab-content" id="courseTabContent">
@@ -677,7 +675,7 @@ console.log(chapterLength +"CHPTER2VIDEs")
                               </div>
                             </div>
 
-                            <div
+                            {/* <div
                               class="tab-pane fade"
                               id="monthly"
                               role="tabpanel"
@@ -685,7 +683,7 @@ console.log(chapterLength +"CHPTER2VIDEs")
                             >
                               <div
                                 className="course__sidebar-widget-2 white-bg mb-20"
-                                // className="tab-pane fade show active"
+                               
                                 id="yearly"
                                 role="tabpanel"
                                 aria-labelledby="yearly-tab"
@@ -714,9 +712,7 @@ console.log(chapterLength +"CHPTER2VIDEs")
                                           <h5>
                                             <span>chapters :</span>
 
-                                            {/* {course?.chapters
-                                              ? course?.chapters?.length
-                                              : 0} */}
+                                          
                                               {chapterLength}
                                           </h5>
                                         </div>
@@ -834,7 +830,7 @@ console.log(chapterLength +"CHPTER2VIDEs")
                                   </div>
                                 </div>
                               </div>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

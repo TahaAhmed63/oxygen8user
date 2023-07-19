@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import './style.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import playButtonIcon from './../../../Assets/AboutImages/newplaybtn.png';
-import mainvideo from './../../../../src/Assets/videohome/HomePage CNSf.mp4';
+import mainvideo from './../../../../src/Assets/videohome/HomeVideo2.mp4';
 import mylogo from './../../../Assets/AboutImages/Oxygen icon W.png';
 import mythumbnail from "../../../Assets/AboutImages/Homepage_Thumbnail_2.png"
 //import mysecondvideo from "../../../Assets/videohome/animation.mp4"
