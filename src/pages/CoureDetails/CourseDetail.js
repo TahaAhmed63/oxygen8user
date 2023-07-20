@@ -399,7 +399,7 @@ console.log(chapterLength +"CHPTER2VIDEs")
                             aria-labelledby="yearly-tab"
                           >
                             <div className="course__video">
-                              <div
+                              {/* <div
                                 className="course__video-thumb w-img mb-25"
                                 style={{ position: "relative" }}
                               >
@@ -407,7 +407,7 @@ console.log(chapterLength +"CHPTER2VIDEs")
                                   src={`${img_link}${course?.image}`}
                                   alt=""
                                 />
-                              </div>
+                              </div> */}
                               <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
                                 <div className="course__video-price">
                                   <h5>Course Information</h5>
@@ -530,7 +530,7 @@ console.log(chapterLength +"CHPTER2VIDEs")
                                 aria-labelledby="yearly-tab"
                               >
                                 <div className="course__video">
-                                  <div
+                                  {/* <div
                                     className="course__video-thumb w-img mb-25"
                                     style={{ position: "relative" }}
                                   >
@@ -538,7 +538,7 @@ console.log(chapterLength +"CHPTER2VIDEs")
                                       src={`${img_link}${course?.image}`}
                                       alt=""
                                     />
-                                  </div>
+                                  </div> */}
                                   <div className="course__video-meta mb-25 d-flex align-items-center justify-content-between">
                                     <div className="course__video-price">
                                       <h5>
