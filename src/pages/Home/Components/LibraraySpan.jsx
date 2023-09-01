@@ -16,21 +16,21 @@ export const LibraraySpan = () => {
 
         <div className="librarycontent-">
             <div className="library-head">
-                <h4>Try the Libraries for Free</h4>
+                <h4>The Oxygen8™ Stress Resilience Course</h4>
 
             </div>
             <div className="library-para">
-                <p>Access all Libraries for tools on stress, anxiety, sleep and resilience management.</p>
+                <p>An arsenal of over 50+ tools and techniques to build your stress resilience.</p>
             </div>
             <div className="wrap">
                  <div className="cardBtn">
                 <span style={{
                   cursor:"pointer"
                 }} onClick={()=>{
-                  navigate("/videolibrary")
+                  navigate("/Courses")
                 }}>
 
-               Free Trial</span>
+Find Out More</span>
                  </div>
                  </div>
         </div>
