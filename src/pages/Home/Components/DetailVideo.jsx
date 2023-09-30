@@ -2,10 +2,10 @@ import React, { useState, useRef } from 'react';
 import ReactPlayer from 'react-player';
 import './style.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import playButtonIcon from './../../../Assets/AboutImages/newplaybtn.png';
-import mainvideo from './../../../../src/Assets/videohome/HomeVideo2.mp4';
+// import playButtonIcon from './../../../Assets/AboutImages/newplaybtn.png';
+import mainvideo from './../../../../src/Assets/videohome/finalhomevideo.mp4';
 import mylogo from './../../../Assets/AboutImages/Oxygen icon W.png';
-import mythumbnail from "../../../Assets/AboutImages/Homepage_Thumbnail_2.png"
+import mythumbnail from "../../../Assets/AboutImage/thumbnail.png"
 //import mysecondvideo from "../../../Assets/videohome/animation.mp4"
 import gifimage from "../../../Assets/AboutImages/ezgif.com-gif-maker (2).gif"
 
@@ -62,7 +62,7 @@ import gifimage from "../../../Assets/AboutImages/ezgif.com-gif-maker (2).gif"
                  
                     <div className="play-button" onClick={handleVideoToggle}>
               
-                      <img src={playButtonIcon} alt="Play Button" />
+                      {/* <img src={playButtonIcon} alt="Play Button" /> */}
                     </div>
                   )}  
                 </div>
