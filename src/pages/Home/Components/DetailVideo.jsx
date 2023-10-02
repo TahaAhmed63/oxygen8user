@@ -4,7 +4,8 @@ import './style.css';
 import { Container, Row, Col } from 'react-bootstrap';
 // import playButtonIcon from './../../../Assets/AboutImages/newplaybtn.png';
 import mainvideo from './../../../../src/Assets/videohome/finalhomevideo.mp4';
-import mylogo from './../../../Assets/AboutImages/Oxygen icon W.png';
+// import mylogo from './../../../Assets/AboutImages/Oxygen icon W.png';
+import mylogo from './../../../Assets/AboutImages/updated logo.png';
 import mythumbnail from "../../../Assets/AboutImages/thumbnail.png"
 //import mysecondvideo from "../../../Assets/videohome/animation.mp4"
 import gifimage from "../../../Assets/AboutImages/ezgif.com-gif-maker (2).gif"

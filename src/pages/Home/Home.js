@@ -169,7 +169,7 @@ function Home() {
                   }}
                 >
                   Whether you are looking for stress management, burnout
-                  recovery, or resilience building, Oxygen8{" "}
+                  recovery, or resilience building,Oxygen8{" "}
                   <em
                     style={{
                       fontSize: "11px",
@@ -185,9 +185,9 @@ function Home() {
                   of life. We offer tools to downregulate from stress using
                   Conscious Nervous System Feedback (CNSF) techniques, and
                   improve the baseline resilience of your physiology through
-                  macro-level, science-backed lifestyle changes. These methods
-                  become an arsenal of quick-fire techniques that cover you any
-                  time, anywhere.{" "}
+                  science-backed lifestyle changes. These methods become an
+                  arsenal of quick-fire techniques that cover you any time,
+                  anywher{" "}
                 </p>
               </div>
             </Col>

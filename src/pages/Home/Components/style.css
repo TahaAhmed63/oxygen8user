@@ -1465,6 +1465,10 @@ background: none!important;
     .home-main {
       height: 50vh !important;
     }
+   .row.wrap-mb{
+      max-width:100% !important;
+      
+    }
     .video-container {
       height: 50vh !important;
       width: 100% !important;
@@ -1534,4 +1538,26 @@ background: none!important;
       width: 19em !important;
     }
   }
+.square-box{
+  color: white;
+  align-items: flex-end;
+  text-align: left;
+  gap: 10px;
+  display: flex;
+  font-size:15px;
+}
 
+.square-box::before{
+    width: 40px;
+    height: 40px;
+    display:block;
+    background-color: rgba(128, 128, 128, 0.342);
+    border: 1px solid white;
+  }
+  .after-box{
+    width: 20px;
+    height: 20px;
+    display:flex;
+    background-color: rgba(128, 128, 128, 0.342);
+    border: 1px solid white;
+  }
