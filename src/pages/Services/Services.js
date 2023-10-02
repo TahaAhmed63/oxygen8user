@@ -6,10 +6,11 @@ import "./../About/Components/style.css";
 import { useNavigate } from "react-router-dom";
 import { Contact2 } from "../Home/Components/Contact2";
 import Footer from "../../component/Footer/Footer";
-import courseimg from '../../Assets/AboutImages/courses.jpg'
-import libraryimg from './../../Assets/AboutImages/library.jpg'
-import corporateimg from '../../Assets/AboutImages/corporate.jpg'
-import breathworkimg from '../../Assets/AboutImages/breathwork.jpg'
+import courseimg from "../../Assets/AboutImages/courses.jpg";
+import libraryimg from "./../../Assets/AboutImages/library.jpg";
+import corporateimg from "../../Assets/AboutImages/corporate.jpg";
+import breathworkimg from "../../Assets/AboutImages/breathwork.jpg";
+import sideimage from "../../Assets/AboutImages/sideimage.png";
 import mylogo from "./../../Assets/AboutImages/A4 Website Designs (10).png";
 const Services = () => {
   const navigate = useNavigate();
@@ -49,14 +50,21 @@ const Services = () => {
                         paddingBottom: "2rem",
                       }}
                     >
-                          <div className="service-img-wrap d-flex justify-content-center  " style={
-                            {
-                              paddingBottom:'2rem'
-                            }
-                           }>
-                            <img src={mylogo} className="img-fluid" alt="asa" width='150' height='120' />
-                           </div>
-                 
+                      <div
+                        className="service-img-wrap d-flex justify-content-center  "
+                        style={{
+                          paddingBottom: "2rem",
+                        }}
+                      >
+                        <img
+                          src={mylogo}
+                          className="img-fluid"
+                          alt="asa"
+                          width="150"
+                          height="120"
+                        />
+                      </div>
+
                       <div
                         style={{
                           paddingBottom: "2rem",
@@ -65,61 +73,87 @@ const Services = () => {
                         <p className="acordin-para">
                           1:1 appointments provide a highly personalised
                           approach to developing resilience and enhancing your
-                          relationship with stress.
-                     
+                          relationship with stress or anxiety.
                           <br />
-                          <br/>
-                          During these appointments we will:
                           <br />
-                          <br/>
+                          During these online video consultancy sessions we
+                          will:
+                          <br />
+                          <br />
                           - Explore your unique nervous system.
-                    
-                          <br/>
-                           - Identify
-                          strategies that can improve your stress
-                          managementbased on your specific circumstances.
-                       
-                          <br/>
+                          <br />
+                          - Identify strategies that can improve your stress
+                          management based on your specific circumstances.
+                          <br />
                           - Tailor a comprehensive plan that merges into your
                           weekly routine.
-                  
-                          <br/>
+                          <br />
                           - Address both immediate stress relief techniques and
                           long-term changes for increased resilience.
-                 
                           <br />
-                          <br/>
+                          <br />
                           To maximise the impact of our sessions, we structure
-                          them into three parts :
-                    
-                          <br/>
-                          <br/>
-                          1. Initial consultation: We will discuss your goals
-                          for stress management, lifestyle and emotional
-                          wellbeing, delving into information that is useful to
-                          create a plan unique to you and your life. <br /><br/>
-                          2. Individualised Plan: Based upon our first
-                          appointment, a tailored plan to assimilate into your
-                          day-to-day life will be created.
-                          <br /><br/>
-                          3. Follow-up Appointment: The plan is unique to you,
-                          and our follow-up appointment runs through the
-                          suggested lifestyle changes and down-regulation
-                          techniques, teaching you the methods that have been
-                          included. 
-                          <br/>
-                          <br/>
-                          Additional Support: If required, you have
-                          access to email support for any queries after our
-                          follow-up to help as you integrate these techniques
-                          into your life. After our second appointment, further
-                          appointments can be booked as we evaluate your
+                          them into three parts with potential :
+                          <br />
+                          <br />
+                          <div className="row wrap-mb" style={{maxWidth:"90%",margin:"0 auto"}}>
+                            <div className="col-md-6">
+                              <img src={sideimage} alt="asas" width="100%" className="img-fluid"/>
+                            </div>
+                            <div className="col-md-6">
+                              <h4 className="square-box">
+                                <span className="after-box"></span> Initial
+                                consultation:{" "}
+                              </h4>{" "}
+                            <p style={{fontSize:"16px",fontWeight:"300",lineHeight:"20px"}}> We will initially discuss your stress management
+                              goals, lifestyle and emotional wellbeing, delving
+                              into information that is useful to create a plan
+                              unique to you and your life in an online
+                              appointment.</p> 
+                              <br />
+                              <h4 className="square-box">
+                                {" "}
+                                <span className="after-box"></span>{" "}
+                                Individualised Plan:{" "}
+                              </h4>
+                              <p style={{fontSize:"16px",fontWeight:"300",lineHeight:"20px"}}>  A tailored plan to assimilate into your day-to-day
+                              life will be created. Guided sessions, lifestyle
+                              changes and resources will be sent through to
+                              accompany these changes based upon your individual
+                              requirements.</p>
+                              <br />
+                        
+                              <h4 className="square-box">
+                                {" "}
+                                <span className="after-box"></span> Additional
+                                Support:{" "}
+                              </h4>
+                              <p style={{fontSize:"16px",fontWeight:"300",lineHeight:"20px"}}>      The plan is unique to you and each of the guided
+                              sessions, lifestyle change suggestions and
+                              resources will have email support available for
+                              any questions on the exercises or topics provided.
+                </p>
+                              <br />
+                     
+                              <h4 className="square-box">
+                                {" "}
+                                <span className="after-box"></span> Optional
+                                Facilatted Appointment{" "}
+                              </h4>{" "}
+                              <p style={{fontSize:"16px",fontWeight:"300",lineHeight:"20px"}}>   
+Depending on the outcome of your initial consultancy, I may recommend a non-compulsory 1:1 facilitated session.</p>
+                              <br />
+                         
+                            </div>
+                          </div>
+                 Further appointments can be booked as we evaluate your
                           progress and make any necessary adjustments to further
                           enhance your ability to cope with stress.
                           <br />
                           <br />
+                    
                           <h2
-                            style={{  
+                            style={{
                               fontSize: "18px",
                               fontWeight: "bold",
                               color: "#fff",
@@ -127,30 +161,26 @@ const Services = () => {
                           >
                             Pricing
                           </h2>
-                        Initial Consultation: £240*
-                        <br/>
-                     Follow-up Appointments: £100
-                     <br/>
-                    1:1 Guided Sessions: £85**
-                      <br/>
-                            {" "}
-                            <br />
-                           
-                              *Includes initial consultation, tailored plan, and
-                              follow-up appointment to learn the techniques in
-                              the plan. Also encompasses email support regarding
-                              the implamentation or learning of the techniques.
-                       <br/>
-                          <br/>
-                              **Depending on the outcome of your initial
-                              consultancy, I may recommend a 1:1 guided session,
-                              for example Conscious Connected Breathwork. It is
-                              entirely at your discretion and not compulsory,
-                              but the session falls outside of the scope of the
-                              appointments and CNSF techniques.
-                       <br/>
-                          </p>
-                   
+                          Initial Consultation: £240*
+                          <br />
+                          Follow-up Appointments: £100
+                          <br />
+                          1:1 Guided Sessions: £85**
+                          <br /> <br />
+                          *Includes initial consultation, tailored plan, and
+                          follow-up appointment to learn the techniques in the
+                          plan. Also encompasses email support regarding the
+                          implamentation or learning of the techniques.
+                          <br />
+                          <br />
+                          **Depending on the outcome of your initial
+                          consultancy, I may recommend a 1:1 guided session, for
+                          example Conscious Connected Breathwork. It is entirely
+                          at your discretion and not compulsory, but the session
+                          falls outside of the scope of the appointments and
+                          CNSF techniques.
+                          <br />
+                        </p>
                       </div>
                       <div className=" button-about-3">
                         <button
@@ -189,17 +219,23 @@ const Services = () => {
                   >
                     <section
                       style={{
-                    paddingTop:"2rem",
+                        paddingTop: "2rem",
                         paddingBottom: "2rem",
                       }}
                     >
-                           <div className="service-img-wrap d-flex justify-content-center  " style={
-                            {
-                              paddingBottom:'2rem'
-                            }
-                           }>
-                            <img src={courseimg} alt="asa" width='100' height='100' />
-                           </div>
+                      <div
+                        className="service-img-wrap d-flex justify-content-center  "
+                        style={{
+                          paddingBottom: "2rem",
+                        }}
+                      >
+                        <img
+                          src={courseimg}
+                          alt="asa"
+                          width="100"
+                          height="100"
+                        />
+                      </div>
                       <div
                         style={{
                           paddingBottom: "2rem",
@@ -210,11 +246,12 @@ const Services = () => {
                           Courses provide a comprehensive array of science-based
                           techniques. They are designed to equip you with a
                           diverse arsenal of stress management methods that
-                          range from biofeedback practices like breathwork, to
-                          macro-level adjustments to your circadian rhythms.
-                          These courses offer the flexibility to select only the
-                          techniques that resonate best with you, all backed by
-                          scientific research.
+                          range from CNSF practices such as Breathwork or
+                          Somatics, mental rewiring, or lifestyle adjustments to
+                          improve your baseline physiology. These courses allow
+                          you to select techniques that resonate best with you
+                          for stress management, all backed by recent scientific
+                          research.
                           <br />
                           <br />
                           The methods on offer cover a range of needs and
@@ -266,13 +303,19 @@ const Services = () => {
                         paddingBottom: "2rem",
                       }}
                     >
-                          <div className="service-img-wrap d-flex justify-content-center  " style={
-                            {
-                              paddingBottom:'2rem'
-                            }
-                           }>
-                            <img src={libraryimg} alt="asa" width='100' height='100' />
-                           </div>
+                      <div
+                        className="service-img-wrap d-flex justify-content-center  "
+                        style={{
+                          paddingBottom: "2rem",
+                        }}
+                      >
+                        <img
+                          src={libraryimg}
+                          alt="asa"
+                          width="100"
+                          height="100"
+                        />
+                      </div>
                       <div
                         style={{
                           paddingBottom: "2rem",
@@ -331,13 +374,19 @@ const Services = () => {
                         paddingBottom: "2rem",
                       }}
                     >
-                          <div className="service-img-wrap d-flex justify-content-center  " style={
-                            {
-                              paddingBottom:'2rem'
-                            }
-                           }>
-                            <img src={corporateimg} alt="asa" width='100' height='90' />
-                           </div>
+                      <div
+                        className="service-img-wrap d-flex justify-content-center  "
+                        style={{
+                          paddingBottom: "2rem",
+                        }}
+                      >
+                        <img
+                          src={corporateimg}
+                          alt="asa"
+                          width="100"
+                          height="90"
+                        />
+                      </div>
                       <div
                         style={{
                           paddingBottom: "2rem",
@@ -395,13 +444,19 @@ const Services = () => {
                         paddingBottom: "2rem",
                       }}
                     >
-                          <div className="service-img-wrap d-flex justify-content-center  " style={
-                            {
-                              paddingBottom:'2rem'
-                            }
-                           }>
-                            <img src={breathworkimg} alt="asa" width='100' height='100' />
-                           </div>
+                      <div
+                        className="service-img-wrap d-flex justify-content-center  "
+                        style={{
+                          paddingBottom: "2rem",
+                        }}
+                      >
+                        <img
+                          src={breathworkimg}
+                          alt="asa"
+                          width="100"
+                          height="100"
+                        />
+                      </div>
                       <div
                         style={{
                           paddingBottom: "2rem",
@@ -515,8 +570,7 @@ const Services = () => {
                             Pricing
                           </h3>
                           Conscious Connected Breathwork Session, 75mins: £85
-                          <br/>
-                        
+                          <br />
                           Down-regulating 1:1 Session, 30 minutes: £55
                         </p>
                       </div>
