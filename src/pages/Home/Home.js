@@ -175,7 +175,7 @@ function Home() {
                       fontSize: "11px",
                       position: "relative",
                       bottom: "0.8rem",
-                      left: "-5px",
+                      left: "-9px",
                       fontStyle: "normal",
                     }}
                   >

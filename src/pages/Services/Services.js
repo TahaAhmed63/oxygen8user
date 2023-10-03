@@ -36,7 +36,7 @@ const Services = () => {
               <Accordion eventKey="0" className="services-acord">
                 <Accordion.Item eventKey="0">
                   <Accordion.Header className="button-after">
-                    CNSF & Optimisation Consultancy
+                    Consultancy
                   </Accordion.Header>
                   <Accordion.Body
                     style={{
@@ -93,65 +93,105 @@ const Services = () => {
                           <br />
                           <br />
                           To maximise the impact of our sessions, we structure
-                          them into three parts with potential :
+                          them into three parts :
                           <br />
                           <br />
-                          <div className="row wrap-mb" style={{maxWidth:"90%",margin:"0 auto"}}>
+                          <div
+                            className="row wrap-mb"
+                            style={{ maxWidth: "90%", margin: "0 auto" }}
+                          >
                             <div className="col-md-6">
-                              <img src={sideimage} alt="asas" width="100%" className="img-fluid"/>
+                              <img
+                                src={sideimage}
+                                alt="asas"
+                                width="100%"
+                                className="img-fluid"
+                              />
                             </div>
                             <div className="col-md-6">
                               <h4 className="square-box">
                                 <span className="after-box"></span> Initial
                                 consultation:{" "}
                               </h4>{" "}
-                            <p style={{fontSize:"16px",fontWeight:"300",lineHeight:"20px"}}> We will initially discuss your stress management
-                              goals, lifestyle and emotional wellbeing, delving
-                              into information that is useful to create a plan
-                              unique to you and your life in an online
-                              appointment.</p> 
+                              <p
+                                style={{
+                                  fontSize: "16px",
+                                  fontWeight: "300",
+                                  lineHeight: "20px",
+                                }}
+                              >
+                                {" "}
+                                We will initially discuss your stress management
+                                goals, lifestyle and emotional wellbeing,
+                                delving into information that is useful to
+                                create a plan unique to you and your life in an
+                                online appointment.
+                              </p>
                               <br />
                               <h4 className="square-box">
                                 {" "}
                                 <span className="after-box"></span>{" "}
                                 Individualised Plan:{" "}
                               </h4>
-                              <p style={{fontSize:"16px",fontWeight:"300",lineHeight:"20px"}}>  A tailored plan to assimilate into your day-to-day
-                              life will be created. Guided sessions, lifestyle
-                              changes and resources will be sent through to
-                              accompany these changes based upon your individual
-                              requirements.</p>
+                              <p
+                                style={{
+                                  fontSize: "16px",
+                                  fontWeight: "300",
+                                  lineHeight: "20px",
+                                }}
+                              >
+                                {" "}
+                                A tailored plan to assimilate into your
+                                day-to-day life will be created. Guided
+                                sessions, lifestyle changes and resources will
+                                be sent through to accompany these changes based
+                                upon your individual requirements.
+                              </p>
                               <br />
-                        
                               <h4 className="square-box">
                                 {" "}
                                 <span className="after-box"></span> Additional
                                 Support:{" "}
                               </h4>
-                              <p style={{fontSize:"16px",fontWeight:"300",lineHeight:"20px"}}>      The plan is unique to you and each of the guided
-                              sessions, lifestyle change suggestions and
-                              resources will have email support available for
-                              any questions on the exercises or topics provided.
-                </p>
+                              <p
+                                style={{
+                                  fontSize: "16px",
+                                  fontWeight: "300",
+                                  lineHeight: "20px",
+                                }}
+                              >
+                                {" "}
+                                The plan is unique to you and each of the guided
+                                sessions, lifestyle change suggestions and
+                                resources will have email support available for
+                                any questions on the exercises or topics
+                                provided.
+                              </p>
                               <br />
-                     
                               <h4 className="square-box">
                                 {" "}
                                 <span className="after-box"></span> Optional
                                 Facilatted Appointment{" "}
                               </h4>{" "}
-                              <p style={{fontSize:"16px",fontWeight:"300",lineHeight:"20px"}}>   
-Depending on the outcome of your initial consultancy, I may recommend a non-compulsory 1:1 facilitated session.</p>
+                              <p
+                                style={{
+                                  fontSize: "16px",
+                                  fontWeight: "300",
+                                  lineHeight: "20px",
+                                }}
+                              >
+                                Depending on the outcome of your initial
+                                consultancy, I may recommend a non-compulsory
+                                1:1 facilitated session.
+                              </p>
                               <br />
-                         
                             </div>
                           </div>
-                 Further appointments can be booked as we evaluate your
+                          Further appointments can be booked as we evaluate your
                           progress and make any necessary adjustments to further
                           enhance your ability to cope with stress.
                           <br />
                           <br />
-                    
                           <h2
                             style={{
                               fontSize: "18px",
@@ -161,16 +201,16 @@ Depending on the outcome of your initial consultancy, I may recommend a non-comp
                           >
                             Pricing
                           </h2>
-                          Initial Consultation: £240*
+                          Initial Consultation: £95*
                           <br />
-                          Follow-up Appointments: £100
+                          Follow-up Appointments: £85
                           <br />
                           1:1 Guided Sessions: £85**
                           <br /> <br />
-                          *Includes initial consultation, tailored plan, and
-                          follow-up appointment to learn the techniques in the
-                          plan. Also encompasses email support regarding the
-                          implamentation or learning of the techniques.
+                          *Includes initial consultation, tailored plan,
+                          resources to learn the suggested techniques and
+                          follow-up support regarding the implementation or
+                          learning of the techniques.
                           <br />
                           <br />
                           **Depending on the outcome of your initial
