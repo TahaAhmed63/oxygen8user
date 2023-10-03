@@ -8,7 +8,7 @@ import mainvideo from './../../../../src/Assets/videohome/finalhomevideo.mp4';
 import mylogo from './../../../Assets/AboutImages/updated logo.png';
 import mythumbnail from "../../../Assets/AboutImages/thumbnail.png"
 //import mysecondvideo from "../../../Assets/videohome/animation.mp4"
-import gifimage from "../../../Assets/AboutImages/ezgif.com-gif-maker (2).gif"
+import gifimage from "../../../Assets/AboutImages/maingif.gif"
 
  const DetailVideo = () => {
    const videoRef = useRef(null);
