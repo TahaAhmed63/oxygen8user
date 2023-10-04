@@ -169,13 +169,13 @@ function Home() {
                   }}
                 >
                   Whether you are looking for stress management, burnout
-                  recovery, or resilience building,Oxygen8{" "}
+                  recovery, or resilience building, Oxygen8{" "}
                   <em
                     style={{
                       fontSize: "11px",
                       position: "relative",
                       bottom: "0.8rem",
-                      left: "-9px",
+                      left: "-12px",
                       fontStyle: "normal",
                     }}
                   >
