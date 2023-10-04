@@ -93,7 +93,7 @@ const Services = () => {
                           <br />
                           <br />
                           To maximise the impact of our sessions, we structure
-                          them into three parts :
+                          them into three parts:
                           <br />
                           <br />
                           <div
