@@ -187,7 +187,7 @@ function Home() {
                   improve the baseline resilience of your physiology through
                   science-backed lifestyle changes. These methods become an
                   arsenal of quick-fire techniques that cover you any time,
-                  anywher{" "}
+                  anywhere.{" "}
                 </p>
               </div>
             </Col>
