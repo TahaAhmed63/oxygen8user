@@ -136,7 +136,7 @@ const Coorperate = () => {
                     <em
                       style={{
                         fontSize: "10px",
-                        left: "-5px",
+                        left: "-10px",
                         position: "relative",
                         bottom: "0.8rem",
                         fontStyle:"normal"
