@@ -1,98 +1,118 @@
-/* eslint-disable react/jsx-no-target-blank */
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useRef } from "react";
-import Modal from 'react-bootstrap/Modal';
-import Swal from "sweetalert2";
+  /* eslint-disable react/jsx-no-target-blank */
+  import React, { useState } from "react";
+  import { Link } from "react-router-dom";
+  import { useRef } from "react";
+  import Modal from 'react-bootstrap/Modal';
+  import Swal from "sweetalert2";
 
-const VideoList = ({item,buy }) => {
-  const videoEl = useRef(null);
+  const VideoList = ({item,buy }) => {
+    const videoEl = useRef(null);
 
-  const { title, image ,video} = item;
+    const { title, image ,video} = item;
 
-  const [show, setShow] = useState(false);
-  const [time,settime] = useState()
-  const video_link = localStorage.getItem("video_link");
-  const img_link = localStorage.getItem("image_link");
+    const [show, setShow] = useState(false);
+    const [time,settime] = useState()
+    const video_link = localStorage.getItem("video_link");
+    const img_link = localStorage.getItem("image_link");
 
 
-  const handleClose = () => setShow(false);
+    const handleClose = () => setShow(false);
 
-  const handleLoadedMetadata = () => {
-    const videolength = videoEl.current;
-    const temp =(Math.floor(videolength.duration)/60)
-    settime(temp.toFixed(2))
-    if (!videolength) return videolength.duration
-
-  };
-  function playVideo(){
-    if(buy){
-      setShow(true)
-    }
-    else{
-      Swal.fire({
-        title: "OOps!",
-        text: 'You are not Enrolled in this Video Library',
-        icon: "danger",
-        button: "Ok",
-      });
-    }
-  }
-
-  return (
-    <div
-    className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 grid-item cat1 cat2 cat4 height='600'"
-  >
-    <div className="course__item white-bg mb-30 fix">
-      <div className="course__thumb w-img p-relative fix">
-          <img src={`${img_link}${image}`} alt="" width="300" height="200" />
-      </div>
-      <div className="course__item white-bg mb-30 fix" style={{display:'none'}}>
-      <video src={`${video_link}${video}`}  ref={videoEl} onLoadedMetadata={handleLoadedMetadata}  alt=""  height="300" width="250" autoPlay muted loop playsInline ><source src={`${video_link}${video}`} type='video/mp4'/></video>
-    </div>
-      <div className="course__content">
-       
-        <h3
-          className="course__title"
-          style={{ textAlign: "left", paddingTop: "5px",height:'50px' }}
-        >
-          {title}
-        </h3>
-      </div>
-      <div className="course__more d-flex justify-content-between align-items-center  cursor-pointer">
-          {item.type === "video"?
-          <>
-          <div className="course__btn">
-            <span className="theme-btn">{time} min </span>
-          </div>
-
-          <div className="course__btn" onClick={playVideo}>
-            <Link href="#" className="link-btn" to="">
-              Play
-              <i className="far fa-play"></i>
-              <i className="far fa-play"></i>
-            </Link>
-          </div>
-          </>
-          :
-          <>
-<div className="course__btn">
-            <a href={`${video_link}${video}`} className="link-btn" target="_blank">
-              View Document
-            </a>
-          </div>          
-          </>
+    const handleLoadedMetadata = () => {
+      const videolength = videoEl.current;
+      const duration = Math.floor(videolength.duration);
+      const hours = Math.floor(duration / 3600);
+      const minutes = Math.floor((duration % 3600) / 60);
+      const seconds = duration % 60;
+      
+      let formattedDuration = '';
+      
+      if (hours > 0) {
+        formattedDuration += `${hours} hr${hours !== 1 ? 's' : ''} `;
       }
-      </div>
-    </div>
-    <Modal show={show} onHide={handleClose} fullscreen={true}>
-        <Modal.Header closeButton>
-          <Modal.Title>{title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body> <video src={`${video_link}${video}`}  alt=""  height="100%" width="100%" autoPlay muted loop playsInline controls><source src={`${video_link}${video}`} type='video/mp4'/></video></Modal.Body>
-      </Modal>
-  </div>
-  );
-};
+      
+      if (minutes > 0) {
+        formattedDuration += `${minutes} min${minutes !== 1 ? 's' : ''} `;
+      }
+      
+      formattedDuration += `${seconds} sec${seconds !== 1 ? 's' : ''}`;
+      
+      settime(formattedDuration);
 
-export default VideoList;
+    };
+    function playVideo(pdf,type){
+      if(buy){
+        if(type==="video"){
+          setShow(true)
+        
+        }else{
+          window.open(pdf,"_blank")
+        }
+    }
+      else{
+        Swal.fire({
+          title: "OOps!",
+          text: 'You are not Enrolled in this Course',
+          icon: "danger",
+          button: "Ok",
+        });
+      }
+    }
+
+    return (
+      <div
+      className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 grid-item cat1 cat2 cat4 height='600'"
+    >
+      <div className="course__item white-bg mb-30 fix">
+        <div className="course__thumb w-img p-relative fix">
+            <img src={`${img_link}${image}`} alt="" width="300" height="200" />
+        </div>
+        <div className="course__item white-bg mb-30 fix" style={{display:'none'}}>
+        <video src={`${video_link}${video}`}  ref={videoEl} onLoadedMetadata={handleLoadedMetadata}  alt=""  height="300" width="250" autoPlay muted loop playsInline ><source src={`${video_link}${video}`} type='video/mp4'/></video>
+      </div>
+        <div className="course__content">
+        
+          <h3
+            className="course__title"
+            style={{ textAlign: "left", paddingTop: "5px",height:'50px' }}
+          >
+            {title}
+          </h3>
+        </div>
+        <div className="course__more d-flex justify-content-between align-items-center  cursor-pointer">
+            {item.type === "video"?
+            <>
+            <div className="course__btn">
+              <span className="theme-btn">{time ? time :"loading" }   </span>
+            </div>
+
+            <div className="course__btn" onClick={()=>playVideo("",item.type)}>
+              <Link href="#" className="link-btn" to="">
+                Play
+                <i className="far fa-play"></i>
+                <i className="far fa-play"></i>
+              </Link>
+            </div>
+            </>
+            :
+            <>
+  <div className="course__btn">
+  <button style={{
+          backgroundColor:"transparent"
+        }} onClick={()=>playVideo(`${video_link}${video}`,item.type)}>View pdf</button>
+            </div>          
+            </>
+        }
+        </div>
+      </div>
+      <Modal show={show} onHide={handleClose} fullscreen={true}>
+          <Modal.Header closeButton>
+            <Modal.Title>{title}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body> <video src={`${video_link}${video}`}  alt=""  height="100%" width="100%" autoPlay muted loop playsInline controls><source src={`${video_link}${video}`} type='video/mp4'/></video></Modal.Body>
+        </Modal>
+    </div>
+    );
+  };
+
+  export default VideoList;
